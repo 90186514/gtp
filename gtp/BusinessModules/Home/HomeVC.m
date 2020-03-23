@@ -102,7 +102,8 @@
         [self.mainView requestHomeListSuccessWithArray:dataArray WithPage:page];
     } failed:^(id model){
         kStrongSelf(self);
-        [self.mainView requestHomeListFailed];
+        [self.mainView requestHomeListSuccessWithArray:model WithPage:page];
+//        [self.mainView requestHomeListFailed];
     }];
 }
 

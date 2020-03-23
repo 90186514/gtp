@@ -387,7 +387,17 @@ typedef NS_ENUM(NSInteger, RCErrorCode) {
      小视频消息超限
      */
     RC_SIGHT_MSG_DURATION_LIMIT_EXCEED = 34002,
+    
+    /*!
+     GIF 消息大小超限
+     */
+    RC_GIF_MSG_SIZE_LIMIT_EXCEED = 34003,
 
+};
+
+typedef NS_ENUM(NSInteger, RCDBErrorCode) {
+    RCDBOpenSuccess = 0,
+    RCDBOpenFailed = 33002,
 };
 
 #pragma mark - 连接状态
@@ -613,6 +623,11 @@ typedef NS_ENUM(NSUInteger, RCConversationType) {
      */
     ConversationType_Encrypted = 11,
     
+    /**
+     * RTC 会话
+     */
+    ConversationType_RTC = 12,
+    
     /*!
      无效类型
      */
@@ -822,7 +837,12 @@ typedef NS_ENUM(NSUInteger, RCMediaType) {
     /*!
      小视频
      */
-    MediaType_SIGHT = 5
+    MediaType_SIGHT = 5,
+    
+    /*!
+     合并转发
+     */
+    MediaType_HTML = 6
 };
 
 #pragma mark RCMediaType - 消息中@提醒的类型
@@ -840,6 +860,31 @@ typedef NS_ENUM(NSUInteger, RCMentionedType) {
      */
     RC_Mentioned_Users = 2,
 };
+
+/**
+ 语音消息采样率
+ 
+ - RCSample_Rate_8000: 8KHz
+ - RCSample_Rate_16000: 16KHz
+ */
+typedef NS_ENUM(NSInteger,RCSampleRate)
+{
+    RCSample_Rate_8000 = 1,         //8KHz
+    RCSample_Rate_16000 = 2,        //16KHz
+};
+
+/**
+ 语音消息类型
+ 
+ - RCVoiceMessageTypeOrdinary: 普通音质语音消息
+ - RCVoiceMessageTypeHighQuality: 高音质语音消息
+ */
+typedef NS_ENUM(NSInteger,RCVoiceMessageType)
+{
+    RCVoiceMessageTypeOrdinary = 1,
+    RCVoiceMessageTypeHighQuality = 2,
+};
+
 
 #pragma mark - 公众服务相关
 
@@ -1005,6 +1050,12 @@ typedef NS_ENUM(NSUInteger, RCCSEvaType) {
  日志级别
  */
 typedef NS_ENUM(NSUInteger, RCLogLevel) {
+    
+    /*!
+     *  不输出任何日志
+     */
+    RC_Log_Level_None = 0,
+    
     /*!
      *  只输出错误的日志
      */
@@ -1019,6 +1070,16 @@ typedef NS_ENUM(NSUInteger, RCLogLevel) {
      *  输出错误、警告和一般的日志
      */
     RC_Log_Level_Info = 3,
+    
+    /*!
+     *  输出输出错误、警告和一般的日志以及 debug 日志
+     */
+    RC_Log_Level_Debug = 4,
+    
+    /*!
+     *  输出所有日志
+     */
+    RC_Log_Level_Verbose = 5,
 };
 
 #pragma mark RCTimestampOrder - 历史消息查询顺序

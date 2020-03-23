@@ -108,9 +108,7 @@ static NSString *cellId = @"faceCellId";
                         //2.1建立映射关系
                         for (NSString *faceToken in faceTokens) {
                             //把图片存储到本地，faceToken作为key存储图片
-                            [[SDImageCache sharedImageCache] storeImage:image forKey:faceToken completion:^{
-                                
-                            }];
+                            [[SDImageCache sharedImageCache] storeImage:image forKey:faceToken];
                            
                             NSDictionary *dic = @{@"imageKey": faceToken,  //对应的本地的图片
 //                                                  @"personName" : @"xxx", //设置对应人的名字

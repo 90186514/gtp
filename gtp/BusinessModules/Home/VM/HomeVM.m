@@ -79,10 +79,10 @@
 
 - (void)assembleApiData:(HomeData*)data WithPage:(NSInteger)page{
     [self removeContentWithType:IndexSectionZero];
-    if (data.r !=nil && data.r.arr.count>0 &&page==1) {
+    if (data.returnData !=nil && data.returnData.rankinglist.count>0 &&page==1) {
         [self.listData addObject:@{
                    kIndexSection: @(IndexSectionZero),
-                   kIndexRow: @[data.r]}];
+                   kIndexRow: @[data.returnData]}];
     }
     
     [self removeContentWithType:IndexSectionOne];
@@ -108,13 +108,13 @@
         NSInteger time = arc4random()%3600;
         [times addObject:@(time)];
     }
-    if (data.t !=nil && data.t.arr.count>0) {
+//    if (data.t !=nil && data.t.arr.count>0) {
         [self.listData addObject:@{
                 
                 kIndexSection: @(IndexSectionTwo),
                 kIndexRow: times}//data.t.arr
          ];
-    }
+//    }
     
     
     [self sortData];

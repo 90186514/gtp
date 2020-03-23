@@ -69,7 +69,7 @@
 {
     if ([NSObject isNSDictionaryClass:dic]) {
         int successed = [dic intForKey:@"code"];
-        if (successed == 200) {
+        if (successed == 1) {
             return YES;
         } else {
             return NO;

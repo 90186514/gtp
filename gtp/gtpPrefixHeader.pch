@@ -20,7 +20,7 @@
 #import "DTCoreText.h"
 
 #import "UIImageView+WebCache.h"
-//#import "MWPhotoBrowser.h"
+#import "MWPhotoBrowser.h"
 
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <SVProgressHUD/SVProgressHUD.h>

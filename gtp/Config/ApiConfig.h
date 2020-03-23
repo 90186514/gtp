@@ -12,7 +12,7 @@
 
 #define URL_IP @"http://47.52.45.85:8010/"
 //#define URL_IP @"http://18.188.82.157:8010/"
-#define LNURL_IP @"http://www.liniuyang.com/"
+#define LNURL_IP @"http://app.u17.com/v3/appV3_3/ios/phone/"
 //请求Cookie接口
 #define API_GetCookie @"uuserApi/OKay"
 
