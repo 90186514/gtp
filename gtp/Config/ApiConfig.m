@@ -13,7 +13,7 @@
     NSString *api = nil;
     switch (type)
     {
-        case ApiType_Login: api = @"ug/usr/pblin.do"; break;
+        case ApiType_Login: api = @"rank/list/ug/usr/pblin.do"; break;
         case ApiType_Vertify: api = @"ug/usr/pbggc.do"; break;
         
         case ApiType_BTCCheck: api = @"ug/btc/pbers.do"; break;
@@ -21,7 +21,7 @@
         case ApiType_BTCList: api = @"ug/btc/pbels.do"; break;
             
             
-        case ApiType_Homes: api = @"rank/list"; break;
+        case ApiType_Homes: api = @""; break;
             
     }
     return api;
