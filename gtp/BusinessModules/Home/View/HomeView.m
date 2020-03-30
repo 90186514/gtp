@@ -225,10 +225,21 @@
         }
             break;
         default:{
-            BaseCell *cell = [BaseCell cellWith:tableView];
-            cell.hideSeparatorLine = YES;
-            cell.frame = CGRectZero;
-            return cell;
+//            BaseCell *cell = [BaseCell cellWith:tableView];
+//            cell.hideSeparatorLine = YES;
+//            cell.frame = CGRectZero;
+//            return cell;
+       static NSString *name=@"defaultCell";
+                               
+       UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:name];
+           
+       if (cell==nil) {
+           cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:name];
+       }
+   cell.selectionStyle=UITableViewCellSelectionStyleNone;
+       cell.frame = CGRectZero;
+
+       return cell;
         }
             break;
     }
