@@ -261,7 +261,7 @@
             break;
             
         case IndexSectionOne:
-            return [GridCell cellHeightWithModel];
+            return [GridCell cellHeightWithModel:itemData];
             break;
         case IndexSectionTwo:
         {

@@ -26,7 +26,7 @@
         }
         
         UICollectionViewFlowLayout *layout=[[UICollectionViewFlowLayout alloc] init];
-        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
+        layout.scrollDirection = UICollectionViewScrollDirectionVertical;
         //设置第一个cell和最后一个cell,与父控件之间的间距
         layout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 0);
         //设置cell行、列的间距
@@ -48,9 +48,6 @@
     return self;
 }
 
-+(CGFloat)cellHeightWithModel{
-    return kGridCellHeight;
-}
 +(instancetype)cellWith:(UITableView*)tabelView{
     GridCell *cell = (GridCell *)[tabelView dequeueReusableCellWithIdentifier:@"GridCell"];
     if (!cell) {
@@ -58,8 +55,17 @@
     }
     return cell;
 }
+
++(CGFloat)cellHeightWithModel:(NSArray*)model{
+    //更新GridCell高度
+    return (model.count%4==0?model.count/4:model.count/4+1)*kGridCellHeight;
+}
+
 - (void)richElementsInCellWithModel:(NSArray*)model{
     _data = model;
+    
+    //如果是GridCell的话，要同步collectionView高度
+    [_collectionView setHeight:[GridCell cellHeightWithModel:model]];
     [_collectionView setDelegate:self];
     [_collectionView setDataSource:self];
     
@@ -87,25 +93,31 @@
     static NSString *gCollectionViewCell = @"gCollectionViewCell";
     UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:gCollectionViewCell forIndexPath:indexPath];
     
-    ////计算图标的中心位置
-    float unitCenterWith = collectionView.width  / 4;
-    float iconWidth = 44;
-    float iconStartPoint = (unitCenterWith - iconWidth) / 2;
-    
     if (cell) {
-        UIImageView *icon = [[UIImageView alloc]initWithFrame:CGRectMake(iconStartPoint, 15, iconWidth, iconWidth)];
+        UIImageView *icon = [[UIImageView alloc]init];
         icon.tag = 7001;
         [icon setBackgroundColor:kClearColor];
         [cell.contentView addSubview:icon];
+        [icon mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(15);
+            make.centerX.mas_equalTo(cell.contentView);
+            make.width.height.mas_equalTo(44);
+        }];
         
-        
-        UILabel *title = [[UILabel alloc]initWithFrame :CGRectMake(0, icon.height + icon.origin.y +5, collectionView.width / 4, 13)];
+        UILabel *title = [[UILabel alloc]init];
         title.tag = 7003;
+        [cell.contentView addSubview:title];
+        [title mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(icon.mas_bottom).offset(5);
+            make.centerX.mas_equalTo(cell.contentView);
+            make.left.mas_equalTo(3);
+            make.bottom.mas_equalTo(cell.contentView);
+        }];
         [title setBackgroundColor:kClearColor];
         [title setTextAlignment:NSTextAlignmentCenter];
         [title setFont:kFontSize(12)];
         [title setTextColor:RGBSAMECOLOR(91)];
-        [cell.contentView addSubview:title];
+        
     }
     
     NSDictionary *fourPalaceData = [_data objectAtIndex:indexPath.row];

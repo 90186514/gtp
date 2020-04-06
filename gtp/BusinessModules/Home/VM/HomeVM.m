@@ -86,9 +86,9 @@
     }
     
     [self removeContentWithType:IndexSectionOne];
-    NSArray* gridSectionNames = @[@"卖币",@"我的订单",@"数据统计",@"兑换比特币"];//,@"推广"
+    NSArray* gridSectionNames = @[@"卖币",@"我的订单",@"数据统计",@"兑换比特币",@"推广"];//,@"推广"
     NSMutableArray* gridParams = [NSMutableArray array];
-    NSArray* gridTypes = @[@(EnumActionTag0),@(EnumActionTag1),@(EnumActionTag2),@(EnumActionTag3)];//,@(IndexSectionFour)
+    NSArray* gridTypes = @[@(EnumActionTag0),@(EnumActionTag1),@(EnumActionTag2),@(EnumActionTag3),@(EnumActionTag4)];//,@(IndexSectionFour)
     for (int i=0; i<gridSectionNames.count; i++) {
         NSDictionary * param = @{kArr:gridSectionNames[i],
                                  kImg:[NSString stringWithFormat:@"home_grid_%i",i],

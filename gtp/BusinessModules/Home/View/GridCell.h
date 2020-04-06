@@ -16,7 +16,7 @@
 @property(nonatomic, strong)NSArray *data;
 //@property (copy, nonatomic) void(^clickGridRowBlock)(NSDictionary * dataModel);
 - (void)actionBlock:(ActionBlock)block;
-+(CGFloat)cellHeightWithModel;
++(CGFloat)cellHeightWithModel:(NSArray*)model;
 +(instancetype)cellWith:(UITableView*)tabelView;
 - (void)richElementsInCellWithModel:(NSArray*)model;
 @end
