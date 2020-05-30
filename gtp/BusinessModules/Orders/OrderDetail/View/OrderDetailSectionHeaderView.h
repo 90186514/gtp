@@ -13,7 +13,6 @@ static NSString *OrderDetailSectionFooterReuseIdentifier = @"OrderDetailSectionF
 
 + (CGFloat)viewHeight;
 - (void)richElementsInViewWithModel:(id)model;
-- (void)setDataWithType:(OrderType)type withTitle:(NSString*)title  withSubTitle:(NSString*)subTitle withImg:(NSString*)img;
 + (void)sectionHeaderViewWith:(UITableView*)tableView;
 
 @end

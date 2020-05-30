@@ -7,6 +7,8 @@
 #import <Foundation/Foundation.h>
 FOUNDATION_EXTERN NSString * const kNotify_NetWorkingStatusRefresh;
 
+FOUNDATION_EXTERN NSString * const kNotify_IsLoginRefresh;
+
 extern NSString* const kIsLogin;
 extern NSString* const kUserName;
 extern NSString* const kUserPW;
@@ -24,6 +26,10 @@ extern NSString* const kIsOn ;
 extern NSString* const kImg;
 extern NSString* const kTit;
 extern NSString* const kSubTit;
+extern NSString* const kAmount;
+extern NSString* const kDate;
+extern NSString* const kTotal;
+extern NSString* const kColor;
 extern NSString* const kUrl;
 extern NSString* const kArr;
 extern NSString* const kData;
@@ -43,6 +49,61 @@ typedef NS_ENUM(NSUInteger,EnumActionTag){
     EnumActionTag4  ,
     EnumActionTag5  ,
     EnumActionTag6  ,
+};
+
+typedef NS_ENUM(NSUInteger,AccountPurseType){
+    AccountPurseTypeCash = 0 ,
+    AccountPurseTypeCredit ,
+    AccountPurseTypeZFB,
+    AccountPurseTypeWX ,
+    AccountPurseTypeDeposit,
+};
+
+typedef NS_ENUM(NSUInteger,AccountingSelectedType){
+    AccountingSelectedTypeIncome = 0 ,
+    AccountingSelectedTypeOutcome  ,
+    AccountingSelectedTypeAllStated  ,
+    
+    AccountingSelectedTypeAllBalanceTotalStated  ,
+    
+    AccountingSelectedTypeDayAllStated  ,
+    AccountingSelectedTypeDayBalanceTotalStated  ,
+    
+    AccountingSelectedTypeAllSameSourceBalanceStated ,
+    AccountingSelectedTypeMonthSameSourceBalanceStated,
+    AccountingSelectedTypeMonthSameDaySameSourceBalanceStated
+};
+
+typedef NS_ENUM(NSUInteger,AccountingDistinctionType){
+    AccountingDistinctionTypeNone = 0 ,
+    AccountingDistinctionTypeDayAllStated  ,
+    AccountingDistinctionTypeMonthPie   ,
+    
+    AccountingDistinctionTypeAllBalanceFromSameSource,
+    AccountingDistinctionTypeMonthBalanceFromSameSource
+    
+};
+
+typedef NS_ENUM(NSUInteger,AccountingType){
+    AccountingTypeIncome = 0 ,
+    AccountingTypeDiet ,
+    AccountingTypeShopping,
+    AccountingTypeTrip ,
+    AccountingTypeEducation,
+    AccountingTypeRecreation,
+    AccountingTypeOtherOutcome,
+};
+
+typedef NS_ENUM(NSUInteger,AccountingIncomeType){
+    AccountingIncomeTypeSalary = 0 ,
+    AccountingIncomeTypeInvest ,
+    AccountingIncomeTypePartTime,
+    AccountingIncomeTypeLivingCost ,
+    AccountingIncomeTypeRedPacket,
+    AccountingIncomeTypeSecondhand,
+    AccountingIncomeTypeDebit,
+    AccountingIncomeTypeReimburse,
+    AccountingIncomeTypeOther,
 };
 
 typedef NS_ENUM(NSUInteger,PostAdsType){
@@ -66,8 +127,6 @@ typedef NS_ENUM(NSUInteger,OrderType){
     
     OrderTypeFinished ,
 };
-
-
 
 typedef NS_ENUM(NSUInteger,ExchangeType){
     ExchangeTypeAll = 0,

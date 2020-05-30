@@ -22,7 +22,7 @@
 @property (nonatomic, strong) NSString * title;
 @end
 
-@interface OrderDetailSubData : NSObject
+@interface ExchangeDetailSubData : NSObject
 @property (nonatomic, strong) NSArray * arr;
 @property (nonatomic, strong) NSString * category;
 @property (nonatomic, strong) NSString * title;

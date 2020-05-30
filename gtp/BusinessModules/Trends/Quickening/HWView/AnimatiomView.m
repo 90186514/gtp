@@ -11,8 +11,8 @@
 @interface AnimatiomView ()
 
 @end
-static const NSTimeInterval KAnimationDuration = 1;
-static const NSTimeInterval KAnimationBeginTime = 0.0;
+//static const NSTimeInterval KAnimationDuration = 1;
+//static const NSTimeInterval KAnimationBeginTime = 0.0;
 @implementation AnimatiomView
 
 - (instancetype) initWithFrame:(CGRect)frame {

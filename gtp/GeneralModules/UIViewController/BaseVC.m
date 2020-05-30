@@ -8,6 +8,7 @@
 //
 
 #import "BaseVC.h"
+#import "LoginVC.h"
 #import "NetworkingErrorView.h"
 @interface BaseVC ()
 @property(nonatomic,strong)NetworkingErrorView *netErrorView;
@@ -86,5 +87,50 @@
     self.lastNetStatus = status;
 }
 
+- (BOOL)isloginBlock {
+    WS(weakSelf);
+    BOOL valueLogin = GetUserDefaultBoolWithKey(kIsLogin);
+    if(!valueLogin){
+        
+//        LoginVC *loginCon = [[LoginVC alloc]init];
+//        loginCon.loginSuccessBlock = ^{
+//            [weakSelf loginSuccessBlockMethod];
+//        };
+//        UINavigationController *reNavCon = [[UINavigationController alloc]initWithRootViewController:loginCon];
+//        [self presentViewController:reNavCon animated:YES completion:nil];
+        
+//        [[ChangeURLEnvironment sharedInstance]changeEnvironment:^(id data) {
+//            [LoginVC pushFromVC:self requestParams:@(0) success:^(id data) {
+//                [weakSelf loginSuccessBlockMethod];
+//            }];
+//        }];
+        
+        [LoginVC pushFromVC:self requestParams:@(0) success:^(id data) {
+            [weakSelf loginSuccessBlockMethod];
+        }];
+        return YES;
+        
+    }
+    return NO;
+}
+
+- (void)loginSuccessBlockMethod{
+//    NSLog(@",,,,");
+}
+
+-(void)locateTabBar:(NSInteger)index{//backHome
+    
+    if (self.navigationController.tabBarController.selectedIndex == index) {
+        
+        [self.navigationController popToRootViewControllerAnimated:YES];
+        
+    }else{
+        self.navigationController.tabBarController.hidesBottomBarWhenPushed = NO;
+        
+        self.navigationController.tabBarController.selectedIndex = index;
+        
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+}
 @end
 

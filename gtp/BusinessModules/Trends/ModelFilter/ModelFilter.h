@@ -10,6 +10,7 @@
 
 @interface ModelFilter : NSObject
 - (void)filteredSameStringAndAssembleDifferentStringToIndividualArray;
+- (void)setFilteredAarryForSameKeyValue;
 - (void)setFilteredLastStringForSameKey;
 - (void)setFilteredAndDescendingSameStringToArrForSameKey;
 - (NSInteger) binarySearchArray:(NSArray*)levelActivities withSelectedAmt:(NSInteger)selectedAmt;

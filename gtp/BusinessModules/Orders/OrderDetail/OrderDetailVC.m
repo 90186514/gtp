@@ -51,7 +51,7 @@
             {
                 DistributePopUpView* popupView = [[DistributePopUpView alloc]init];
                 [popupView richElementsInViewWithModel:data2];
-                [popupView showInView:self.view];
+                [popupView showInApplicationKeyWindow];
                 [popupView actionBlock:^(id data) {
                     EnumActionTag tag = (EnumActionTag)[data integerValue];
                     switch (tag) {

@@ -246,7 +246,7 @@
             
             NSDictionary* dic = (_sections[0][kIndexRow])[indexPath.row];
             //            WData* wData = (WData*)itemData;
-            [cell richElementsInCellWithModel:dic withExchangeType:nil];
+            [cell richElementsInCellWithModel:dic withExchangeType:ExchangeTypeAll];
             
             return cell;
             

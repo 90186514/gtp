@@ -2,8 +2,8 @@
 //  YBRootTabBarViewController.h
 //  YBArchitectureDemo
 //
-//  Created by 杨波 on 2018/11/19.
-//  Copyright © 2018 杨波. All rights reserved.
+//  Created by ML on 2018/11/19.
+//  Copyright © 2018 ML. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

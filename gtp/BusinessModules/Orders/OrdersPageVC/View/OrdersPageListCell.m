@@ -345,7 +345,7 @@
     }
 }
 
-- (void)layoutTypeLabelWithModel:(OrdersPageItem*)model{
+- (void)layoutTypeLabelWithModel:(id)model{//OrdersPageItem*
     _typeLab.text = [NSString stringWithFormat:@"买方：%@",@"L****k"];
     CGFloat typeStringWidth =  [NSString getTextWidth:_typeLab.text withFontSize:kFontSize(13) withHeight:18];
     [_typeLab mas_updateConstraints:^(MASConstraintMaker *make) {
@@ -359,7 +359,7 @@
     }];
     _vipIV.image = [UIImage imageNamed:@"icon_vip"];
 }
-- (void)layoutPayMethodViewsWithModel:(OrdersPageItem*)model{
+- (void)layoutPayMethodViewsWithModel:(id)model{//OrdersPageItem*
     _payIvs = [NSMutableArray array];
     
     if (_payMethodView) {

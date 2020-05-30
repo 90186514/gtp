@@ -13,7 +13,7 @@
 #import "OrdersPageVM.h"
 
 #define kHeightForListHeaderInSections 5
-#define kTableViewBackgroundColor RGBCOLOR(228, 229,232)
+
 @interface OrdersPageListView () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, copy)TwoDataBlock block;

@@ -37,7 +37,7 @@
         
         [_collectionView setBackgroundColor:kWhiteColor];
         //如果row = 5
-//        _collectionView.scrollEnabled = YES;
+        _collectionView.scrollEnabled = NO;
 //        _collectionView.alwaysBounceHorizontal = YES;
 //        _collectionView.showsHorizontalScrollIndicator = YES;
 //        _collectionView.contentSize = CGSizeMake(_collectionView.width*5 / 4, 0);

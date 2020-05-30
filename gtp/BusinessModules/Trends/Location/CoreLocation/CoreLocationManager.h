@@ -50,7 +50,7 @@ typedef void (^NSStringBlock)(NSString *addressString);
 /**
  *  获取坐标
  *
- *  @param locaiontBlock locaiontBlock description
+ *  @param locationBlock locaiontBlock description
  */
 - (void) getLocationCoordinate:(LocationBlock) locationBlock error:(LocationErrorBlock) errorBlock;
 
@@ -64,7 +64,7 @@ typedef void (^NSStringBlock)(NSString *addressString);
 /**
  *  获取坐标和地址
  *
- *  @param locaiontBlock locaiontBlock description
+ *  @param locationBlock locaiontBlock description
  *  @param addressBlock  addressBlock description
  *  @param errorBlock    errorBlock description
  */

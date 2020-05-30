@@ -7,6 +7,7 @@
 #ifndef gtpPrefixHeader_pch
 #define gtpPrefixHeader_pch
 
+#import<objc/runtime.h>
 //三方库
 #import "RegexKitLite.h"
 
@@ -38,6 +39,7 @@
 #import "UIViewController+YBGeneral.h"
 #import "BaseVC.h"
 #import "YBNaviagtionViewController.h"
+
 //ToolModules
 #import "ToolMacro.h"
 #import "YBSystemTool.h"
@@ -63,4 +65,7 @@
 //api
 #import "ApiConfig.h"
 
+//BusinessModules
+#import "AccountingModel.h"
+#import "UserInfoManager.h"
 #endif /* gtpPrefixHeader_pch */

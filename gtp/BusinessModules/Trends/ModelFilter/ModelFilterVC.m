@@ -24,6 +24,7 @@
     [self YBGeneral_baseConfig];
     ModelFilter* m = [[ModelFilter alloc]init];
     [m filteredSameStringAndAssembleDifferentStringToIndividualArray];
+    [m setFilteredAarryForSameKeyValue];
     [m setFilteredLastStringForSameKey];
     [m setFilteredAndDescendingSameStringToArrForSameKey];
     

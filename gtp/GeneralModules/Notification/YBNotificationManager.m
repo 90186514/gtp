@@ -7,6 +7,8 @@
 #import "YBNotificationManager.h"
 NSString * const kNotify_NetWorkingStatusRefresh= @"kNotify_NetWorkingStatusRefresh";
 
+NSString * const kNotify_IsLoginRefresh= @"kNotify_IsLoginRefresh";
+
 NSString* const kIsLogin = @"kIsLogin";
 NSString* const kUserName = @"kUserName";
 NSString* const kUserPW = @"kUserPW";
@@ -24,6 +26,10 @@ NSString* const kIsOn = @"kIsOn";
 NSString* const kImg = @"kImg";
 NSString* const kTit = @"kTit";
 NSString* const kSubTit = @"kSubTit";
+NSString* const kAmount = @"kAmount";
+NSString* const kDate = @"kDate";
+NSString* const kTotal = @"kTotal";
+NSString* const kColor = @"kColor";
 NSString* const kUrl = @"kUrl";
 NSString* const kArr = @"kArr";
 NSString* const kData = @"kData";

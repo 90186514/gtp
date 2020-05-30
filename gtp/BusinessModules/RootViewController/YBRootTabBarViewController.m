@@ -2,8 +2,8 @@
 //  YBRootTabBarViewController.m
 //  YBArchitectureDemo
 //
-//  Created by 杨波 on 2018/11/19.
-//  Copyright © 2018 杨波. All rights reserved.
+//  Created by ML on 2018/11/19.
+//  Copyright © 2018 ML. All rights reserved.
 //
 
 #import "YBRootTabBarViewController.h"
@@ -14,9 +14,15 @@
 #import "YBMineViewController.h"
 #import "AdsVC.h"
 #import "FaceQRVC.h"
-@interface YBRootTabBarViewController ()
-
+#import "AccountingView.h"
+#import "AccountStatedVC.h"
+#import "AccountPurseVC.h"
+@interface YBRootTabBarViewController ()<UITabBarDelegate,UITabBarControllerDelegate>
+    //最近一次选择的Index
+@property(nonatomic, readonly) NSUInteger lastSelectedIndex;
 @property (nonatomic, strong) HomeVC *homeVC;
+@property (nonatomic, strong) AccountStatedVC *accountStatedVC;
+@property (nonatomic, strong) AccountPurseVC *accountPurseVC;
 @property (nonatomic, strong) AdsVC *adVC;
 @property (nonatomic, strong) YBTrendsViewController *trendsVC;
 @property (nonatomic, strong) YBMsgViewController *msgVC;
@@ -30,9 +36,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.delegate = self;
     self.tabBar.translucent = NO;
     self.tabBar.shadowImage = [UIImage new];
-    
     [self configSubViewControllers];
 }
 
@@ -57,6 +63,45 @@
     return nav;
 }
 
+-(void)setSelectedIndex:(NSUInteger)selectedIndex
+{
+    //判断是否相等,不同才设置
+    if (self.selectedIndex != selectedIndex  && self.selectedIndex != 1) {
+        //设置最近一次
+        _lastSelectedIndex = self.selectedIndex;
+    }
+    //调用父类的setSelectedIndex
+    [super setSelectedIndex:selectedIndex];
+}
+ 
+- (void)tabBar:(UITabBar *)tabBar didSelectItem:(UITabBarItem *)item
+{
+    //获得选中的item
+    NSUInteger tabIndex = [tabBar.items indexOfObject:item];
+    if (tabIndex != self.selectedIndex && self.selectedIndex != 1) {
+        //设置最近一次变更
+        _lastSelectedIndex = self.selectedIndex;
+    }
+}
+
+-(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    //3tabBar Middle item show above any tabBar
+//    if (tabBarController.selectedIndex ==1) {
+//        AccountingView* popupView = [[AccountingView alloc]init];
+//        [popupView richElementsInViewWithModel:@(1)];
+//        [popupView showInApplicationKeyWindow];
+//        [popupView actionBlock:^(id data) {
+//            
+//        }];
+//        
+//        YBNaviagtionViewController* naviC = (YBNaviagtionViewController*)viewController;
+//        NSArray *viewControllers = naviC.viewControllers;
+//        for (int i=0; i<viewControllers.count; i++) {
+//            BaseVC* vc = (BaseVC*)viewControllers[i];
+//            [vc locateTabBar:_lastSelectedIndex];
+//        }
+//    }
+}
 #pragma mark - getter
 
 - (HomeVC *)homeVC {
@@ -66,6 +111,18 @@
     return _homeVC;
 }
 
+- (AccountStatedVC *)accountStatedVC {
+    if (!_accountStatedVC) {
+        _accountStatedVC = [AccountStatedVC new];
+    }
+    return _accountStatedVC;
+}
+- (AccountPurseVC *)accountPurseVC {
+    if (!_accountPurseVC) {
+        _accountPurseVC = [AccountPurseVC new];
+    }
+    return _accountPurseVC;
+}
 - (AdsVC *)adVC {
     if (!_adVC) {
         _adVC = [AdsVC new];

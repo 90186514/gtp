@@ -183,7 +183,6 @@
 }
 #pragma mark - cellForRow
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    WS(weakSelf);
     
     NSInteger section = indexPath.section;
     if(section >= _sections.count)

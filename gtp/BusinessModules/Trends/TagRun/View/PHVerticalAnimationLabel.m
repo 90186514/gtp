@@ -15,20 +15,6 @@
 @synthesize arrayText;
 @synthesize randomTimeDur;
 
-
-- (void)awakeFromNib
-{
-    self.clipsToBounds = YES;
-    self.lbl1= [[UILabel alloc] init];
-    [self.lbl1 setTextColor:RGBCOLOR(153, 153, 153)];
-    [self.lbl1 setFrame:self.bounds];
-    [self.lbl1 setFont:[UIFont systemFontOfSize:12]];
-    [lbl1 setBackgroundColor:[UIColor clearColor]];
-    [self addSubview:lbl1];
-    i = 0;
-    self.arrayText = [[NSMutableArray alloc] init];
-}
-
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self =[ super initWithFrame:frame]) {
         self.clipsToBounds = YES;

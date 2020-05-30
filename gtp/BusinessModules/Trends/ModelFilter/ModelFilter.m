@@ -99,6 +99,127 @@
      */
 }
 
+- (void)setFilteredAarryForSameKeyValue{
+    NSMutableArray* filteredAarry = [NSMutableArray array];
+    NSMutableArray* attriArrs = [NSMutableArray array];
+//    NSMutableArray* matchArr = [NSMutableArray array];
+    attriArrs =[@[
+    @{
+      @"111" : @"Aonsectetur adipisicing elit",
+      @"kAmount" : @"12"
+     },
+    @{
+       @"222" : @"DLorem ipsum"
+     },
+    @{
+        @"111" : @"Aonsectetur adipisicing elit",
+        @"kAmount" : @"13"
+    },
+    @{
+        @"222" : @"DLorem ipsum"
+    },
+    
+    @{
+        @"222" : @"D"
+    }
+     ]mutableCopy];
+    
+    for (int i=0; i<attriArrs.count; i++) {
+        NSDictionary* temA = attriArrs[i];
+        NSString* AheadKey = temA.allKeys[0];
+        NSString *tempAValue = temA[AheadKey];
+//        if ([temA[kAmount] intValue] != 12) {
+//            continue;
+//        }
+        
+        
+        NSMutableArray* Is = [NSMutableArray array];
+        
+        NSMutableArray* matchArr = [NSMutableArray array];
+        [matchArr addObject:temA];
+        for (int j=i+1; j<attriArrs.count; j++) {
+            NSDictionary* temB = attriArrs[j];
+            NSString* BheadKey = temB.allKeys[0];
+            NSString *tempBValue = temB[BheadKey];
+            //不同key过滤 2个
+            //同key异Value过滤 4个
+            if (tempBValue.hash ==  tempAValue.hash) {
+                //BheadKey.hash ==  AheadKey.hash
+                
+               [matchArr addObject:temB];
+                
+                
+//                NSNumber* num = [NSString getPropertAmountNumberByArray:matchArr];
+//                if (num&& [num floatValue]>0) {
+//
+//                }
+//                tempAValue= tempBValue;
+//                NSMutableDictionary* dicHR = [NSMutableDictionary dictionary];
+////                [dicHR setObject:tempAValue forKey:AheadKey];
+//                [dicHR addEntriesFromDictionary:temB];
+//                [attriArrs replaceObjectAtIndex:i  withObject:dicHR];
+//
+                [attriArrs replaceObjectAtIndex:i  withObject:temB];
+
+                
+                [Is  addObject:@(j)];
+                
+                
+            }
+           
+        }
+        [filteredAarry addObject:matchArr];
+        for (NSInteger h =Is.count - 1; h>=0; h--) {
+            NSInteger remove = [Is[h] integerValue];
+            [attriArrs removeObjectAtIndex:remove];
+        }
+        
+    }
+    
+    
+    
+     
+    
+    NSLog(@"setFilteredAarryForSameKeyValue%@",filteredAarry);
+    /*
+     <__NSArrayM 0x600001be4e40>(
+     <__NSArrayM 0x600001be5530>(
+     {
+         111 = "Aonsectetur adipisicing elit";
+         QQ = tt;
+     },
+     {
+         111 = "Aonsectetur adipisicing elit";
+         QQ = pp;
+     }
+     )
+     ,
+     <__NSArrayM 0x600001be5560>(
+     {
+         222 = "DLorem ipsum";
+     },
+     {
+         222 = "DLorem ipsum";
+     }
+     )
+
+     )
+     */
+
+    
+    /* Total DicArr
+    <__NSArrayM 0x600002cb2400>(
+    {
+        kTotal = 24;
+    },
+    {
+        kTotal = 0;
+    }
+    )
+    */
+
+}
+
 - (void)setFilteredLastStringForSameKey{
     NSMutableArray* attriArrs = [NSMutableArray array];
     attriArrs =[@[
@@ -129,16 +250,19 @@
         for (int j=i+1; j<attriArrs.count; j++) {
             NSDictionary* temB = attriArrs[j];
             NSString* BheadKey = temB.allKeys[0];
-            
-            if (BheadKey == AheadKey) {
+            NSString *tempBValue = temB[BheadKey];
+            //不同key过滤 2个
+            //同key异Value过滤 4个
+            if (BheadKey.hash ==  AheadKey.hash) {
+//                &&tempBValue.hash ==  tempAValue.hash
                 
-                NSString *tempBValue = temB[BheadKey];
                 tempAValue= tempBValue;
                 
                 
                 
                 NSMutableDictionary* dicHR = [NSMutableDictionary dictionary];
-                [dicHR setObject:tempAValue forKey:AheadKey];
+//                [dicHR setObject:tempAValue forKey:AheadKey];
+                [dicHR addEntriesFromDictionary:temB];
                 [attriArrs replaceObjectAtIndex:i  withObject:dicHR];
                 
                 [Is  addObject:@(j)];

@@ -108,6 +108,19 @@
     self.tableView.tableFooterView = textView;
 }
 #pragma mark- delegate
+-(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *name=@"defaultCell";
+                                
+    UITableViewCell *cell=[tableView dequeueReusableCellWithIdentifier:name];
+        
+    if (cell==nil) {
+        cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:name];
+    }
+    cell.selectionStyle=UITableViewCellSelectionStyleNone;
+    cell.frame = CGRectZero;
+
+    return cell;
+}
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.dataArray.count;
 }

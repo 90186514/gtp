@@ -103,7 +103,7 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    WS(weakSelf);
+    
     NSDictionary* itemData = _sections[0];
     PostAdsDetailType type = [itemData[kType] integerValue];
     NSString *sectionTitle = itemData[kTit];

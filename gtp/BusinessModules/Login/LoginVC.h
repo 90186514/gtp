@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LoginVC : UIViewController
++ (instancetype)pushFromVC:(UIViewController *)rootVC requestParams:(id )requestParams success:(DataBlock)block;
 - (void)actionBlock:(ActionBlock)block;
 @end
 

@@ -14,6 +14,7 @@ pod 'DTCoreText'
 pod 'MWPhotoBrowser'
 pod 'FDFullscreenPopGesture'
 pod 'Charts'
+pod 'JXCategoryView'
 pod 'RongCloudIM/IMLib', '~> 2.9.7'
 pod 'RongCloudIM/IMKit', '~> 2.9.7'
 use_frameworks!

@@ -30,11 +30,21 @@
     [super viewDidLoad];
     [self YBGeneral_baseConfig];
     [self initView];
+    [self homeView:self.mainView requestHomeListWithPage:1];
 }
 
 -(void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    [UIApplication sharedApplication].statusBarStyle=UIStatusBarStyleLightContent;
     self.navigationController.delegate = self;
+    [self.navigationController setNavigationBarHidden:YES animated:animated];
+    
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    [UIApplication sharedApplication].statusBarStyle=UIStatusBarStyleDefault;
+    [self.navigationController setNavigationBarHidden:NO animated:animated];
 }
 
 - (void)initView {

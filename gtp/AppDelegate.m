@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <IQKeyboardManager/IQKeyboardManager.h>
 #import "YBRootTabBarViewController.h"
+#import "AccountRootTabBarViewController.h"
 #import "LoginVC.h"
 #import "LoginModel.h"
 @interface AppDelegate ()
@@ -50,6 +51,8 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self initRootUI];
+    [[AccountingModel new] setAccountingDataIsForceInit:NO];
+//    [UserInfoSingleton sharedUserInfoContext].userInfo= [UserInfoManager GetNSUserDefaults];
     IQKeyboardManager *keyboardManager = [IQKeyboardManager sharedManager]; // 获取类库的单例变量
     
     keyboardManager.enable = YES; // 控制整个功能是否启用
@@ -62,7 +65,7 @@
     
     keyboardManager.enableAutoToolbar = YES; // 控制是否显示键盘上的工具条
     
-    keyboardManager.shouldShowTextFieldPlaceholder = YES; // 是否显示占位文字
+    keyboardManager.shouldShowToolbarPlaceholder = YES; // 是否显示占位文字
     
     keyboardManager.placeholderFont = [UIFont boldSystemFontOfSize:17]; // 设置占位文字的字体
     

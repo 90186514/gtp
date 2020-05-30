@@ -11,6 +11,7 @@
 @implementation RichTextAdjustTableViewCell
 
 - (void)awakeFromNib {
+    [super awakeFromNib];
     [_lblTest setPreferredMaxLayoutWidth:[UIScreen mainScreen].bounds.size.width];
     // Initialization code
     //sel

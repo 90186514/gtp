@@ -7,7 +7,7 @@
 //
 
 #import "UINavigationItem+Extras.h"
-#define kTitleColor RGBCOLOR(100, 83, 79)
+#define kTitleColor YBGeneralColor.navigationBarTitleColor //RGBCOLOR(100, 83, 79)
 #define kSeachBackgroundColor RGBSAMECOLOR(246)
 @implementation UINavigationItem (Extras)
 
@@ -180,7 +180,7 @@
 
 -(void)addCustomRightButton:(id)target withImage:(UIImage *)image andTitle:(NSString *)title{
     UIButton *rightButton = [UIButton buttonWithType:UIButtonTypeCustom];
-    [rightButton setFrame:CGRectMake(0, 0, 37, 37)];
+    [rightButton setFrame:CGRectMake(0, 0, 44, 44)];
     rightButton.tag = 888;
     [rightButton setImage:image forState:UIControlStateNormal];
     [rightButton setTitle:title forState:UIControlStateNormal];
@@ -257,14 +257,14 @@
                                             context:nil];
         size = CGSizeMake(rectSize.size.width, rectSize.size.height);
     }
-    else
-    {
-        size = [title
-                  sizeWithFont:btnBg.titleLabel.font
-                  constrainedToSize:CGSizeMake(90, MAXFLOAT)
-                  lineBreakMode:NSLineBreakByWordWrapping];
-        
-    }
+//    else
+//    {
+//        size = [title
+//                  sizeWithFont:btnBg.titleLabel.font
+//                  constrainedToSize:CGSizeMake(90, MAXFLOAT)
+//                  lineBreakMode:NSLineBreakByWordWrapping];
+//
+//    }
     
     UILabel *lblTitle = [[UILabel alloc] initWithFrame:CGRectZero];
     [lblTitle setTextAlignment:NSTextAlignmentLeft];
@@ -284,6 +284,19 @@
     [btnBg addSubview:imageArrow];
     
     self.titleView = btnBg;
+}
+
+- (void)firstRightButtonEvent:(UIButton*)sender{
+    
+}
+- (void)secondRightButtonEvent:(UIButton*)sender{
+    
+}
+- (void)leftButtonEvent{
+    
+}
+- (void)rightButtonEvent{
+    
 }
 @end
 

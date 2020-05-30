@@ -34,7 +34,7 @@
         
         [self initViews];
         
-        [self.tableView.mj_header beginRefreshing];
+//        [self.tableView.mj_header beginRefreshing];
         
         //监听程序进入前台
         [[NSNotificationCenter defaultCenter] addObserver:self
@@ -45,7 +45,7 @@
     return self;
 }
 - (void)applicationDidBecomeActive:(NSNotification *)notification {
-    [_tableView reloadData];
+//    [_tableView reloadData];
 }
 
 - (void)initViews {
@@ -236,7 +236,7 @@
        if (cell==nil) {
            cell=[[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:name];
        }
-   cell.selectionStyle=UITableViewCellSelectionStyleNone;
+       cell.selectionStyle=UITableViewCellSelectionStyleNone;
        cell.frame = CGRectZero;
 
        return cell;

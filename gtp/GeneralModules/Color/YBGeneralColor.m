@@ -11,16 +11,17 @@
 @implementation YBGeneralColor
 
 + (UIColor *)themeColor {
-    return RGBCOLOR(76,127,255);
+    return RGBCOLOR(29,113,217);
 }
 
 + (UIColor *)navigationBarColor {
-//    return RGBCOLOR(86,129,247);
-    return kWhiteColor;
+    return RGBCOLOR(29,113,217);
+//    return kWhiteColor;
 }
 
 + (UIColor *)navigationBarTitleColor {
-    return [UIColor darkTextColor];
+    return [UIColor whiteColor];
+//    return [UIColor darkTextColor];
 }
 
 + (UIColor *)tabBarTitleNormalColor {

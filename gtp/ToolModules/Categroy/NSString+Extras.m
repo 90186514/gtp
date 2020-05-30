@@ -10,6 +10,48 @@
 #import <CommonCrypto/CommonDigest.h>
 
 @implementation NSString (Extras)
++ (NSString *)getSumStringByArray:(NSArray *)array
+//[string or num]
+{
+    CGFloat sum = [[array valueForKeyPath:@"@sum.floatValue"] floatValue];
+//    CGFloat avg = [[array valueForKeyPath:@"@avg.floatValue"] floatValue];
+//    CGFloat max =[[array valueForKeyPath:@"@max.floatValue"] floatValue];
+//    CGFloat min =[[array valueForKeyPath:@"@min.floatValue"] floatValue];
+//    NSLog(@"%fn%fn%fn%f",sum,avg,max,min);
+    return [NSString stringWithFormat:@"%.2f",sum];
+}
++ (NSNumber *)getNormalSumNumberByArray:(NSArray *)array
+//[string or num]
+{
+    CGFloat sum = [[array valueForKeyPath:@"@sum.floatValue"] floatValue];
+//    CGFloat avg = [[array valueForKeyPath:@"@avg.floatValue"] floatValue];
+//    CGFloat max =[[array valueForKeyPath:@"@max.floatValue"] floatValue];
+//    CGFloat min =[[array valueForKeyPath:@"@min.floatValue"] floatValue];
+//    NSLog(@"%fn%fn%fn%f",sum,avg,max,min);
+    return @([[NSString stringWithFormat:@"%.2f",sum] floatValue]);
+}
+
++ (NSNumber *)getPropertTotalNumberByArray:(NSArray *)array
+//[string or num]
+{
+    CGFloat sum = [[array valueForKeyPath:@"@sum.kTotal"] floatValue];
+//    CGFloat avg = [[array valueForKeyPath:@"@avg.floatValue"] floatValue];
+//    CGFloat max =[[array valueForKeyPath:@"@max.floatValue"] floatValue];
+//    CGFloat min =[[array valueForKeyPath:@"@min.floatValue"] floatValue];
+//    NSLog(@"%fn%fn%fn%f",sum,avg,max,min);
+    return @([[NSString stringWithFormat:@"%.2f",sum] floatValue]);
+}
+
++ (NSNumber *)getPropertAmountNumberByArray:(NSArray *)array
+//[string or num]
+{
+    CGFloat sum = [[array valueForKeyPath:@"@sum.kAmount"] floatValue];
+//    CGFloat avg = [[array valueForKeyPath:@"@avg.floatValue"] floatValue];
+//    CGFloat max =[[array valueForKeyPath:@"@max.floatValue"] floatValue];
+//    CGFloat min =[[array valueForKeyPath:@"@min.floatValue"] floatValue];
+//    NSLog(@"%fn%fn%fn%f",sum,avg,max,min);
+    return @([[NSString stringWithFormat:@"%.2f",sum] floatValue]);
+}
 
 - (NSString *)yb_encodingUTF8 {
     NSString *result = (NSString*)CFBridgingRelease(CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,(CFStringRef)self, NULL,CFSTR("!*'();:@&=+$,/?%#[]"),kCFStringEncodingUTF8));
@@ -93,7 +135,6 @@
         return NO;
     }
 }
-
 #pragma mark -将秒数转换为字符串格式
 + (NSString *)timeWithSecond:(NSInteger)second{
     NSString *time;
@@ -110,21 +151,135 @@
     }
     return time;
 }
+
++ (NSString *)mdSeparatedByPointFormatString{
+    return @"MM.dd";
+}
+
++ (NSString *)mdSeparatedByHyphenFormatString{
+    return @"MM-dd";
+}
+
++ (NSString *)mdSeparatedBySlashFormatString{
+     return @"MM/dd";
+}
+
++ (NSString *)mdSeparatedByUnitFormatString{
+    return @"MM月dd日";
+}
+
++ (NSString *)ymSeparatedByPointFormatString{
+    return @"yyyy.MM";
+}
+
++ (NSString *)ymSeparatedByHyphenFormatString{
+    return @"yyyy-MM";
+}
+
++ (NSString *)ymSeparatedBySlashFormatString{
+     return @"yyyy/MM";
+}
+
++ (NSString *)ymSeparatedByUnitFormatString{
+    return @"yyyy年MM月";
+}
+
++ (NSString *)ymdSeparatedByPointFormatString{
+    return @"yyyy.MM.dd";
+}
+
++ (NSString *)ymdSeparatedByHyphenFormatString{
+    return @"yyyy-MM-dd";
+}
+
++ (NSString *)ymdSeparatedBySlashFormatString{
+     return @"yyyy/MM/dd";
+}
+
++ (NSString *)ymdSeparatedByUnitFormatString{
+    return @"yyyy年MM月dd日";
+}
+
++ (NSString *)currentDataStringWithFormatString:(NSString *)formatString {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:formatString];
+    
+    NSString *retStr = [formatter stringFromDate:[NSDate date]];
+    
+    return retStr;
+}
+
++ (NSString *)dataStringWithFormatString:(NSString *)formatString setDate:(NSDate *)setDate{
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:formatString];
+    
+    NSString *retStr = [formatter stringFromDate:setDate];
+    
+    return retStr;
+}
+
++ (NSString *)dateStrWithString:(NSString *)string formatString:(NSString *)formatString{
+//    NSString *string0 = @"2016-7-16 ";
+//
+//    // 日期格式化类
+//
+//    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+//
+//    // 设置日期格式 为了转换成功
+//
+//    format.dateFormat = @"yyyy-MM-dd";
+//
+//    // NSString * -> NSDate *
+//
+//    NSDate *data = [format dateFromString:string0];
+//
+//    NSString *newString = [format stringFromDate:data];
+    
+//
+    NSDateFormatter *format = [[NSDateFormatter alloc] init];
+
+    format.dateFormat = formatString;
+
+
+    NSDate *data = [format dateFromString:string];
+
+    NSString *newString = [format stringFromDate:data];
+    
+    return newString;
+}
+
+
 #pragma mark -绘制AttributeString与NSTextAttachment不同大小颜色
 + (NSMutableAttributedString *)attributedStringWithString:(NSString *)string stringColor:(UIColor*)scolor stringFont:(UIFont*)sFont subString:(NSString *)subString subStringColor:(UIColor*)subStringcolor subStringFont:(UIFont*)subStringFont numInSubColor:(UIColor*)numInSubColor numInSubFont:(UIFont*)numInSubFont
 {
+   NSMutableDictionary *txtDict = [NSMutableDictionary dictionary];
+   NSMutableParagraphStyle *aParagraphStyle = [[NSMutableParagraphStyle alloc] init];
+//       aParagraphStyle.lineSpacing = 10;// 字体的行间距
+//       aParagraphStyle.firstLineHeadIndent = 30.0f;//首行缩进
+   aParagraphStyle.paragraphSpacing = 5;
+   aParagraphStyle.alignment = NSTextAlignmentCenter;
+   [aParagraphStyle setLineBreakMode:NSLineBreakByWordWrapping];
+   [txtDict setObject:aParagraphStyle forKey:NSParagraphStyleAttributeName];
+//     [attStr addAttribute:NSBaselineOffsetAttributeName value:@(0.36 * (a - b)) range:NSMakeRange(2, attStr.length - 2)]; //vertical
+    
     NSMutableAttributedString *attributedStr=[[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@", string]];
     NSDictionary * attributes = @{ NSFontAttributeName:sFont,NSForegroundColorAttributeName:scolor};
-    [attributedStr setAttributes:attributes range:NSMakeRange(0,attributedStr.length)];
+    [txtDict addEntriesFromDictionary:attributes];
+    
+    [attributedStr setAttributes:txtDict range:NSMakeRange(0,attributedStr.length)];
     
     
     NSRegularExpression *regular = [NSRegularExpression regularExpressionWithPattern:@"([0-9]\\d*\\.?\\d*)" options:0 error:NULL];//)个
     
     NSArray<NSTextCheckingResult *> *ranges = [regular matchesInString:subString options:0 range:NSMakeRange(0, [subString length])];
     
+
+    
     NSDictionary * subAttributes = @{NSFontAttributeName:subStringFont,NSForegroundColorAttributeName:subStringcolor};
     
-    NSMutableAttributedString *subAttributedStr = [[NSMutableAttributedString alloc] initWithString:subString attributes:subAttributes];
+    [txtDict addEntriesFromDictionary:subAttributes];
+    
+    NSMutableAttributedString *subAttributedStr = [[NSMutableAttributedString alloc] initWithString:subString attributes:txtDict];
     
     for (int i = 0; i < ranges.count; i++) {
         [subAttributedStr setAttributes:@{NSForegroundColorAttributeName : numInSubColor,NSFontAttributeName:numInSubFont} range:ranges[i].range];
@@ -138,13 +293,27 @@
 
 + (NSMutableAttributedString *)attributedStringWithString:(NSString *)string stringColor:(UIColor*)scolor stringFont:(UIFont*)sFont subString:(NSString *)subString subStringColor:(UIColor*)subStringcolor subStringFont:(UIFont*)subStringFont
 {
+    NSMutableDictionary *txtDict = [NSMutableDictionary dictionary];
+   NSMutableParagraphStyle *aParagraphStyle = [[NSMutableParagraphStyle alloc] init];
+//       aParagraphStyle.lineSpacing = 10;// 字体的行间距
+//       aParagraphStyle.firstLineHeadIndent = 30.0f;//首行缩进
+   aParagraphStyle.paragraphSpacing = 5;
+   aParagraphStyle.alignment = NSTextAlignmentCenter;
+   [aParagraphStyle setLineBreakMode:NSLineBreakByWordWrapping];
+   [txtDict setObject:aParagraphStyle forKey:NSParagraphStyleAttributeName];
+//     [attStr addAttribute:NSBaselineOffsetAttributeName value:@(0.36 * (a - b)) range:NSMakeRange(2, attStr.length - 2)]; //vertical
+        
     NSMutableAttributedString *attributedStr=[[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@", string]];
     NSDictionary * attributes = @{ NSFontAttributeName:sFont,NSForegroundColorAttributeName:scolor};
-    [attributedStr setAttributes:attributes range:NSMakeRange(0,attributedStr.length)];
+    [txtDict addEntriesFromDictionary:attributes];
+    
+    [attributedStr setAttributes:txtDict range:NSMakeRange(0,attributedStr.length)];
     
     
     NSMutableAttributedString *subAttributedStr=[[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@", subString]];
     NSDictionary * subAttributes = @{NSFontAttributeName:subStringFont,NSForegroundColorAttributeName:subStringcolor};
+//    [txtDict addEntriesFromDictionary:subAttributes];
+    
     [subAttributedStr setAttributes:subAttributes range:NSMakeRange(0,subAttributedStr.length)];
     
     [attributedStr appendAttributedString:subAttributedStr];

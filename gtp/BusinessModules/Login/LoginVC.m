@@ -20,7 +20,13 @@
 @end
 
 @implementation LoginVC
-
++ (instancetype)pushFromVC:(UIViewController *)rootVC requestParams:(id )requestParams success:(DataBlock)block{
+    LoginVC *vc = [[LoginVC alloc] init];
+    vc.block = block;
+//    vc.requestParams = requestParams;
+    [rootVC.navigationController pushViewController:vc animated:true];
+    return vc;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self YBGeneral_baseConfig];

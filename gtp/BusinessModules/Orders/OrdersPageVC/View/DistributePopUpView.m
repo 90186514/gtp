@@ -271,6 +271,16 @@
     return YES;
 }
 
+- (void)showInApplicationKeyWindow{
+    [self showInView:[UIApplication sharedApplication].keyWindow];
+    
+    //    [popupView showInView:self.view];
+    //
+    //    [popupView showInView:[UIApplication sharedApplication].keyWindow];
+    //
+    //    [[UIApplication sharedApplication].keyWindow addSubview:popupView];
+}
+
 - (void)showInView:(UIView *)view {
     if (!view) {
         return;

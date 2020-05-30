@@ -11,7 +11,9 @@
 NS_ASSUME_NONNULL_BEGIN
 
 @interface BaseVC : UIViewController
-
+- (void)loginSuccessBlockMethod;
+- (BOOL)isloginBlock;
+-(void)locateTabBar:(NSInteger)index;
 @end
 
 NS_ASSUME_NONNULL_END

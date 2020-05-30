@@ -11,6 +11,7 @@
 NS_ASSUME_NONNULL_BEGIN
 @interface DistributePopUpView : UIView
 - (void)actionBlock:(ActionBlock)block;
+- (void)showInApplicationKeyWindow;
 - (void)showInView:(UIView *)view;
 - (void)richElementsInViewWithModel:(id)model;
 @end

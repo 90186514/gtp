@@ -128,7 +128,7 @@
     NSString *selectorStr = self.dataArray[indexPath.section][indexPath.row][@"selector"];
     SEL selector = NSSelectorFromString(selectorStr);
     if ([self respondsToSelector:selector]) {
-        [self performSelector:selector];
+//        [self performSelector:selector];
     }
 }
 

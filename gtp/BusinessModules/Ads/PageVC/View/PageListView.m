@@ -13,7 +13,7 @@
 #import "PageVM.h"
 
 #define kHeightForListHeaderInSections 5
-#define kTableViewBackgroundColor RGBCOLOR(228, 229,232)
+
 @interface PageListView () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) UIButton * editAdsBtn;

@@ -36,13 +36,13 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
 - (void)_setMenu;
 - (CAAnimationGroup *)_blowupAnimationAtPoint:(CGPoint)p;
 - (CAAnimationGroup *)_shrinkAnimationAtPoint:(CGPoint)p;
+@property (nonatomic, strong) AwesomeMenuItem *startButton;
 @end
 
 @implementation AwesomeMenu {
     NSArray *_menusArray;
     NSUInteger _flag;
     NSTimer *_timer;
-    AwesomeMenuItem *_startButton;
     
     id<AwesomeMenuDelegate> __weak _delegate;
     BOOL _isAnimating;
@@ -191,7 +191,7 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
     // rotate start button
     float angle = self.isExpanding ? -M_PI_4 : 0.0f;
     [UIView animateWithDuration:animationDuration animations:^{
-        _startButton.transform = CGAffineTransformMakeRotation(angle);
+        self.startButton.transform = CGAffineTransformMakeRotation(angle);
     }];
     
     if ([_delegate respondsToSelector:@selector(awesomeMenu:didSelectIndex:)])
@@ -267,7 +267,7 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
     if (self.rotateAddButton) {
         float angle = self.isExpanding ? -M_PI_4 : 0.0f;
         [UIView animateWithDuration:kAwesomeMenuStartMenuDefaultAnimationDuration animations:^{
-            _startButton.transform = CGAffineTransformMakeRotation(angle);
+            self.startButton.transform = CGAffineTransformMakeRotation(angle);
         }];
     }
     
@@ -320,7 +320,7 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
     animationgroup.duration = animationDuration;
     animationgroup.fillMode = kCAFillModeForwards;
     animationgroup.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-    animationgroup.delegate = self;
+//    animationgroup.delegate = self;
     if(_flag == [_menusArray count] - 1){
         [animationgroup setValue:@"firstAnimation" forKey:@"id"];
     }
@@ -367,7 +367,7 @@ static CGPoint RotateCGPointAroundCenter(CGPoint point, CGPoint center, float an
     animationgroup.duration = animationDuration;
     animationgroup.fillMode = kCAFillModeForwards;
     animationgroup.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseIn];
-    animationgroup.delegate = self;
+//    animationgroup.delegate = self;
     if(_flag == 0){
         [animationgroup setValue:@"lastAnimation" forKey:@"id"];
     }
