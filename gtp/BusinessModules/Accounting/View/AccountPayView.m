@@ -9,7 +9,6 @@
 #import "AccountPayView.h"
 #import "CollectionViewHorizontalLayout.h"
 #import "RTPagedCollectionViewLayout.h"
-//#import "TYConttactUsModel.h"
 #define kGridCellHeight   102
 @interface AccountPayView()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property(nonatomic, strong)UICollectionView *collectionView;

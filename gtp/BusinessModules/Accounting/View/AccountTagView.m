@@ -9,7 +9,6 @@
 #import "AccountTagView.h"
 #import "CollectionViewHorizontalLayout.h"
 #import "RTPagedCollectionViewLayout.h"
-//#import "TYConttactUsModel.h"
 #define kGridCellHeight   102
 @interface AccountTagView()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property(nonatomic, strong)UICollectionView *collectionView;
