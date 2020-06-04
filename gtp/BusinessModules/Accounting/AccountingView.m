@@ -485,7 +485,7 @@
     
     AccountingModel* amodel = [[AccountingModel alloc]init];
     
-//    [amodel setAccountingDataIsForceInit:NO];
+//    [amodel setDefaultDataIsForceInit:NO];
     
     UIButton* btn = _funcBtns[1];
     [btn setTitle:[UserInfoManager GetNSUserDefaults].paySource forState:UIControlStateNormal];
@@ -498,7 +498,7 @@
 //
 //    if (currentDay.hash != today.hash) {
 //        [[AccountingModel new]setAccountingCurrentDayIsForceInit:YES];
-//        [[AccountingModel new] setAccountingDataIsForceInit:YES];
+//        [[AccountingModel new] setDefaultDataIsForceInit:YES];
 //    }
     
     //no
@@ -572,7 +572,8 @@
 
 - (void)showInApplicationKeyWindow{
     [self showInView:[UIApplication sharedApplication].keyWindow];
-    
+    //iOS 13
+//    [self showInView:[[UIApplication sharedApplication] delegate].window];
     //    [popupView showInView:self.view];
     //
     //    [popupView showInView:[UIApplication sharedApplication].keyWindow];

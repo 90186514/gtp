@@ -17,6 +17,6 @@ withDistinctionTime:(NSString*)distinctionTime withDistinctionBalanceSource:(NSS
 
 - (NSMutableArray*)getAccountingPayData;
 
-- (void)setAccountingDataIsForceInit:(BOOL)isForceInit;
+- (void)setDefaultDataIsForceInit:(BOOL)isForceInit;
 
 @end

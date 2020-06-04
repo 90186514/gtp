@@ -9,7 +9,7 @@
 #import "CoreLocationVC.h"
 #import "SelectCityListVC.h"
 @interface CoreLocationVC ()<MKMapViewDelegate,CLLocationManagerDelegate>
-
+@property (nonatomic,strong) CLGeocoder *geocoder;
 @end
 
 @implementation CoreLocationVC
@@ -17,20 +17,94 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self YBGeneral_baseConfig];
+    //根据地理名字定位
+    [self getCoordinateByAddressName:@"澳洲"];
+    
     //定位管理器
-
-    [[CoreLocationManager shareLocation]getLocationCoordinate:^(CLLocationCoordinate2D locationCoordinate) {
-        //显示坐标
-        [self setMapPoint:locationCoordinate];
-        
-    } error:^(NSError *error) {
-        [SVProgressHUD dismiss];
-    }];
-  
-    
-    
-    
+//    [[CoreLocationManager shareLocation]getLocationCoordinate:^(CLLocationCoordinate2D locationCoordinate) {
+//        //显示坐标
+//        [self setMapPoint:locationCoordinate];
+//
+//    } error:^(NSError *error) {
+//        [SVProgressHUD dismiss];
+//    }];
 }
+
+-(void)getCoordinateByAddressName:(NSString *)address{
+    
+    if ([[UIDevice currentDevice].systemVersion doubleValue]>=8.0) {
+        [[[CLLocationManager alloc]init] requestWhenInUseAuthorization];
+    }
+    
+    MKMapView* mapView = [[MKMapView alloc] initWithFrame:self.view.bounds];
+    mapView.delegate = self;
+    mapView.showsUserLocation = YES;
+    mapView.scrollEnabled = YES;
+    mapView.zoomEnabled = YES;
+    //默认是standard模式，还有卫星模式satellite和杂交模式Hybrid
+    mapView.mapType=MKMapTypeStandard;
+    
+    //显示用户位置（蓝色发光圆圈），还有None和FollowWithHeading两种，当有这个属性的时候，iOS8第一次打开地图，会自动定位并显示这个位置。iOS7模拟器上不会。
+    mapView.userTrackingMode=MKUserTrackingModeFollow;
+    [self.view addSubview:mapView];
+    
+    //地理编码
+    [_geocoder geocodeAddressString:address completionHandler:^(NSArray *placemarks, NSError *error) {
+        // 处理出错
+                if (error || placemarks.count == 0) {
+                    NSLog(@"解析出错");
+                    return;
+                }
+                // 遍历数组
+                for (CLPlacemark *placeMark in placemarks) {
+                    NSLog(@"latitude: %f", placeMark.location.coordinate.latitude);
+                    NSLog(@"longitude: %f", placeMark.location.coordinate.longitude);
+                    NSLog(@"name: %@", placeMark.name);
+                    
+                    CLLocationCoordinate2D locationCoordinate = placeMark.location.coordinate;
+                    
+                    CLLocation *location=[[CLLocation alloc]initWithLatitude:locationCoordinate.latitude longitude:locationCoordinate.longitude];
+                    
+                    [[[CLGeocoder alloc]init] reverseGeocodeLocation:location completionHandler:^(NSArray *placemarks, NSError *error) {
+                            CLPlacemark *placemark=[placemarks firstObject];
+                            //红色大头针GPS定位，点击弹框
+                        MKAnnotationModel* annotation = [[MKAnnotationModel alloc]initWithCoords:locationCoordinate];
+                            annotation.title = placemark.country;
+                            annotation.subtitle = placemark.name;
+                            annotation.image=[UIImage imageNamed:@"icon_openmap_item"];
+                            annotation.icon=[UIImage imageNamed:@"icon_mark1"];
+                            annotation.detail=@"Aalto's Studio...";
+                            annotation.rate=[UIImage imageNamed:@"icon_Movie_Star_rating"];
+                    //        [mapView selectAnnotation:annotation animated:YES];
+                            [mapView addAnnotation:annotation];
+                            
+                            //蓝色发光圆圈，显示用户位置，点击弹框
+                    //        mapView.userLocation.title=placemark.country;
+                    //        mapView.userLocation.subtitle = placemark.name;
+                            //让地图显示用户的位置（iOS8一打开地图会默认转到用户所在位置的地图），该方法不能设置地图精度
+                    //        [mapView setCenterCoordinate:mapView.userLocation.coordinate animated:YES];
+                            
+                            //设置地图精度以及显示用户所在位置的地图
+                            MKCoordinateSpan span=MKCoordinateSpanMake(0.01f, 0.01f);
+                            MKCoordinateRegion region=MKCoordinateRegionMake(locationCoordinate, span);
+                            [mapView setRegion:region animated:true];
+                            
+                    //        UIAlertView* alertView = [[UIAlertView alloc]initWithTitle:@"详细地址" message:placemark.name delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:nil, nil];
+                    //        [alertView show];
+                            NSString * str = [NSString stringWithFormat:@"LocationName:%@\n City:%@\n Country:%@\n",placemark.name,placemark.locality,placemark.country];
+                            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"详细地址" message:str preferredStyle:  UIAlertControllerStyleAlert];
+                            
+                            [alert addAction:[UIAlertAction actionWithTitle:@"Sure" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+                            }]];
+                            
+                            [self presentViewController:alert animated:true completion:nil];
+                        }];
+                }
+        
+        
+    }];
+}
+
 -(void)setMapPoint:(CLLocationCoordinate2D)locationCoordinate
 {
     

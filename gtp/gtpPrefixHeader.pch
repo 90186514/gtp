@@ -25,6 +25,7 @@
 
 #import <MBProgressHUD/MBProgressHUD.h>
 #import <SVProgressHUD/SVProgressHUD.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
 #import "UINavigationController+FDFullscreenPopGesture.h"
 
 //GeneralModules

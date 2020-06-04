@@ -358,14 +358,21 @@ withDistinctionTime:(NSString*)distinctionTime withDistinctionBalanceSource:(NSS
  */
 }
 
-- (NSMutableArray*)setFilteredData:(NSMutableArray*)outcomeMutArr witySameKey:(NSString*)sameKey{
+- (NSMutableArray*)setFilteredData:(NSMutableArray*)outcomeMutArr withSameKey:(NSString*)sameKey{
     NSMutableArray* attriArrs = [NSMutableArray array];
     [attriArrs addObjectsFromArray:[outcomeMutArr mutableCopy]];
     
     for (int i=0; i<attriArrs.count; i++) {
         NSDictionary* temA = attriArrs[i];
         NSString* AheadKey = sameKey;
-        NSNumber* tempAValue = @([temA[AheadKey]intValue]);
+        BOOL isContainKAmount = [[temA allKeys] containsObject:sameKey];
+        if (!isContainKAmount) {
+            continue;
+        }
+        
+//        NSNumber* tempAValue = @([temA[AheadKey]intValue]);
+        NSString* tempAValue = [NSString stringWithFormat:@"%@",temA[AheadKey]];
+
 
         
         NSMutableArray* Is = [NSMutableArray array];
@@ -374,8 +381,14 @@ withDistinctionTime:(NSString*)distinctionTime withDistinctionBalanceSource:(NSS
         for (int j=i+1; j<attriArrs.count; j++) {
             NSDictionary* temB = attriArrs[j];
             NSString* BheadKey = sameKey;
-            NSNumber* tempBValue = @([temB[BheadKey]intValue]);
-            if ( tempBValue ==  tempAValue) {
+            BOOL isContainKAmount = [[temB allKeys] containsObject:sameKey];
+            if (!isContainKAmount) {
+                continue;
+            }
+//            NSNumber* tempBValue = @([temB[BheadKey]intValue]);
+            NSString* tempBValue = [NSString stringWithFormat:@"%@",temB[BheadKey]];
+            
+            if ( tempBValue.hash ==  tempAValue.hash) {
 //                BheadKey.hash ==  AheadKey.hash &&
                 
                 tempAValue = tempBValue;
@@ -657,8 +670,10 @@ withDistinctionTime:(NSString*)distinctionTime withDistinctionBalanceSource:(NSS
     return incomeMutArr;
 }
 
-- (void)setAccountingDataIsForceInit:(BOOL)isForceInit{
+- (void)setDefaultDataIsForceInit:(BOOL)isForceInit{
     if (isForceInit) {
+        [UserInfoManager DeleteNSUserDefaults];
+        
         UserInfoModel *userInfoModel = [UserInfoSingleton sharedUserInfoContext].userInfo;
 //        userInfoModel.tagArrs = [[self getAccountingTagDataWithSelectedType:AccountingSelectedTypeAllStated] mutableCopy];
         userInfoModel.tagArrs = @[];

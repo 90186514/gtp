@@ -7,7 +7,6 @@
 //
 
 #import "AppDelegate.h"
-#import <IQKeyboardManager/IQKeyboardManager.h>
 #import "YBRootTabBarViewController.h"
 #import "AccountRootTabBarViewController.h"
 #import "LoginVC.h"
@@ -50,9 +49,10 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    [[AccountingModel new] setDefaultDataIsForceInit:NO];
+    //    [UserInfoSingleton sharedUserInfoContext].userInfo= [UserInfoManager GetNSUserDefaults];
     [self initRootUI];
-    [[AccountingModel new] setAccountingDataIsForceInit:NO];
-//    [UserInfoSingleton sharedUserInfoContext].userInfo= [UserInfoManager GetNSUserDefaults];
+
     IQKeyboardManager *keyboardManager = [IQKeyboardManager sharedManager]; // 获取类库的单例变量
     
     keyboardManager.enable = YES; // 控制整个功能是否启用
