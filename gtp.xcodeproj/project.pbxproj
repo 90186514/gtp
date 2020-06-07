@@ -25,46 +25,6 @@
 		39441E5B2476B37E00AA23C3 /* AccountStatedVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 39441E4F2476B37E00AA23C3 /* AccountStatedVC.m */; };
 		39441E5E2477AAF400AA23C3 /* AccountEditAmountVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 39441E5D2477AAF400AA23C3 /* AccountEditAmountVC.m */; };
 		39441E61247885A700AA23C3 /* AccountStatedSectionHV.m in Sources */ = {isa = PBXBuildFile; fileRef = 39441E5F247885A600AA23C3 /* AccountStatedSectionHV.m */; };
-		3948F6FA246FD43F00477131 /* Colours.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F699246FD43E00477131 /* Colours.m */; };
-		3948F6FB246FD43F00477131 /* XBaseChartConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F69D246FD43E00477131 /* XBaseChartConfiguration.m */; };
-		3948F6FC246FD43F00477131 /* XAreaLineChartConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F69F246FD43E00477131 /* XAreaLineChartConfiguration.m */; };
-		3948F6FD246FD43F00477131 /* XNormalLineChartConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6A4246FD43E00477131 /* XNormalLineChartConfiguration.m */; };
-		3948F6FE246FD43F00477131 /* XStackAreaLineChartConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6A5246FD43E00477131 /* XStackAreaLineChartConfiguration.m */; };
-		3948F6FF246FD43F00477131 /* XLineChartConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6A6246FD43E00477131 /* XLineChartConfiguration.m */; };
-		3948F700246FD43F00477131 /* XBarChartConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6A9246FD43E00477131 /* XBarChartConfiguration.m */; };
-		3948F701246FD43F00477131 /* XPointDetect.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6AD246FD43E00477131 /* XPointDetect.m */; };
-		3948F702246FD43F00477131 /* XAuxiliaryCalculationHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6AF246FD43E00477131 /* XAuxiliaryCalculationHelper.m */; };
-		3948F703246FD43F00477131 /* XRandomNumerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6B0246FD43E00477131 /* XRandomNumerHelper.m */; };
-		3948F704246FD43F00477131 /* CALayer+XLayerSelectHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6B5246FD43E00477131 /* CALayer+XLayerSelectHelper.m */; };
-		3948F705246FD43F00477131 /* CAShapeLayer+XLayerHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6B8246FD43E00477131 /* CAShapeLayer+XLayerHelper.m */; };
-		3948F706246FD43F00477131 /* UIGestureRecognizer+XGesHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6B9246FD43E00477131 /* UIGestureRecognizer+XGesHelper.m */; };
-		3948F707246FD43F00477131 /* XColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6BC246FD43E00477131 /* XColor.m */; };
-		3948F708246FD43F00477131 /* XAnimationPath.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6BF246FD43E00477131 /* XAnimationPath.m */; };
-		3948F709246FD43F00477131 /* XAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6C2246FD43E00477131 /* XAnimation.m */; };
-		3948F70A246FD43F00477131 /* XAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6C4246FD43E00477131 /* XAnimator.m */; };
-		3948F70B246FD43F00477131 /* XJYNumberLabelDecoration.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6C8246FD43E00477131 /* XJYNumberLabelDecoration.m */; };
-		3948F70C246FD43F00477131 /* XCycleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6C9246FD43E00477131 /* XCycleView.m */; };
-		3948F70D246FD43F00477131 /* XAlignLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6CB246FD43E00477131 /* XAlignLabel.m */; };
-		3948F70E246FD43F00477131 /* XPositiveNegativeBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6CC246FD43E00477131 /* XPositiveNegativeBarChartView.m */; };
-		3948F70F246FD43F00477131 /* XAreaLineContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6CD246FD43E00477131 /* XAreaLineContainerView.m */; };
-		3948F710246FD43F00477131 /* XAnimationLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6CE246FD43E00477131 /* XAnimationLabel.m */; };
-		3948F711246FD43F00477131 /* XPositiveNegativeBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6CF246FD43E00477131 /* XPositiveNegativeBarChart.m */; };
-		3948F712246FD43F00477131 /* XAbscissaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6D1246FD43E00477131 /* XAbscissaView.m */; };
-		3948F713246FD43F00477131 /* XLineChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6D5246FD43F00477131 /* XLineChartView.m */; };
-		3948F714246FD43F00477131 /* XPieChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6D7246FD43F00477131 /* XPieChart.m */; };
-		3948F715246FD43F00477131 /* XStackAreaLineContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6DD246FD43F00477131 /* XStackAreaLineContainerView.m */; };
-		3948F716246FD43F00477131 /* XPositiveNegativeBarContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6E0246FD43F00477131 /* XPositiveNegativeBarContainerView.m */; };
-		3948F717246FD43F00477131 /* XBarChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6E1246FD43F00477131 /* XBarChart.m */; };
-		3948F718246FD43F00477131 /* XBarContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6E3246FD43F00477131 /* XBarContainerView.m */; };
-		3948F719246FD43F00477131 /* XLineContainerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6E5246FD43F00477131 /* XLineContainerView.m */; };
-		3948F71A246FD43F00477131 /* XBarChartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6E7246FD43F00477131 /* XBarChartView.m */; };
-		3948F71B246FD43F00477131 /* OrdinateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6E8246FD43F00477131 /* OrdinateView.m */; };
-		3948F71C246FD43F00477131 /* XLineChart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6E9246FD43F00477131 /* XLineChart.m */; };
-		3948F71D246FD43F00477131 /* XBarItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6ED246FD43F00477131 /* XBarItem.m */; };
-		3948F71E246FD43F00477131 /* XPieItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6EE246FD43F00477131 /* XPieItem.m */; };
-		3948F71F246FD43F00477131 /* XLineChartItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6EF246FD43F00477131 /* XLineChartItem.m */; };
-		3948F720246FD43F00477131 /* XNotificationBridge.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6F5246FD43F00477131 /* XNotificationBridge.m */; };
-		3948F721246FD43F00477131 /* CAKeyframeAnimation+AHEasing.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F6F9246FD43F00477131 /* CAKeyframeAnimation+AHEasing.m */; };
 		3948F7282470945400477131 /* AccountTagView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F7262470945300477131 /* AccountTagView.m */; };
 		3948F80224717FF200477131 /* CollectionViewHorizontalLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F80124717FF100477131 /* CollectionViewHorizontalLayout.m */; };
 		3948F8052471AB8900477131 /* RTPagedCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F8032471AB8900477131 /* RTPagedCollectionViewLayout.m */; };
@@ -703,89 +663,6 @@
 		39441E5D2477AAF400AA23C3 /* AccountEditAmountVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountEditAmountVC.m; sourceTree = "<group>"; };
 		39441E5F247885A600AA23C3 /* AccountStatedSectionHV.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountStatedSectionHV.m; sourceTree = "<group>"; };
 		39441E60247885A700AA23C3 /* AccountStatedSectionHV.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountStatedSectionHV.h; sourceTree = "<group>"; };
-		3948F699246FD43E00477131 /* Colours.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Colours.m; sourceTree = "<group>"; };
-		3948F69A246FD43E00477131 /* Colours.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Colours.h; sourceTree = "<group>"; };
-		3948F69D246FD43E00477131 /* XBaseChartConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBaseChartConfiguration.m; sourceTree = "<group>"; };
-		3948F69F246FD43E00477131 /* XAreaLineChartConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAreaLineChartConfiguration.m; sourceTree = "<group>"; };
-		3948F6A0246FD43E00477131 /* XStackAreaLineChartConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XStackAreaLineChartConfiguration.h; sourceTree = "<group>"; };
-		3948F6A1246FD43E00477131 /* XNormalLineChartConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNormalLineChartConfiguration.h; sourceTree = "<group>"; };
-		3948F6A2246FD43E00477131 /* XLineChartConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLineChartConfiguration.h; sourceTree = "<group>"; };
-		3948F6A3246FD43E00477131 /* XAreaLineChartConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAreaLineChartConfiguration.h; sourceTree = "<group>"; };
-		3948F6A4246FD43E00477131 /* XNormalLineChartConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNormalLineChartConfiguration.m; sourceTree = "<group>"; };
-		3948F6A5246FD43E00477131 /* XStackAreaLineChartConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XStackAreaLineChartConfiguration.m; sourceTree = "<group>"; };
-		3948F6A6246FD43E00477131 /* XLineChartConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLineChartConfiguration.m; sourceTree = "<group>"; };
-		3948F6A8246FD43E00477131 /* XBarChartConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBarChartConfiguration.h; sourceTree = "<group>"; };
-		3948F6A9246FD43E00477131 /* XBarChartConfiguration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBarChartConfiguration.m; sourceTree = "<group>"; };
-		3948F6AA246FD43E00477131 /* XBaseChartConfiguration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBaseChartConfiguration.h; sourceTree = "<group>"; };
-		3948F6AC246FD43E00477131 /* XPointDetect.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPointDetect.h; sourceTree = "<group>"; };
-		3948F6AD246FD43E00477131 /* XPointDetect.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPointDetect.m; sourceTree = "<group>"; };
-		3948F6AF246FD43E00477131 /* XAuxiliaryCalculationHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAuxiliaryCalculationHelper.m; sourceTree = "<group>"; };
-		3948F6B0246FD43E00477131 /* XRandomNumerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XRandomNumerHelper.m; sourceTree = "<group>"; };
-		3948F6B1246FD43E00477131 /* XAuxiliaryCalculationHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAuxiliaryCalculationHelper.h; sourceTree = "<group>"; };
-		3948F6B2246FD43E00477131 /* XRandomNumerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XRandomNumerHelper.h; sourceTree = "<group>"; };
-		3948F6B4246FD43E00477131 /* CAShapeLayer+XLayerHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAShapeLayer+XLayerHelper.h"; sourceTree = "<group>"; };
-		3948F6B5246FD43E00477131 /* CALayer+XLayerSelectHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+XLayerSelectHelper.m"; sourceTree = "<group>"; };
-		3948F6B6246FD43E00477131 /* UIGestureRecognizer+XGesHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIGestureRecognizer+XGesHelper.h"; sourceTree = "<group>"; };
-		3948F6B7246FD43E00477131 /* CALayer+XLayerSelectHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+XLayerSelectHelper.h"; sourceTree = "<group>"; };
-		3948F6B8246FD43E00477131 /* CAShapeLayer+XLayerHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAShapeLayer+XLayerHelper.m"; sourceTree = "<group>"; };
-		3948F6B9246FD43E00477131 /* UIGestureRecognizer+XGesHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIGestureRecognizer+XGesHelper.m"; sourceTree = "<group>"; };
-		3948F6BB246FD43E00477131 /* XColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XColor.h; sourceTree = "<group>"; };
-		3948F6BC246FD43E00477131 /* XColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XColor.m; sourceTree = "<group>"; };
-		3948F6BD246FD43E00477131 /* XJYChartDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYChartDelegate.h; sourceTree = "<group>"; };
-		3948F6BF246FD43E00477131 /* XAnimationPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAnimationPath.m; sourceTree = "<group>"; };
-		3948F6C0246FD43E00477131 /* XAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAnimation.h; sourceTree = "<group>"; };
-		3948F6C1246FD43E00477131 /* XAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAnimator.h; sourceTree = "<group>"; };
-		3948F6C2246FD43E00477131 /* XAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAnimation.m; sourceTree = "<group>"; };
-		3948F6C3246FD43E00477131 /* XAnimationPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAnimationPath.h; sourceTree = "<group>"; };
-		3948F6C4246FD43E00477131 /* XAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAnimator.m; sourceTree = "<group>"; };
-		3948F6C7246FD43E00477131 /* XJYNumberLabelDecoration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYNumberLabelDecoration.h; sourceTree = "<group>"; };
-		3948F6C8246FD43E00477131 /* XJYNumberLabelDecoration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XJYNumberLabelDecoration.m; sourceTree = "<group>"; };
-		3948F6C9246FD43E00477131 /* XCycleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XCycleView.m; sourceTree = "<group>"; };
-		3948F6CA246FD43E00477131 /* XStackAreaLineContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XStackAreaLineContainerView.h; sourceTree = "<group>"; };
-		3948F6CB246FD43E00477131 /* XAlignLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAlignLabel.m; sourceTree = "<group>"; };
-		3948F6CC246FD43E00477131 /* XPositiveNegativeBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPositiveNegativeBarChartView.m; sourceTree = "<group>"; };
-		3948F6CD246FD43E00477131 /* XAreaLineContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAreaLineContainerView.m; sourceTree = "<group>"; };
-		3948F6CE246FD43E00477131 /* XAnimationLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAnimationLabel.m; sourceTree = "<group>"; };
-		3948F6CF246FD43E00477131 /* XPositiveNegativeBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPositiveNegativeBarChart.m; sourceTree = "<group>"; };
-		3948F6D0246FD43E00477131 /* XBarContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBarContainerView.h; sourceTree = "<group>"; };
-		3948F6D1246FD43E00477131 /* XAbscissaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XAbscissaView.m; sourceTree = "<group>"; };
-		3948F6D2246FD43E00477131 /* XBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBarChart.h; sourceTree = "<group>"; };
-		3948F6D3246FD43E00477131 /* XPositiveNegativeBarContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPositiveNegativeBarContainerView.h; sourceTree = "<group>"; };
-		3948F6D4246FD43F00477131 /* XBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBarChartView.h; sourceTree = "<group>"; };
-		3948F6D5246FD43F00477131 /* XLineChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLineChartView.m; sourceTree = "<group>"; };
-		3948F6D6246FD43F00477131 /* XLineContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLineContainerView.h; sourceTree = "<group>"; };
-		3948F6D7246FD43F00477131 /* XPieChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPieChart.m; sourceTree = "<group>"; };
-		3948F6D8246FD43F00477131 /* XLineChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLineChart.h; sourceTree = "<group>"; };
-		3948F6D9246FD43F00477131 /* OrdinateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdinateView.h; sourceTree = "<group>"; };
-		3948F6DA246FD43F00477131 /* XAnimationLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAnimationLabel.h; sourceTree = "<group>"; };
-		3948F6DB246FD43F00477131 /* XAreaLineContainerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAreaLineContainerView.h; sourceTree = "<group>"; };
-		3948F6DC246FD43F00477131 /* XPositiveNegativeBarChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPositiveNegativeBarChartView.h; sourceTree = "<group>"; };
-		3948F6DD246FD43F00477131 /* XStackAreaLineContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XStackAreaLineContainerView.m; sourceTree = "<group>"; };
-		3948F6DE246FD43F00477131 /* XAlignLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAlignLabel.h; sourceTree = "<group>"; };
-		3948F6DF246FD43F00477131 /* XCycleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XCycleView.h; sourceTree = "<group>"; };
-		3948F6E0246FD43F00477131 /* XPositiveNegativeBarContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPositiveNegativeBarContainerView.m; sourceTree = "<group>"; };
-		3948F6E1246FD43F00477131 /* XBarChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBarChart.m; sourceTree = "<group>"; };
-		3948F6E2246FD43F00477131 /* XAbscissaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XAbscissaView.h; sourceTree = "<group>"; };
-		3948F6E3246FD43F00477131 /* XBarContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBarContainerView.m; sourceTree = "<group>"; };
-		3948F6E4246FD43F00477131 /* XPositiveNegativeBarChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPositiveNegativeBarChart.h; sourceTree = "<group>"; };
-		3948F6E5246FD43F00477131 /* XLineContainerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLineContainerView.m; sourceTree = "<group>"; };
-		3948F6E6246FD43F00477131 /* XLineChartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLineChartView.h; sourceTree = "<group>"; };
-		3948F6E7246FD43F00477131 /* XBarChartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBarChartView.m; sourceTree = "<group>"; };
-		3948F6E8246FD43F00477131 /* OrdinateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdinateView.m; sourceTree = "<group>"; };
-		3948F6E9246FD43F00477131 /* XLineChart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLineChart.m; sourceTree = "<group>"; };
-		3948F6EA246FD43F00477131 /* XPieChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPieChart.h; sourceTree = "<group>"; };
-		3948F6EB246FD43F00477131 /* XJYChart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XJYChart.h; sourceTree = "<group>"; };
-		3948F6ED246FD43F00477131 /* XBarItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XBarItem.m; sourceTree = "<group>"; };
-		3948F6EE246FD43F00477131 /* XPieItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPieItem.m; sourceTree = "<group>"; };
-		3948F6EF246FD43F00477131 /* XLineChartItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XLineChartItem.m; sourceTree = "<group>"; };
-		3948F6F0246FD43F00477131 /* XPieItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPieItem.h; sourceTree = "<group>"; };
-		3948F6F1246FD43F00477131 /* XBarItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XBarItem.h; sourceTree = "<group>"; };
-		3948F6F2246FD43F00477131 /* XLineChartItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XLineChartItem.h; sourceTree = "<group>"; };
-		3948F6F4246FD43F00477131 /* XEnumHeader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XEnumHeader.h; sourceTree = "<group>"; };
-		3948F6F5246FD43F00477131 /* XNotificationBridge.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XNotificationBridge.m; sourceTree = "<group>"; };
-		3948F6F6246FD43F00477131 /* XNotificationBridge.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XNotificationBridge.h; sourceTree = "<group>"; };
-		3948F6F8246FD43F00477131 /* CAKeyframeAnimation+AHEasing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CAKeyframeAnimation+AHEasing.h"; sourceTree = "<group>"; };
-		3948F6F9246FD43F00477131 /* CAKeyframeAnimation+AHEasing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAKeyframeAnimation+AHEasing.m"; sourceTree = "<group>"; };
 		3948F7262470945300477131 /* AccountTagView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountTagView.m; sourceTree = "<group>"; };
 		3948F7272470945300477131 /* AccountTagView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountTagView.h; sourceTree = "<group>"; };
 		3948F80024717FF100477131 /* CollectionViewHorizontalLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionViewHorizontalLayout.h; sourceTree = "<group>"; };
@@ -1742,216 +1619,6 @@
 				39441E4A2476B37E00AA23C3 /* CalendaDaysCell.m */,
 			);
 			path = View;
-			sourceTree = "<group>";
-		};
-		3948F697246FD43E00477131 /* XJYChart */ = {
-			isa = PBXGroup;
-			children = (
-				3948F698246FD43E00477131 /* Colours */,
-				3948F69B246FD43E00477131 /* XJYChart */,
-			);
-			path = XJYChart;
-			sourceTree = "<group>";
-		};
-		3948F698246FD43E00477131 /* Colours */ = {
-			isa = PBXGroup;
-			children = (
-				3948F699246FD43E00477131 /* Colours.m */,
-				3948F69A246FD43E00477131 /* Colours.h */,
-			);
-			path = Colours;
-			sourceTree = "<group>";
-		};
-		3948F69B246FD43E00477131 /* XJYChart */ = {
-			isa = PBXGroup;
-			children = (
-				3948F69C246FD43E00477131 /* Configuration */,
-				3948F6AB246FD43E00477131 /* CALayerTouch */,
-				3948F6AE246FD43E00477131 /* Calculate */,
-				3948F6B3246FD43E00477131 /* Category */,
-				3948F6BA246FD43E00477131 /* Color */,
-				3948F6BD246FD43E00477131 /* XJYChartDelegate.h */,
-				3948F6BE246FD43E00477131 /* Animator */,
-				3948F6C5246FD43E00477131 /* ChartView */,
-				3948F6EB246FD43F00477131 /* XJYChart.h */,
-				3948F6EC246FD43F00477131 /* DataModel */,
-				3948F6F3246FD43F00477131 /* Helper */,
-				3948F6F7246FD43F00477131 /* AHEasing */,
-			);
-			path = XJYChart;
-			sourceTree = "<group>";
-		};
-		3948F69C246FD43E00477131 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				3948F69D246FD43E00477131 /* XBaseChartConfiguration.m */,
-				3948F69E246FD43E00477131 /* LineChartConfiguration */,
-				3948F6A7246FD43E00477131 /* BarChartConfiguration */,
-				3948F6AA246FD43E00477131 /* XBaseChartConfiguration.h */,
-			);
-			path = Configuration;
-			sourceTree = "<group>";
-		};
-		3948F69E246FD43E00477131 /* LineChartConfiguration */ = {
-			isa = PBXGroup;
-			children = (
-				3948F69F246FD43E00477131 /* XAreaLineChartConfiguration.m */,
-				3948F6A0246FD43E00477131 /* XStackAreaLineChartConfiguration.h */,
-				3948F6A1246FD43E00477131 /* XNormalLineChartConfiguration.h */,
-				3948F6A2246FD43E00477131 /* XLineChartConfiguration.h */,
-				3948F6A3246FD43E00477131 /* XAreaLineChartConfiguration.h */,
-				3948F6A4246FD43E00477131 /* XNormalLineChartConfiguration.m */,
-				3948F6A5246FD43E00477131 /* XStackAreaLineChartConfiguration.m */,
-				3948F6A6246FD43E00477131 /* XLineChartConfiguration.m */,
-			);
-			path = LineChartConfiguration;
-			sourceTree = "<group>";
-		};
-		3948F6A7246FD43E00477131 /* BarChartConfiguration */ = {
-			isa = PBXGroup;
-			children = (
-				3948F6A8246FD43E00477131 /* XBarChartConfiguration.h */,
-				3948F6A9246FD43E00477131 /* XBarChartConfiguration.m */,
-			);
-			path = BarChartConfiguration;
-			sourceTree = "<group>";
-		};
-		3948F6AB246FD43E00477131 /* CALayerTouch */ = {
-			isa = PBXGroup;
-			children = (
-				3948F6AC246FD43E00477131 /* XPointDetect.h */,
-				3948F6AD246FD43E00477131 /* XPointDetect.m */,
-			);
-			path = CALayerTouch;
-			sourceTree = "<group>";
-		};
-		3948F6AE246FD43E00477131 /* Calculate */ = {
-			isa = PBXGroup;
-			children = (
-				3948F6AF246FD43E00477131 /* XAuxiliaryCalculationHelper.m */,
-				3948F6B0246FD43E00477131 /* XRandomNumerHelper.m */,
-				3948F6B1246FD43E00477131 /* XAuxiliaryCalculationHelper.h */,
-				3948F6B2246FD43E00477131 /* XRandomNumerHelper.h */,
-			);
-			path = Calculate;
-			sourceTree = "<group>";
-		};
-		3948F6B3246FD43E00477131 /* Category */ = {
-			isa = PBXGroup;
-			children = (
-				3948F6B4246FD43E00477131 /* CAShapeLayer+XLayerHelper.h */,
-				3948F6B5246FD43E00477131 /* CALayer+XLayerSelectHelper.m */,
-				3948F6B6246FD43E00477131 /* UIGestureRecognizer+XGesHelper.h */,
-				3948F6B7246FD43E00477131 /* CALayer+XLayerSelectHelper.h */,
-				3948F6B8246FD43E00477131 /* CAShapeLayer+XLayerHelper.m */,
-				3948F6B9246FD43E00477131 /* UIGestureRecognizer+XGesHelper.m */,
-			);
-			path = Category;
-			sourceTree = "<group>";
-		};
-		3948F6BA246FD43E00477131 /* Color */ = {
-			isa = PBXGroup;
-			children = (
-				3948F6BB246FD43E00477131 /* XColor.h */,
-				3948F6BC246FD43E00477131 /* XColor.m */,
-			);
-			path = Color;
-			sourceTree = "<group>";
-		};
-		3948F6BE246FD43E00477131 /* Animator */ = {
-			isa = PBXGroup;
-			children = (
-				3948F6BF246FD43E00477131 /* XAnimationPath.m */,
-				3948F6C0246FD43E00477131 /* XAnimation.h */,
-				3948F6C1246FD43E00477131 /* XAnimator.h */,
-				3948F6C2246FD43E00477131 /* XAnimation.m */,
-				3948F6C3246FD43E00477131 /* XAnimationPath.h */,
-				3948F6C4246FD43E00477131 /* XAnimator.m */,
-			);
-			path = Animator;
-			sourceTree = "<group>";
-		};
-		3948F6C5246FD43E00477131 /* ChartView */ = {
-			isa = PBXGroup;
-			children = (
-				3948F6C6246FD43E00477131 /* Decoration */,
-				3948F6C9246FD43E00477131 /* XCycleView.m */,
-				3948F6CA246FD43E00477131 /* XStackAreaLineContainerView.h */,
-				3948F6CB246FD43E00477131 /* XAlignLabel.m */,
-				3948F6CC246FD43E00477131 /* XPositiveNegativeBarChartView.m */,
-				3948F6CD246FD43E00477131 /* XAreaLineContainerView.m */,
-				3948F6CE246FD43E00477131 /* XAnimationLabel.m */,
-				3948F6CF246FD43E00477131 /* XPositiveNegativeBarChart.m */,
-				3948F6D0246FD43E00477131 /* XBarContainerView.h */,
-				3948F6D1246FD43E00477131 /* XAbscissaView.m */,
-				3948F6D2246FD43E00477131 /* XBarChart.h */,
-				3948F6D3246FD43E00477131 /* XPositiveNegativeBarContainerView.h */,
-				3948F6D4246FD43F00477131 /* XBarChartView.h */,
-				3948F6D5246FD43F00477131 /* XLineChartView.m */,
-				3948F6D6246FD43F00477131 /* XLineContainerView.h */,
-				3948F6D7246FD43F00477131 /* XPieChart.m */,
-				3948F6D8246FD43F00477131 /* XLineChart.h */,
-				3948F6D9246FD43F00477131 /* OrdinateView.h */,
-				3948F6DA246FD43F00477131 /* XAnimationLabel.h */,
-				3948F6DB246FD43F00477131 /* XAreaLineContainerView.h */,
-				3948F6DC246FD43F00477131 /* XPositiveNegativeBarChartView.h */,
-				3948F6DD246FD43F00477131 /* XStackAreaLineContainerView.m */,
-				3948F6DE246FD43F00477131 /* XAlignLabel.h */,
-				3948F6DF246FD43F00477131 /* XCycleView.h */,
-				3948F6E0246FD43F00477131 /* XPositiveNegativeBarContainerView.m */,
-				3948F6E1246FD43F00477131 /* XBarChart.m */,
-				3948F6E2246FD43F00477131 /* XAbscissaView.h */,
-				3948F6E3246FD43F00477131 /* XBarContainerView.m */,
-				3948F6E4246FD43F00477131 /* XPositiveNegativeBarChart.h */,
-				3948F6E5246FD43F00477131 /* XLineContainerView.m */,
-				3948F6E6246FD43F00477131 /* XLineChartView.h */,
-				3948F6E7246FD43F00477131 /* XBarChartView.m */,
-				3948F6E8246FD43F00477131 /* OrdinateView.m */,
-				3948F6E9246FD43F00477131 /* XLineChart.m */,
-				3948F6EA246FD43F00477131 /* XPieChart.h */,
-			);
-			path = ChartView;
-			sourceTree = "<group>";
-		};
-		3948F6C6246FD43E00477131 /* Decoration */ = {
-			isa = PBXGroup;
-			children = (
-				3948F6C7246FD43E00477131 /* XJYNumberLabelDecoration.h */,
-				3948F6C8246FD43E00477131 /* XJYNumberLabelDecoration.m */,
-			);
-			path = Decoration;
-			sourceTree = "<group>";
-		};
-		3948F6EC246FD43F00477131 /* DataModel */ = {
-			isa = PBXGroup;
-			children = (
-				3948F6ED246FD43F00477131 /* XBarItem.m */,
-				3948F6EE246FD43F00477131 /* XPieItem.m */,
-				3948F6EF246FD43F00477131 /* XLineChartItem.m */,
-				3948F6F0246FD43F00477131 /* XPieItem.h */,
-				3948F6F1246FD43F00477131 /* XBarItem.h */,
-				3948F6F2246FD43F00477131 /* XLineChartItem.h */,
-			);
-			path = DataModel;
-			sourceTree = "<group>";
-		};
-		3948F6F3246FD43F00477131 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				3948F6F4246FD43F00477131 /* XEnumHeader.h */,
-				3948F6F5246FD43F00477131 /* XNotificationBridge.m */,
-				3948F6F6246FD43F00477131 /* XNotificationBridge.h */,
-			);
-			path = Helper;
-			sourceTree = "<group>";
-		};
-		3948F6F7246FD43F00477131 /* AHEasing */ = {
-			isa = PBXGroup;
-			children = (
-				3948F6F8246FD43F00477131 /* CAKeyframeAnimation+AHEasing.h */,
-				3948F6F9246FD43F00477131 /* CAKeyframeAnimation+AHEasing.m */,
-			);
-			path = AHEasing;
 			sourceTree = "<group>";
 		};
 		3948F7222470937300477131 /* Accounting */ = {
@@ -3012,7 +2679,6 @@
 		6423D77821C4F9A1002FECA5 /* PackageModules */ = {
 			isa = PBXGroup;
 			children = (
-				3948F697246FD43E00477131 /* XJYChart */,
 				642F2C9F21E6EA00008AF504 /* PickerPopUp */,
 				6405E9E021E45BDC00D9719B /* NetErrorView */,
 				644EF82B21D9C74000F18287 /* ToastView */,
@@ -4466,12 +4132,9 @@
 				642E45AF21CF78E7000E0888 /* UITextView+ZWPlaceHolder.m in Sources */,
 				6423D85621C4F9A3002FECA5 /* GridCell.m in Sources */,
 				644E016221DCB79B00F18287 /* LoginVC.m in Sources */,
-				3948F707246FD43F00477131 /* XColor.m in Sources */,
 				6439E12121C8A3A100A12D79 /* UILabel+Extras.m in Sources */,
-				3948F71B246FD43F00477131 /* OrdinateView.m in Sources */,
 				6439E0DF21C7B79B00A12D79 /* ACell.m in Sources */,
 				6439E11221C89B9F00A12D79 /* MasterETVCell.m in Sources */,
-				3948F70D246FD43F00477131 /* XAlignLabel.m in Sources */,
 				644E016B21DDB48600F18287 /* LoginModel.m in Sources */,
 				6423D85D21C4F9A3002FECA5 /* YBMsgViewController.m in Sources */,
 				644E016D21DE28D700F18287 /* ApiConfig.m in Sources */,
@@ -4487,20 +4150,15 @@
 				6423D86021C4F9A3002FECA5 /* YBRootTabBarViewController.m in Sources */,
 				640B2FB621D0F4CA002ABE64 /* DataStatisticsSlideCell.m in Sources */,
 				64FB4EC521C659BE000952D6 /* CollectionViewController.m in Sources */,
-				3948F70A246FD43F00477131 /* XAnimator.m in Sources */,
-				3948F706246FD43F00477131 /* UIGestureRecognizer+XGesHelper.m in Sources */,
 				6423D80D21C4F9A3002FECA5 /* YTSharednetManager.m in Sources */,
 				642E458C21CD048B000E0888 /* PostAdsView.m in Sources */,
 				640B315621D76403002ABE64 /* FaceQRVC.m in Sources */,
 				642E44DC21CA36D0000E0888 /* PageVC.m in Sources */,
 				642E447821CA1DC4000E0888 /* Radar.m in Sources */,
-				3948F717246FD43F00477131 /* XBarChart.m in Sources */,
-				3948F71C246FD43F00477131 /* XLineChart.m in Sources */,
 				3948F80D24724A4800477131 /* AccountingModel.m in Sources */,
 				640B30F121D62255002ABE64 /* PostAdsDetailVC.m in Sources */,
 				640B2FE321D366B2002ABE64 /* OrderDetailVC.m in Sources */,
 				644EF84221DC5A2B00F18287 /* PostAppealView.m in Sources */,
-				3948F709246FD43F00477131 /* XAnimation.m in Sources */,
 				642E458521CD048B000E0888 /* PostAdsVC.m in Sources */,
 				642F2C9E21E6E9D8008AF504 /* PickerPopUpView.m in Sources */,
 				640B312A21D76384002ABE64 /* FCOCRIDCardViewController.m in Sources */,
@@ -4511,15 +4169,12 @@
 				6439E11021C89B9F00A12D79 /* CoreLocationManager.m in Sources */,
 				6423D85A21C4F9A3002FECA5 /* AccountCell.m in Sources */,
 				642E454121CCD823000E0888 /* SlideTabBarView.m in Sources */,
-				3948F708246FD43F00477131 /* XAnimationPath.m in Sources */,
 				640B317021D76496002ABE64 /* FCPPOCR.m in Sources */,
 				642E44E721CB36F3000E0888 /* PageVM.m in Sources */,
 				6405E98D21E3489600D9719B /* ModelFilterVC.m in Sources */,
 				640B30C621D4D499002ABE64 /* OrdersPageVC.m in Sources */,
-				3948F700246FD43F00477131 /* XBarChartConfiguration.m in Sources */,
 				6405E95D21E31E5C00D9719B /* UIImageView+Extras.m in Sources */,
 				642E446F21CA1DC4000E0888 /* SXWaveView.m in Sources */,
-				3948F6FB246FD43F00477131 /* XBaseChartConfiguration.m in Sources */,
 				6439E11B21C8A03300A12D79 /* NSData+Extras.m in Sources */,
 				6423D86421C4F9A3002FECA5 /* NSString+Extras.m in Sources */,
 				39441E5B2476B37E00AA23C3 /* AccountStatedVC.m in Sources */,
@@ -4528,7 +4183,6 @@
 				39441E572476B37E00AA23C3 /* WeeksView.m in Sources */,
 				642E448621CA1E86000E0888 /* AwesomeMenuItem.m in Sources */,
 				39441E592476B37E00AA23C3 /* BSLMonthCollectionView.m in Sources */,
-				3948F70B246FD43F00477131 /* XJYNumberLabelDecoration.m in Sources */,
 				640B30F321D62255002ABE64 /* PostAdsDetailModel.m in Sources */,
 				6405E96F21E331CB00D9719B /* PHOvalView.m in Sources */,
 				6405E98821E3394100D9719B /* TagRunVC.m in Sources */,
@@ -4536,7 +4190,6 @@
 				642E44D121CA3061000E0888 /* AdsVC.m in Sources */,
 				6423D86221C4F9A3002FECA5 /* YBFrameTool.m in Sources */,
 				640B2FC521D22B3A002ABE64 /* SetValueFormatter.m in Sources */,
-				3948F720246FD43F00477131 /* XNotificationBridge.m in Sources */,
 				6405E97921E338BB00D9719B /* UIControl+ClickControl.m in Sources */,
 				39441E542476B37E00AA23C3 /* NSDate+Decomposer.m in Sources */,
 				6439E11521C89B9F00A12D79 /* LocationVC.m in Sources */,
@@ -4550,9 +4203,6 @@
 				6405E97021E331CB00D9719B /* PHNormalMembrane.m in Sources */,
 				642E447221CA1DC4000E0888 /* UIViewAdditions.m in Sources */,
 				640B310721D63A2D002ABE64 /* ModifyAdsModel.m in Sources */,
-				3948F716246FD43F00477131 /* XPositiveNegativeBarContainerView.m in Sources */,
-				3948F719246FD43F00477131 /* XLineContainerView.m in Sources */,
-				3948F715246FD43F00477131 /* XStackAreaLineContainerView.m in Sources */,
 				640B30AE21D49E8D002ABE64 /* ExchangeStatusCell.m in Sources */,
 				640B2FC421D22B3A002ABE64 /* DateValueFormatter.m in Sources */,
 				642E447321CA1DC4000E0888 /* CircleAnimationVC.m in Sources */,
@@ -4563,8 +4213,6 @@
 				6405E96E21E331CB00D9719B /* CircleLayer.m in Sources */,
 				640B313821D76384002ABE64 /* FCLicensePlateViewController.m in Sources */,
 				642E454021CCD823000E0888 /* SlideTabBarVC.m in Sources */,
-				3948F71D246FD43F00477131 /* XBarItem.m in Sources */,
-				3948F71A246FD43F00477131 /* XBarChartView.m in Sources */,
 				642E447621CA1DC4000E0888 /* RWLabel.m in Sources */,
 				640B317321D76496002ABE64 /* FCPPFaceSet.m in Sources */,
 				640B2FB221D0F4CA002ABE64 /* DataStatisticsVC.m in Sources */,
@@ -4584,14 +4232,10 @@
 				640B310521D63A2D002ABE64 /* ModifyAdsVC.m in Sources */,
 				642E447521CA1DC4000E0888 /* RichTextAdjustVC.m in Sources */,
 				6439E11E21C8A18500A12D79 /* UINavigationItem+Extras.m in Sources */,
-				3948F71E246FD43F00477131 /* XPieItem.m in Sources */,
 				644EF84321DC5A2B00F18287 /* PostAppealCell.m in Sources */,
 				642E44EB21CB4194000E0888 /* PageListCell.m in Sources */,
 				642E453E21CCD823000E0888 /* SlideBarCell.m in Sources */,
-				3948F6FC246FD43F00477131 /* XAreaLineChartConfiguration.m in Sources */,
-				3948F702246FD43F00477131 /* XAuxiliaryCalculationHelper.m in Sources */,
 				6439E11321C89B9F00A12D79 /* CLGeocoderVC.m in Sources */,
-				3948F710246FD43F00477131 /* XAnimationLabel.m in Sources */,
 				642E45A921CF5DF8000E0888 /* PostAdsSectionHeaderView.m in Sources */,
 				39441E5A2476B37E00AA23C3 /* AccountStatedCell.m in Sources */,
 				6405E99021E34C2300D9719B /* ModelFilter.m in Sources */,
@@ -4605,18 +4249,13 @@
 				39DDDF1B247E5792009E1985 /* AccountBalanceSourceVC.m in Sources */,
 				640B30AD21D49E8D002ABE64 /* ExchangeAccountCell.m in Sources */,
 				642E45AC21CF7600000E0888 /* PostAdsReplyCell.m in Sources */,
-				3948F71F246FD43F00477131 /* XLineChartItem.m in Sources */,
 				39441E102473BC6500AA23C3 /* UserInfoManager.m in Sources */,
 				640B312D21D76384002ABE64 /* FCOCRDriverLicenceViewController.m in Sources */,
-				3948F70C246FD43F00477131 /* XCycleView.m in Sources */,
 				640B2FF721D36743002ABE64 /* OrderDetailSectionHeaderView.m in Sources */,
-				3948F721246FD43F00477131 /* CAKeyframeAnimation+AHEasing.m in Sources */,
 				6423D73821C4F7C3002FECA5 /* main.m in Sources */,
-				3948F703246FD43F00477131 /* XRandomNumerHelper.m in Sources */,
 				6439E05E21C7912C00A12D79 /* FHSegmentedViewController.m in Sources */,
 				640B316D21D76496002ABE64 /* FCPPMergeface.m in Sources */,
 				6423D85C21C4F9A3002FECA5 /* HomeVC.m in Sources */,
-				3948F705246FD43F00477131 /* CAShapeLayer+XLayerHelper.m in Sources */,
 				6423D80921C4F9A3002FECA5 /* UIViewController+YBGeneral.m in Sources */,
 				640B2FB321D0F4CA002ABE64 /* DataStatisticsModel.m in Sources */,
 				640B317121D76496002ABE64 /* UIImage+FCExtension.m in Sources */,
@@ -4632,14 +4271,10 @@
 				640B310621D63A2D002ABE64 /* ModifyAdsVM.m in Sources */,
 				640B2FB521D0F4CA002ABE64 /* DataStatisticsView.m in Sources */,
 				6423D72A21C4F7C2002FECA5 /* AppDelegate.m in Sources */,
-				3948F6FD246FD43F00477131 /* XNormalLineChartConfiguration.m in Sources */,
 				640B313221D76384002ABE64 /* FCBankCardViewController.m in Sources */,
 				6423D85821C4F9A3002FECA5 /* HomeOrderCell.m in Sources */,
-				3948F713246FD43F00477131 /* XLineChartView.m in Sources */,
-				3948F711246FD43F00477131 /* XPositiveNegativeBarChart.m in Sources */,
 				6423D85921C4F9A3002FECA5 /* BaseCell.m in Sources */,
 				6423D85B21C4F9A3002FECA5 /* HomeView.m in Sources */,
-				3948F6FE246FD43F00477131 /* XStackAreaLineChartConfiguration.m in Sources */,
 				640B313521D76384002ABE64 /* FCCompareViewController.m in Sources */,
 				640B312E21D76384002ABE64 /* FCBaseViewController.m in Sources */,
 				640B316E21D76496002ABE64 /* FCPPFaceDetect.m in Sources */,
@@ -4673,8 +4308,6 @@
 				6423D85721C4F9A3002FECA5 /* HomeSectionHeaderView.m in Sources */,
 				642E44C921CA20B4000E0888 /* UIButton+Extras.m in Sources */,
 				640B30C921D4D499002ABE64 /* OrdersPageModel.m in Sources */,
-				3948F6FF246FD43F00477131 /* XLineChartConfiguration.m in Sources */,
-				3948F701246FD43F00477131 /* XPointDetect.m in Sources */,
 				640B309B21D49B60002ABE64 /* ExchangeVM.m in Sources */,
 				640B309A21D49B60002ABE64 /* ExchangeVC.m in Sources */,
 				39441E142475382A00AA23C3 /* AccountingView.m in Sources */,
@@ -4683,9 +4316,7 @@
 				640B2FF321D36721002ABE64 /* OrderDetailCell.m in Sources */,
 				6423D85F21C4F9A3002FECA5 /* YBMineViewController.m in Sources */,
 				642E44D921CA36C0000E0888 /* TabContentView.m in Sources */,
-				3948F714246FD43F00477131 /* XPieChart.m in Sources */,
 				6405E9EF21E46F9100D9719B /* FGScrollView.m in Sources */,
-				3948F718246FD43F00477131 /* XBarContainerView.m in Sources */,
 				642E44E521CB36F3000E0888 /* PageModel.m in Sources */,
 				640B317821D8CD52002ABE64 /* InputPWPopUpView.m in Sources */,
 				6405E9DF21E456A200D9719B /* BaseVC.m in Sources */,
@@ -4694,21 +4325,17 @@
 				640B310921D63A2D002ABE64 /* ModifyAdsView.m in Sources */,
 				640B2FB121D0F4CA002ABE64 /* DataStatisticsVM.m in Sources */,
 				6423D80321C4F9A3002FECA5 /* UIScrollView+YBGeneral.m in Sources */,
-				3948F712246FD43F00477131 /* XAbscissaView.m in Sources */,
 				640B317421D76496002ABE64 /* FCPPFaceBeautify.m in Sources */,
 				640B2FC621D22B3A002ABE64 /* SymbolsValueFormatter.m in Sources */,
 				6405E97521E331D700D9719B /* QuickeningVC.m in Sources */,
-				3948F704246FD43F00477131 /* CALayer+XLayerSelectHelper.m in Sources */,
 				6423D80621C4F9A3002FECA5 /* YBGeneralColor.m in Sources */,
 				640B2FE421D366B2002ABE64 /* OrderDetailVM.m in Sources */,
-				3948F70E246FD43F00477131 /* XPositiveNegativeBarChartView.m in Sources */,
 				642E45B821CF8605000E0888 /* PostAdsRestrictCell.m in Sources */,
 				6423D80421C4F9A3002FECA5 /* UIView+Extras.m in Sources */,
 				3948F7282470945400477131 /* AccountTagView.m in Sources */,
 				642E45B221CF7963000E0888 /* UITextView+ZWLimitCounter.m in Sources */,
 				640B30B121D49F36002ABE64 /* ExchangeView.m in Sources */,
 				6405E98221E3391C00D9719B /* PHRoundTagView.m in Sources */,
-				3948F70F246FD43F00477131 /* XAreaLineContainerView.m in Sources */,
 				642E45A621CF5BFA000E0888 /* PostAdsPaysCell.m in Sources */,
 				642E447A21CA1DC4000E0888 /* RichTextAdjustTableViewCell.m in Sources */,
 				640B313321D76384002ABE64 /* NSMutableAttributedString+FCExtension.m in Sources */,
@@ -4717,7 +4344,6 @@
 				644EF82A21D9C73500F18287 /* YKToastView.m in Sources */,
 				640B30DB21D5EB83002ABE64 /* ExchangeDetailVM.m in Sources */,
 				39441E532476B37E00AA23C3 /* CalendarView.m in Sources */,
-				3948F6FA246FD43F00477131 /* Colours.m in Sources */,
 				640B312921D76384002ABE64 /* FCBodyDetectViewController.m in Sources */,
 				6439E11621C89B9F00A12D79 /* MKAnnotationVC.m in Sources */,
 				64FB4E6021C650B6000952D6 /* YBTrendsViewController.m in Sources */,

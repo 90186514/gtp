@@ -135,8 +135,23 @@
         return NO;
     }
 }
-#pragma mark -将秒数转换为字符串格式
-+ (NSString *)timeWithSecond:(NSInteger)second{
++ (NSString *)transToHMSSeparatedByUnitFormatSecond:(NSInteger)second{
+    NSString *time;
+    if (second < 60) {
+        time = [NSString stringWithFormat:@"%02ld秒",(long)second];
+    }
+    else {
+        if (second < 3600) {
+            time = [NSString stringWithFormat:@"%02ld分%02ld秒",second/60,second%60];
+        }
+        else {
+            time = [NSString stringWithFormat:@"%02ld时%02ld分%02ld秒",second/3600,(second%3600)/60,(second%3600)%60];
+        }
+    }
+    return time;
+}
+
++ (NSString *)transToHMSSeparatedByColonFormatSecond:(NSInteger)second{
     NSString *time;
     if (second < 60) {
         time = [NSString stringWithFormat:@"00:00:%02ld",(long)second];
@@ -146,11 +161,28 @@
             time = [NSString stringWithFormat:@"00:%02ld:%02ld",second/60,second%60];
         }
         else {
-            time = [NSString stringWithFormat:@"%02ld:%02ld:%02ld",second/3600,(second-second/3600*3600)/60,second%60];
+            time = [NSString stringWithFormat:@"%02ld:%02ld:%02ld",second/3600,(second%3600)/60,(second%3600)%60];
         }
     }
     return time;
 }
+
++ (NSString *)currentDateComparePastDate:(NSDate *)pDate{
+    //NSTimeInterval
+    NSInteger second = (NSInteger)[[NSDate date] timeIntervalSinceDate:pDate];
+    
+    NSString *time = [NSString transToHMSSeparatedByUnitFormatSecond:second];
+    return time;
+}
+
++ (NSString *)currentDateCompareFutureDate:(NSDate *)fDate{
+    //NSTimeInterval
+    NSInteger second = (NSInteger)[fDate timeIntervalSinceDate:[NSDate date]];
+    
+    NSString *time = [NSString transToHMSSeparatedByUnitFormatSecond:second];
+    return time;
+}
+
 
 + (NSString *)mdSeparatedByPointFormatString{
     return @"MM.dd";

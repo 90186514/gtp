@@ -27,7 +27,13 @@ NS_ASSUME_NONNULL_BEGIN
 + (id)isValueNSStringWith:(NSString *)str;
 + (BOOL)getDataSuccessed:(NSDictionary *)dic;
 +(BOOL)getLNDataSuccessed:(NSDictionary *)dic;
-+ (NSString *)timeWithSecond:(NSInteger)second;
+
++ (NSString *)transToHMSSeparatedByUnitFormatSecond:(NSInteger)second;
++ (NSString *)transToHMSSeparatedByColonFormatSecond:(NSInteger)second;
+
+
++ (NSString *)currentDateComparePastDate:(NSDate *)pDate;
++ (NSString *)currentDateCompareFutureDate:(NSDate *)fDate;
 
 + (NSString *)mdSeparatedByPointFormatString;
 + (NSString *)mdSeparatedByHyphenFormatString;
