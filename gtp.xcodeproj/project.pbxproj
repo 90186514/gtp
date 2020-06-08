@@ -45,6 +45,19 @@
 		393213C5248E2EDF00EC4CD8 /* MRViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 393213AD248E2EDE00EC4CD8 /* MRViewController.storyboard */; };
 		393213C6248E2EDF00EC4CD8 /* MRViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 393213AE248E2EDE00EC4CD8 /* MRViewController.m */; };
 		393213C7248E2EDF00EC4CD8 /* MRWorldMapView.m in Sources */ = {isa = PBXBuildFile; fileRef = 393213B0248E2EDE00EC4CD8 /* MRWorldMapView.m */; };
+		393215CF248E3CDD00EC4CD8 /* Position.m in Sources */ = {isa = PBXBuildFile; fileRef = 393215B3248E3CDD00EC4CD8 /* Position.m */; };
+		393215D0248E3CDD00EC4CD8 /* PaihangTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 393215B6248E3CDD00EC4CD8 /* PaihangTableViewCell.m */; };
+		393215D1248E3CDD00EC4CD8 /* SaoleiFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 393215B7248E3CDD00EC4CD8 /* SaoleiFooterView.m */; };
+		393215D2248E3CDD00EC4CD8 /* PaihangTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 393215B9248E3CDD00EC4CD8 /* PaihangTableViewCell.xib */; };
+		393215D3248E3CDD00EC4CD8 /* SaoleiNumberOrTimeImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 393215BA248E3CDD00EC4CD8 /* SaoleiNumberOrTimeImageView.m */; };
+		393215D4248E3CDD00EC4CD8 /* SaoleiView.m in Sources */ = {isa = PBXBuildFile; fileRef = 393215BB248E3CDD00EC4CD8 /* SaoleiView.m */; };
+		393215D5248E3CDD00EC4CD8 /* SaoleiChessView.m in Sources */ = {isa = PBXBuildFile; fileRef = 393215BC248E3CDD00EC4CD8 /* SaoleiChessView.m */; };
+		393215D6248E3CDD00EC4CD8 /* SaoleiHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 393215BF248E3CDD00EC4CD8 /* SaoleiHeaderView.m */; };
+		393215D7248E3CDD00EC4CD8 /* PopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 393215C5248E3CDD00EC4CD8 /* PopViewController.m */; };
+		393215D9248E3CDD00EC4CD8 /* PaihangViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 393215C8248E3CDD00EC4CD8 /* PaihangViewController.m */; };
+		393215DA248E3CDD00EC4CD8 /* SaveHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 393215CB248E3CDD00EC4CD8 /* SaveHandle.m */; };
+		393215DB248E3CDD00EC4CD8 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 393215CC248E3CDD00EC4CD8 /* UserModel.m */; };
+		393215DE248E3D9000EC4CD8 /* MineClearVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 393215DC248E3D9000EC4CD8 /* MineClearVC.m */; };
 		39441D1C24739C8100AA23C3 /* AccountPayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39441D1B24739C8100AA23C3 /* AccountPayView.m */; };
 		39441E0E2473BC6500AA23C3 /* UserInfoSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 39441E082473BC6400AA23C3 /* UserInfoSingleton.m */; };
 		39441E0F2473BC6500AA23C3 /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 39441E0A2473BC6400AA23C3 /* UserInfoModel.m */; };
@@ -703,6 +716,31 @@
 		393213AF248E2EDE00EC4CD8 /* MRWorldMapView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRWorldMapView.h; sourceTree = "<group>"; };
 		393213B0248E2EDE00EC4CD8 /* MRWorldMapView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MRWorldMapView.m; sourceTree = "<group>"; };
 		393213B1248E2EDE00EC4CD8 /* MRViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MRViewController.h; sourceTree = "<group>"; };
+		393215B3248E3CDD00EC4CD8 /* Position.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Position.m; sourceTree = "<group>"; };
+		393215B4248E3CDD00EC4CD8 /* Position.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Position.h; sourceTree = "<group>"; };
+		393215B6248E3CDD00EC4CD8 /* PaihangTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaihangTableViewCell.m; sourceTree = "<group>"; };
+		393215B7248E3CDD00EC4CD8 /* SaoleiFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaoleiFooterView.m; sourceTree = "<group>"; };
+		393215B8248E3CDD00EC4CD8 /* SaoleiHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaoleiHeaderView.h; sourceTree = "<group>"; };
+		393215B9248E3CDD00EC4CD8 /* PaihangTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PaihangTableViewCell.xib; sourceTree = "<group>"; };
+		393215BA248E3CDD00EC4CD8 /* SaoleiNumberOrTimeImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaoleiNumberOrTimeImageView.m; sourceTree = "<group>"; };
+		393215BB248E3CDD00EC4CD8 /* SaoleiView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaoleiView.m; sourceTree = "<group>"; };
+		393215BC248E3CDD00EC4CD8 /* SaoleiChessView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaoleiChessView.m; sourceTree = "<group>"; };
+		393215BD248E3CDD00EC4CD8 /* SaoleiFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaoleiFooterView.h; sourceTree = "<group>"; };
+		393215BE248E3CDD00EC4CD8 /* PaihangTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaihangTableViewCell.h; sourceTree = "<group>"; };
+		393215BF248E3CDD00EC4CD8 /* SaoleiHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaoleiHeaderView.m; sourceTree = "<group>"; };
+		393215C0248E3CDD00EC4CD8 /* SaoleiChessView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaoleiChessView.h; sourceTree = "<group>"; };
+		393215C1248E3CDD00EC4CD8 /* SaoleiView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaoleiView.h; sourceTree = "<group>"; };
+		393215C2248E3CDD00EC4CD8 /* SaoleiNumberOrTimeImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaoleiNumberOrTimeImageView.h; sourceTree = "<group>"; };
+		393215C5248E3CDD00EC4CD8 /* PopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopViewController.m; sourceTree = "<group>"; };
+		393215C6248E3CDD00EC4CD8 /* PaihangViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PaihangViewController.h; sourceTree = "<group>"; };
+		393215C8248E3CDD00EC4CD8 /* PaihangViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PaihangViewController.m; sourceTree = "<group>"; };
+		393215C9248E3CDD00EC4CD8 /* PopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopViewController.h; sourceTree = "<group>"; };
+		393215CB248E3CDD00EC4CD8 /* SaveHandle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaveHandle.m; sourceTree = "<group>"; };
+		393215CC248E3CDD00EC4CD8 /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
+		393215CD248E3CDD00EC4CD8 /* SaveHandle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaveHandle.h; sourceTree = "<group>"; };
+		393215CE248E3CDD00EC4CD8 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
+		393215DC248E3D9000EC4CD8 /* MineClearVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineClearVC.m; sourceTree = "<group>"; };
+		393215DD248E3D9000EC4CD8 /* MineClearVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineClearVC.h; sourceTree = "<group>"; };
 		39441D1A24739C8100AA23C3 /* AccountPayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountPayView.h; sourceTree = "<group>"; };
 		39441D1B24739C8100AA23C3 /* AccountPayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountPayView.m; sourceTree = "<group>"; };
 		39441E082473BC6400AA23C3 /* UserInfoSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoSingleton.m; sourceTree = "<group>"; };
@@ -1692,6 +1730,70 @@
 				393213B1248E2EDE00EC4CD8 /* MRViewController.h */,
 			);
 			path = MRWorldMapView;
+			sourceTree = "<group>";
+		};
+		393215B1248E3CDD00EC4CD8 /* MineClearance */ = {
+			isa = PBXGroup;
+			children = (
+				393215B2248E3CDD00EC4CD8 /* Model */,
+				393215B5248E3CDD00EC4CD8 /* View */,
+				393215C3248E3CDD00EC4CD8 /* ViewController */,
+				393215CA248E3CDD00EC4CD8 /* ExtraHandle */,
+			);
+			path = MineClearance;
+			sourceTree = "<group>";
+		};
+		393215B2248E3CDD00EC4CD8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				393215B3248E3CDD00EC4CD8 /* Position.m */,
+				393215B4248E3CDD00EC4CD8 /* Position.h */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		393215B5248E3CDD00EC4CD8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				393215B6248E3CDD00EC4CD8 /* PaihangTableViewCell.m */,
+				393215B7248E3CDD00EC4CD8 /* SaoleiFooterView.m */,
+				393215B8248E3CDD00EC4CD8 /* SaoleiHeaderView.h */,
+				393215B9248E3CDD00EC4CD8 /* PaihangTableViewCell.xib */,
+				393215BA248E3CDD00EC4CD8 /* SaoleiNumberOrTimeImageView.m */,
+				393215BB248E3CDD00EC4CD8 /* SaoleiView.m */,
+				393215BC248E3CDD00EC4CD8 /* SaoleiChessView.m */,
+				393215BD248E3CDD00EC4CD8 /* SaoleiFooterView.h */,
+				393215BE248E3CDD00EC4CD8 /* PaihangTableViewCell.h */,
+				393215BF248E3CDD00EC4CD8 /* SaoleiHeaderView.m */,
+				393215C0248E3CDD00EC4CD8 /* SaoleiChessView.h */,
+				393215C1248E3CDD00EC4CD8 /* SaoleiView.h */,
+				393215C2248E3CDD00EC4CD8 /* SaoleiNumberOrTimeImageView.h */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		393215C3248E3CDD00EC4CD8 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				393215DD248E3D9000EC4CD8 /* MineClearVC.h */,
+				393215DC248E3D9000EC4CD8 /* MineClearVC.m */,
+				393215C5248E3CDD00EC4CD8 /* PopViewController.m */,
+				393215C6248E3CDD00EC4CD8 /* PaihangViewController.h */,
+				393215C8248E3CDD00EC4CD8 /* PaihangViewController.m */,
+				393215C9248E3CDD00EC4CD8 /* PopViewController.h */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		393215CA248E3CDD00EC4CD8 /* ExtraHandle */ = {
+			isa = PBXGroup;
+			children = (
+				393215CB248E3CDD00EC4CD8 /* SaveHandle.m */,
+				393215CC248E3CDD00EC4CD8 /* UserModel.m */,
+				393215CD248E3CDD00EC4CD8 /* SaveHandle.h */,
+				393215CE248E3CDD00EC4CD8 /* UserModel.h */,
+			);
+			path = ExtraHandle;
 			sourceTree = "<group>";
 		};
 		39441E072473BC6400AA23C3 /* UserInfo */ = {
@@ -2929,6 +3031,7 @@
 				6423D7C721C4F9A2002FECA5 /* Home */,
 				6423D7DE21C4F9A2002FECA5 /* Message */,
 				6423D7E221C4F9A2002FECA5 /* Trends */,
+				393215B1248E3CDD00EC4CD8 /* MineClearance */,
 				6423D7E621C4F9A2002FECA5 /* Mine */,
 				6423D7EA21C4F9A2002FECA5 /* RootViewController */,
 			);
@@ -4048,6 +4151,7 @@
 				39DDE3C524821F7B009E1985 /* jipiao@3x.png in Resources */,
 				393213BF248E2EDE00EC4CD8 /* china-low.svg in Resources */,
 				39DDE41924821F7B009E1985 /* shenghuofei@2x.png in Resources */,
+				393215D2248E3CDD00EC4CD8 /* PaihangTableViewCell.xib in Resources */,
 				6439E0BB21C7957300A12D79 /* user_henxian@2x.png in Resources */,
 				39DDE38B24821F7B009E1985 /* home_grid_4.png in Resources */,
 				6439E0B221C7957300A12D79 /* more_small_icon_1_0@2x.png in Resources */,
@@ -4388,6 +4492,7 @@
 				642E44E721CB36F3000E0888 /* PageVM.m in Sources */,
 				6405E98D21E3489600D9719B /* ModelFilterVC.m in Sources */,
 				640B30C621D4D499002ABE64 /* OrdersPageVC.m in Sources */,
+				393215D7248E3CDD00EC4CD8 /* PopViewController.m in Sources */,
 				6405E95D21E31E5C00D9719B /* UIImageView+Extras.m in Sources */,
 				642E446F21CA1DC4000E0888 /* SXWaveView.m in Sources */,
 				6439E11B21C8A03300A12D79 /* NSData+Extras.m in Sources */,
@@ -4404,6 +4509,7 @@
 				6405E98821E3394100D9719B /* TagRunVC.m in Sources */,
 				640B30AC21D49E8D002ABE64 /* ExchangeSectionHeaderView.m in Sources */,
 				642E44D121CA3061000E0888 /* AdsVC.m in Sources */,
+				393215D0248E3CDD00EC4CD8 /* PaihangTableViewCell.m in Sources */,
 				6423D86221C4F9A3002FECA5 /* YBFrameTool.m in Sources */,
 				640B2FC521D22B3A002ABE64 /* SetValueFormatter.m in Sources */,
 				39594217248E28BC005CF920 /* DraggableCVModel.m in Sources */,
@@ -4421,13 +4527,17 @@
 				6405E97021E331CB00D9719B /* PHNormalMembrane.m in Sources */,
 				642E447221CA1DC4000E0888 /* UIViewAdditions.m in Sources */,
 				640B310721D63A2D002ABE64 /* ModifyAdsModel.m in Sources */,
+				393215D5248E3CDD00EC4CD8 /* SaoleiChessView.m in Sources */,
 				640B30AE21D49E8D002ABE64 /* ExchangeStatusCell.m in Sources */,
 				640B2FC421D22B3A002ABE64 /* DateValueFormatter.m in Sources */,
+				393215D1248E3CDD00EC4CD8 /* SaoleiFooterView.m in Sources */,
 				642E447321CA1DC4000E0888 /* CircleAnimationVC.m in Sources */,
 				39441E562476B37E00AA23C3 /* CalendarModel.m in Sources */,
 				6405E98421E3391C00D9719B /* PHRectTagView.m in Sources */,
+				393215DA248E3CDD00EC4CD8 /* SaveHandle.m in Sources */,
 				6405E96D21E331CB00D9719B /* StyleKitName.m in Sources */,
 				644EF82E21D9E41100F18287 /* DistributePopUpView.m in Sources */,
+				393215DE248E3D9000EC4CD8 /* MineClearVC.m in Sources */,
 				6405E96E21E331CB00D9719B /* CircleLayer.m in Sources */,
 				640B313821D76384002ABE64 /* FCLicensePlateViewController.m in Sources */,
 				642E454021CCD823000E0888 /* SlideTabBarVC.m in Sources */,
@@ -4501,10 +4611,12 @@
 				640B312E21D76384002ABE64 /* FCBaseViewController.m in Sources */,
 				640B316E21D76496002ABE64 /* FCPPFaceDetect.m in Sources */,
 				640B313121D76384002ABE64 /* FCSearchViewController.m in Sources */,
+				393215DB248E3CDD00EC4CD8 /* UserModel.m in Sources */,
 				640B30DF21D5EB83002ABE64 /* ExchangeDetailCell.m in Sources */,
 				640B30E021D5EB83002ABE64 /* ExchangeDetailVC.m in Sources */,
 				642E458421CD048B000E0888 /* PostAdsVM.m in Sources */,
 				64FB4EC321C659BE000952D6 /* CollectionCell.m in Sources */,
+				393215CF248E3CDD00EC4CD8 /* Position.m in Sources */,
 				6439E11421C89B9F00A12D79 /* MKCalloutAnnotationView.m in Sources */,
 				6423D86721C4F9A3002FECA5 /* YBSystemTool.m in Sources */,
 				6423D86321C4F9A3002FECA5 /* NSDictionary+Extras.m in Sources */,
@@ -4516,9 +4628,11 @@
 				39441E0E2473BC6500AA23C3 /* UserInfoSingleton.m in Sources */,
 				642E447921CA1DC4000E0888 /* RichTextAdjustTableVC.m in Sources */,
 				642E458621CD048B000E0888 /* PostAdsModel.m in Sources */,
+				393215D9248E3CDD00EC4CD8 /* PaihangViewController.m in Sources */,
 				642E45A321CE1E9C000E0888 /* PHLockClick.m in Sources */,
 				39441E61247885A700AA23C3 /* AccountStatedSectionHV.m in Sources */,
 				3948F8092472498400477131 /* AccountingVM.m in Sources */,
+				393215D6248E3CDD00EC4CD8 /* SaoleiHeaderView.m in Sources */,
 				39441E552476B37E00AA23C3 /* MonthOpeartion.m in Sources */,
 				640B313721D76384002ABE64 /* FCOCRVehicleLicenseViewController.m in Sources */,
 				644EF84421DC5A2B00F18287 /* PostAppealSectionHeaderView.m in Sources */,
@@ -4545,9 +4659,11 @@
 				640B317821D8CD52002ABE64 /* InputPWPopUpView.m in Sources */,
 				6405E9DF21E456A200D9719B /* BaseVC.m in Sources */,
 				6439E0DC21C7B79B00A12D79 /* BViewController.m in Sources */,
+				393215D3248E3CDD00EC4CD8 /* SaoleiNumberOrTimeImageView.m in Sources */,
 				640B30F621D62255002ABE64 /* PostAdsDetailSectionHeaderView.m in Sources */,
 				640B310921D63A2D002ABE64 /* ModifyAdsView.m in Sources */,
 				640B2FB121D0F4CA002ABE64 /* DataStatisticsVM.m in Sources */,
+				393215D4248E3CDD00EC4CD8 /* SaoleiView.m in Sources */,
 				6423D80321C4F9A3002FECA5 /* UIScrollView+YBGeneral.m in Sources */,
 				640B317421D76496002ABE64 /* FCPPFaceBeautify.m in Sources */,
 				640B2FC621D22B3A002ABE64 /* SymbolsValueFormatter.m in Sources */,

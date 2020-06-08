@@ -42,6 +42,9 @@ PODS:
   - DTFoundation/UIKit (1.7.14):
     - DTFoundation/Core
   - FDFullscreenPopGesture (1.1)
+  - FMDB (2.7.5):
+    - FMDB/standard (= 2.7.5)
+  - FMDB/standard (2.7.5)
   - IQKeyboardManager (4.0.13)
   - JXCategoryView (1.5.5)
   - Masonry (1.1.0)
@@ -67,6 +70,7 @@ DEPENDENCIES:
   - Charts
   - DTCoreText
   - FDFullscreenPopGesture
+  - FMDB
   - IQKeyboardManager (~> 4.0.8)
   - JXCategoryView
   - Masonry
@@ -88,6 +92,7 @@ SPEC REPOS:
     - DTCoreText
     - DTFoundation
     - FDFullscreenPopGesture
+    - FMDB
     - IQKeyboardManager
     - JXCategoryView
     - Masonry
@@ -108,6 +113,7 @@ SPEC CHECKSUMS:
   DTCoreText: 67023bb51b26711d5f640c851f4845aea14c24c9
   DTFoundation: 25aa19bb7c6e225b1dfae195604fb8cf1da0ab4c
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
+  FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   IQKeyboardManager: 8eab4d8111418414619d1df8e4779ce5d0f8d7e2
   JXCategoryView: 0293fcb356f10a5c2e679dac0a1a5f1899ee0c87
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
@@ -121,6 +127,6 @@ SPEC CHECKSUMS:
   SDWebImage: a72e880a8fe0f7fc31efe15aaed443c074d2a80c
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
 
-PODFILE CHECKSUM: 4c903c5f83d34156b52d5f3da09ef374ecffc035
+PODFILE CHECKSUM: 1cea2609f02bf74996df2f79014a22ff7a10a8cf
 
 COCOAPODS: 1.9.3

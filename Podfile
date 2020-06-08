@@ -17,6 +17,7 @@ pod 'Charts'
 pod 'JXCategoryView'
 pod 'RongCloudIM/IMLib', '~> 2.9.7'
 pod 'RongCloudIM/IMKit', '~> 2.9.7'
+pod 'FMDB'
 use_frameworks!
 
 end
