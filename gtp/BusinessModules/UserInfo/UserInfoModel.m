@@ -15,6 +15,7 @@
     [aCoder encodeObject:self.paySource     forKey:@"paySource"];
     [aCoder encodeObject:self.tagArrs     forKey:@"tagArrs"];
     [aCoder encodeObject:self.currentDay     forKey:@"currentDay"];
+    [aCoder encodeObject:self.recordedDate     forKey:@"recordedDate"];
     [aCoder encodeObject:self.purseArr     forKey:@"purseArr"];
     
     [aCoder encodeObject:self.phoneNumber     forKey:@"phoneNumber"];
@@ -29,6 +30,7 @@
         self.paySource = [aDecoder     decodeObjectForKey:@"paySource"];
         self.tagArrs = [aDecoder     decodeObjectForKey:@"tagArrs"];
         self.currentDay = [aDecoder     decodeObjectForKey:@"currentDay"];
+        self.recordedDate = [aDecoder     decodeObjectForKey:@"recordedDate"];
         self.purseArr = [aDecoder     decodeObjectForKey:@"purseArr"];
         
         self.phoneNumber = [aDecoder     decodeObjectForKey:@"phoneNumber"];

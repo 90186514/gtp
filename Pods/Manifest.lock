@@ -69,7 +69,7 @@ DEPENDENCIES:
   - FDFullscreenPopGesture
   - IQKeyboardManager (~> 4.0.8)
   - JXCategoryView
-  - Masonry (~> 1.1.0)
+  - Masonry
   - MBProgressHUD
   - MJExtension
   - MJRefresh (~> 3.1.15.7)
@@ -121,6 +121,6 @@ SPEC CHECKSUMS:
   SDWebImage: a72e880a8fe0f7fc31efe15aaed443c074d2a80c
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
 
-PODFILE CHECKSUM: 6e7867f1e62a164c3fc67633a6c8bada2515a2ce
+PODFILE CHECKSUM: 4c903c5f83d34156b52d5f3da09ef374ecffc035
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.9.3

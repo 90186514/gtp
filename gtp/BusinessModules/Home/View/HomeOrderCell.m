@@ -93,7 +93,7 @@
 }
 
 + (NSMutableAttributedString *)accLabAttributedStringWithSecond:(NSInteger)second{
-   return  [NSString attributedStringWithString:[NSString stringWithFormat:@"%@倒计时：",@"2018-12-14 11:11:01"] stringColor:HEXCOLOR(0x9b9b9b) stringFont:kFontSize(13) subString:second > 0?[NSString timeWithSecond:second]:@"00:00:00" subStringColor:HEXCOLOR(0xeb831d) subStringFont:kFontSize(13)];
+   return  [NSString attributedStringWithString:[NSString stringWithFormat:@"%@倒计时：",@"2018-12-14 11:11:01"] stringColor:HEXCOLOR(0x9b9b9b) stringFont:kFontSize(13) subString:second > 0?[NSString transToHMSSeparatedByColonFormatSecond:second]:@"00:00:00" subStringColor:HEXCOLOR(0xeb831d) subStringFont:kFontSize(13)];
 }
 
 + (NSMutableAttributedString *)mergeAttributedStringWithSecond:(NSInteger)second{

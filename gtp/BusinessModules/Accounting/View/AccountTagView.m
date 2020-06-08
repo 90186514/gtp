@@ -1,10 +1,6 @@
 //
 //  AccountTagView.m
-//  gtp
-//
-//  Created by Lino on 14/05/2020.
-//  Copyright © 2020 gtp. All rights reserved.
-//
+
 
 #import "AccountTagView.h"
 #import "CollectionViewHorizontalLayout.h"
