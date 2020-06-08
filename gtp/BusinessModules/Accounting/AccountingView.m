@@ -7,7 +7,7 @@
 //
 
 #import "AccountingView.h"
-#import "XJYChart.h"
+#import "PieStatedView.h"
 #import "AccountTagView.h"
 #import "AccountPayView.h"
 #import "AccountingVM.h"
@@ -21,7 +21,7 @@
 @property (nonatomic, copy) ActionBlock block;
 @property (nonatomic, assign) CGFloat contentViewHeigth;
 
-@property (nonatomic, strong) XPieChart               *monthPieChartView;
+@property (nonatomic, strong) PieStatedView               *monthPieChartView;
 
 @property (nonatomic, strong) NSMutableArray* leftBtns;
 @property (nonatomic, strong) NSMutableArray* rightLabs;
@@ -127,15 +127,16 @@
         [self selectTypeRefreshView];
     }];
     
-    self.monthPieChartView = [[XPieChart alloc] init];
-    self.monthPieChartView.onlyShowValues = NO;
-    self.monthPieChartView.shouldHighlightSectorOnTouch = YES;
+    [self.contentView layoutIfNeeded];
+    self.monthPieChartView = [[PieStatedView alloc] initWithFrame:CGRectMake(0, CGRectGetMaxY(self.line1.frame)+75, self.contentView.frame.size.width, IS_iPhoneX?(5+ 158+5+15+5+15):(5+128+5+15+5+15))];
     [self.contentView addSubview:self.monthPieChartView];
-    [self.monthPieChartView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.centerX.equalTo(self.contentView);
-        make.top.equalTo(self.line1.mas_bottom).offset(100);
-        make.width.height.mas_equalTo(158);
-    }];
+//    [self.monthPieChartView mas_makeConstraints:^(MASConstraintMaker *make) {
+//        make.centerX.equalTo(self.contentView);
+//        make.top.equalTo(self.line1.mas_bottom).offset(10);
+////        make.width.height.mas_equalTo(158);
+//        make.width.mas_equalTo(self.contentView);
+//        make.height.mas_equalTo(20+158+10+20+10+50);
+//    }];
     
     UIImageView* line2 = [[UIImageView alloc]init];
     [self.contentView addSubview:line2];
@@ -537,16 +538,14 @@
     
     for (int i=0 ; i< pieSums.count; i++) {
         NSDictionary* dic = pieSums[i];
-        XPieItem* item =
-        [[XPieItem alloc] initWithDataNumber:dic[kTotal]
-                                       color:dic[kColor]
-                                dataDescribe:dic[kIndexInfo]];
-        item.textColor = [UIColor whiteColor];
-        item.font = [UIFont systemFontOfSize:12];
-        [pieVs addObject:item];
+        PieModel *pm = [[PieModel alloc]init];
+        pm.count = [dic[kTotal]floatValue];
+        pm.title = dic[kIndexInfo];
+        pm.descript = @"";
+        pm.color = dic[kColor];
+        [pieVs addObject:pm];
     }
-    self.monthPieChartView.dataItemArray = pieVs;
-    [self.monthPieChartView refreshChart];
+    [self.monthPieChartView richEleInView:pieVs];
 }
 
 - (void)actionBlock:(ActionBlock)block

@@ -30,6 +30,9 @@
 		3948F8052471AB8900477131 /* RTPagedCollectionViewLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F8032471AB8900477131 /* RTPagedCollectionViewLayout.m */; };
 		3948F8092472498400477131 /* AccountingVM.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F8072472498400477131 /* AccountingVM.m */; };
 		3948F80D24724A4800477131 /* AccountingModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 3948F80B24724A4800477131 /* AccountingModel.m */; };
+		39594079248E0B2A005CF920 /* PieStatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39594073248E0B2A005CF920 /* PieStatedView.m */; };
+		3959407A248E0B2A005CF920 /* PieModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 39594074248E0B2A005CF920 /* PieModel.m */; };
+		3959407B248E0B2A005CF920 /* PieView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39594078248E0B2A005CF920 /* PieView.m */; };
 		39B0CBB6247B8F2C00815698 /* AccountRootTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B0CBB5247B8F2C00815698 /* AccountRootTabBarViewController.m */; };
 		39B0CBCF247BC4D200815698 /* DefaultLaunch1242x2208.png in Resources */ = {isa = PBXBuildFile; fileRef = 39B0CBCD247BC4D200815698 /* DefaultLaunch1242x2208.png */; };
 		39DDDF1B247E5792009E1985 /* AccountBalanceSourceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DDDF19247E5791009E1985 /* AccountBalanceSourceVC.m */; };
@@ -673,6 +676,12 @@
 		3948F8082472498400477131 /* AccountingVM.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountingVM.h; sourceTree = "<group>"; };
 		3948F80B24724A4800477131 /* AccountingModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountingModel.m; sourceTree = "<group>"; };
 		3948F80C24724A4800477131 /* AccountingModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountingModel.h; sourceTree = "<group>"; };
+		39594073248E0B2A005CF920 /* PieStatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieStatedView.m; sourceTree = "<group>"; };
+		39594074248E0B2A005CF920 /* PieModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieModel.m; sourceTree = "<group>"; };
+		39594075248E0B2A005CF920 /* PieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieView.h; sourceTree = "<group>"; };
+		39594076248E0B2A005CF920 /* PieModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieModel.h; sourceTree = "<group>"; };
+		39594077248E0B2A005CF920 /* PieStatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PieStatedView.h; sourceTree = "<group>"; };
+		39594078248E0B2A005CF920 /* PieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PieView.m; sourceTree = "<group>"; };
 		39B0CBB4247B8F2C00815698 /* AccountRootTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountRootTabBarViewController.h; sourceTree = "<group>"; };
 		39B0CBB5247B8F2C00815698 /* AccountRootTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountRootTabBarViewController.m; sourceTree = "<group>"; };
 		39B0CBCE247BC4D200815698 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/DefaultLaunch1242x2208.png; sourceTree = "<group>"; };
@@ -1649,6 +1658,19 @@
 				3948F80B24724A4800477131 /* AccountingModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		39594072248E0B2A005CF920 /* Pie */ = {
+			isa = PBXGroup;
+			children = (
+				39594077248E0B2A005CF920 /* PieStatedView.h */,
+				39594073248E0B2A005CF920 /* PieStatedView.m */,
+				39594075248E0B2A005CF920 /* PieView.h */,
+				39594078248E0B2A005CF920 /* PieView.m */,
+				39594076248E0B2A005CF920 /* PieModel.h */,
+				39594074248E0B2A005CF920 /* PieModel.m */,
+			);
+			path = Pie;
 			sourceTree = "<group>";
 		};
 		39DDE29A24821F79009E1985 /* App */ = {
@@ -2679,6 +2701,7 @@
 		6423D77821C4F9A1002FECA5 /* PackageModules */ = {
 			isa = PBXGroup;
 			children = (
+				39594072248E0B2A005CF920 /* Pie */,
 				642F2C9F21E6EA00008AF504 /* PickerPopUp */,
 				6405E9E021E45BDC00D9719B /* NetErrorView */,
 				644EF82B21D9C74000F18287 /* ToastView */,
@@ -4214,6 +4237,7 @@
 				640B313821D76384002ABE64 /* FCLicensePlateViewController.m in Sources */,
 				642E454021CCD823000E0888 /* SlideTabBarVC.m in Sources */,
 				642E447621CA1DC4000E0888 /* RWLabel.m in Sources */,
+				3959407A248E0B2A005CF920 /* PieModel.m in Sources */,
 				640B317321D76496002ABE64 /* FCPPFaceSet.m in Sources */,
 				640B2FB221D0F4CA002ABE64 /* DataStatisticsVC.m in Sources */,
 				640B313021D76384002ABE64 /* FCBodySegmentViewController.m in Sources */,
@@ -4330,6 +4354,7 @@
 				6405E97521E331D700D9719B /* QuickeningVC.m in Sources */,
 				6423D80621C4F9A3002FECA5 /* YBGeneralColor.m in Sources */,
 				640B2FE421D366B2002ABE64 /* OrderDetailVM.m in Sources */,
+				3959407B248E0B2A005CF920 /* PieView.m in Sources */,
 				642E45B821CF8605000E0888 /* PostAdsRestrictCell.m in Sources */,
 				6423D80421C4F9A3002FECA5 /* UIView+Extras.m in Sources */,
 				3948F7282470945400477131 /* AccountTagView.m in Sources */,
@@ -4348,6 +4373,7 @@
 				6439E11621C89B9F00A12D79 /* MKAnnotationVC.m in Sources */,
 				64FB4E6021C650B6000952D6 /* YBTrendsViewController.m in Sources */,
 				642E459F21CE1CF2000E0888 /* FixedRectTagView.m in Sources */,
+				39594079248E0B2A005CF920 /* PieStatedView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
