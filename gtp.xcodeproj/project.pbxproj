@@ -1965,9 +1965,9 @@
 			isa = PBXGroup;
 			children = (
 				3959420D248E28BC005CF920 /* DraggableCViewFlowLayout.h */,
+				39594210248E28BC005CF920 /* DraggableCViewFlowLayout.m */,
 				3959420F248E28BC005CF920 /* DraggableCView.h */,
 				39594215248E28BC005CF920 /* DraggableCView.m */,
-				39594210248E28BC005CF920 /* DraggableCViewFlowLayout.m */,
 			);
 			path = View;
 			sourceTree = "<group>";

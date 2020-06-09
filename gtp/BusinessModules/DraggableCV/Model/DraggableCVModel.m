@@ -53,7 +53,9 @@
         NSInteger count = originArr.count;
         for (i = 0; i < count; i ++) {
             int index = arc4random() % (count - i);
-            [resultArray addObject:[originArr objectAtIndex:index]];
+            NSMutableDictionary* dic = [NSMutableDictionary dictionaryWithDictionary:@{kTit:[originArr objectAtIndex:index]}];
+            [dic addEntriesFromDictionary:@{kIsOn:@(0)}];
+            [resultArray addObject:dic];
             [originArr removeObjectAtIndex:index];
             
         }

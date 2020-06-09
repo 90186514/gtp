@@ -21,7 +21,7 @@
         //            make.bottom.mas_equalTo(cell.contentView);
         //        }];
         titleLab.frame = CGRectMake(0, 0, self.frame.size.width, self.frame.size.height);
-        [titleLab setBackgroundColor:UIColor.lightGrayColor];
+        [titleLab setBackgroundColor:UIColor.clearColor];
         [titleLab setTextAlignment:NSTextAlignmentCenter];
         [titleLab setFont:[UIFont systemFontOfSize:18]];
         [titleLab setTextColor:UIColor.whiteColor];
@@ -55,6 +55,11 @@
 @property(nonatomic, assign) NSUInteger currentIndex;
 @property (strong,nonatomic) UIPageControl * pageControl;
 @property (nonatomic, copy) ActionBlock block;
+
+@property (assign, nonatomic) BOOL isMultipleSelected;
+@property (strong, nonatomic) NSMutableArray*selectArr;
+@property (strong, nonatomic) NSMutableDictionary* selectedModel;
+
 @end
 static CGFloat const kPadding            = 3;
 @implementation DraggableCView
@@ -124,9 +129,16 @@ static CGFloat const kPadding            = 3;
     return kGridCellHeight;
 }
 - (void)richElementsInCellWithModel:(NSDictionary*)model{
+    _selectedModel = [NSMutableDictionary dictionary];
+    _selectArr = [NSMutableArray array];
+    self.isMultipleSelected = true;
+    
     NSInteger x =  [model[kIndexRow]intValue];
     NSInteger y =  [model[kIndexSection]intValue];
-    _originDatas = [NSMutableArray arrayWithArray:model[kArr]];
+    _originDatas = [NSMutableArray array];
+    for (NSDictionary* c in model[kArr]) {
+        [_originDatas addObject:[NSString stringWithFormat:@"%@",c[kTit]]];
+    }
     _data = [NSMutableArray arrayWithArray:model[kArr]];
     _pageCount = _data.count;
     
@@ -217,7 +229,14 @@ static CGFloat const kPadding            = 3;
     CVCell *cell = (CVCell*)[collectionView dequeueReusableCellWithReuseIdentifier:@"gCollectionViewCell" forIndexPath:indexPath];
     
 //    NSMutableArray *fourPalaceData = [_data objectAtIndex:indexPath.section];
-    [cell richElementsInCellWithModel:[NSString stringWithFormat:@"%@",_data[indexPath.row]]];
+    NSDictionary* dic = _data[indexPath.row];
+    [cell richElementsInCellWithModel:[NSString stringWithFormat:@"%@",dic[kTit]]];
+    cell.contentView.backgroundColor = [UIColor lightGrayColor];
+    if ([dic[kIsOn]boolValue]) {
+        cell.contentView.backgroundColor = [YBGeneralColor themeColor];
+    }else{
+        cell.contentView.backgroundColor = [UIColor lightGrayColor];
+    }
     return cell;
 }
 - (void)actionBlock:(ActionBlock)block
@@ -225,14 +244,63 @@ static CGFloat const kPadding            = 3;
     self.block = block;
 }
 #pragma mark --UICollectionViewDelegate
--(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
-//    NSArray *object = [_data objectAtIndex:indexPath.section];
-    if (![NSString isEmpty:_data[indexPath.row]]) {
-        
-        NSLog(@"点击了=====%ld",indexPath.row);
-//        if (self.block) {
-//            self.block(_data[indexPath.row]);
-//        }
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
+    [[DraggableCVModel new] setDataIsForceInit:NO];
+    
+    NSDictionary *model = self.data[indexPath.row];
+    
+    if (!self.isMultipleSelected) {
+        if (![[self.selectedModel mutableCopy] isEqualToDictionary: model]) {
+            [self.selectedModel setValue:@(0) forKey:kIsOn];
+            for (NSDictionary* dic in self.data) {
+                if (![[self.selectedModel mutableCopy] isEqualToDictionary: dic]) {
+                    [dic setValue:@(0) forKey:kIsOn];
+                }
+            }
+        }
+    }
+    
+    [model setValue:@(![model[kIsOn]boolValue]) forKey:kIsOn];
+    
+    if (self.isMultipleSelected) {
+        if ([model[kIsOn]boolValue]) {
+            [self.selectArr addObject:model];
+        }else{
+            if ([self.selectArr indexOfObject:model]!= NSNotFound) {
+                [self.selectArr removeObject:model];
+            }
+        }
+    }
+    self.selectedModel = [NSMutableDictionary dictionaryWithDictionary:model];
+    [UIView performWithoutAnimation:^{
+        NSIndexSet *reloadSet = [NSIndexSet indexSetWithIndex:indexPath.section];
+        [self.collectionView reloadSections:reloadSet];
+    }];
+    if (self.isMultipleSelected) {
+        NSMutableArray* nums = [NSMutableArray array];
+        if (self.selectArr.count>0) {
+            for (NSDictionary* dic in self.selectArr) {
+                [nums addObject:[NSString stringWithFormat:@"%@",dic[kTit]]];
+            }
+            if ([[DraggableCVModel new]compareOriginData:self.originDatas withNewData:nums]) {
+                if ([UserInfoManager GetNSUserDefaults].recordedDate){
+                    if (self.block) {
+                        self.block(@(1));
+                    }
+                }
+            }
+        }
+        NSLog(@"mult%@",nums);
+    }
+    else{
+       if (self.selectedModel) {
+           NSLog(@"gseges%@",self.selectedModel);
+           for (NSDictionary* dic in self.data) {
+               if (![[self.selectedModel mutableCopy] isEqualToDictionary: dic]) {
+                   [dic setValue:@(0) forKey:kIsOn];
+               }
+           }
+       }
     }
 }
 #pragma mark - LXReorderableCollectionViewDataSource methods
@@ -297,15 +365,20 @@ static CGFloat const kPadding            = 3;
 
     
 //    NSLog(@"mmml===%@\n%lu",self.data,(unsigned long)self.data.count);
-    if ([[DraggableCVModel new]compareOriginData:_originDatas withNewData:self.data]) {
-        if ([UserInfoManager GetNSUserDefaults].recordedDate){
-            if (self.block) {
-                self.block(@(1));
+    NSMutableArray* nums = [NSMutableArray array];
+    if (self.data.count>0) {
+        for (NSDictionary* dic in self.data) {
+            [nums addObject:[NSString stringWithFormat:@"%@",dic[kTit]]];
+        }
+        if ([[DraggableCVModel new]compareOriginData:_originDatas withNewData:nums]) {
+            if ([UserInfoManager GetNSUserDefaults].recordedDate){
+                if (self.block) {
+                    self.block(@(1));
+                }
             }
         }
-//        NSLog(@"mmml===win==%@",[NSString currentDateComparePastDate:[UserInfoManager GetNSUserDefaults].currentDate]);
-        
     }
+    NSLog(@"mult%@",nums);
 //    [self.collectionView reloadData];
 
 }
