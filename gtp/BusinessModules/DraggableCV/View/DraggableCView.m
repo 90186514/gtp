@@ -55,13 +55,14 @@
 @property(nonatomic, assign) NSUInteger currentIndex;
 @property (strong,nonatomic) UIPageControl * pageControl;
 @property (nonatomic, copy) ActionBlock block;
+@property (nonatomic, copy) NSDictionary* model;
 
 @property (assign, nonatomic) BOOL isMultipleSelected;
 @property (strong, nonatomic) NSMutableArray*selectArr;
 @property (strong, nonatomic) NSMutableDictionary* selectedModel;
-
+@property (assign, nonatomic) CGFloat padding;
 @end
-static CGFloat const kPadding            = 3;
+//static CGFloat const kPadding            = 3;
 @implementation DraggableCView
 -(instancetype)initWithFrame:(CGRect)frame{
     if (self = [super initWithFrame:frame]) {
@@ -118,9 +119,9 @@ static CGFloat const kPadding            = 3;
 //        _flowLayout.columns = 6;
 //        _flowLayout.rows = 7;
 //        _flowLayout.edgeInsets = UIEdgeInsetsMake(kPadding, kPadding, kPadding, kPadding);
-        _flowLayout.minimumLineSpacing = kPadding;
-        _flowLayout.minimumInteritemSpacing = kPadding;
-        _flowLayout.sectionInset = UIEdgeInsetsMake(kPadding, kPadding, kPadding, kPadding);
+        _flowLayout.minimumLineSpacing = self.padding;
+        _flowLayout.minimumInteritemSpacing = self.padding;
+        _flowLayout.sectionInset = UIEdgeInsetsMake(self.padding, self.padding, self.padding, self.padding);
 //        _flowLayout.headerReferenceSize = CGSizeMake(0, 0);
     }
     return _flowLayout;
@@ -129,6 +130,7 @@ static CGFloat const kPadding            = 3;
     return kGridCellHeight;
 }
 - (void)richElementsInCellWithModel:(NSDictionary*)model{
+    self.model = model;
     _selectedModel = [NSMutableDictionary dictionary];
     _selectArr = [NSMutableArray array];
     self.isMultipleSelected = true;
@@ -149,7 +151,15 @@ static CGFloat const kPadding            = 3;
     self.pageControl.numberOfPages = _pageCount / 12.0;
     
     
-    self.flowLayout.itemSize = CGSizeMake((MAINSCREEN_WIDTH-kPadding*(x+1))/x, (self.collectionView.frame.size.height-kPadding*(y+1))/y);
+    if (x == y) {
+        self.padding = 20;
+        self.flowLayout.itemSize = CGSizeMake((MAINSCREEN_WIDTH-self.padding*(x+1))/x, (MAINSCREEN_WIDTH-self.padding*(y+1))/y);
+    }else{
+        self.padding = 3;
+        self.flowLayout.itemSize = CGSizeMake((MAINSCREEN_WIDTH-self.padding*(x+1))/x, (self.collectionView.frame.size.height-self.padding*(y+1))/y);
+    }
+    
+    
     
     _collectionView.collectionViewLayout = self.flowLayout;
 //    [_collectionView setHeight:[AccountTagView cellHeightWithModel:model]];
@@ -185,16 +195,16 @@ static CGFloat const kPadding            = 3;
             break;
         }
         case UIGestureRecognizerStateChanged: {
-            NSIndexPath *toIndexPath = [self.collectionView indexPathForItemAtPoint:[_longPress locationInView:_longPress.view]];
-            NSMutableArray *data2 = [_data objectAtIndex:toIndexPath.section];
-
-                NSString *toIndex = [data2 objectAtIndex:toIndexPath.item];
-                if ([toIndex isEqualToString: @"A 1"]
-            //        &&
-            //        [toIndex isEqualToString: @"A 1"]
-                    ) {
-                    break;
-                }
+//            NSIndexPath *toIndexPath = [self.collectionView indexPathForItemAtPoint:[_longPress locationInView:_longPress.view]];
+//            NSMutableArray *data2 = [_data objectAtIndex:toIndexPath.section];
+//
+//                NSString *toIndex = [data2 objectAtIndex:toIndexPath.item];
+//                if ([toIndex isEqualToString: @"A 1"]
+//            //        &&
+//            //        [toIndex isEqualToString: @"A 1"]
+//                    ) {
+//                    break;
+//                }
             
                 [self.collectionView updateInteractiveMovementTargetPosition:[_longPress locationInView:_longPress.view]];
             break;
@@ -231,14 +241,58 @@ static CGFloat const kPadding            = 3;
 //    NSMutableArray *fourPalaceData = [_data objectAtIndex:indexPath.section];
     NSDictionary* dic = _data[indexPath.row];
     [cell richElementsInCellWithModel:[NSString stringWithFormat:@"%@",dic[kTit]]];
-    cell.contentView.backgroundColor = [UIColor lightGrayColor];
-    if ([dic[kIsOn]boolValue]) {
-        cell.contentView.backgroundColor = [YBGeneralColor themeColor];
+    if ([self.model[kIndexRow]intValue]==[self.model[kIndexSection]intValue]) {
+        cell.contentView.backgroundColor = dic[kColor];
     }else{
         cell.contentView.backgroundColor = [UIColor lightGrayColor];
+        if ([dic[kIsOn]boolValue]) {
+            cell.contentView.backgroundColor = [YBGeneralColor themeColor];
+        }else{
+            cell.contentView.backgroundColor = [UIColor lightGrayColor];
+        }
     }
     return cell;
 }
+
+- (void)rotateModel:(NSDictionary*)model{
+    NSInteger i = [model[kSubTit]intValue];
+    NSInteger x = [self.model[kIndexRow]intValue];
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"1  %@",[NSThread currentThread]);
+            [self collectionView:self.collectionView itemAtIndexPath:[NSIndexPath indexPathForRow:i+1 inSection:0] willMoveToIndexPath:[NSIndexPath indexPathForRow:i+(x) inSection:0]];
+        });
+    });
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"2  %@",[NSThread currentThread]);
+            [self collectionView:self.collectionView itemAtIndexPath:[NSIndexPath indexPathForRow:i inSection:0] willMoveToIndexPath:[NSIndexPath indexPathForRow:i+1 inSection:0]];
+            
+        });
+    });
+    
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            NSLog(@"3  %@",[NSThread currentThread]);
+            [self collectionView:self.collectionView itemAtIndexPath:[NSIndexPath indexPathForRow:i+(x+1) inSection:0] willMoveToIndexPath:[NSIndexPath indexPathForRow:i+(x) inSection:0]];
+        });
+    });
+    
+// 0 1
+//4 5
+//对角线3步
+//0  4
+//1  5
+
+// 0 4
+// 5  1
+    
+// 4 0
+// 5  1
+}
+
 - (void)actionBlock:(ActionBlock)block
 {
     self.block = block;
@@ -341,12 +395,13 @@ static CGFloat const kPadding            = 3;
         
         return YES;
 }
-//
-//- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(nonnull NSIndexPath *)sourceIndexPath toIndexPath:(nonnull NSIndexPath *)destinationIndexPath
-#pragma mark - LXReorderableCollectionViewDataSource methods
+
+//- (void)collectionView:(UICollectionView *)collectionView moveItemAtIndexPath:(NSIndexPath *)sourceIndexPath toIndexPath:(NSIndexPath *)destinationIndexPath
+//#pragma mark - LXReorderableCollectionViewDataSource methods
 - (void)collectionView:(UICollectionView *)collectionView itemAtIndexPath:(NSIndexPath *)sourceIndexPath willMoveToIndexPath:(NSIndexPath *)destinationIndexPath
 {
     [[DraggableCVModel new] setDataIsForceInit:NO];
+    
 //    NSMutableArray *data1 = [_data objectAtIndex:sourceIndexPath.section];
 //    NSMutableArray *data2 = [_data objectAtIndex:destinationIndexPath.section];
 //    NSString *index = [data1 objectAtIndex:sourceIndexPath.item];
@@ -354,6 +409,22 @@ static CGFloat const kPadding            = 3;
 //    [data1 removeObjectAtIndex:sourceIndexPath.item];
 //    [data2 insertObject:index atIndex:destinationIndexPath.item];
     
+    if ([self.model[kIndexRow]intValue]==[self.model[kIndexSection]intValue]) {
+        [self.data exchangeObjectAtIndex:sourceIndexPath.item withObjectAtIndex:destinationIndexPath.item];
+        [self.collectionView reloadData];
+
+        if (self.data.count>0) {
+            if([[DraggableCVModel new]isEqualFinalElementInArray:self.data byX:[self.model[kIndexRow]intValue]]){
+                if ([UserInfoManager GetNSUserDefaults].recordedDate){
+                    if (self.block) {
+                        self.block(@(1));
+                    }
+                }
+            }
+
+        }
+        return;
+    }
     NSArray *selectModel = self.data[sourceIndexPath.item];
     [self.data removeObjectAtIndex:sourceIndexPath.item];
     [self.data insertObject:selectModel atIndex:destinationIndexPath.item];
@@ -379,6 +450,7 @@ static CGFloat const kPadding            = 3;
         }
     }
     NSLog(@"mult%@",nums);
+    
 //    [self.collectionView reloadData];
 
 }

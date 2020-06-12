@@ -58,6 +58,7 @@
 		393215DA248E3CDD00EC4CD8 /* SaveHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 393215CB248E3CDD00EC4CD8 /* SaveHandle.m */; };
 		393215DB248E3CDD00EC4CD8 /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 393215CC248E3CDD00EC4CD8 /* UserModel.m */; };
 		393215DE248E3D9000EC4CD8 /* MineClearVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 393215DC248E3D9000EC4CD8 /* MineClearVC.m */; };
+		3932190724937C1000EC4CD8 /* CenterSpinView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3932190624937C1000EC4CD8 /* CenterSpinView.m */; };
 		39441D1C24739C8100AA23C3 /* AccountPayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39441D1B24739C8100AA23C3 /* AccountPayView.m */; };
 		39441E0E2473BC6500AA23C3 /* UserInfoSingleton.m in Sources */ = {isa = PBXBuildFile; fileRef = 39441E082473BC6400AA23C3 /* UserInfoSingleton.m */; };
 		39441E0F2473BC6500AA23C3 /* UserInfoModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 39441E0A2473BC6400AA23C3 /* UserInfoModel.m */; };
@@ -741,6 +742,8 @@
 		393215CE248E3CDD00EC4CD8 /* UserModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserModel.h; sourceTree = "<group>"; };
 		393215DC248E3D9000EC4CD8 /* MineClearVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MineClearVC.m; sourceTree = "<group>"; };
 		393215DD248E3D9000EC4CD8 /* MineClearVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MineClearVC.h; sourceTree = "<group>"; };
+		3932190524937C1000EC4CD8 /* CenterSpinView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CenterSpinView.h; sourceTree = "<group>"; };
+		3932190624937C1000EC4CD8 /* CenterSpinView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CenterSpinView.m; sourceTree = "<group>"; };
 		39441D1A24739C8100AA23C3 /* AccountPayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountPayView.h; sourceTree = "<group>"; };
 		39441D1B24739C8100AA23C3 /* AccountPayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountPayView.m; sourceTree = "<group>"; };
 		39441E082473BC6400AA23C3 /* UserInfoSingleton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoSingleton.m; sourceTree = "<group>"; };
@@ -1964,6 +1967,8 @@
 		3959421A248E29AD005CF920 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3932190524937C1000EC4CD8 /* CenterSpinView.h */,
+				3932190624937C1000EC4CD8 /* CenterSpinView.m */,
 				3959420D248E28BC005CF920 /* DraggableCViewFlowLayout.h */,
 				39594210248E28BC005CF920 /* DraggableCViewFlowLayout.m */,
 				3959420F248E28BC005CF920 /* DraggableCView.h */,
@@ -4634,6 +4639,7 @@
 				3948F8092472498400477131 /* AccountingVM.m in Sources */,
 				393215D6248E3CDD00EC4CD8 /* SaoleiHeaderView.m in Sources */,
 				39441E552476B37E00AA23C3 /* MonthOpeartion.m in Sources */,
+				3932190724937C1000EC4CD8 /* CenterSpinView.m in Sources */,
 				640B313721D76384002ABE64 /* FCOCRVehicleLicenseViewController.m in Sources */,
 				644EF84421DC5A2B00F18287 /* PostAppealSectionHeaderView.m in Sources */,
 				64FB4EC621C659BE000952D6 /* CollectionAndQuiltModel.m in Sources */,
@@ -4795,7 +4801,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -4848,7 +4854,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -4867,7 +4873,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/gtp/gtpPrefixHeader.pch";
 				INFOPLIST_FILE = gtp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4893,7 +4899,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/gtp/gtpPrefixHeader.pch";
 				INFOPLIST_FILE = gtp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

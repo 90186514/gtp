@@ -1,16 +1,16 @@
 //
-//  DraggableCView.h
+//  CenterSpinView.h
 //  PLLL
+//
+//  Created by TNM on 7/06/2020.
+//  Copyright © 2020 PLLL. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
-@interface DraggableCView : UIView
+@interface CenterSpinView : UIView
 
 - (void)actionBlock:(ActionBlock)block;
 + (CGFloat)cellHeightWithModel;
 - (void)richElementsInCellWithModel:(NSDictionary*)model;
-- (void)rotateModel:(NSDictionary*)model;
-- (void)showInView:(UIView *)contentView;
-- (void)disMissView;
 @end
