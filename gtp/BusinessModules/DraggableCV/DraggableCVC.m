@@ -28,17 +28,17 @@
     _verticalFuncBtns = [NSMutableArray arrayWithCapacity:2];
     self.dicXY = @{@(2):@(3)};
     
-    UIButton *saftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    saftBtn.frame = CGRectMake(0, 0, MAINSCREEN_WIDTH, [YBFrameTool safeAdjustNavigationBarHeight]);
-    saftBtn.titleLabel.font = kFontSize(17);
-    [saftBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    saftBtn.backgroundColor = [UIColor lightGrayColor];
-    [saftBtn setTitle:[NSString currentDataStringWithFormatString:[NSString ymSeparatedBySlashFormatString]] forState:UIControlStateNormal];
-    saftBtn.tag = 9;
-    saftBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
-    saftBtn.contentVerticalAlignment = UIControlContentVerticalAlignmentBottom;
-    [self.view addSubview:saftBtn];
-    saftBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 15, 0);
+    UIButton *naviBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    naviBtn.frame = CGRectMake(0, 0, MAINSCREEN_WIDTH, [YBFrameTool safeAdjustNavigationBarHeight]);
+    naviBtn.titleLabel.font = kFontSize(17);
+    [naviBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    naviBtn.backgroundColor = YBGeneralColor.themeColor;
+    [naviBtn setTitle:[NSString currentDataStringWithFormatString:[NSString ymSeparatedBySlashFormatString]] forState:UIControlStateNormal];
+    naviBtn.tag = 9;
+    naviBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+    naviBtn.contentVerticalAlignment = UIControlContentVerticalAlignmentBottom;
+    [self.view addSubview:naviBtn];
+    naviBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 0, 15, 0);
     
     NSArray* subtitleArray =@[
         @{@"难度系数":@""},
@@ -68,7 +68,7 @@
     [_funcBtns mas_distributeViewsAlongAxis:MASAxisTypeHorizontal withFixedItemLength:82 leadSpacing:13 tailSpacing:13];
     
     [_funcBtns mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.top.equalTo(saftBtn.mas_bottom).offset(0);
+        make.top.equalTo(naviBtn.mas_bottom).offset(0);
         make.height.equalTo(@30);
     }];
 
