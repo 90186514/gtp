@@ -63,6 +63,8 @@
             NSArray *model = arr[j];
             if ([tempModel isEqualToArray:model]) {
                 [isEqualSplitByLineColors addObject:@(1)];
+//                [arr removeObject:model];
+//                j--;
             }
         }
     }

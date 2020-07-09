@@ -435,7 +435,7 @@
     }
     return categoryArray;
 }
-
+//https://www.jianshu.com/p/039ba9ad2a87
 - (NSInteger) binarySearchArray:(NSArray*)levelActivities withSelectedAmt:(NSInteger)selectedAmt
 {
     NSMutableArray* testarrs  = [levelActivities mutableCopy];
