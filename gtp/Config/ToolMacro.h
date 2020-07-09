@@ -21,21 +21,6 @@
 #define LRToast(str) [NSString stringWithFormat:@"%@",@#str]
 
 #pragma mark - Keys & OtherConfig
-#define PhotoEndPoint @"oss-cn-hongkong.aliyuncs.com"
-#define SERVICE_ID @"KEFU155119713095416"
-//se
-#define JPush_Key  @"d27651c3960383fb99f2a7e6"
-#define JPush_Channel @"Publish channel"
-//
-//#define JPush_Key  @"b07cefbde8fee58c3a22d6aa"
-//#define JPush_Channel @"App Store"
-#define RongCloud_Key @"qd46yzrfqp0af" //dis
-//#define RongCloud_Key @"25wehl3u2gq4w" //外包的dev
-#define WYVertifyID_Key @"af45977d53044827af6ee8968a3d550e"
-#define AliYun_Key @"LTAIJ02GVyFdCID8"
-#define AliYun_Secret @"hkYskQyGqrsvfAqDbTjezR6396OYwu"
-
-
 
 #pragma mark -单例模式宏
 #define MACRO_SHARED_INSTANCE_INTERFACE +(instancetype)sharedInstance;
@@ -187,8 +172,5 @@ dispatch_async(queue, block);\
 #define WS(weakSelf)  __weak __typeof(&*self)weakSelf = self
 #define kWeakSelf(type)  __weak typeof(type) weak##type = type
 #define kStrongSelf(type)  __strong typeof(type) type = weak##type
-
-#pragma mark - 融云
-#define RCDLocalizedString(key) NSLocalizedStringFromTable(key, @"SealTalk", nil)
 
 #endif /* ToolMacro_h */
