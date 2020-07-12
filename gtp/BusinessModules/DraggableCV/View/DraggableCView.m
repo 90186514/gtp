@@ -153,10 +153,10 @@
     
     if (x == y) {
         self.padding = 20;
-        self.flowLayout.itemSize = CGSizeMake((MAINSCREEN_WIDTH-self.padding*(x+1))/x, (MAINSCREEN_WIDTH-self.padding*(y+1))/y);
+        self.flowLayout.itemSize = CGSizeMake((self.collectionView.frame.size.width-self.padding*(x+1))/x, (self.collectionView.frame.size.width-self.padding*(y+1))/y);
     }else{
         self.padding = 3;
-        self.flowLayout.itemSize = CGSizeMake((MAINSCREEN_WIDTH-self.padding*(x+1))/x, (self.collectionView.frame.size.height-self.padding*(y+1))/y);
+        self.flowLayout.itemSize = CGSizeMake((self.collectionView.frame.size.width-self.padding*(x+1))/x, (self.collectionView.frame.size.height-self.padding*(y+1))/y);
     }
     
     
