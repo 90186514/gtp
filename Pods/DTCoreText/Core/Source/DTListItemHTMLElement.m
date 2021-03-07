@@ -7,6 +7,8 @@
 //
 
 #import "DTListItemHTMLElement.h"
+
+#import "DTCompatibility.h"
 #import "DTCoreTextParagraphStyle.h"
 #import "DTCoreTextFontDescriptor.h"
 #import "NSDictionary+DTCoreText.h"

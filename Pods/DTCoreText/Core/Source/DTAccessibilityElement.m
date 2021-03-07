@@ -8,6 +8,8 @@
 
 #import "DTAccessibilityElement.h"
 
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+
 static const CGPoint DTAccessibilityElementNullActivationPoint = {CGFLOAT_MAX, CGFLOAT_MAX};
 
 @interface DTAccessibilityElement()
@@ -48,3 +50,5 @@ static const CGPoint DTAccessibilityElementNullActivationPoint = {CGFLOAT_MAX, C
 }
 
 @end
+
+#endif

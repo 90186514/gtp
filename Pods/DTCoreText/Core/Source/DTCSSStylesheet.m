@@ -38,17 +38,26 @@
 	{
 		if (!defaultDTCSSStylesheet)
 		{
+#if SWIFT_PACKAGE
+			// get resource bundle via macro
+			NSString *path = [SWIFTPM_MODULE_BUNDLE pathForResource:@"default" ofType:@"css"];
+#else
 			NSBundle *bundle = [NSBundle bundleForClass:self];
-			NSString *path = [bundle pathForResource:@"default" ofType:@"css"];
-			// Cocoapods uses a separate Resources bundle to include default.css
-			if (!path)
-			{
-				NSString *resourcesBundlePath = [bundle pathForResource:@"Resources" ofType:@"bundle"];
-				NSBundle *resourcesBundle = [NSBundle bundleWithPath:resourcesBundlePath];
-				path = [resourcesBundle pathForResource:@"default" ofType:@"css"];
-			}
-			NSString *cssString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+			NSString *path = [[NSBundle bundleForClass:self] pathForResource:@"default" ofType:@"css"];
 			
+            // Cocoapods uses a separate Resources bundle to include default.css
+            if (!path)
+            {
+                NSString *resourcesBundlePath = [bundle pathForResource:@"Resources" ofType:@"bundle"];
+                NSBundle *resourcesBundle = [NSBundle bundleWithPath:resourcesBundlePath];
+                path = [resourcesBundle pathForResource:@"default" ofType:@"css"];
+            }
+#endif
+			
+			NSAssert(path != nil, @"Missing default.css");
+			
+            NSString *cssString = [NSString stringWithContentsOfFile:path encoding:NSUTF8StringEncoding error:nil];
+
 			defaultDTCSSStylesheet = [[DTCSSStylesheet alloc] initWithStyleBlock:cssString];
 		}
 	}

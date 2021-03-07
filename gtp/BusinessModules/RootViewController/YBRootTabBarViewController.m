@@ -14,7 +14,7 @@
 #import "YBMineViewController.h"
 #import "AdsVC.h"
 #import "FaceQRVC.h"
-#import "AccountingView.h"
+#import "AccountingVC.h"
 #import "AccountStatedVC.h"
 #import "AccountPurseVC.h"
 @interface YBRootTabBarViewController ()<UITabBarDelegate,UITabBarControllerDelegate>
@@ -87,7 +87,7 @@
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
     //3tabBar Middle item show above any tabBar
 //    if (tabBarController.selectedIndex ==1) {
-//        AccountingView* popupView = [[AccountingView alloc]init];
+//        AccountingVC* popupView = [[AccountingVC alloc]init];
 //        [popupView richElementsInViewWithModel:@(1)];
 //        [popupView showInApplicationKeyWindow];
 //        [popupView actionBlock:^(id data) {

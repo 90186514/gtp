@@ -6,6 +6,10 @@
 #import "ClockInModel.h"
 #define XHHTuanNumViewHight 332
 #define XHHTuanNumViewWidth 306
+
+//#define XHHTuanNumViewHight SCREEN_WIDTH * 1423/1125
+//#define XHHTuanNumViewHight2 SCREEN_WIDTH * 1623/1125
+//#define XHHTuanNumViewWidth SCREEN_WIDTH
 @interface MapPopUpView()<UIGestureRecognizerDelegate>
 @property(nonatomic,strong)UIView *contentView;
 @property (nonatomic, strong) UIImageView *flagIv;
@@ -201,6 +205,23 @@
     } completion:nil];
 }
 
+- (void)changeContentViewFrame:(CGRect)frame{
+    __weak __typeof(self)weakSelf = self;
+    [_contentView setFrame:CGRectMake((MAINSCREEN_WIDTH - XHHTuanNumViewWidth)/2, (MAINSCREEN_HEIGHT - _contentViewHeigth)/2, XHHTuanNumViewWidth, _contentViewHeigth)];
+    [UIView animateWithDuration:0.3f
+                     animations:^{
+                         
+                         weakSelf.alpha = 1.0;
+                         
+                         [weakSelf.contentView setFrame:frame];
+                     }
+                     completion:^(BOOL finished){
+                         
+//                         [weakSelf removeFromSuperview];
+//                         [weakSelf.contentView removeFromSuperview];
+                         
+                     }];
+}
 //移除从上向底部弹下去的UIView（包含遮罩）
 - (void)disMissView {
     WS(weakSelf);

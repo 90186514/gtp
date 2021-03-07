@@ -20,36 +20,36 @@ PODS:
   - AFNetworking/UIKit (2.7.0):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
-  - Charts (3.4.0):
-    - Charts/Core (= 3.4.0)
-  - Charts/Core (3.4.0)
+  - Charts (3.6.0):
+    - Charts/Core (= 3.6.0)
+  - Charts/Core (3.6.0)
   - DACircularProgress (2.3.1)
-  - DTCoreText (1.6.23):
-    - DTCoreText/Core (= 1.6.23)
+  - DTCoreText (1.6.25):
+    - DTCoreText/Core (= 1.6.25)
     - DTFoundation/Core (~> 1.7.5)
     - DTFoundation/DTAnimatedGIF (~> 1.7.5)
     - DTFoundation/DTHTMLParser (~> 1.7.5)
     - DTFoundation/UIKit (~> 1.7.5)
-  - DTCoreText/Core (1.6.23):
+  - DTCoreText/Core (1.6.25):
     - DTFoundation/Core (~> 1.7.5)
     - DTFoundation/DTAnimatedGIF (~> 1.7.5)
     - DTFoundation/DTHTMLParser (~> 1.7.5)
     - DTFoundation/UIKit (~> 1.7.5)
-  - DTFoundation/Core (1.7.14)
-  - DTFoundation/DTAnimatedGIF (1.7.14)
-  - DTFoundation/DTHTMLParser (1.7.14):
+  - DTFoundation/Core (1.7.16)
+  - DTFoundation/DTAnimatedGIF (1.7.16)
+  - DTFoundation/DTHTMLParser (1.7.16):
     - DTFoundation/Core
-  - DTFoundation/UIKit (1.7.14):
+  - DTFoundation/UIKit (1.7.16):
     - DTFoundation/Core
   - FDFullscreenPopGesture (1.1)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - IQKeyboardManager (4.0.13)
-  - JXCategoryView (1.5.5)
+  - JXCategoryView (1.5.8)
   - Masonry (1.1.0)
   - MBProgressHUD (0.9.2)
-  - MJExtension (3.2.1)
+  - MJExtension (3.2.4)
   - MJRefresh (3.1.15.7)
   - MWPhotoBrowser (2.1.2):
     - DACircularProgress (~> 2.3)
@@ -64,6 +64,7 @@ PODS:
     - SDWebImage/Core (= 3.8.3)
   - SDWebImage/Core (3.8.3)
   - SVProgressHUD (1.1.3)
+  - YCPopover (1.2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.6)
@@ -83,6 +84,7 @@ DEPENDENCIES:
   - RongCloudIM/IMKit (~> 2.9.7)
   - RongCloudIM/IMLib (~> 2.9.7)
   - SVProgressHUD (~> 1.0)
+  - YCPopover
 
 SPEC REPOS:
   trunk:
@@ -105,20 +107,21 @@ SPEC REPOS:
     - RongCloudIM
     - SDWebImage
     - SVProgressHUD
+    - YCPopover
 
 SPEC CHECKSUMS:
   AFNetworking: 8dd5f9b9691e09186393069a12cc3b5ed7c8b511
-  Charts: 74c9f256eaf0460c0c416522d1cf8c634ea6b286
+  Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
-  DTCoreText: 67023bb51b26711d5f640c851f4845aea14c24c9
-  DTFoundation: 25aa19bb7c6e225b1dfae195604fb8cf1da0ab4c
+  DTCoreText: e92f4cf6b36d9d71ce4436d12cf089d74ab0596b
+  DTFoundation: e7781d9fd2f202bfd451fbbf8cab71ce83b46498
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   IQKeyboardManager: 8eab4d8111418414619d1df8e4779ce5d0f8d7e2
-  JXCategoryView: 0293fcb356f10a5c2e679dac0a1a5f1899ee0c87
+  JXCategoryView: 778a620f76070d6598fd8d7239991b8da8326170
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
-  MJExtension: 635f2c663dcb1bf76fa4b715b2570a5710aec545
+  MJExtension: 88e0900751b6cac8de1cf724ca9838a0b28d5acb
   MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
@@ -126,7 +129,8 @@ SPEC CHECKSUMS:
   RongCloudIM: cd6836aa86fbf6c02f7b6b5c895ea4caa894d67f
   SDWebImage: a72e880a8fe0f7fc31efe15aaed443c074d2a80c
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
+  YCPopover: a11e06b685e9cddaa10e8f1bb3c1ba5bb52d719e
 
-PODFILE CHECKSUM: 1cea2609f02bf74996df2f79014a22ff7a10a8cf
+PODFILE CHECKSUM: bcc6f1bb0deaf904c21a5fe9e53547438cc8052d
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.1

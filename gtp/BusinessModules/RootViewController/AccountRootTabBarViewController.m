@@ -15,13 +15,18 @@
 #import "AdsVC.h"
 #import "FaceQRVC.h"
 #import "AccountingView.h"
+#import "AccountingVC.h"
 #import "AccountStatedVC.h"
 #import "AccountPurseVC.h"
+#import "UIViewController+YCPopover.h"
+
+
 @interface AccountRootTabBarViewController ()<UITabBarDelegate,UITabBarControllerDelegate>
     //最近一次选择的Index
 @property(nonatomic, readonly) NSUInteger lastSelectedIndex;
 @property (nonatomic, strong) HomeVC *homeVC;
 @property (nonatomic, strong) AccountStatedVC *accountStatedVC;
+@property (nonatomic, strong) AccountingVC *accountingVC;
 @property (nonatomic, strong) AccountPurseVC *accountPurseVC;
 @property (nonatomic, strong) AdsVC *adVC;
 @property (nonatomic, strong) YBTrendsViewController *trendsVC;
@@ -88,18 +93,24 @@
 
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
     if (tabBarController.selectedIndex ==1) {
-        AccountingView* popupView = [[AccountingView alloc]init];
-        [popupView richElementsInViewWithModel:@(1)];
-        [popupView showInApplicationKeyWindow];
-        [popupView actionBlock:^(id data) {
-            
-        }];
+//        AccountingView* popupView = [[AccountingView alloc]init];
+//        [popupView richElementsInViewWithModel:@(1)];
+//        [popupView showInApplicationKeyWindow];
+//        [popupView actionBlock:^(id data) {
+//
+//        }];
         
         YBNaviagtionViewController* naviC = (YBNaviagtionViewController*)viewController;
+        
         NSArray *viewControllers = naviC.viewControllers;
+        
         for (int i=0; i<viewControllers.count; i++) {
             BaseVC* vc = (BaseVC*)viewControllers[i];
             [vc locateTabBar:_lastSelectedIndex];
+            
+            [vc yc_bottomPresentController:self.accountingVC presentedHeight:MAINSCREEN_HEIGHT - 60 completeHandle:^(BOOL presented) {
+                NSLog(@"YYYYC:%d", presented);
+            }];//presentC != tabNaviC
         }
     }
 }
@@ -118,6 +129,14 @@
     }
     return _accountStatedVC;
 }
+
+- (AccountingVC *)accountingVC {
+    if (!_accountingVC) {
+        _accountingVC = [AccountingVC new];
+    }
+    return _accountingVC;
+}
+
 - (AccountPurseVC *)accountPurseVC {
     if (!_accountPurseVC) {
         _accountPurseVC = [AccountPurseVC new];

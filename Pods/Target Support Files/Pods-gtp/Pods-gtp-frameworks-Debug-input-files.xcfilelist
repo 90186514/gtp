@@ -17,3 +17,4 @@ ${BUILT_PRODUCTS_DIR}/OpenUDID/OpenUDID.framework
 ${BUILT_PRODUCTS_DIR}/RegexKitLite/RegexKitLite.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
 ${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/YCPopover/YCPopover.framework

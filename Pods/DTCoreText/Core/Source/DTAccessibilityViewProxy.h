@@ -6,7 +6,11 @@
 //  Copyright (c) 2013 Drobnik.com. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "DTCompatibility.h"
+#import "DTAccessibilityElement.h"
+
+#if TARGET_OS_IPHONE && !TARGET_OS_WATCH
+
 #import "DTTextAttachment.h"
 
 @protocol DTAccessibilityViewProxyDelegate;
@@ -52,3 +56,5 @@
 
 - (UIView *)viewForTextAttachment:(DTTextAttachment *)attachment proxy:(DTAccessibilityViewProxy *)proxy;
 @end
+
+#endif
