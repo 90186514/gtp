@@ -15,6 +15,7 @@
 #import "CircleAnimationVC.h"
 #import "TagRunVC.h"
 #import "ModelFilterVC.h"
+#import "WKPopUpView.h"
 @interface CollectionViewController ()<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property (strong, nonatomic) UICollectionView *collectionView;
 
@@ -140,6 +141,37 @@
         case 4:
         {
             [ModelFilterVC  pushFromVC:self];
+        }
+            break;
+        case 5:
+        {
+            NSString *str = @"";
+            str = @"http://baidu.com";
+
+            if ([str containsString:@"http"]){
+                
+                WKPopUpView* popupView = [[WKPopUpView alloc]init];
+                [popupView richElementsInViewWithModel:str];
+                [popupView showInApplicationKeyWindow];
+                [popupView actionBlock:^(NSNumber*  data) {
+                    switch ([data integerValue]) {
+                        case 2:
+                        {
+                            [[UIApplication sharedApplication] openURL:[NSURL URLWithString:str] options:@{} completionHandler:^(BOOL success) {}];
+                        }
+                            break;
+                            
+                        default:
+                            break;
+                    }
+                }];
+            }
+            else
+            {
+                //跳转到appstore
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"https://apps.apple.com/cn/app/qq/id444934666"] options:@{} completionHandler:^(BOOL success) {}];
+            }
+            
         }
             break;
         default:

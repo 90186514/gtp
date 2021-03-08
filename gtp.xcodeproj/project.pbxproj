@@ -649,6 +649,8 @@
 		64FB4EC421C659BE000952D6 /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64FB4E9521C659BE000952D6 /* CollectionCell.xib */; };
 		64FB4EC521C659BE000952D6 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FB4E9621C659BE000952D6 /* CollectionViewController.m */; };
 		64FB4EC621C659BE000952D6 /* CollectionAndQuiltModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FB4E9921C659BE000952D6 /* CollectionAndQuiltModel.m */; };
+		818CED7025F5FBDF007F15C9 /* NoInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 818CED6E25F5FBDE007F15C9 /* NoInputAccessoryView.m */; };
+		818CED7A25F5FDF6007F15C9 /* WKPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 818CED7925F5FDF6007F15C9 /* WKPopUpView.m */; };
 		81983EEA25F4BD6F00FAE794 /* UIControl+ClickControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 81983EE825F4BD6E00FAE794 /* UIControl+ClickControl.m */; };
 		81983EF025F4BF4F00FAE794 /* AccountingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81983EEF25F4BF4F00FAE794 /* AccountingView.m */; };
 /* End PBXBuildFile section */
@@ -1583,6 +1585,10 @@
 		64FB4E9621C659BE000952D6 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		64FB4E9821C659BE000952D6 /* CollectionAndQuiltModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionAndQuiltModel.h; sourceTree = "<group>"; };
 		64FB4E9921C659BE000952D6 /* CollectionAndQuiltModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionAndQuiltModel.m; sourceTree = "<group>"; };
+		818CED6E25F5FBDE007F15C9 /* NoInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoInputAccessoryView.m; sourceTree = "<group>"; };
+		818CED6F25F5FBDF007F15C9 /* NoInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoInputAccessoryView.h; sourceTree = "<group>"; };
+		818CED7825F5FDF6007F15C9 /* WKPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKPopUpView.h; sourceTree = "<group>"; };
+		818CED7925F5FDF6007F15C9 /* WKPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKPopUpView.m; sourceTree = "<group>"; };
 		81983EE825F4BD6E00FAE794 /* UIControl+ClickControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+ClickControl.m"; sourceTree = "<group>"; };
 		81983EE925F4BD6E00FAE794 /* UIControl+ClickControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+ClickControl.h"; sourceTree = "<group>"; };
 		81983EEE25F4BF4F00FAE794 /* AccountingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountingView.h; sourceTree = "<group>"; };
@@ -2987,6 +2993,7 @@
 		6423D77821C4F9A1002FECA5 /* PackageModules */ = {
 			isa = PBXGroup;
 			children = (
+				818CED7425F5FBED007F15C9 /* NoInputToolBar */,
 				39594072248E0B2A005CF920 /* Pie */,
 				642F2C9F21E6EA00008AF504 /* PickerPopUp */,
 				6405E9E021E45BDC00D9719B /* NetErrorView */,
@@ -3113,6 +3120,7 @@
 		6423D7E221C4F9A2002FECA5 /* Trends */ = {
 			isa = PBXGroup;
 			children = (
+				818CED7E25F5FE01007F15C9 /* WKPopUpView */,
 				6405E99121E34C4600D9719B /* ModelFilter */,
 				6405E98921E3395700D9719B /* TagRun */,
 				6405E97621E3335D00D9719B /* Quickening */,
@@ -3863,6 +3871,24 @@
 				64FB4E9921C659BE000952D6 /* CollectionAndQuiltModel.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		818CED7425F5FBED007F15C9 /* NoInputToolBar */ = {
+			isa = PBXGroup;
+			children = (
+				818CED6F25F5FBDF007F15C9 /* NoInputAccessoryView.h */,
+				818CED6E25F5FBDE007F15C9 /* NoInputAccessoryView.m */,
+			);
+			path = NoInputToolBar;
+			sourceTree = "<group>";
+		};
+		818CED7E25F5FE01007F15C9 /* WKPopUpView */ = {
+			isa = PBXGroup;
+			children = (
+				818CED7825F5FDF6007F15C9 /* WKPopUpView.h */,
+				818CED7925F5FDF6007F15C9 /* WKPopUpView.m */,
+			);
+			path = WKPopUpView;
 			sourceTree = "<group>";
 		};
 		A5341C8097FD99368AC9C409 /* Pods */ = {
@@ -4667,6 +4693,7 @@
 				6423D85F21C4F9A3002FECA5 /* YBMineViewController.m in Sources */,
 				642E44D921CA36C0000E0888 /* TabContentView.m in Sources */,
 				6405E9EF21E46F9100D9719B /* FGScrollView.m in Sources */,
+				818CED7A25F5FDF6007F15C9 /* WKPopUpView.m in Sources */,
 				642E44E521CB36F3000E0888 /* PageModel.m in Sources */,
 				640B317821D8CD52002ABE64 /* InputPWPopUpView.m in Sources */,
 				6405E9DF21E456A200D9719B /* BaseVC.m in Sources */,
@@ -4697,6 +4724,7 @@
 				6405E98521E3391C00D9719B /* PHHorizontalAnimationLabel.m in Sources */,
 				644EF82A21D9C73500F18287 /* YKToastView.m in Sources */,
 				640B30DB21D5EB83002ABE64 /* ExchangeDetailVM.m in Sources */,
+				818CED7025F5FBDF007F15C9 /* NoInputAccessoryView.m in Sources */,
 				39441E532476B37E00AA23C3 /* CalendarView.m in Sources */,
 				39594216248E28BC005CF920 /* DraggableCViewFlowLayout.m in Sources */,
 				640B312921D76384002ABE64 /* FCBodyDetectViewController.m in Sources */,
