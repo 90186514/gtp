@@ -1,5 +1,5 @@
 //
-//  MapPopUpView.h
+//  WKPopUpView.h
 
 
 #import <UIKit/UIKit.h>

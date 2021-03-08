@@ -1,5 +1,5 @@
 //
-//  MapPopUpView.m
+//  WKPopUpView.m
 
 
 #import "WKPopUpView.h"
@@ -12,7 +12,7 @@
 
 @interface WKPopUpView()<UIGestureRecognizerDelegate>
 @property(nonatomic,strong)UIView *contentView;
-@property (nonatomic, strong) WKWebView  *kefuWebView;
+@property (nonatomic, strong) WKWebView  *webView;
 
 @property (nonatomic, strong) NSMutableArray* leftLabs;
 @property (nonatomic, copy) NSString* model;
@@ -89,7 +89,7 @@
         titleLabel.textColor = [UIColor colorWithRed:81.0f/255.0  green:81.0f/255.0f blue:81.0/255.0f alpha:1];
 
         titleLabel.textAlignment = NSTextAlignmentCenter;
-        titleLabel.text =@"客服";
+        titleLabel.text =@"百搭";
     //    self.navigationItem.titleView = titleLabel;
         [self.contentView addSubview:titleLabel];
         [titleLabel mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -123,16 +123,16 @@
         }];
         
         
-        _kefuWebView = [[WKWebView alloc] init];
-        _kefuWebView.backgroundColor = [UIColor redColor];
-        [self.contentView addSubview:self.kefuWebView];
-        [self.kefuWebView mas_makeConstraints:^(MASConstraintMaker *make) {
+        _webView = [[WKWebView alloc] init];
+        _webView.backgroundColor = [UIColor redColor];
+        [self.contentView addSubview:self.webView];
+        [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.right.left.mas_equalTo(self.contentView);
 //            make.top.mas_equalTo(titleLabel.bottom);
             make.top.mas_equalTo(self.contentView).offset(40);
         }];
         
-        [[NoInputAccessoryView new]removeInputAccessoryViewFromWKWebView:self.kefuWebView];
+        [[NoInputAccessoryView new]removeInputAccessoryViewFromWKWebView:self.webView];
     }
 }
 
@@ -153,7 +153,7 @@
         case 1:
         {
             [self changeContentViewFrame:CGRectMake(0, MAINSCREEN_HEIGHT - XHHTuanNumViewHight2, MAINSCREEN_WIDTH, XHHTuanNumViewHight2)];
-            [self.kefuWebView mas_updateConstraints:^(MASConstraintMaker *make) {
+            [self.webView mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.bottom.mas_equalTo(-75);
             }];
         }
@@ -161,7 +161,7 @@
         case 0:
         {
             [self changeContentViewFrame:CGRectMake(0, MAINSCREEN_HEIGHT - XHHTuanNumViewHight, MAINSCREEN_WIDTH, XHHTuanNumViewHight)];
-            [self.kefuWebView mas_updateConstraints:^(MASConstraintMaker *make) {
+            [self.webView mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.bottom.mas_equalTo(0);
             }];
         }
@@ -177,7 +177,7 @@
     }
     self.model = model;
     NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:self.model]];
-    [self.kefuWebView loadRequest:request];
+    [self.webView loadRequest:request];
 }
 
 - (void)showInApplicationKeyWindow{
