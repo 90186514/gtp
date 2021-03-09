@@ -18,7 +18,7 @@
     
     _listData = [NSMutableArray array];
     
-    NSArray* gridSectionNames = @[@"Location",@"Quickening",@"CircleAnimation",@"TagRun",@"ModelFilter",@"WKPopUpView"];
+    NSArray* gridSectionNames = @[@"Location",@"Quickening",@"CircleAnimation",@"TagRun",@"ModelFilter",@"WKPopUpView",@"AppListInfo"];
     NSMutableArray* gridParams = [NSMutableArray array];
     
     for (int i=0; i<gridSectionNames.count; i++) {

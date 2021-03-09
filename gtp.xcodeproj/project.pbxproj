@@ -651,6 +651,7 @@
 		64FB4EC621C659BE000952D6 /* CollectionAndQuiltModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FB4E9921C659BE000952D6 /* CollectionAndQuiltModel.m */; };
 		818CED7025F5FBDF007F15C9 /* NoInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 818CED6E25F5FBDE007F15C9 /* NoInputAccessoryView.m */; };
 		818CED7A25F5FDF6007F15C9 /* WKPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 818CED7925F5FDF6007F15C9 /* WKPopUpView.m */; };
+		818CED8425F75453007F15C9 /* AppListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 818CED8325F75453007F15C9 /* AppListVC.m */; };
 		81983EEA25F4BD6F00FAE794 /* UIControl+ClickControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 81983EE825F4BD6E00FAE794 /* UIControl+ClickControl.m */; };
 		81983EF025F4BF4F00FAE794 /* AccountingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81983EEF25F4BF4F00FAE794 /* AccountingView.m */; };
 /* End PBXBuildFile section */
@@ -1589,6 +1590,8 @@
 		818CED6F25F5FBDF007F15C9 /* NoInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoInputAccessoryView.h; sourceTree = "<group>"; };
 		818CED7825F5FDF6007F15C9 /* WKPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKPopUpView.h; sourceTree = "<group>"; };
 		818CED7925F5FDF6007F15C9 /* WKPopUpView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WKPopUpView.m; sourceTree = "<group>"; };
+		818CED8325F75453007F15C9 /* AppListVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppListVC.m; sourceTree = "<group>"; };
+		818CED8F25F754DF007F15C9 /* AppListVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppListVC.h; sourceTree = "<group>"; };
 		81983EE825F4BD6E00FAE794 /* UIControl+ClickControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIControl+ClickControl.m"; sourceTree = "<group>"; };
 		81983EE925F4BD6E00FAE794 /* UIControl+ClickControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+ClickControl.h"; sourceTree = "<group>"; };
 		81983EEE25F4BF4F00FAE794 /* AccountingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountingView.h; sourceTree = "<group>"; };
@@ -3120,6 +3123,7 @@
 		6423D7E221C4F9A2002FECA5 /* Trends */ = {
 			isa = PBXGroup;
 			children = (
+				818CED8E25F754DF007F15C9 /* AppListInfo */,
 				818CED7E25F5FE01007F15C9 /* WKPopUpView */,
 				6405E99121E34C4600D9719B /* ModelFilter */,
 				6405E98921E3395700D9719B /* TagRun */,
@@ -3891,6 +3895,15 @@
 			path = WKPopUpView;
 			sourceTree = "<group>";
 		};
+		818CED8E25F754DF007F15C9 /* AppListInfo */ = {
+			isa = PBXGroup;
+			children = (
+				818CED8F25F754DF007F15C9 /* AppListVC.h */,
+				818CED8325F75453007F15C9 /* AppListVC.m */,
+			);
+			path = AppListInfo;
+			sourceTree = "<group>";
+		};
 		A5341C8097FD99368AC9C409 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -4539,6 +4552,7 @@
 				6405E98321E3391C00D9719B /* PHVerticalAnimationLabel.m in Sources */,
 				393213B4248E2EDE00EC4CD8 /* FSSVG.m in Sources */,
 				39441E572476B37E00AA23C3 /* WeeksView.m in Sources */,
+				818CED8425F75453007F15C9 /* AppListVC.m in Sources */,
 				642E448621CA1E86000E0888 /* AwesomeMenuItem.m in Sources */,
 				39441E592476B37E00AA23C3 /* BSLMonthCollectionView.m in Sources */,
 				81983EF025F4BF4F00FAE794 /* AccountingView.m in Sources */,
