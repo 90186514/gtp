@@ -13,6 +13,7 @@
 @interface WKPopUpView()<UIGestureRecognizerDelegate>
 @property(nonatomic,strong)UIView *contentView;
 @property (nonatomic, strong) WKWebView  *webView;
+@property (nonatomic, strong) UIProgressView *progressView;
 
 @property (nonatomic, strong) NSMutableArray* leftLabs;
 @property (nonatomic, copy) NSString* model;
@@ -101,20 +102,34 @@
             
         }];
         
-        [self.contentView layoutIfNeeded];
         UIButton *button =  [UIButton buttonWithType:UIButtonTypeCustom];
-        [button setTitle:@"浏览器打开" forState:UIControlStateNormal];
-        [button setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
-        [button layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleLeft imageTitleSpace:5];
-        [button setTitleColor:[UIColor colorWithRed:137.0f/255.0  green:137.0f/255.0f blue:137.0/255.0f alpha:1] forState:UIControlStateNormal];
-        button.titleLabel.font = [UIFont systemFontOfSize: 12];
-        button.contentHorizontalAlignment =  UIControlContentHorizontalAlignmentRight;
-    //    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
-        button.tag = 2;
-        [button addTarget:self action:@selector(clickright) forControlEvents:UIControlEventTouchUpInside];
-    //    self.navigationItem.rightBarButtonItem = buttonItem;
+        [button setImage:[UIImage imageNamed:@"icon_back_black"] forState:UIControlStateNormal];
+        button.contentHorizontalAlignment =  UIControlContentHorizontalAlignmentLeft;
+        button.tag = 3;
+        [button addTarget:self action:@selector(disMissView) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:button];
         [button mas_makeConstraints:^(MASConstraintMaker *make) {
+            
+            make.left.equalTo(self.contentView.mas_left).offset(20);
+            make.centerY.equalTo(titleLabel);
+            make.right.equalTo(titleLabel.mas_left).offset(5);
+            
+        }];
+        
+        
+        UIButton *safariButton =  [UIButton buttonWithType:UIButtonTypeCustom];
+        [safariButton setTitle:@"浏览器打开" forState:UIControlStateNormal];
+        [safariButton setImage:[UIImage imageNamed:@""] forState:UIControlStateNormal];
+        [safariButton layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleLeft imageTitleSpace:5];
+        [safariButton setTitleColor:[UIColor colorWithRed:137.0f/255.0  green:137.0f/255.0f blue:137.0/255.0f alpha:1] forState:UIControlStateNormal];
+        safariButton.titleLabel.font = [UIFont systemFontOfSize: 12];
+        safariButton.contentHorizontalAlignment =  UIControlContentHorizontalAlignmentRight;
+    //    UIBarButtonItem *buttonItem = [[UIBarButtonItem alloc] initWithCustomView:button];
+        safariButton.tag = 2;
+        [safariButton addTarget:self action:@selector(clickright) forControlEvents:UIControlEventTouchUpInside];
+    //    self.navigationItem.rightBarButtonItem = buttonItem;
+        [self.contentView addSubview:safariButton];
+        [safariButton mas_makeConstraints:^(MASConstraintMaker *make) {
             
             make.right.equalTo(self.contentView.mas_right).offset(-20);
             make.centerY.equalTo(titleLabel);
@@ -122,20 +137,79 @@
             
         }];
         
+        self.progressView = [[UIProgressView alloc] init];
         
-        _webView = [[WKWebView alloc] init];
-        _webView.backgroundColor = [UIColor redColor];
+        self.progressView.backgroundColor = [UIColor blueColor];
+        self.progressView.transform = CGAffineTransformMakeScale(1.0f, 1.5f);
+        [self.contentView addSubview:self.progressView];
+        [self.progressView mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.right.left.mas_equalTo(self.contentView);
+            make.top.mas_equalTo(self.contentView).offset(40);
+            make.height.equalTo(@2);
+        }];
+        
+        self.webView = [[WKWebView alloc] init];
+        self.webView.backgroundColor = [UIColor redColor];
         [self.contentView addSubview:self.webView];
         [self.webView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.bottom.right.left.mas_equalTo(self.contentView);
 //            make.top.mas_equalTo(titleLabel.bottom);
-            make.top.mas_equalTo(self.contentView).offset(40);
+            make.top.mas_equalTo(self.contentView).offset(42);
         }];
+        
+        
+        [self.webView addObserver:self forKeyPath:@"estimatedProgress" options:NSKeyValueObservingOptionNew context:nil];
         
         [[NoInputAccessoryView new]removeInputAccessoryViewFromWKWebView:self.webView];
     }
 }
 
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSString *,id> *)change context:(void *)context {
+    if ([keyPath isEqualToString:@"estimatedProgress"]) {
+        self.progressView.progress = self.webView.estimatedProgress;
+        if (self.progressView.progress == 1) {
+            /*
+             *添加一个简单的动画，将progressView的Height变为1.4倍，在开始加载网页的代理中会恢复为1.5倍
+             *动画时长0.25s，延时0.3s后开始动画
+             *动画结束后将progressView隐藏
+             */
+            __weak typeof (self)weakSelf = self;
+            [UIView animateWithDuration:0.25f delay:0.3f options:UIViewAnimationOptionCurveEaseOut animations:^{
+                weakSelf.progressView.transform = CGAffineTransformMakeScale(1.0f, 1.4f);
+            } completion:^(BOOL finished) {
+                weakSelf.progressView.hidden = YES;
+
+            }];
+        }
+    }else{
+        [super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
+    }
+}
+
+//开始加载
+- (void)webView:(WKWebView *)webView didStartProvisionalNavigation:(WKNavigation *)navigation {
+    NSLog(@"开始加载网页");
+    //开始加载网页时展示出progressView
+    self.progressView.hidden = NO;
+    //开始加载网页的时候将progressView的Height恢复为1.5倍
+    self.progressView.transform = CGAffineTransformMakeScale(1.0f, 1.5f);
+    //防止progressView被网页挡住
+    [self.contentView bringSubviewToFront:self.progressView];
+}
+
+//加载完成
+- (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
+    NSLog(@"加载完成");
+    //加载完成后隐藏progressView
+    //self.progressView.hidden = YES;
+}
+
+//加载失败
+- (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
+    NSLog(@"加载失败");
+    //加载失败同样需要隐藏progressView
+    //self.progressView.hidden = YES;
+}
 
 - (void)actionBlock:(ActionBlock)block
 {
@@ -244,10 +318,13 @@
                          
                          [weakSelf removeFromSuperview];
                          [weakSelf.contentView removeFromSuperview];
-                         
+                        [weakSelf.webView removeObserver:self forKeyPath:@"estimatedProgress"];
                      }];
     
 }
 
+//- (void)dealloc {
+//    [self.webView removeObserver:self forKeyPath:@"estimatedProgress"];
+//}
 @end
 
