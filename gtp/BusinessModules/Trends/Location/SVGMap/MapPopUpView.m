@@ -6,10 +6,6 @@
 #import "ClockInModel.h"
 #define XHHTuanNumViewHight 332
 #define XHHTuanNumViewWidth 306
-
-//#define XHHTuanNumViewHight SCREEN_WIDTH * 1423/1125
-//#define XHHTuanNumViewHight2 SCREEN_WIDTH * 1623/1125
-//#define XHHTuanNumViewWidth SCREEN_WIDTH
 @interface MapPopUpView()<UIGestureRecognizerDelegate>
 @property(nonatomic,strong)UIView *contentView;
 @property (nonatomic, strong) UIImageView *flagIv;

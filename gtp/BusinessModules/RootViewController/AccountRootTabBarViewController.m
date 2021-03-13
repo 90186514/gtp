@@ -112,7 +112,15 @@
                 NSLog(@"YYYYC:%d", presented);
             }];//presentC != tabNaviC
         }
-    }
+    }//2.UIView push UIViewController
+    /*
+     id object = [self nextResponder];
+     while (![object isKindOfClass:[UIViewController class]] && object != nil) {
+         object = [object nextResponder];
+     }
+     UIViewController *superController = (UIViewController*)object;
+     [superController.navigationController  showViewController:vc sender:nil];
+     */
 }
 #pragma mark - getter
 
