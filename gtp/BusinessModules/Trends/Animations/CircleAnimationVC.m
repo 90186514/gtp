@@ -26,14 +26,24 @@ static SystemSoundID soundID;
     [rootVC.navigationController pushViewController:vc animated:true];
     return vc;
 }
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        
-    }
-    return self;
+-(void)viewWillDisappear:(BOOL)animated{
+    [super viewWillDisappear:animated];
+    self.navigationController.navigationBar.translucent = NO;
 }
-
+-(void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    [self.navigationController.navigationBar setBackgroundImage:[UIImage new] forBarMetrics:0];
+   
+    self.navigationController.navigationBar.tintColor = [UIColor whiteColor];
+    self.navigationController.navigationBar.translucent = YES;
+    self.navigationController.navigationBar.tintColor = HEXCOLOR(0xffffff);
+    [self.navigationController.navigationBar setTitleTextAttributes:@{
+        NSForegroundColorAttributeName : HEXCOLOR(0xffffff)
+    }];
+    
+    
+    self.navigationItem.title = @"CircleAnimationVC";
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];

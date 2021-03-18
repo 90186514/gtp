@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationItem.title = @"RichTextAdjustVC";
     [_lblTest setPreferredMaxLayoutWidth:[UIScreen mainScreen].bounds.size.width];
     NSMutableAttributedString *str = [[NSMutableAttributedString alloc] initWithString:@"Using NSAttributed String To be or not to be ,That's a question!"];
     [str addAttribute:NSForegroundColorAttributeName value:[UIColor blueColor] range:NSMakeRange(0,5)];
