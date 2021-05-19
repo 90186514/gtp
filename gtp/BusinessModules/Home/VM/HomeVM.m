@@ -89,7 +89,7 @@
     }
     
     [self removeContentWithType:IndexSectionOne];
-    NSArray* gridSectionNames = @[@"SLMIA",@"我的🌹",@"数据统计",@"兑换MIA",@"🐟"];//,@"🐟"
+    NSArray* gridSectionNames = @[@"SLMIA",@"我的🌹",@"数据统计",@"哥哥MIA",@"🐟"];//,@"🐟"
     NSMutableArray* gridParams = [NSMutableArray array];
     NSArray* gridTypes = @[@(EnumActionTag0),@(EnumActionTag1),@(EnumActionTag2),@(EnumActionTag3),@(EnumActionTag4)];//,@(IndexSectionFour)
     for (int i=0; i<gridSectionNames.count; i++) {
@@ -107,7 +107,7 @@
     
     [self removeContentWithType:IndexSectionTwo];
     NSMutableArray *times = [NSMutableArray arrayWithCapacity:20];
-    for (NSInteger i = 0; i < 3; i ++) {
+    for (NSInteger i = 0; i < 8; i ++) {
         NSInteger time = arc4random()%3600;
         [times addObject:@(time)];
     }

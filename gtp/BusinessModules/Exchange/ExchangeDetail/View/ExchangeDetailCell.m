@@ -95,7 +95,7 @@
     [bt1 setTitleColor:HEXCOLOR(0x333333) forState:UIControlStateNormal];
     
     NSString * statusStr = paysDic.allKeys[0];
-    if ( [statusStr isEqualToString:@"兑换状态："]) {
+    if ( [statusStr isEqualToString:@"哥哥状态："]) {
         
     switch (type) {
         case ExchangeTypePayed:

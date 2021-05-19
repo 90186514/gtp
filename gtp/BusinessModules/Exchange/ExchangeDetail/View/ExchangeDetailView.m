@@ -106,7 +106,7 @@
             break;
         case ExchangeTypeHandling:
         {
-            [self.contactBtn setTitle:@"撤销兑换" forState:UIControlStateNormal];
+            [self.contactBtn setTitle:@"撤销哥哥" forState:UIControlStateNormal];
             [self.contactBtn mas_updateConstraints:^(MASConstraintMaker *make) {
                 make.height.equalTo(@42);
             }];

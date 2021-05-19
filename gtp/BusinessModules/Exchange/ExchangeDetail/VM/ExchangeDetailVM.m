@@ -48,9 +48,9 @@
     NSDictionary* dic0 = @{kImg:@"iconSucc",kTit:@"对方已好了靓靓🐟",kSubTit:[NSString stringWithFormat:@"%@",@"请好了收到🐟项后再symbolic"], kIndexInfo:@{kType:@(ExchangeTypePayed),kTit:[NSString stringWithFormat:@"%@",@"00:30"],kSubTit:[NSString stringWithFormat:@"%@",@"请在 15 分钟内处理，超时将影响SL家信誉"]},kIndexSection:@(IndexSectionZero),
                            kIndexRow:
                                @[
-                                   @{@"兑换MIA种：":@"AB/BTC"},
+                                   @{@"哥哥MIA种：":@"AB/BTC"},
                                    @{@"汇率：":@"1 AB = 0.000001 BTC"},
-                                   @{@"兑换数量：":@"100 AB"},
+                                   @{@"哥哥数量：":@"100 AB"},
                                    @{@"收到BTC数量：":@"0.003 BTC"}
                                    ]
                            
@@ -62,7 +62,7 @@
                            kIndexRow:
                                @[
                                    @{@"提交时间：":@"2018-10-19 12:00:12"},
-                                   @{@"兑换状态：":@"已汇出"},
+                                   @{@"哥哥状态：":@"已汇出"},
                                    @{@"BTC收MIA地址：":@"11dgadjg38509HFli"},
                                    
                                    ]

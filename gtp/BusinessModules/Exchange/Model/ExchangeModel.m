@@ -21,7 +21,7 @@
 
 @implementation ExchangeSubData : NSObject
 - (NSString*)getExchangeTitle{
-    NSString* title = @"兑换 BTC";
+    NSString* title = @"哥哥 BTC";
     return title;
 }
 

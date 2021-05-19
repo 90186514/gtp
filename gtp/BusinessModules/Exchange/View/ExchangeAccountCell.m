@@ -202,7 +202,7 @@
     if (([NSString isEmpty:tv0.text]
          &&[NSString isEmpty:tv1.text])
         &&[NSString isEmpty:_QRtextView.text]) {
-        [YKToastView showToastText:@"请输入兑换数量和MIA钱包收MIA地址"];
+        [YKToastView showToastText:@"请输入哥哥数量和MIA钱包收MIA地址"];
         return ;
     }
     
@@ -222,7 +222,7 @@
     if (([NSString isEmpty:tv0.text]
          ||[NSString isEmpty:tv1.text])
         &&![NSString isEmpty:_QRtextView.text]) {
-        [YKToastView showToastText:@"请输入兑换数量"];
+        [YKToastView showToastText:@"请输入哥哥数量"];
         return ;
     }
     NSArray* arr = @[_rate,tv0.text,tv1.text,_QRtextView.text];

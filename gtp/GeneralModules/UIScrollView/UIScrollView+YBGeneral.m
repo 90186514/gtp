@@ -18,7 +18,7 @@
 - (void)addMJFooterWithBlock:(MJRefreshComponentAction)block
 {
     self.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:block];
-//    self.mj_footer.hidden = YES;
+    self.mj_footer.hidden = YES;
 }
 
 - (void)endMJRefresh

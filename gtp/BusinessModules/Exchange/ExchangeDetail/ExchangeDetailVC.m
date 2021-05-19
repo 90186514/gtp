@@ -32,7 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self YBGeneral_baseConfig];
-    self.title = @"兑换详情";
+    self.title = @"哥哥详情";
     [self initView];
 }
 

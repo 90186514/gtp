@@ -9,6 +9,7 @@
 #import "GridCell.h"
 @interface GridCell()
 @property (nonatomic, copy) ActionBlock block;
+@property (nonatomic, strong)NSIndexPath* selectedIndexPath;
 @end
 @implementation GridCell
 
@@ -92,6 +93,7 @@
 {
     static NSString *gCollectionViewCell = @"gCollectionViewCell";
     UICollectionViewCell * cell = [collectionView dequeueReusableCellWithReuseIdentifier:gCollectionViewCell forIndexPath:indexPath];
+    cell.tag = indexPath.row;
     
     if (cell) {
         UIImageView *icon = [[UIImageView alloc]init];
@@ -132,6 +134,23 @@
     
     UILabel *title =(UILabel *)[cell.contentView viewWithTag:7003];
     [title setText:fourPalaceData[kArr]];
+    
+    if (_selectedIndexPath) {
+        if (_selectedIndexPath == indexPath) {
+            title.textColor = [UIColor redColor];
+            icon.layer.shadowColor = [UIColor blackColor].CGColor;
+        }else{
+            title.textColor = HEXCOLOR(0x202020);
+            icon.layer.shadowColor = [UIColor clearColor].CGColor;
+        }
+    }else{
+        if (cell.tag == 0) {
+            title.textColor = [UIColor redColor];
+            icon.layer.shadowColor = [UIColor blackColor].CGColor;
+            
+        }
+    }
+    
     return cell;
 }
 - (void)actionBlock:(ActionBlock)block
@@ -142,9 +161,36 @@
 //UICollectionView被选中时调用的方法
 -(void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath{
     NSDictionary *object = [_data objectAtIndex:indexPath.row];
-//    if (self.clickGridRowBlock) {
-//        self.clickGridRowBlock(object);
-//    }
+
+    if (_selectedIndexPath) {
+        UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:_selectedIndexPath];
+        UILabel* title = [cell.contentView viewWithTag:7003];
+        title.textColor = HEXCOLOR(0x202020);
+        
+        UIImageView* icon = [cell.contentView viewWithTag:7001];
+        icon.layer.shadowColor = [UIColor clearColor].CGColor;
+        
+    }
+    
+    UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:indexPath];
+    UILabel* title = [cell.contentView viewWithTag:7003];
+    title.textColor = [UIColor redColor];
+    
+    UIImageView* icon = [cell.contentView viewWithTag:7001];
+    icon.layer.shadowColor = [UIColor blackColor].CGColor;
+    
+    if (indexPath.row !=0) {
+        NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
+        UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:indexPath];
+        UILabel* title = [cell.contentView viewWithTag:7003];
+        title.textColor = HEXCOLOR(0x202020);
+        
+        UIImageView* icon = [cell.contentView viewWithTag:7001];
+        icon.layer.shadowColor = [UIColor clearColor].CGColor;
+    }
+    
+    
+    _selectedIndexPath = indexPath;
     if (self.block) {
         self.block(object);
     }
