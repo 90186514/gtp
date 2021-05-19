@@ -109,6 +109,7 @@
         icon.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
         icon.titleLabel.font = kFontSize(12);
         [icon setTitleColor:RGBSAMECOLOR(91) forState:0];
+        [icon setBackgroundImage:[UIImage new] forState:0];
     }
     
     NSDictionary *fourPalaceData = [_data objectAtIndex:indexPath.row];
@@ -120,6 +121,7 @@
     [icon setImage:[UIImage imageNamed:fourPalaceData[kImg]] forState:0];
     [icon setTitle:fourPalaceData[kArr] forState:0];
     [icon layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleTop imageTitleSpace:30];
+    [icon setBackgroundImage:[UIImage new] forState:0];
     
     if (_selectedIndexPath) {
         if (_selectedIndexPath == indexPath) {
