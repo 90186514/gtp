@@ -96,56 +96,42 @@
     cell.tag = indexPath.row;
     
     if (cell) {
-        UIImageView *icon = [[UIImageView alloc]init];
+        UIButton *icon = [[UIButton alloc]init];
+        icon.userInteractionEnabled = NO;
         icon.tag = 7001;
         [icon setBackgroundColor:kClearColor];
         [cell.contentView addSubview:icon];
         [icon mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(15);
-            make.centerX.mas_equalTo(cell.contentView);
-            make.width.height.mas_equalTo(44);
+            make.top.mas_equalTo(0);
+            make.left.mas_equalTo(0);
+            make.center.mas_equalTo(cell.contentView);
         }];
-        
-        UILabel *title = [[UILabel alloc]init];
-        title.tag = 7003;
-        [cell.contentView addSubview:title];
-        [title mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.top.mas_equalTo(icon.mas_bottom).offset(5);
-            make.centerX.mas_equalTo(cell.contentView);
-            make.left.mas_equalTo(3);
-            make.bottom.mas_equalTo(cell.contentView);
-        }];
-        [title setBackgroundColor:kClearColor];
-        [title setTextAlignment:NSTextAlignmentCenter];
-        [title setFont:kFontSize(12)];
-        [title setTextColor:RGBSAMECOLOR(91)];
-        
+        icon.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+        icon.titleLabel.font = kFontSize(12);
+        [icon setTitleColor:RGBSAMECOLOR(91) forState:0];
     }
     
     NSDictionary *fourPalaceData = [_data objectAtIndex:indexPath.row];
     
-    UIImageView *icon=(UIImageView *)[cell.contentView viewWithTag:7001];
+    UIButton *icon=(UIButton *)[cell.contentView viewWithTag:7001];
     [icon setContentMode:UIViewContentModeScaleAspectFill];
     [icon setClipsToBounds:YES];
 //    [icon setImageWithURL:URLFromString(@"icon") placeholderImage:kSQUARE_PLACEDHOLDER_IMG options:SDWebImageRetryFailed];
-    [icon setImage:[UIImage imageNamed:fourPalaceData[kImg]]];
-    
-    
-    
-    UILabel *title =(UILabel *)[cell.contentView viewWithTag:7003];
-    [title setText:fourPalaceData[kArr]];
+    [icon setImage:[UIImage imageNamed:fourPalaceData[kImg]] forState:0];
+    [icon setTitle:fourPalaceData[kArr] forState:0];
+    [icon layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleTop imageTitleSpace:30];
     
     if (_selectedIndexPath) {
         if (_selectedIndexPath == indexPath) {
-            title.textColor = [UIColor redColor];
+            [icon setTitleColor:[UIColor redColor] forState:0];
             icon.layer.shadowColor = [UIColor blackColor].CGColor;
         }else{
-            title.textColor = HEXCOLOR(0x202020);
+            [icon setTitleColor:HEXCOLOR(0x202020) forState:0];
             icon.layer.shadowColor = [UIColor clearColor].CGColor;
         }
     }else{
         if (cell.tag == 0) {
-            title.textColor = [UIColor redColor];
+            [icon setTitleColor:[UIColor redColor] forState:0];
             icon.layer.shadowColor = [UIColor blackColor].CGColor;
             
         }
@@ -163,29 +149,28 @@
     NSDictionary *object = [_data objectAtIndex:indexPath.row];
 
     if (_selectedIndexPath) {
-        UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:_selectedIndexPath];
-        UILabel* title = [cell.contentView viewWithTag:7003];
-        title.textColor = HEXCOLOR(0x202020);
         
-        UIImageView* icon = [cell.contentView viewWithTag:7001];
+        UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:_selectedIndexPath];
+        
+        UIButton* icon = [cell.contentView viewWithTag:7001];
+        [icon setTitleColor:HEXCOLOR(0x202020) forState:0];
         icon.layer.shadowColor = [UIColor clearColor].CGColor;
         
     }
     
     UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:indexPath];
-    UILabel* title = [cell.contentView viewWithTag:7003];
-    title.textColor = [UIColor redColor];
-    
-    UIImageView* icon = [cell.contentView viewWithTag:7001];
+    UIButton* icon = [cell.contentView viewWithTag:7001];
+    [icon setTitleColor:[UIColor redColor] forState:0];
     icon.layer.shadowColor = [UIColor blackColor].CGColor;
+    
+    
     
     if (indexPath.row !=0) {
         NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:indexPath];
-        UILabel* title = [cell.contentView viewWithTag:7003];
-        title.textColor = HEXCOLOR(0x202020);
         
-        UIImageView* icon = [cell.contentView viewWithTag:7001];
+        UIButton* icon = [cell.contentView viewWithTag:7001];
+        [icon setTitleColor:HEXCOLOR(0x202020) forState:0];
         icon.layer.shadowColor = [UIColor clearColor].CGColor;
     }
     
