@@ -98,7 +98,7 @@
     if (cell) {
         UIButton *icon = [[UIButton alloc]init];
         icon.userInteractionEnabled = NO;
-        icon.tag = 7001;
+        icon.tag = 8000;
         [icon setBackgroundColor:kClearColor];
         [cell.contentView addSubview:icon];
         [icon mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -113,7 +113,7 @@
     
     NSDictionary *fourPalaceData = [_data objectAtIndex:indexPath.row];
     
-    UIButton *icon=(UIButton *)[cell.contentView viewWithTag:7001];
+    UIButton *icon=(UIButton *)[cell.contentView viewWithTag:8000];
     [icon setContentMode:UIViewContentModeScaleAspectFill];
     [icon setClipsToBounds:YES];
 //    [icon setImageWithURL:URLFromString(@"icon") placeholderImage:kSQUARE_PLACEDHOLDER_IMG options:SDWebImageRetryFailed];
@@ -152,14 +152,14 @@
         
         UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:_selectedIndexPath];
         
-        UIButton* icon = [cell.contentView viewWithTag:7001];
+        UIButton* icon = [cell.contentView viewWithTag:8000];
         [icon setTitleColor:HEXCOLOR(0x202020) forState:0];
         icon.layer.shadowColor = [UIColor clearColor].CGColor;
         
     }
     
     UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:indexPath];
-    UIButton* icon = [cell.contentView viewWithTag:7001];
+    UIButton* icon = [cell.contentView viewWithTag:8000];
     [icon setTitleColor:[UIColor redColor] forState:0];
     icon.layer.shadowColor = [UIColor blackColor].CGColor;
     
@@ -169,7 +169,7 @@
         NSIndexPath* indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
         UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:indexPath];
         
-        UIButton* icon = [cell.contentView viewWithTag:7001];
+        UIButton* icon = [cell.contentView viewWithTag:8000];
         [icon setTitleColor:HEXCOLOR(0x202020) forState:0];
         icon.layer.shadowColor = [UIColor clearColor].CGColor;
     }
