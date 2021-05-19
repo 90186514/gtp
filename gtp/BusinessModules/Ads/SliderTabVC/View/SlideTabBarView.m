@@ -251,7 +251,7 @@ isHiddenTopSliderBarSeparatorLine:(BOOL)isHiddenSLine{
 #pragma mark --点击顶部的按钮所触发的方法
 -(void) tabButton: (id) sender{
     if (_scrollView.scrollEnabled == NO) {
-        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"广告类型不可修改" message:nil preferredStyle:  UIAlertControllerStyleAlert];
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"勃勃生机类型不可修改" message:nil preferredStyle:  UIAlertControllerStyleAlert];
         
         [alert addAction:[UIAlertAction actionWithTitle:@"好的" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         }]];

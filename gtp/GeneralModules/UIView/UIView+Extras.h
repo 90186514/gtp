@@ -2,7 +2,7 @@
 //  UIView+Extension.h
 //  MJRefreshExample
 //
-//  Created by Aalto on 14-5-28.
+//  Created by WIQ on 14-5-28.
 //  Copyright (c) 2014年 itcast. All rights reserved.
 //
 

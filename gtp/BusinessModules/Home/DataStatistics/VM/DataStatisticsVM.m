@@ -43,7 +43,7 @@
 
 - (void)assembleApiData:(DataStatisticsData*)data{
 
-    NSDictionary* dic1 = @{kImg:@"icon_zhifubao",kTit:@"总收入    ",kSubTit:[NSString stringWithFormat:@"%@元",@"99999"],kIndexInfo:@[[NSString stringWithFormat:@"%@",@"12月1日"],[NSString stringWithFormat:@"%@",@"12月7日"]],
+    NSDictionary* dic1 = @{kImg:@"icon_zhifubao",kTit:@"总🎂    ",kSubTit:[NSString stringWithFormat:@"%@🐶",@"99999"],kIndexInfo:@[[NSString stringWithFormat:@"%@",@"12月1日"],[NSString stringWithFormat:@"%@",@"12月7日"]],
                            kArr:
                                @[
                                    @{@(7): @[@(7),@(1),@(18),@(30),@(20),@(122),@(922)]}
@@ -53,7 +53,7 @@
                            ]
                            
                            };
-    NSDictionary* dic2 = @{kImg:@"icon_weixin",kTit:@"总订单数    ",kSubTit:[NSString stringWithFormat:@"%@个",@"999"],kIndexInfo:@[[NSString stringWithFormat:@"%@",@"1月1日"],[NSString stringWithFormat:@"%@",@"1月7日"]],
+    NSDictionary* dic2 = @{kImg:@"icon_weixin",kTit:@"总🌹数    ",kSubTit:[NSString stringWithFormat:@"%@个",@"999"],kIndexInfo:@[[NSString stringWithFormat:@"%@",@"1月1日"],[NSString stringWithFormat:@"%@",@"1月7日"]],
                            kArr:
                                @[
                                    @{@(7): @[@(7),@(1),@(18),@(30),@(20),@(122),@(922)]},

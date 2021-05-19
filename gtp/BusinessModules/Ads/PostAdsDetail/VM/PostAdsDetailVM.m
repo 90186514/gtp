@@ -2,8 +2,8 @@
 //  YBHomeDataCenter.m
 //  YBArchitectureDemo
 //
-//  Created by Aalto on 2018/11/19.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/11/19.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "PostAdsDetailVM.h"
@@ -44,13 +44,13 @@
 }
 
 - (void)assembleApiData:(PostAdsDetailData*)data{
-    NSDictionary* dic1 = @{kType:@(PostAdsDetailTypeSuccess),kImg:@"iconSucc",kTit:@"发布成功",kSubTit:[NSString stringWithFormat:@"%@",@"请确认收到款项后再放行"], kIndexSection:@{kTit:[NSString stringWithFormat:@"%@",@"00:30"],kSubTit:[NSString stringWithFormat:@"%@",@"请在 15 分钟内处理，超时将影响卖家信誉"]},
+    NSDictionary* dic1 = @{kType:@(PostAdsDetailTypeSuccess),kImg:@"iconSucc",kTit:@"发布成功",kSubTit:[NSString stringWithFormat:@"%@",@"请好了收到🐟项后再symbolic"], kIndexSection:@{kTit:[NSString stringWithFormat:@"%@",@"00:30"],kSubTit:[NSString stringWithFormat:@"%@",@"请在 15 分钟内处理，超时将影响SL家信誉"]},
                            kIndexRow:
                                @[
-                                   @{@"币种：":@"UG"},
+                                   @{@"MIA种：":@"UG"},
                                    @{@"数量：":@"590 AB"},
-                                   @{@"单价：":@"100 CNY = 1 AB"},
-                                   @{@"首款方式：":@"支付宝"},
+                                   @{@"暨起：":@"100 KKL = 1 AB"},
+                                   @{@"首🐟方式：":@"😊"},
                                    @{@"单笔限额：":@"1000～23000"}
                                    ]
                            };

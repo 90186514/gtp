@@ -2,8 +2,8 @@
 //  ApiConfig.m
 //  gtp
 //
-//  Created by Aalto on 2019/1/3.
-//  Copyright © 2019 Aalto. All rights reserved.
+//  Created by WIQ on 2019/1/3.
+//  Copyright © 2019 WIQ. All rights reserved.
 //
 
 #import "ApiConfig.h"
@@ -21,7 +21,7 @@
         case ApiType_BTCList: api = @"ug/btc/pbels.do"; break;
             
             
-        case ApiType_Homes: api = @"rank/list"; break;
+        case ApiType_Homes: api = @"ug/btc/pbels.do"; break;
             
     }
     return api;

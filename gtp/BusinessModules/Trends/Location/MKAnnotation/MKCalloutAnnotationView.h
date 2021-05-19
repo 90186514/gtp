@@ -2,8 +2,8 @@
 //  MKCalloutAnnotationView.h
 //  TestDemo
 //
-//  Created by AaltoChen on 16/3/3.
-//  Copyright © 2016年 AaltoChen. All rights reserved.
+//  Created by WIQChen on 16/3/3.
+//  Copyright © 2016年 WIQChen. All rights reserved.
 //
 
 #import <MapKit/MapKit.h>

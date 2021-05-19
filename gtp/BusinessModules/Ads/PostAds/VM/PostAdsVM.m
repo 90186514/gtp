@@ -70,8 +70,8 @@
     
     [self removeContentWithType:IndexSectionTwo];
     NSMutableArray *pays = [NSMutableArray arrayWithCapacity:3];
-    NSDictionary* dic1 = @{kImg:@"icon_zhifubao",kTit:@"支付宝",kType:@"2",kIsOn:@"1"};
-    NSDictionary* dic2 = @{kImg:@"icon_weixin",kTit:@"微信",kType:@"1",kIsOn:@"1"};
+    NSDictionary* dic1 = @{kImg:@"icon_zhifubao",kTit:@"😊",kType:@"2",kIsOn:@"1"};
+    NSDictionary* dic2 = @{kImg:@"icon_weixin",kTit:@"😄",kType:@"1",kIsOn:@"1"};
     NSDictionary* dic3 = @{kImg:@"icon_bank",kTit:@"银行卡",kType:@"3",kIsOn:@"1"};
     [pays addObjectsFromArray:@[dic1,dic2,dic3]];
     
@@ -79,7 +79,7 @@
         [self.listData addObject:@{
                 
                 kIndexSection: @(IndexSectionTwo),
-                kIndexInfo:@[@"支付方式：",@""],
+                kIndexInfo:@[@"支靓靓方式：",@""],
                 kIndexRow: pays}//data.t.arr
          ];
     }
@@ -90,7 +90,7 @@
                                    
                            kIndexSection: @(IndexSectionThree),
                            kIndexInfo:@[@"快捷回复：",@""],
-                           kIndexRow: @[@{kTit:@"用户下单看到的快捷回复，可填写付款要求。"}]}//data.t.arr
+                           kIndexRow: @[@{kTit:@"用户下单看到的快捷回复，可填写靓靓🐟要求。"}]}//data.t.arr
     ];
     
     [self removeContentWithType:IndexSectionFour];
@@ -98,7 +98,7 @@
     [self.listData addObject:@{
                                
                                kIndexSection: @(IndexSectionFour),
-                               kIndexInfo:@[@"买家限制：",@""],
+                               kIndexInfo:@[@"可可家限制：",@""],
                                kIndexRow: @[@{kTit:@"需要对方通过高级认证"},@{kTit:@"不与平台其他商户交易"}]}//data.t.arr
      ];
     

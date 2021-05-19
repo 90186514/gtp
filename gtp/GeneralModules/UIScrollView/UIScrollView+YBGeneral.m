@@ -9,6 +9,40 @@
 #import "UIScrollView+YBGeneral.h"
 
 @implementation UIScrollView (YBGeneral)
+- (void)addMJHeaderWithBlock:(MJRefreshComponentAction)block
+{
+    self.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:block];
+    self.mj_header.automaticallyChangeAlpha = YES;
+}
+
+- (void)addMJFooterWithBlock:(MJRefreshComponentAction)block
+{
+    self.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:block];
+//    self.mj_footer.hidden = YES;
+}
+
+- (void)endMJRefresh
+{
+    if ([self.mj_header isRefreshing]) {
+        [self.mj_header endRefreshing];
+    }
+    if ([self.mj_footer isRefreshing]) {
+        [self.mj_footer endRefreshing];
+    }
+    if ([self isKindOfClass:[UITableView class]] || [self isKindOfClass:[UICollectionView class]]) {
+        [self performSelector:@selector(reloadData)];
+    }
+}
+
+- (void)hasMoreData:(BOOL)hasMoreData
+{
+    if (hasMoreData) {
+        [self.mj_footer resetNoMoreData];
+    }else
+    {
+        self.mj_footer.state = MJRefreshStateNoMoreData;
+    }
+}
 
 - (void)YBGeneral_addRefreshHeader:(void (^)(void))blockH footer:(void (^)(void))blockF {
    kWeakSelf(self);

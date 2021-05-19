@@ -34,8 +34,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self YBGeneral_baseConfig];
-    self.title=@"我的订单";
-    NSArray* titles = @[@"全部",@"未付款",@"待放行",@"申诉中",@"已取消",@"已完成"];
+    self.title=@"我的🌹";
+    NSArray* titles = @[@"全部",@"未靓靓🐟",@"待symbolic",@"粮农中",@"已取消",@"已完成"];
     _tabs=[[NSMutableArray alloc]initWithCapacity:titles.count];
     _contents=[[NSMutableArray alloc]initWithCapacity:titles.count];
     
@@ -82,7 +82,7 @@
                                     InputPWPopUpView* popupView = [[InputPWPopUpView alloc]init];
                                     [popupView showInView:self.view];
                                     [popupView actionBlock:^(id data) {
-                                        [YKToastView showToastText:@"已放行"];
+                                        [YKToastView showToastText:@"已symbolic"];
                                     }];
                                     
                                 }

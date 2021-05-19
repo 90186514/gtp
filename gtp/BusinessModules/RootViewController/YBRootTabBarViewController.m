@@ -9,20 +9,21 @@
 #import "YBRootTabBarViewController.h"
 #import "YBNaviagtionViewController.h"
 #import "HomeVC.h"
+#import "HomeVVC.h"
+
 #import "YBTrendsViewController.h"
 #import "YBMsgViewController.h"
 #import "YBMineViewController.h"
+
 #import "AdsVC.h"
 #import "FaceQRVC.h"
-#import "AccountingVC.h"
-#import "AccountStatedVC.h"
-#import "AccountPurseVC.h"
+
 @interface YBRootTabBarViewController ()<UITabBarDelegate,UITabBarControllerDelegate>
     //最近一次选择的Index
 @property(nonatomic, readonly) NSUInteger lastSelectedIndex;
 @property (nonatomic, strong) HomeVC *homeVC;
-@property (nonatomic, strong) AccountStatedVC *accountStatedVC;
-@property (nonatomic, strong) AccountPurseVC *accountPurseVC;
+
+@property (nonatomic, strong) HomeVVC *homeVVC;
 @property (nonatomic, strong) AdsVC *adVC;
 @property (nonatomic, strong) YBTrendsViewController *trendsVC;
 @property (nonatomic, strong) YBMsgViewController *msgVC;
@@ -45,8 +46,8 @@
 #pragma mark - private
 - (void)configSubViewControllers {
     self.viewControllers = @[
-        [self getViewControllerWithVC:self.homeVC title:@"首页" normalImage:[UIImage imageNamed:@"icon_home_gray"] selectImage:[UIImage imageNamed:@"icon_home_blue"]],
-        [self getViewControllerWithVC:self.adVC title:@"广告" normalImage:[UIImage imageNamed:@"icon_deal_gray"] selectImage:[UIImage imageNamed:@"icon_deal_blue"]],
+        [self getViewControllerWithVC:self.homeVVC title:@"首页" normalImage:[UIImage imageNamed:@"icon_home_gray"] selectImage:[UIImage imageNamed:@"icon_home_blue"]],
+        [self getViewControllerWithVC:self.adVC title:@"勃勃生机" normalImage:[UIImage imageNamed:@"icon_deal_gray"] selectImage:[UIImage imageNamed:@"icon_deal_blue"]],
         [self getViewControllerWithVC:self.trendsVC title:@"消息" normalImage:[UIImage imageNamed:@"icon_massage_gray"] selectImage:[UIImage imageNamed:@"icon_massage_blue"]],
         [self getViewControllerWithVC:self.mineVC title:@"我的" normalImage:[UIImage imageNamed:@"icon_my_gray"] selectImage:[UIImage imageNamed:@"icon_my_blue"]]];
 }
@@ -85,22 +86,7 @@
 }
 
 -(void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
-    //3tabBar Middle item show above any tabBar
-//    if (tabBarController.selectedIndex ==1) {
-//        AccountingVC* popupView = [[AccountingVC alloc]init];
-//        [popupView richElementsInViewWithModel:@(1)];
-//        [popupView showInApplicationKeyWindow];
-//        [popupView actionBlock:^(id data) {
-//            
-//        }];
-//        
-//        YBNaviagtionViewController* naviC = (YBNaviagtionViewController*)viewController;
-//        NSArray *viewControllers = naviC.viewControllers;
-//        for (int i=0; i<viewControllers.count; i++) {
-//            BaseVC* vc = (BaseVC*)viewControllers[i];
-//            [vc locateTabBar:_lastSelectedIndex];
-//        }
-//    }
+    
 }
 #pragma mark - getter
 
@@ -111,17 +97,12 @@
     return _homeVC;
 }
 
-- (AccountStatedVC *)accountStatedVC {
-    if (!_accountStatedVC) {
-        _accountStatedVC = [AccountStatedVC new];
+
+- (HomeVVC *)homeVVC {
+    if (!_homeVVC) {
+        _homeVVC = [HomeVVC new];
     }
-    return _accountStatedVC;
-}
-- (AccountPurseVC *)accountPurseVC {
-    if (!_accountPurseVC) {
-        _accountPurseVC = [AccountPurseVC new];
-    }
-    return _accountPurseVC;
+    return _homeVVC;
 }
 - (AdsVC *)adVC {
     if (!_adVC) {

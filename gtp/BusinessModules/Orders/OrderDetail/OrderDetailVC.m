@@ -2,8 +2,8 @@
 //  OrderDetailVC.m
 //  gt
 //
-//  Created by Aalto on 2018/11/19.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/11/19.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "OrderDetailVC.h"
@@ -34,7 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self YBGeneral_baseConfig];
-    self.title = @"订单详情";
+    self.title = @"🌹详情";
     [self initView];
 }
 
@@ -60,7 +60,7 @@
                             InputPWPopUpView* popupView = [[InputPWPopUpView alloc]init];
                             [popupView showInView:self.view];
                             [popupView actionBlock:^(id data) {
-                                [YKToastView showToastText:@"已放行"];
+                                [YKToastView showToastText:@"已symbolic"];
                             }];
                             
                         }

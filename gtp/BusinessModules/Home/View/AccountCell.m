@@ -2,7 +2,7 @@
 //  SPCell.m
 //  LiNiuYang
 //
-//  Created by Aalto on 2017/7/25.
+//  Created by WIQ on 2017/7/25.
 //  Copyright © 2017年 LiNiu. All rights reserved.
 //
 
@@ -178,15 +178,15 @@
 }
 
 - (void)richElementsInCellWithModel:(NSArray*)model{
-    _accLab.text = [NSString stringWithFormat:@"%@账号",@"AB"];
+    _accLab.text = [NSString stringWithFormat:@"%@心号",@"AB"];
     _aliasLab.text = @"100000000000 AB";
-    _rmbLab.text = [NSString stringWithFormat:@"折合人民币 %@",@"100000000000.00"];
+    _rmbLab.text = [NSString stringWithFormat:@"起🎂MIA %@",@"100000000000.00"];
     
-    _tdTagLab.text = @"今日收入";
+    _tdTagLab.text = @"今日🎂";
     _tdLab.text = @"1000000000000";
     _ydLab.text = [NSString stringWithFormat:@"昨日 %@",@"100000.00"];
     
-    _tmTagLab.text = @"本月收入";
+    _tmTagLab.text = @"本月🎂";
     _tmLab.text = @"100000";
     _ymLab.text = [NSString stringWithFormat:@"上月 %@",@"100000.00"];
 }

@@ -2,7 +2,7 @@
 //  InputPWPopUpView.m
 //  gtp
 //
-//  Created by Aalto on 2018/12/30.
+//  Created by WIQ on 2018/12/30.
 //  Copyright © 2018 GT. All rights reserved.
 //
 
@@ -186,7 +186,7 @@
     NSInteger result = 0;
     switch (component) {
         case 0:
-            result = self.letter.count;//根据数组的元素个数返回几行数据
+            result = self.letter.count;//根据数组的🐶素个数返回几行数据
             break;
             //        case 1:
             //            result = self.number.count;

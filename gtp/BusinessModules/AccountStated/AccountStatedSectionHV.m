@@ -1,5 +1,5 @@
-//  Created by Aalto on 2018/12/28.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/12/28.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "AccountStatedSectionHV.h"
@@ -106,7 +106,7 @@
             UIButton* btn1 =_funcBtns.lastObject;
             [btn1 setBackgroundImage:[UIImage imageWithColor:HEXCOLOR(0xffffff)] forState:UIControlStateNormal];
             [btn1 setTitleColor:HEXCOLOR(0x21c244) forState:UIControlStateNormal];
-            [btn1 setTitle:[NSString stringWithFormat:@"收入：¥ %@",model[kSubTit]] forState:UIControlStateNormal];
+            [btn1 setTitle:[NSString stringWithFormat:@"🎂：¥ %@",model[kSubTit]] forState:UIControlStateNormal];
     btn1.contentHorizontalAlignment = UIControlContentHorizontalAlignmentRight;
     
             [self.tipButton setTitle:model[kDate] forState:UIControlStateNormal];

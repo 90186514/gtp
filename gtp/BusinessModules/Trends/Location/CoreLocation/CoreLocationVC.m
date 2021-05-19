@@ -2,8 +2,8 @@
 //  CoreLocationVC.m
 //  TestDemo
 //
-//  Created by AaltoChen on 16/3/2.
-//  Copyright © 2016年 AaltoChen. All rights reserved.
+//  Created by WIQChen on 16/3/2.
+//  Copyright © 2016年 WIQChen. All rights reserved.
 //
 
 #import "CoreLocationVC.h"
@@ -73,7 +73,7 @@
                             annotation.subtitle = placemark.name;
                             annotation.image=[UIImage imageNamed:@"icon_openmap_item"];
                             annotation.icon=[UIImage imageNamed:@"icon_mark1"];
-                            annotation.detail=@"Aalto's Studio...";
+                            annotation.detail=@"WIQ's Studio...";
                             annotation.rate=[UIImage imageNamed:@"icon_Movie_Star_rating"];
                     //        [mapView selectAnnotation:annotation animated:YES];
                             [mapView addAnnotation:annotation];
@@ -134,7 +134,7 @@
         annotation.subtitle = placemark.name;
         annotation.image=[UIImage imageNamed:@"icon_openmap_item"];
         annotation.icon=[UIImage imageNamed:@"icon_mark1"];
-        annotation.detail=@"Aalto's Studio...";
+        annotation.detail=@"WIQ's Studio...";
         annotation.rate=[UIImage imageNamed:@"icon_Movie_Star_rating"];
 //        [mapView selectAnnotation:annotation animated:YES];
         [mapView addAnnotation:annotation];

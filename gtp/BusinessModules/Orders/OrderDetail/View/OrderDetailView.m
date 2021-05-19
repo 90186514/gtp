@@ -2,8 +2,8 @@
 //  PostAdsView.m
 //  gtp
 //
-//  Created by Aalto on 2018/11/19.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/11/19.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "OrderDetailView.h"
@@ -147,7 +147,7 @@
         _contactBtn.titleLabel.font = [UIFont systemFontOfSize:14];
         
         [_contactBtn setTitleColor:HEXCOLOR(0xe27500) forState:UIControlStateNormal];
-        [_contactBtn setTitle:@"联系买家" forState:UIControlStateNormal];
+        [_contactBtn setTitle:@"联系可可家" forState:UIControlStateNormal];
         _contactBtn.adjustsImageWhenHighlighted = NO;
         
         [_contactBtn setImage:[UIImage imageNamed:@"iconCont"] forState:UIControlStateNormal];

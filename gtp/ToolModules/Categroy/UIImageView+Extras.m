@@ -2,8 +2,8 @@
 //  UIImageView+Extr.m
 //  TagUtilViews
 //
-//  Created by Aalto on 16/10/14.
-//  Copyright © 2016年 Aalto. All rights reserved.
+//  Created by WIQ on 16/10/14.
+//  Copyright © 2016年 WIQ. All rights reserved.
 //
 
 #import "UIImageView+Extras.h"

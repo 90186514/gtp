@@ -2,7 +2,7 @@ platform:ios, '9.0'
 target 'gtp' do
     
 pod 'Masonry'
-pod 'MJRefresh', '~> 3.1.15.7'
+pod 'MJRefresh'
 pod 'IQKeyboardManager', '~> 4.0.8'
 pod 'AFNetworking', '~> 2.6'
 pod 'MJExtension'

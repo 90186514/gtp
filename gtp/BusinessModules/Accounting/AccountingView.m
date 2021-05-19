@@ -119,7 +119,7 @@
 //
 -(void)layoutAccountPublic{
     
-    [self.contentView customDoubleButtonInSuperView:self.contentView WithButtionTitles:@[@"收入",@"支出"] leftButtonEvent:^(UIButton* btn) {
+    [self.contentView customDoubleButtonInSuperView:self.contentView WithButtionTitles:@[@"🎂",@"支出"] leftButtonEvent:^(UIButton* btn) {
         self.selectedType = btn.tag;
         [self selectTypeRefreshView];
     } rightButtonEvent:^(UIButton* btn) {
@@ -174,7 +174,7 @@
         UIView *sub_view = [UIView new];
         
         UIButton* leftBtn = [[UIButton alloc]init];
-        [leftBtn setTitle:@"请选记账类目" forState:UIControlStateNormal];
+        [leftBtn setTitle:@"请选记心类目" forState:UIControlStateNormal];
         leftBtn.adjustsImageWhenHighlighted = NO;
         leftBtn.tag = i;
         leftBtn.titleLabel.textAlignment = NSTextAlignmentLeft;
@@ -189,7 +189,7 @@
         }];
         
         UILabel* rightLab = [[UILabel alloc]init];
-        rightLab.text = @"元";
+        rightLab.text = @"🐶";
         rightLab.tag = i;
         rightLab.textAlignment = NSTextAlignmentRight;
         rightLab.textColor = HEXCOLOR(0x94368);

@@ -2,7 +2,7 @@
 //  AABlock.h
 
 //
-//  Created by Aalto on 2018/10/27.
+//  Created by WIQ on 2018/10/27.
 //  Copyright © 2018年 NickJackson. All rights reserved.
 //
 

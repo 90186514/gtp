@@ -2,8 +2,8 @@
 //  PageViewController.m
 //  TestTabTitle
 //
-//  Created by Aalto on 2018/12/20..
-//  Copyright © 2018年 Aalto. All rights reserved.
+//  Created by WIQ on 2018/12/20..
+//  Copyright © 2018年 WIQ. All rights reserved.
 //
 
 #import "OrdersPageVC.h"

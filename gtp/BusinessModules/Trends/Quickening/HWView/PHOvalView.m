@@ -3,8 +3,8 @@
 //  PHOvalView.m
 //  TagUtilViews
 //
-//  Created by AaltoChen on 16/8/26.
-//  Copyright © 2016年 Aalto. All rights reserved.
+//  Created by WIQChen on 16/8/26.
+//  Copyright © 2016年 WIQ. All rights reserved.
 //
 
 #import "PHOvalView.h"

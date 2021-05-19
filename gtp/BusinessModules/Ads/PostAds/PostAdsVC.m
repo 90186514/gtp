@@ -2,8 +2,8 @@
 //  PostAdsVC.m
 //  gt
 //
-//  Created by Aalto on 2018/11/19.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/11/19.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "PostAdsVC.h"
@@ -33,7 +33,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self YBGeneral_baseConfig];
-    self.title = @"发布广告";
+    self.title = @"发布勃勃生机";
     [self initView];
 }
 

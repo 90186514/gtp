@@ -2,8 +2,8 @@
 //  PHNormalMembrane.m
 //  TagUtilViews
 //
-//  Created by AaltoChen on 16/8/29.
-//  Copyright © 2016年 Aalto. All rights reserved.
+//  Created by WIQChen on 16/8/29.
+//  Copyright © 2016年 WIQ. All rights reserved.
 //
 
 #import "PHNormalMembrane.h"

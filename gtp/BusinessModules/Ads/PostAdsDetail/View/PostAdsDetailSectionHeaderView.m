@@ -1,5 +1,5 @@
-//  Created by Aalto on 2018/12/28.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/12/28.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "PostAdsDetailSectionHeaderView.h"
@@ -163,7 +163,7 @@
     _sureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _sureBtn.tag = EnumActionTag1;
     _sureBtn.titleLabel.font = [UIFont systemFontOfSize:16];
-    [_sureBtn setTitle:@"查看广告" forState:UIControlStateNormal];
+    [_sureBtn setTitle:@"查看勃勃生机" forState:UIControlStateNormal];
     [_sureBtn setTitleColor:HEXCOLOR(0xf7f9fa) forState:UIControlStateNormal];
     _sureBtn.layer.masksToBounds = YES;
     _sureBtn.layer.cornerRadius = 6;

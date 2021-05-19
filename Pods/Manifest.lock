@@ -35,22 +35,22 @@ PODS:
     - DTFoundation/DTAnimatedGIF (~> 1.7.5)
     - DTFoundation/DTHTMLParser (~> 1.7.5)
     - DTFoundation/UIKit (~> 1.7.5)
-  - DTFoundation/Core (1.7.16)
-  - DTFoundation/DTAnimatedGIF (1.7.16)
-  - DTFoundation/DTHTMLParser (1.7.16):
+  - DTFoundation/Core (1.7.17)
+  - DTFoundation/DTAnimatedGIF (1.7.17)
+  - DTFoundation/DTHTMLParser (1.7.17):
     - DTFoundation/Core
-  - DTFoundation/UIKit (1.7.16):
+  - DTFoundation/UIKit (1.7.17):
     - DTFoundation/Core
   - FDFullscreenPopGesture (1.1)
   - FMDB (2.7.5):
     - FMDB/standard (= 2.7.5)
   - FMDB/standard (2.7.5)
   - IQKeyboardManager (4.0.13)
-  - JXCategoryView (1.5.8)
+  - JXCategoryView (1.5.9)
   - Masonry (1.1.0)
   - MBProgressHUD (0.9.2)
   - MJExtension (3.2.4)
-  - MJRefresh (3.1.15.7)
+  - MJRefresh (3.6.1)
   - MWPhotoBrowser (2.1.2):
     - DACircularProgress (~> 2.3)
     - MBProgressHUD (~> 0.9)
@@ -77,7 +77,7 @@ DEPENDENCIES:
   - Masonry
   - MBProgressHUD
   - MJExtension
-  - MJRefresh (~> 3.1.15.7)
+  - MJRefresh
   - MWPhotoBrowser
   - OpenUDID (~> 1.0)
   - RegexKitLite (= 4.0)
@@ -114,15 +114,15 @@ SPEC CHECKSUMS:
   Charts: b1e3a1f5a1c9ba5394438ca3b91bd8c9076310af
   DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
   DTCoreText: e92f4cf6b36d9d71ce4436d12cf089d74ab0596b
-  DTFoundation: e7781d9fd2f202bfd451fbbf8cab71ce83b46498
+  DTFoundation: 989698be00d3f19438c38a49a8ebb3f6919dcac5
   FDFullscreenPopGesture: a8a620179e3d9c40e8e00256dcee1c1a27c6d0f0
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
   IQKeyboardManager: 8eab4d8111418414619d1df8e4779ce5d0f8d7e2
-  JXCategoryView: 778a620f76070d6598fd8d7239991b8da8326170
+  JXCategoryView: 2ef9ecfd3735158d009ce02d1f29811aa822da65
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   MJExtension: 88e0900751b6cac8de1cf724ca9838a0b28d5acb
-  MJRefresh: 697f8ec75ebdbe9207767bb682cf0f51b0d8a41f
+  MJRefresh: d2c1970d1cf6e77fcfcdfe76c943dfab8dbfa5c1
   MWPhotoBrowser: 5836d7aa041dc05a13de380c246826578adc5ea5
   OpenUDID: e7cb6984c7304906ad20f3a36bf087b025896b6b
   RegexKitLite: c0e4c12e6e7de0769f3a3ed679f0f61604170661
@@ -131,6 +131,6 @@ SPEC CHECKSUMS:
   SVProgressHUD: 748080e4f36e603f6c02aec292664239df5279c1
   YCPopover: a11e06b685e9cddaa10e8f1bb3c1ba5bb52d719e
 
-PODFILE CHECKSUM: bcc6f1bb0deaf904c21a5fe9e53547438cc8052d
+PODFILE CHECKSUM: fdc2e06c6456976e822f6ea69b861f5abe5f4f6d
 
 COCOAPODS: 1.10.1

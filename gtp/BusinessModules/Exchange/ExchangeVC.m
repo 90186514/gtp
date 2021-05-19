@@ -2,8 +2,8 @@
 //  PostAdsVC.m
 //  gt
 //
-//  Created by Aalto on 2018/11/19.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/11/19.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "ExchangeVC.h"
@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self YBGeneral_baseConfig];
-    self.title = @"兑换比特币";
+    self.title = @"兑换MIA";
     [self initView];
 }
 

@@ -2,7 +2,7 @@
 //  UILabel+Extras.h
 //  PhoneZhuan
 //
-//  Created by Aalto on 14-2-17.
+//  Created by WIQ on 14-2-17.
 //  Copyright (c) 2014年 shen. All rights reserved.
 //
 

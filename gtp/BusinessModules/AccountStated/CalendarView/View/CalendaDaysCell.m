@@ -180,7 +180,7 @@
 //        }
 //    }
 //    else if ([m_str isEqualToString:@"正月"] && [d_str isEqualToString:@"十五"]) {
-//        chineseCal_str = @"元宵节";
+//        chineseCal_str = @"🐶宵节";
 //    }
 //    else if ([m_str isEqualToString:@"五月"] && [d_str isEqualToString:@"初五"]) {
 //        chineseCal_str = @"端午节";
@@ -201,7 +201,7 @@
 //        chineseCal_str = @"除夕";
 //    }
 //    // Extensions: display the holidays
-//    NSDictionary *Holidays = @{@"01-01":@"元旦",
+//    NSDictionary *Holidays = @{@"01-01":@"🐶旦",
 //                               @"02-14":@"情人节",
 //                               @"03-08":@"妇女节",
 //                               @"03-12":@"植树节",

@@ -2,8 +2,8 @@
 //  CoreLocationManager.m
 //  TestDemo
 //
-//  Created by AaltoChen on 16/3/2.
-//  Copyright © 2016年 AaltoChen. All rights reserved.
+//  Created by WIQChen on 16/3/2.
+//  Copyright © 2016年 WIQChen. All rights reserved.
 //
 
 #import "CoreLocationManager.h"

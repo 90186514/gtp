@@ -2,8 +2,8 @@
 //  OrderDetailVC.m
 //  gt
 //
-//  Created by Aalto on 2018/11/19.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/11/19.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "ModifyAdsVC.h"
@@ -24,7 +24,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self YBGeneral_baseConfig];
-    self.title = @"修改广告";
+    self.title = @"修改勃勃生机";
     [self initView];
 }
 
@@ -46,7 +46,7 @@
                 break;
             case EnumActionTag3:
             {
-                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"确认要下架吗？" message:nil preferredStyle:  UIAlertControllerStyleAlert];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"好了要朋友吗？" message:nil preferredStyle:  UIAlertControllerStyleAlert];
                 
                 [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                 }]];

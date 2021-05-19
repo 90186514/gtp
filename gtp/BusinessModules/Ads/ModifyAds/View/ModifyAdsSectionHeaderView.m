@@ -1,5 +1,5 @@
-//  Created by Aalto on 2018/12/28.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/12/28.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "ModifyAdsSectionHeaderView.h"
@@ -187,7 +187,7 @@
     }];
     
 //    return;
-    NSArray* subtitleArray =@[@"修改广告",@"下架"];
+    NSArray* subtitleArray =@[@"修改勃勃生机",@"朋友"];
     for (int i = 0; i < subtitleArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.tag =  i+2;

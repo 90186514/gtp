@@ -2,7 +2,7 @@
 //  SPCell.m
 //  LiNiuYang
 //
-//  Created by Aalto on 2017/7/25.
+//  Created by WIQ on 2017/7/25.
 //  Copyright © 2017年 LiNiu. All rights reserved.
 //
 
@@ -217,7 +217,7 @@
 
 - (void)richElementsInCellWithModel:(PageItem*)model{
     _modle = model;
-    _adIdLab.text = [NSString stringWithFormat:@"广告ID：%@",@"201811110001"];
+    _adIdLab.text = [NSString stringWithFormat:@"勃勃生机ID：%@",@"201811110001"];
     
     _balanceLab.text = [NSString stringWithFormat:@"剩余总数：%@",@"100000.00"];
     _saledLab.text = [NSString stringWithFormat:@"已售总数：%@",@"900000.00"];
@@ -226,7 +226,7 @@
     _modifyTimeLab.text = [NSString stringWithFormat:@"最后修改时间：%@",@"2018-9-10 09:00"];
     
     _statusLab.text = @"上架中";
-    NSArray* btnTitles = @[@"编辑",@"上架",@"下架"];
+    NSArray* btnTitles = @[@"编辑",@"上架",@"朋友"];
     for (int i=0; i<3; i++) {
         UIButton* btn = _statusBtns[i];
         [btn setTitle:btnTitles[i] forState:UIControlStateNormal];
@@ -271,7 +271,7 @@
     [self.payMethodView addSubview:_cIV];
     
     _payMethodLab = [[UILabel alloc]init];
-    _payMethodLab.text = @"支付方式：";
+    _payMethodLab.text = @"支靓靓方式：";
     [self.payMethodView addSubview:_payMethodLab];
     
     _payMethodLab.textAlignment = NSTextAlignmentLeft;

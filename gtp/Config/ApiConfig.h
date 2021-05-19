@@ -2,8 +2,8 @@
 //  ApiConfig.m
 //  gtp
 //
-//  Created by Aalto on 2019/1/3.
-//  Copyright © 2019 Aalto. All rights reserved.
+//  Created by WIQ on 2019/1/3.
+//  Copyright © 2019 WIQ. All rights reserved.
 //
 
 #ifndef ApiConfig_h

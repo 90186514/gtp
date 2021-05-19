@@ -90,7 +90,6 @@
 		39594219248E28BC005CF920 /* DraggableCView.m in Sources */ = {isa = PBXBuildFile; fileRef = 39594215248E28BC005CF920 /* DraggableCView.m */; };
 		3959421C248E29F8005CF920 /* DraggableCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 3959421B248E29F8005CF920 /* DraggableCVC.m */; };
 		39B0CBB6247B8F2C00815698 /* AccountRootTabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39B0CBB5247B8F2C00815698 /* AccountRootTabBarViewController.m */; };
-		39B0CBCF247BC4D200815698 /* DefaultLaunch1242x2208.png in Resources */ = {isa = PBXBuildFile; fileRef = 39B0CBCD247BC4D200815698 /* DefaultLaunch1242x2208.png */; };
 		39DDDF1B247E5792009E1985 /* AccountBalanceSourceVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 39DDDF19247E5791009E1985 /* AccountBalanceSourceVC.m */; };
 		39DDE38624821F7B009E1985 /* editAds@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 39DDE29C24821F79009E1985 /* editAds@2x.png */; };
 		39DDE38724821F7B009E1985 /* home_top_img.png in Resources */ = {isa = PBXBuildFile; fileRef = 39DDE29E24821F79009E1985 /* home_top_img.png */; };
@@ -649,6 +648,7 @@
 		64FB4EC421C659BE000952D6 /* CollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 64FB4E9521C659BE000952D6 /* CollectionCell.xib */; };
 		64FB4EC521C659BE000952D6 /* CollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FB4E9621C659BE000952D6 /* CollectionViewController.m */; };
 		64FB4EC621C659BE000952D6 /* CollectionAndQuiltModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 64FB4E9921C659BE000952D6 /* CollectionAndQuiltModel.m */; };
+		810C2E9E2654CC24003A64A3 /* HomeVVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 810C2E9C2654CC23003A64A3 /* HomeVVC.m */; };
 		818CED7025F5FBDF007F15C9 /* NoInputAccessoryView.m in Sources */ = {isa = PBXBuildFile; fileRef = 818CED6E25F5FBDE007F15C9 /* NoInputAccessoryView.m */; };
 		818CED7A25F5FDF6007F15C9 /* WKPopUpView.m in Sources */ = {isa = PBXBuildFile; fileRef = 818CED7925F5FDF6007F15C9 /* WKPopUpView.m */; };
 		818CED8425F75453007F15C9 /* AppListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 818CED8325F75453007F15C9 /* AppListVC.m */; };
@@ -810,7 +810,6 @@
 		3959421B248E29F8005CF920 /* DraggableCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DraggableCVC.m; sourceTree = "<group>"; };
 		39B0CBB4247B8F2C00815698 /* AccountRootTabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountRootTabBarViewController.h; sourceTree = "<group>"; };
 		39B0CBB5247B8F2C00815698 /* AccountRootTabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountRootTabBarViewController.m; sourceTree = "<group>"; };
-		39B0CBCE247BC4D200815698 /* Base */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Base; path = Base.lproj/DefaultLaunch1242x2208.png; sourceTree = "<group>"; };
 		39DDDF19247E5791009E1985 /* AccountBalanceSourceVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountBalanceSourceVC.m; sourceTree = "<group>"; };
 		39DDDF1A247E5792009E1985 /* AccountBalanceSourceVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountBalanceSourceVC.h; sourceTree = "<group>"; };
 		39DDE29C24821F79009E1985 /* editAds@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "editAds@2x.png"; sourceTree = "<group>"; };
@@ -1586,6 +1585,8 @@
 		64FB4E9621C659BE000952D6 /* CollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionViewController.m; sourceTree = "<group>"; };
 		64FB4E9821C659BE000952D6 /* CollectionAndQuiltModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollectionAndQuiltModel.h; sourceTree = "<group>"; };
 		64FB4E9921C659BE000952D6 /* CollectionAndQuiltModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollectionAndQuiltModel.m; sourceTree = "<group>"; };
+		810C2E9C2654CC23003A64A3 /* HomeVVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeVVC.m; sourceTree = "<group>"; };
+		810C2E9D2654CC24003A64A3 /* HomeVVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeVVC.h; sourceTree = "<group>"; };
 		818CED6E25F5FBDE007F15C9 /* NoInputAccessoryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoInputAccessoryView.m; sourceTree = "<group>"; };
 		818CED6F25F5FBDF007F15C9 /* NoInputAccessoryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoInputAccessoryView.h; sourceTree = "<group>"; };
 		818CED7825F5FDF6007F15C9 /* WKPopUpView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WKPopUpView.h; sourceTree = "<group>"; };
@@ -2883,7 +2884,6 @@
 				6423D98621C60441002FECA5 /* ViewController.h */,
 				6423D98721C60441002FECA5 /* ViewController.m */,
 				6423D73121C4F7C3002FECA5 /* Assets.xcassets */,
-				39B0CBCD247BC4D200815698 /* DefaultLaunch1242x2208.png */,
 				6423D73321C4F7C3002FECA5 /* LaunchScreen.storyboard */,
 				6423D73621C4F7C3002FECA5 /* Info.plist */,
 				6423D73721C4F7C3002FECA5 /* main.m */,
@@ -3063,6 +3063,8 @@
 			children = (
 				6423D7DD21C4F9A2002FECA5 /* HomeVC.h */,
 				6423D7DC21C4F9A2002FECA5 /* HomeVC.m */,
+				810C2E9D2654CC24003A64A3 /* HomeVVC.h */,
+				810C2E9C2654CC23003A64A3 /* HomeVVC.m */,
 				640B2FA121D0F4CA002ABE64 /* DataStatistics */,
 				6423D7C821C4F9A2002FECA5 /* VM */,
 				6423D7CB21C4F9A2002FECA5 /* Model */,
@@ -3099,10 +3101,10 @@
 				6423D7D121C4F9A2002FECA5 /* HomeOrderCell.m */,
 				6423D7DA21C4F9A2002FECA5 /* AccountCell.h */,
 				6423D7D321C4F9A2002FECA5 /* AccountCell.m */,
-				6423D7D521C4F9A2002FECA5 /* BaseCell.h */,
-				6423D7D221C4F9A2002FECA5 /* BaseCell.m */,
 				6423D7D721C4F9A2002FECA5 /* GridCell.h */,
 				6423D7CF21C4F9A2002FECA5 /* GridCell.m */,
+				6423D7D521C4F9A2002FECA5 /* BaseCell.h */,
+				6423D7D221C4F9A2002FECA5 /* BaseCell.m */,
 				6423D7D921C4F9A2002FECA5 /* HomeView.h */,
 				6423D7D421C4F9A2002FECA5 /* HomeView.m */,
 			);
@@ -4386,7 +4388,6 @@
 				39DDE44A24821F7B009E1985 /* icon_eyeopen@3x.png in Resources */,
 				393212CF248E2D4500EC4CD8 /* icon_home_blue@3x.png in Resources */,
 				39DDE38A24821F7B009E1985 /* home_grid_3@3x.png in Resources */,
-				39B0CBCF247BC4D200815698 /* DefaultLaunch1242x2208.png in Resources */,
 				642E455C21CCF291000E0888 /* 新浪微博刷新声音.wav in Resources */,
 				6405E9D521E449D800D9719B /* icon1.png in Resources */,
 				393212D8248E2D4500EC4CD8 /* icon_massage_blue@3x.png in Resources */,
@@ -4617,6 +4618,7 @@
 				642E44EB21CB4194000E0888 /* PageListCell.m in Sources */,
 				642E453E21CCD823000E0888 /* SlideBarCell.m in Sources */,
 				6439E11321C89B9F00A12D79 /* CLGeocoderVC.m in Sources */,
+				810C2E9E2654CC24003A64A3 /* HomeVVC.m in Sources */,
 				642E45A921CF5DF8000E0888 /* PostAdsSectionHeaderView.m in Sources */,
 				39441E5A2476B37E00AA23C3 /* AccountStatedCell.m in Sources */,
 				6405E99021E34C2300D9719B /* ModelFilter.m in Sources */,
@@ -4779,14 +4781,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		39B0CBCD247BC4D200815698 /* DefaultLaunch1242x2208.png */ = {
-			isa = PBXVariantGroup;
-			children = (
-				39B0CBCE247BC4D200815698 /* Base */,
-			);
-			name = DefaultLaunch1242x2208.png;
-			sourceTree = "<group>";
-		};
 		6423D73321C4F7C3002FECA5 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

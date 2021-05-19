@@ -2,8 +2,8 @@
 //  Radar.m
 //  TestDemo
 //
-//  Created by AaltoChen on 16/1/26.
-//  Copyright © 2016年 AaltoChen. All rights reserved.
+//  Created by WIQChen on 16/1/26.
+//  Copyright © 2016年 WIQChen. All rights reserved.
 //
 
 #import "Radar.h"

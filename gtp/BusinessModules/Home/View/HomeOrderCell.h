@@ -2,7 +2,7 @@
 //  SPCell.h
 //  LiNiuYang
 //
-//  Created by Aalto on 2017/7/25.
+//  Created by WIQ on 2017/7/25.
 //  Copyright © 2017年 LiNiu. All rights reserved.
 //
 

@@ -2,15 +2,15 @@
 //  HomeVC.m
 //  gt
 //
-//  Created by Aalto on 2018/11/19.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/11/19.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "HomeVC.h"
 #import "HomeView.h"
 #import "HomeVM.h"
 
-#import "SlideTabBarVC.h"
+
 #import "PostAdsVC.h"
 #import "OrdersVC.h"
 #import "DataStatisticsVC.h"
@@ -112,8 +112,8 @@
         [self.mainView requestHomeListSuccessWithArray:dataArray WithPage:page];
     } failed:^(id model){
         kStrongSelf(self);
-        [self.mainView requestHomeListSuccessWithArray:model WithPage:page];
-//        [self.mainView requestHomeListFailed];
+//        [self.mainView requestHomeListSuccessWithArray:model WithPage:page];
+        [self.mainView requestHomeListFailed];
     }];
 }
 

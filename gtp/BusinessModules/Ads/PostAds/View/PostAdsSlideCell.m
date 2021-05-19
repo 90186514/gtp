@@ -1,5 +1,5 @@
-//  Created by Aalto on 2018/12/23.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/12/23.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "PostAdsSlideCell.h"

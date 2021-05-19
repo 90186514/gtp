@@ -1,5 +1,5 @@
-//  Created by Aalto on 2018/12/28.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/12/28.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "OrderDetailSectionHeaderView.h"
@@ -113,7 +113,7 @@
             
             _topicRefreshBtn.hidden = NO;
             _topicRefreshBtn.frame = CGRectMake(0, 0, MAINSCREEN_WIDTH, 30);
-            [_topicRefreshBtn setTitle:@"此订单已被买家申诉，请尽快处理！" forState:UIControlStateNormal];
+            [_topicRefreshBtn setTitle:@"此🌹已被可可家粮农，请进口处理！" forState:UIControlStateNormal];
         }
             break;
         case OrderTypeFinished:
@@ -206,7 +206,7 @@
     _sureBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _sureBtn.tag = EnumActionTag0;
     _sureBtn.titleLabel.font = [UIFont systemFontOfSize:16];
-    [_sureBtn setTitle:@"确认已收款，放行" forState:UIControlStateNormal];
+    [_sureBtn setTitle:@"好了亲亲🐟，symbolic" forState:UIControlStateNormal];
     [_sureBtn setTitleColor:HEXCOLOR(0xf7f9fa) forState:UIControlStateNormal];
     _sureBtn.layer.masksToBounds = YES;
     _sureBtn.layer.cornerRadius = 6;
@@ -220,7 +220,7 @@
     _appealBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     _appealBtn.tag = EnumActionTag1;
     _appealBtn.titleLabel.font = [UIFont systemFontOfSize:16];
-    [_appealBtn setTitle:@"未收到款，去申诉" forState:UIControlStateNormal];
+    [_appealBtn setTitle:@"已拿🐟，去粮农" forState:UIControlStateNormal];
     [_appealBtn setTitleColor:HEXCOLOR(0x4c7fff) forState:UIControlStateNormal];
     _appealBtn.layer.masksToBounds = YES;
     _appealBtn.layer.cornerRadius = 6;

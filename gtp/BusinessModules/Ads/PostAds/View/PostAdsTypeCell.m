@@ -1,5 +1,5 @@
-//  Created by Aalto on 2018/12/28.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/12/28.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "PostAdsTypeCell.h"
@@ -148,18 +148,18 @@
 - (void)richElementsInCellWithModel:(NSArray*)model{
     
     UILabel* lab0 = _leftLabs[0];
-    lab0.text = @"币种";
+    lab0.text = @"MIA种";
     UILabel* lab1 = _leftLabs[1];
-    lab1.text = @"货币类型";
+    lab1.text = @"货MIA类型";
     UILabel* lab2 = _leftLabs[2];
-    lab2.text = @"单价";
+    lab2.text = @"暨起";
 
     UILabel* rlab0 = _rightLabs[0];
     rlab0.text = [NSString stringWithFormat:@"%@",@"AB"];
     UILabel* rlab1 = _rightLabs[1];
-    rlab1.text = [NSString stringWithFormat:@"%@",@"人民币"];
+    rlab1.text = [NSString stringWithFormat:@"%@",@"🎂MIA"];
     UILabel* rlab2 = _rightLabs[2];
-    rlab2.text = [NSString stringWithFormat:@"%@",@"AB:人民币 = 1:1"];;
+    rlab2.text = [NSString stringWithFormat:@"%@",@"AB:🎂MIA = 1:1"];;
     
 }
 

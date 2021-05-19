@@ -2,8 +2,8 @@
 //  collectionAndQuiltModel.m
 //  TestDemo
 //
-//  Created by AaltoChen on 15/10/31.
-//  Copyright © 2015年 AaltoChen. All rights reserved.
+//  Created by WIQChen on 15/10/31.
+//  Copyright © 2015年 WIQChen. All rights reserved.
 //
 
 #import "CollectionAndQuiltModel.h"

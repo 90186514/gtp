@@ -2,7 +2,7 @@
 //  HomeModel.m
 //  LiNiuYang
 //
-//  Created by Aalto on 2017/3/30.
+//  Created by WIQ on 2017/3/30.
 //  Copyright © 2017年 LiNiu. All rights reserved.
 //
 
@@ -436,7 +436,7 @@ withDistinctionTime:(NSString*)distinctionTime withDistinctionBalanceSource:(NSS
         NSDictionary* dic1 = @{
             kType:@(AccountingTypeIncome),
             kIndexSection:@(i),
-            kTit:[NSString stringWithFormat:@"%@",@"收入"],
+            kTit:[NSString stringWithFormat:@"%@",@"🎂"],
             kSubTit:[NSString stringWithFormat:@"%@",dic0.allKeys[0]],
             kImg:[NSString stringWithFormat:@"%@",dic0.allValues[0]]
                                
@@ -451,7 +451,7 @@ withDistinctionTime:(NSString*)distinctionTime withDistinctionBalanceSource:(NSS
         @{@"宵夜":@"yexiao"},
         @{@"零食":@"lingshi"},
         @{@"饮料":@"yinliao"},
-        @{@"买菜":@"maicai"},
+        @{@"可可菜":@"maicai"},
         @{@"酒水":@"jiushui"},
         @{@"水果":@"shuiguo"},
         @{@"香烟":@"xiangyan"},
@@ -650,8 +650,8 @@ withDistinctionTime:(NSString*)distinctionTime withDistinctionBalanceSource:(NSS
     NSArray* incomeArr = @[
         @{@"现金":@"paycash"},
         @{@"信用卡":@"paycredit"},
-        @{@"支付宝":@"payzhifubao"},
-        @{@"微信钱包":@"payweixin"},
+        @{@"😊":@"payzhifubao"},
+        @{@"😄钱包":@"payweixin"},
         @{@"储蓄卡":@"paydeposit"},
     //    @{@"":@""}
     ];
@@ -660,7 +660,7 @@ withDistinctionTime:(NSString*)distinctionTime withDistinctionBalanceSource:(NSS
         NSDictionary* dic0  = incomeArr[i];
         NSDictionary* dic1 = @{
             kType:@(i),
-    //        kTit:[NSString stringWithFormat:@"%@",@"收入"],
+    //        kTit:[NSString stringWithFormat:@"%@",@"🎂"],
             kSubTit:[NSString stringWithFormat:@"%@",dic0.allKeys[0]],
             kImg:[NSString stringWithFormat:@"%@",dic0.allValues[0]]
                                

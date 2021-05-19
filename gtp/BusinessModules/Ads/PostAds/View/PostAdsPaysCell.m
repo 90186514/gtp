@@ -1,5 +1,5 @@
-//  Created by Aalto on 2018/12/23.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/12/23.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "PostAdsPaysCell.h"
@@ -40,7 +40,7 @@
     //        fanBtn.hidden = YES;
     [fanBtn setImage:fanImg forState:UIControlStateNormal];
     fanBtn.adjustsImageWhenHighlighted = NO;
-    [fanBtn setTitle:@"支付宝" forState:UIControlStateNormal];
+    [fanBtn setTitle:@"😊" forState:UIControlStateNormal];
     [fanBtn setTitleColor:HEXCOLOR(0x333333) forState:UIControlStateNormal];
     fanBtn.titleLabel.font = kFontSize(14);
     [fanBtn layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleLeft imageTitleSpace:3];
@@ -152,7 +152,7 @@
     }
     if (opens.count==0) {
         [switchFun setOn:YES animated:YES];
-        [YKToastView showToastText:@"亲，至少保留一种支付方式哦😯～"];
+        [YKToastView showToastText:@"亲，至少保留一种支靓靓方式哦😯～"];
         
         return;
     }

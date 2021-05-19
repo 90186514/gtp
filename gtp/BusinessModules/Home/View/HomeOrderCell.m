@@ -2,7 +2,7 @@
 //  SPCell.m
 //  LiNiuYang
 //
-//  Created by Aalto on 2017/7/25.
+//  Created by WIQ on 2017/7/25.
 //  Copyright © 2017年 LiNiu. All rights reserved.
 //
 
@@ -51,24 +51,23 @@
     
     _accLab = [[UILabel alloc]init];
     [self.contentView addSubview:_accLab];
+    _accLab.textAlignment = NSTextAlignmentLeft;
+    _accLab.numberOfLines = 0;
     [_accLab mas_makeConstraints:^(MASConstraintMaker *make) {
         make.top.equalTo(self.contentView).offset(11);
         make.leading.equalTo(self.contentView).offset(30);
-        make.trailing.equalTo(self.contentView).offset(-30);
+//        make.trailing.equalTo(self.contentView).offset(-30);
+        make.centerX.equalTo(self.contentView);
 //        make.height.equalTo(@20);
     }];
 
     
 }
 
-
 - (void)layoutSubviews
 {
     [super layoutSubviews];
-    _accLab.textAlignment = NSTextAlignmentLeft;
-    _accLab.numberOfLines = 0;
 }
-
 
 +(instancetype)cellWith:(UITableView*)tabelView{
     HomeOrderCell *cell = (HomeOrderCell *)[tabelView dequeueReusableCellWithIdentifier:@"HomeOrderCell"];
@@ -89,7 +88,7 @@
     [self setAccLabWithSecond:_second];
 }
 + (NSMutableAttributedString *)aliasLabAttributedStringWithData:(NSString*)string{
-    return  [NSString attributedStringWithString:[NSString stringWithFormat:@"\n%@",@"Aalto"] stringColor:HEXCOLOR(0x000000) stringFont:kFontSize(13) subString:[NSString stringWithFormat:@"拍下了%@个%@，请尽快确认款项并发行 >>",@"10",@"AB"] subStringColor:HEXCOLOR(0x777777) subStringFont:kFontSize(13) numInSubColor:HEXCOLOR(0x000000) numInSubFont:kFontSize(13)];
+    return  [NSString attributedStringWithString:[NSString stringWithFormat:@"\n%@",@"WIQ"] stringColor:HEXCOLOR(0x000000) stringFont:kFontSize(13) subString:[NSString stringWithFormat:@"好的了%@个%@，请进口好了🐟项并信 >>",@"10",@"AB"] subStringColor:HEXCOLOR(0x777777) subStringFont:kFontSize(13) numInSubColor:HEXCOLOR(0x000000) numInSubFont:kFontSize(13)];
 }
 
 + (NSMutableAttributedString *)accLabAttributedStringWithSecond:(NSInteger)second{

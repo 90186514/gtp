@@ -1,5 +1,5 @@
-//  Created by Aalto on 2018/12/23.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/12/23.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 #import "ExchangeAccountCell.h"
 #import "ExchangeModel.h"
@@ -202,14 +202,14 @@
     if (([NSString isEmpty:tv0.text]
          &&[NSString isEmpty:tv1.text])
         &&[NSString isEmpty:_QRtextView.text]) {
-        [YKToastView showToastText:@"请输入兑换数量和比特币钱包收币地址"];
+        [YKToastView showToastText:@"请输入兑换数量和MIA钱包收MIA地址"];
         return ;
     }
     
     if (![NSString isEmpty:tv0.text]
         &&![NSString isEmpty:tv1.text]){
         if([NSString isEmpty:_QRtextView.text]) {
-            [YKToastView showToastText:@"请输入比特币钱包收币地址"];
+            [YKToastView showToastText:@"请输入MIA钱包收MIA地址"];
             return;
         }
         else{
@@ -264,7 +264,7 @@
     tv1.zw_placeHolder = @"收到数量";
 //    tv1.zw_limitCount = 30;
     
-    _tipLab.text = @"比特币钱包收币地址";
+    _tipLab.text = @"MIA钱包收MIA地址";
     _QRtextView.zw_placeHolder =@"请输入a-zA-Z0-9之类34位字符";
     [_submitBtn setTitle:@"提交申请" forState:UIControlStateNormal];
 }

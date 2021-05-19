@@ -2,7 +2,7 @@
 //  SPCell.m
 //  LiNiuYang
 //
-//  Created by Aalto on 2017/7/25.
+//  Created by WIQ on 2017/7/25.
 //  Copyright © 2017年 LiNiu. All rights reserved.
 //
 
@@ -268,7 +268,7 @@
                 
                 _statusBtn.tag = type;
                 [_statusBtn addTarget:self action:@selector(clickItem:) forControlEvents:UIControlEventTouchUpInside];
-                [_statusBtn setTitle:@"提醒付款" forState:UIControlStateNormal];
+                [_statusBtn setTitle:@"提醒靓靓🐟" forState:UIControlStateNormal];
                 [_statusBtn setTitleColor:HEXCOLOR(0xd02a2a) forState:UIControlStateNormal];
                 _statusBtn.layer.borderColor = HEXCOLOR(0xd02a2a).CGColor;
             }
@@ -279,7 +279,7 @@
             
             _statusBtn.tag = type;
             [_statusBtn addTarget:self action:@selector(clickItem:) forControlEvents:UIControlEventTouchUpInside];
-            [_statusBtn setTitle:@"放行订单" forState:UIControlStateNormal];
+            [_statusBtn setTitle:@"symbolic🌹" forState:UIControlStateNormal];
             [_statusBtn setTitleColor:HEXCOLOR(0x4c7fff) forState:UIControlStateNormal];
             _statusBtn.layer.borderColor = HEXCOLOR(0x4c7fff).CGColor;
         }
@@ -290,7 +290,7 @@
             
             _statusBtn.tag = type;
             [_statusBtn addTarget:self action:@selector(clickItem:) forControlEvents:UIControlEventTouchUpInside];
-            [_statusBtn setTitle:@"联系买家" forState:UIControlStateNormal];
+            [_statusBtn setTitle:@"联系可可家" forState:UIControlStateNormal];
             [_statusBtn setTitleColor:HEXCOLOR(0xff9238) forState:UIControlStateNormal];
             _statusBtn.layer.borderColor = HEXCOLOR(0xff9238).CGColor;
             
@@ -298,7 +298,7 @@
                 make.width.equalTo(@85);
                 make.height.equalTo(@28);
             }];
-            [_leftStatusBtn setTitle:@"买家已申诉" forState:UIControlStateNormal];
+            [_leftStatusBtn setTitle:@"可可家已粮农" forState:UIControlStateNormal];
             _leftStatusBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
             [_leftStatusBtn setTitleColor:HEXCOLOR(0xff9238) forState:UIControlStateNormal];
         }
@@ -319,13 +319,13 @@
             break;
     }
     
-    _adIdLab.text = [NSString stringWithFormat:@"%@",@"出售AB"];
+    _adIdLab.text = [NSString stringWithFormat:@"%@",@"休闲AB"];
     
-    _balanceLab.text = [NSString stringWithFormat:@"放币数量：%@",@"4897"];
-    _saledLab.text = [NSString stringWithFormat:@"应收款：%@",@"47923 CNY"];
+    _balanceLab.text = [NSString stringWithFormat:@"放MIA数量：%@",@"4897"];
+    _saledLab.text = [NSString stringWithFormat:@"应收🐟：%@",@"47923 KKL"];
     
     
-    _modifyTimeLab.text = [NSString stringWithFormat:@"付款参考号：%@",@"758396"];
+    _modifyTimeLab.text = [NSString stringWithFormat:@"靓靓🐟参考号：%@",@"758396"];
     _distributeTimeLab.text = [NSString stringWithFormat:@"%@",@"2018-9-10"];
     
     
@@ -334,7 +334,7 @@
     _payMethodLab.textAlignment = NSTextAlignmentLeft;
     _payMethodLab.font = kFontSize(13);
     _payMethodLab.textColor = HEXCOLOR(0x666666);
-    _payMethodLab.text = @"支付方式：";
+    _payMethodLab.text = @"支靓靓方式：";
     
     [self layoutPayMethodViewsWithModel:model];
 }
@@ -346,7 +346,7 @@
 }
 
 - (void)layoutTypeLabelWithModel:(id)model{//OrdersPageItem*
-    _typeLab.text = [NSString stringWithFormat:@"买方：%@",@"L****k"];
+    _typeLab.text = [NSString stringWithFormat:@"可可方：%@",@"L****k"];
     CGFloat typeStringWidth =  [NSString getTextWidth:_typeLab.text withFontSize:kFontSize(13) withHeight:18];
     [_typeLab mas_updateConstraints:^(MASConstraintMaker *make) {
             make.width.equalTo(@(typeStringWidth+6));

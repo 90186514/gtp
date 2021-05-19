@@ -1,5 +1,5 @@
-//  Created by Aalto on 2018/12/23.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/12/23.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 #import "PostAppealCell.h"
 #import "PostAppealModel.h"
@@ -189,14 +189,14 @@
 
 - (void)richElementsInViewWithModel{
     UILabel* lab0 = _leftLabs[0];
-    lab0.text = @"订单编号";
+    lab0.text = @"🌹编号";
     UILabel* lab1 = _leftLabs[1];
     lab1.text = @"联系方式";
     UILabel* lab2 = _leftLabs[2];
-    lab2.text = @"申诉原因";
+    lab2.text = @"粮农原因";
     
     UITextView* rtf1 = _rightTfs[1];
-    rtf1.placeholder = @"填写邮箱、QQ、或微信号码";
+    rtf1.placeholder = @"填写邮箱、QQ、或😄号码";
     
     [_pickerButton setTitle:@"     请选择" forState:UIControlStateNormal];
     

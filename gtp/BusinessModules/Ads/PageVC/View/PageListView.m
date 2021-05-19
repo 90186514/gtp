@@ -144,7 +144,7 @@
 //
 //-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
 //{
-//    return @"下架";
+//    return @"朋友";
 //}
 //
 //- (BOOL)tableView: (UITableView *)tableView shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)indexPath

@@ -1,7 +1,7 @@
 //  gtp
 //
-//  Created by Aalto on 2018/12/23.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/12/23.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "PostAdsFV.h"
@@ -102,7 +102,7 @@
     _postAdsButton = [UIButton buttonWithType:UIButtonTypeCustom];
     _postAdsButton.tag = EnumActionTag4;
     _postAdsButton.titleLabel.font = [UIFont systemFontOfSize:15];
-    [_postAdsButton setTitle:@"发布广告" forState:UIControlStateNormal];
+    [_postAdsButton setTitle:@"发布勃勃生机" forState:UIControlStateNormal];
     [_postAdsButton setTitleColor:HEXCOLOR(0xffffff) forState:UIControlStateNormal];
     _postAdsButton.layer.masksToBounds = YES;
     _postAdsButton.layer.cornerRadius = 4;

@@ -4,8 +4,8 @@
 //  ModelFilter.m
 //  TagUtilViews
 //
-//  Created by Aalto on 2017/4/22.
-//  Copyright © 2017年 Aalto. All rights reserved.
+//  Created by WIQ on 2017/4/22.
+//  Copyright © 2017年 WIQ. All rights reserved.
 //
 
 #import "ModelFilter.h"

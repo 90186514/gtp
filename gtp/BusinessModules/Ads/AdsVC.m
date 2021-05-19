@@ -28,7 +28,7 @@
     [super viewDidLoad];
     [self YBGeneral_baseConfig];
     
-    NSArray* titles = @[@"全部",@"出售中",@"售罄",@"已下架"];
+    NSArray* titles = @[@"全部",@"休闲中",@"拉拉",@"已朋友"];
     _tabs=[[NSMutableArray alloc]initWithCapacity:titles.count];
     _contents=[[NSMutableArray alloc]initWithCapacity:titles.count];
     
@@ -60,7 +60,7 @@
                     break;
                 case EnumActionTag1:
                 {
-                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"确认要上架吗？" message:nil preferredStyle:  UIAlertControllerStyleAlert];
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"好了要上架吗？" message:nil preferredStyle:  UIAlertControllerStyleAlert];
                     
                     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                         InputPWPopUpView* popupView = [[InputPWPopUpView alloc]init];
@@ -77,7 +77,7 @@
                     break;
                 case EnumActionTag2:
                 {
-                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"确认要下架吗？" message:nil preferredStyle:  UIAlertControllerStyleAlert];
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"好了要朋友吗？" message:nil preferredStyle:  UIAlertControllerStyleAlert];
                     
                     [alert addAction:[UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
                         InputPWPopUpView* popupView = [[InputPWPopUpView alloc]init];
@@ -88,7 +88,7 @@
                             [tableView deleteSections:[NSIndexSet indexSetWithIndex:indexPath.section]  withRowAnimation:UITableViewRowAnimationLeft];
                             [tableView reloadData];
                             [tableView endUpdates];
-                            [YKToastView showToastText:@"下架成功"];
+                            [YKToastView showToastText:@"朋友成功"];
                         }];
                     }]];
                     [alert addAction:[UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {

@@ -2,8 +2,8 @@
 //  YBHomeDataCenter.m
 //  YBArchitectureDemo
 //
-//  Created by Aalto on 2018/11/19.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/11/19.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "PostAppealVM.h"
@@ -51,7 +51,7 @@
         [self.listData addObject:@{
                    kIndexSection: @(IndexSectionZero),
                    kIndexRow: @[@{kTit:@"5896092390458",
-                                  kArr:@[@"已付款，商户未及时放行",@"尚未收到款",@"收款账号和用户实名信息不符",@"其他"]}]}];//@[data.r]//test 从self.requestParams取orderNum
+                                  kArr:@[@"已靓靓🐟，商户未及时symbolic",@"尚已拿🐟",@"收🐟心号和用户实名信息不符",@"其他"]}]}];//@[data.r]//test 从self.requestParams取orderNum
 //    }
     
     

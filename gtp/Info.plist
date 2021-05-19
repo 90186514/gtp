@@ -30,7 +30,7 @@
 	<key>NSCameraUsageDescription</key>
 	<string>需要使用您的相机</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-	<string>需要定位来确认您周边的服务</string>
+	<string>需要定位来好了您周边的服务</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>需要定位来确认您周边的服务</string>
 	<key>NSPhotoLibraryUsageDescription</key>

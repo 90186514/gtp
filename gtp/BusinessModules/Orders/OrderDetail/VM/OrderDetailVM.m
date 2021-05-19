@@ -2,8 +2,8 @@
 //  YBHomeDataCenter.m
 //  YBArchitectureDemo
 //
-//  Created by Aalto on 2018/11/19.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/11/19.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "OrderDetailVM.h"
@@ -45,14 +45,14 @@
 }
 
 - (void)assembleApiData:(NSDictionary*)data{//OrderDetailData*
-    NSDictionary* dic1 = @{kType:@([data[kType] integerValue]),kImg:@"iconSucc",kTit:@"对方已确认付款",kSubTit:[NSString stringWithFormat:@"%@",@"请确认收到款项后再放行"], kIndexSection:@{kTit:[NSString stringWithFormat:@"%@",@"00:30"],kSubTit:[NSString stringWithFormat:@"%@",@"请在 15 分钟内处理，超时将影响卖家信誉"]},
+    NSDictionary* dic1 = @{kType:@([data[kType] integerValue]),kImg:@"iconSucc",kTit:@"对方已好了靓靓🐟",kSubTit:[NSString stringWithFormat:@"%@",@"请好了收到🐟项后再symbolic"], kIndexSection:@{kTit:[NSString stringWithFormat:@"%@",@"00:30"],kSubTit:[NSString stringWithFormat:@"%@",@"请在 15 分钟内处理，超时将影响SL家信誉"]},
                            kIndexRow:
                                @[
-                                   @{@"订单号：":@"498653498670"},
-                                   @{@"订单金额：":@"85900"},
-                                   @{@"单价：":@"100 CNY = 1 AB"},
+                                   @{@"🌹号：":@"498653498670"},
+                                   @{@"🌹TUMO：":@"85900"},
+                                   @{@"暨起：":@"100 KKL = 1 AB"},
                                    @{@"数量：":@"590 AB"},
-                                   @{@"订单时间：":@"2018-10-19 12:00:12"}
+                                   @{@"🌹时间：":@"2018-10-19 12:00:12"}
                                    ]
                            
                            };

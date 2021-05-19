@@ -2,7 +2,7 @@
 //  InputPWPopUpView.m
 //  gtp
 //
-//  Created by Aalto on 2018/12/30.
+//  Created by WIQ on 2018/12/30.
 //  Copyright © 2018 GT. All rights reserved.
 //
 
@@ -236,12 +236,12 @@
 
 - (void)richElementsInViewWithModel{
     UILabel* lab0 = _leftLabs[0];
-    lab0.text = @"支付密码";
+    lab0.text = @"支靓靓密码";
     UILabel* lab1 = _leftLabs[1];
     lab1.text = @"谷歌验证码";
     
     UITextView* rtf0 = _rightTfs[0];
-    rtf0.placeholder = @"请输入支付密码";
+    rtf0.placeholder = @"请输入支靓靓密码";
 //    [self textViewDidBeginEditing:rtf0];
     
     UITextView* rtf1 = _rightTfs[1];
@@ -253,7 +253,7 @@
     
     if ([NSString isEmpty:rtf0.text]
         &&[NSString isEmpty:rtf1.text]) {
-        [YKToastView showToastText:@"请输入支付密码和谷歌验证码"];
+        [YKToastView showToastText:@"请输入支靓靓密码和谷歌验证码"];
         return;
     }
     else if (![NSString isEmpty:rtf0.text]
@@ -263,7 +263,7 @@
     }
     else if ([NSString isEmpty:rtf0.text]
              &&![NSString isEmpty:rtf1.text]) {
-        [YKToastView showToastText:@"请输入支付密码"];
+        [YKToastView showToastText:@"请输入支靓靓密码"];
         return;
     }
     

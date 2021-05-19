@@ -2,8 +2,8 @@
 //  PostAdsVC.m
 //  gt
 //
-//  Created by Aalto on 2018/11/19.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/11/19.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "PostAppealVC.h"
@@ -31,7 +31,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self YBGeneral_baseConfig];
-    self.title = @"提交申诉";
+    self.title = @"提交粮农";
     [self initView];
 }
 
@@ -51,7 +51,7 @@
                 break;
             case EnumActionTag1:
             {
-                [YKToastView showToastText:@"申诉成功"];
+                [YKToastView showToastText:@"粮农成功"];
             }
                 break;
                 

@@ -2,8 +2,8 @@
 //  MKAnnotationVC.m
 //  TestDemo
 //
-//  Created by AaltoChen on 16/3/3.
-//  Copyright © 2016年 AaltoChen. All rights reserved.
+//  Created by WIQChen on 16/3/3.
+//  Copyright © 2016年 WIQChen. All rights reserved.
 //
 
 #import "MKAnnotationVC.h"
@@ -42,22 +42,22 @@
     CLLocationCoordinate2D location1=CLLocationCoordinate2DMake(23.03, 113.15);
     MKAnnotationModel *annotation1=[[MKAnnotationModel alloc]init];
     annotation1.title=@"FS";
-    annotation1.subtitle=@"Aalto's Home";
+    annotation1.subtitle=@"WIQ's Home";
     annotation1.coordinate=location1;
     annotation1.image=[UIImage imageNamed:@"icon_pin_floating"];
     annotation1.icon=[UIImage imageNamed:@"icon_mark1"];
-    annotation1.detail=@"Aalto's Home...";
+    annotation1.detail=@"WIQ's Home...";
     annotation1.rate=[UIImage imageNamed:@"icon_Movie_Star_rating"];
     [_mapView addAnnotation:annotation1];
     
     CLLocationCoordinate2D location2=CLLocationCoordinate2DMake(23.11, 113.27);
     MKAnnotationModel *annotation2=[[MKAnnotationModel alloc]init];
     annotation2.title=@"GZ";
-    annotation2.subtitle=@"Aalto's Studio";
+    annotation2.subtitle=@"WIQ's Studio";
     annotation2.coordinate=location2;
     annotation2.image=[UIImage imageNamed:@"icon_paopao_waterdrop_streetscape"];
     annotation2.icon=[UIImage imageNamed:@"icon_mark2"];
-    annotation2.detail=@"Aalto's Studio...";
+    annotation2.detail=@"WIQ's Studio...";
     annotation2.rate=[UIImage imageNamed:@"icon_Movie_Star_rating"];
     [_mapView addAnnotation:annotation2];
 }
@@ -76,7 +76,7 @@
 //        annotation.subtitle = placemark.name;
 //        annotation.image=[UIImage imageNamed:@"icon_openmap_item"];
 //        annotation.icon=[UIImage imageNamed:@"icon_mark1"];
-//        annotation.detail=@"Aalto's Studio...";
+//        annotation.detail=@"WIQ's Studio...";
 //        annotation.rate=[UIImage imageNamed:@"icon_Movie_Star_rating"];
 //        [mapView addAnnotation:annotation];
         

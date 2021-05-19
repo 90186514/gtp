@@ -2,8 +2,8 @@
 //  TreasureBoxCell.h
 //  SegmentController
 //
-//  Created by Aalto on 14-6-7.
-//  Copyright (c) 2014年 Aalto. All rights reserved.
+//  Created by WIQ on 14-6-7.
+//  Copyright (c) 2014年 WIQ. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

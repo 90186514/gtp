@@ -2,8 +2,8 @@
 //  PHAnimationLabel.m
 //  TagUtilViews
 //
-//  Created by AaltoChen on 16/8/23.
-//  Copyright © 2016年 Aalto. All rights reserved.
+//  Created by WIQChen on 16/8/23.
+//  Copyright © 2016年 WIQ. All rights reserved.
 //
 
 #import "PHVerticalAnimationLabel.h"

@@ -176,7 +176,7 @@
     _postAdsButton.tag = EnumActionTag4;
     _postAdsButton.adjustsImageWhenHighlighted = NO;
     _postAdsButton.titleLabel.font = kFontSize(16);
-    [_postAdsButton setTitle:@"确认登录" forState:UIControlStateNormal];
+    [_postAdsButton setTitle:@"好了登录" forState:UIControlStateNormal];
     [_postAdsButton setTitleColor:HEXCOLOR(0xffffff) forState:UIControlStateNormal];
     _postAdsButton.layer.masksToBounds = YES;
     _postAdsButton.layer.cornerRadius = 20;
@@ -206,16 +206,16 @@
     _accLab.font = kFontSize(30);
     
     UILabel* lab0 = _leftLabs[0];
-    lab0.text = @"请输入账户名";
+    lab0.text = @"请输入心情名";
     UILabel* lab1 = _leftLabs[1];
-    lab1.text = @"请输入账户密码";
+    lab1.text = @"请输入心情密码";
     
     UITextView* rtf0 = _rightTfs[0];
-    rtf0.placeholder = @"请输入账户名";
+    rtf0.placeholder = @"请输入心情名";
     //    [self textViewDidBeginEditing:rtf0];
     
     UITextView* rtf1 = _rightTfs[1];
-    rtf1.placeholder = @"请输入账户密码";
+    rtf1.placeholder = @"请输入心情密码";
 }
 - (void)postAdsAndRuleButtonClickItem:(UIButton*)sender{
     UITextView* rtf0 = _rightTfs[0];
@@ -223,17 +223,17 @@
     
     if ([NSString isEmpty:rtf0.text]
         &&[NSString isEmpty:rtf1.text]) {
-        [YKToastView showToastText:@"请输入账户名和账户密码"];
+        [YKToastView showToastText:@"请输入心情名和心情密码"];
         return;
     }
     else if (![NSString isEmpty:rtf0.text]
              &&[NSString isEmpty:rtf1.text]) {
-        [YKToastView showToastText:@"请输入账户密码"];
+        [YKToastView showToastText:@"请输入心情密码"];
         return;
     }
     else if ([NSString isEmpty:rtf0.text]
              &&![NSString isEmpty:rtf1.text]) {
-        [YKToastView showToastText:@"请输入账户名"];
+        [YKToastView showToastText:@"请输入心情名"];
         return;
     }
     
@@ -464,7 +464,7 @@
     _postAdsButton.tag = EnumActionTag4;
     _postAdsButton.adjustsImageWhenHighlighted = NO;
     _postAdsButton.titleLabel.font = kFontSize(16);
-    [_postAdsButton setTitle:@"确认登录" forState:UIControlStateNormal];
+    [_postAdsButton setTitle:@"好了登录" forState:UIControlStateNormal];
     [_postAdsButton setTitleColor:HEXCOLOR(0xffffff) forState:UIControlStateNormal];
     _postAdsButton.layer.masksToBounds = YES;
     _postAdsButton.layer.cornerRadius = 20;

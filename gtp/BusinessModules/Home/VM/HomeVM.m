@@ -2,8 +2,8 @@
 //  YBHomeDataCenter.m
 //  YBArchitectureDemo
 //
-//  Created by Aalto on 2018/11/19.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/11/19.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "HomeVM.h"
@@ -78,6 +78,9 @@
 }
 
 - (void)assembleApiData:(HomeData*)data WithPage:(NSInteger)page{
+    if (page ==3) {
+        return;
+    }
     [self removeContentWithType:IndexSectionZero];
     if (data.returnData !=nil && data.returnData.rankinglist.count>0 &&page==1) {
         [self.listData addObject:@{
@@ -86,7 +89,7 @@
     }
     
     [self removeContentWithType:IndexSectionOne];
-    NSArray* gridSectionNames = @[@"卖币",@"我的订单",@"数据统计",@"兑换比特币",@"推广"];//,@"推广"
+    NSArray* gridSectionNames = @[@"SLMIA",@"我的🌹",@"数据统计",@"兑换MIA",@"🐟"];//,@"🐟"
     NSMutableArray* gridParams = [NSMutableArray array];
     NSArray* gridTypes = @[@(EnumActionTag0),@(EnumActionTag1),@(EnumActionTag2),@(EnumActionTag3),@(EnumActionTag4)];//,@(IndexSectionFour)
     for (int i=0; i<gridSectionNames.count; i++) {
@@ -98,7 +101,7 @@
     }
     if (page==1){
         [self.listData addObject:@{kIndexSection: @(IndexSectionOne),
-                                   kIndexInfo:@[@"待处理订单",@"icon_bank"],
+                                   kIndexInfo:@[@"待处理🌹",@"icon_bank"],
                                    kIndexRow: @[gridParams]}];
     }
     

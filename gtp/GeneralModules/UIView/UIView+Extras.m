@@ -2,7 +2,7 @@
 //  UIView+Extension.m
 //  MJRefreshExample
 //
-//  Created by Aalto on 14-5-28.
+//  Created by WIQ on 14-5-28.
 //  Copyright (c) 2014年 itcast. All rights reserved.
 //
 
@@ -861,7 +861,7 @@ static const void *funcBtnsKey = &funcBtnsKey;
     button.adjustsImageWhenHighlighted = NO;
     button.titleLabel.font = [UIFont fontWithName:@"PingFangSC-Regular" size:11.0];//kFontSize(15);
     [button setTitleColor:RGBCOLOR(76, 127, 255) forState:UIControlStateNormal];
-    [button setTitle:@"联系买家" forState:UIControlStateNormal];
+    [button setTitle:@"联系可可家" forState:UIControlStateNormal];
     [button setImage:kIMG(@"contactOthers") forState:UIControlStateNormal];
     
     [button addTarget:self action:@selector(clickItem:) forControlEvents:UIControlEventTouchUpInside];
@@ -888,7 +888,7 @@ static const void *funcBtnsKey = &funcBtnsKey;
     
     NSMutableArray* funcBtns = [NSMutableArray array];
     
-    NSArray* subtitleArray =@[@"取消订单",@"已完成付款"];
+    NSArray* subtitleArray =@[@"取消🌹",@"已完成靓靓🐟"];
     for (int i = 0; i < subtitleArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.tag =  i;

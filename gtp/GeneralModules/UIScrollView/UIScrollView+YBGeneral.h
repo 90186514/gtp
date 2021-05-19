@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import <MJRefresh.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -17,6 +17,10 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)YBGeneral_addRefreshFooter:(void(^)(void))block;
 - (void)YBGeneral_addRefreshHeader:(void(^)(void))blockH footer:(void(^)(void))blockF;
 
+- (void)addMJHeaderWithBlock:(MJRefreshComponentAction)block;
+- (void)addMJFooterWithBlock:(MJRefreshComponentAction)block;
+- (void)endMJRefresh;
+- (void)hasMoreData:(BOOL)noMoreData;
 @end
 
 NS_ASSUME_NONNULL_END

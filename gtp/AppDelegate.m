@@ -2,8 +2,8 @@
 //  AppDelegate.m
 //  gtp
 //
-//  Created by Aalto on 2018/12/15.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/12/15.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "AppDelegate.h"

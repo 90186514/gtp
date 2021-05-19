@@ -67,7 +67,7 @@
         saftBtn.frame = CGRectMake(0, 0, _contentView.width, 47);
         saftBtn.titleLabel.font = kFontSize(17);
         [saftBtn setTitleColor:HEXCOLOR(0x232630) forState:UIControlStateNormal];
-        [saftBtn setTitle:@"放行订单" forState:UIControlStateNormal];
+        [saftBtn setTitle:@"symbolic🌹" forState:UIControlStateNormal];
         saftBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
         [_contentView addSubview:saftBtn];
         
@@ -106,9 +106,9 @@
     UIButton* bt0 =_btns[0];
     UIButton* bt1 =_btns[1];
     
-    [bt0 setTitle:[NSString stringWithFormat:@"请确认已收到买方的付款，放行后自动向对方划转 %s 币。","654788 AB"] forState:UIControlStateNormal];
+    [bt0 setTitle:[NSString stringWithFormat:@"请好了亲亲到可可方的靓靓🐟，symbolic后自动向对方划转 %s MIA。","654788 AB"] forState:UIControlStateNormal];
     
-    [bt1 setTitle:@"买方信息：" forState:UIControlStateNormal];
+    [bt1 setTitle:@"可可方信息：" forState:UIControlStateNormal];
     
     [_btns mas_distributeViewsAlongAxis:MASAxisTypeVertical withFixedSpacing:13 leadSpacing:68 tailSpacing:188];
     
@@ -205,7 +205,7 @@
         make.bottom.equalTo(lastView.mas_bottom).offset(0);
     }];
     
-    NSArray* subtitleArray =@[@"取消",@"确认放行"];
+    NSArray* subtitleArray =@[@"取消",@"好了symbolic"];
     for (int i = 0; i < subtitleArray.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.tag =  i;
@@ -256,11 +256,11 @@
 
 - (void)richElementsInViewWithModel:(id)model{
     UILabel* lab0 = _leftLabs[0];
-    lab0.attributedText = [NSString attributedStringWithString:@"付款方式：" stringColor:HEXCOLOR(0x333333) stringFont:kFontSize(14) subString:[NSString stringWithFormat:@"%@",@"支付宝"] subStringColor:HEXCOLOR(0x4c7fff) subStringFont:kFontSize(14)];
+    lab0.attributedText = [NSString attributedStringWithString:@"靓靓🐟方式：" stringColor:HEXCOLOR(0x333333) stringFont:kFontSize(14) subString:[NSString stringWithFormat:@"%@",@"😊"] subStringColor:HEXCOLOR(0x4c7fff) subStringFont:kFontSize(14)];
     UILabel* lab1 = _leftLabs[1];
-    lab1.attributedText = [NSString attributedStringWithString:@"付款金额：" stringColor:HEXCOLOR(0x333333) stringFont:kFontSize(14) subString:[NSString stringWithFormat:@"%@ 元",@"3857"] subStringColor:HEXCOLOR(0x4c7fff) subStringFont:kFontSize(14)];
+    lab1.attributedText = [NSString attributedStringWithString:@"靓靓🐟TUMO：" stringColor:HEXCOLOR(0x333333) stringFont:kFontSize(14) subString:[NSString stringWithFormat:@"%@ 🐶",@"3857"] subStringColor:HEXCOLOR(0x4c7fff) subStringFont:kFontSize(14)];
     UILabel* lab2 = _leftLabs[2];
-    lab2.attributedText = [NSString attributedStringWithString:@"付款参考码： " stringColor:HEXCOLOR(0x333333) stringFont:kFontSize(14) subString:[NSString stringWithFormat:@"%@",@"548860"] subStringColor:HEXCOLOR(0x4c7fff) subStringFont:kFontSize(14)];
+    lab2.attributedText = [NSString attributedStringWithString:@"靓靓🐟参考码： " stringColor:HEXCOLOR(0x333333) stringFont:kFontSize(14) subString:[NSString stringWithFormat:@"%@",@"548860"] subStringColor:HEXCOLOR(0x4c7fff) subStringFont:kFontSize(14)];
 }
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
 {

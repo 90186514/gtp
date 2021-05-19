@@ -2,7 +2,7 @@
 //  InputPWPopUpView.h
 //  gtp
 //
-//  Created by Aalto on 2018/12/30.
+//  Created by WIQ on 2018/12/30.
 //  Copyright © 2018 GT. All rights reserved.
 //
 

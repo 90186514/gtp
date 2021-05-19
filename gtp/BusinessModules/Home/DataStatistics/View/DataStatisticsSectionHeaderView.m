@@ -1,5 +1,5 @@
-//  Created by Aalto on 2018/12/28.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/12/28.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "DataStatisticsSectionHeaderView.h"
@@ -168,8 +168,10 @@
     switch (type) {
         case IndexSectionZero:
         {
-            [_dataBtns[0] setTitle:title forState:UIControlStateNormal];
-            [_dataBtns[1] setTitle:subTitle forState:UIControlStateNormal];
+            UIButton* btn0 = _dataBtns[0];
+            UIButton* btn1 = _dataBtns[1];
+            [btn0 setTitle:title forState:UIControlStateNormal];
+            [btn1 setTitle:subTitle forState:UIControlStateNormal];
         }
             break;
             

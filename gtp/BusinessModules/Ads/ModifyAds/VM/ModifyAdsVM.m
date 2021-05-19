@@ -2,8 +2,8 @@
 //  YBHomeDataCenter.m
 //  YBArchitectureDemo
 //
-//  Created by Aalto on 2018/11/19.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/11/19.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "ModifyAdsVM.h"
@@ -48,13 +48,13 @@
     NSDictionary* dic0 = @{kType:@(OrderTypeFinished),kImg:@"iconSucc",kTit:@"状态",kSubTit:[NSString stringWithFormat:@"%@",@"已上线"], kIndexSection:@(IndexSectionZero),
                            kIndexRow:
                                @[
-                                   @{@"广告ID：":@"3485ifjk"},
-                                   @{@"广告类型：":@"卖出 AB 币"},
-                                   @{@"货币类型：":@"人民币 CNY"},
-                                   @{@"单价：":@"100 CNY = 1 AB"},
-                                   @{@"卖出数量：":@"590 AB"},
-                                   @{@"创建时间：":@"2018-10-19 12:00:12"},@{@"付款期限：":@"20分钟"},
-                                   @{@"收款账号：":@"支付宝"}
+                                   @{@"勃勃生机ID：":@"3485ifjk"},
+                                   @{@"勃勃生机类型：":@"SL出 AB MIA"},
+                                   @{@"货MIA类型：":@"🎂MIA KKL"},
+                                   @{@"暨起：":@"100 KKL = 1 AB"},
+                                   @{@"SL出数量：":@"590 AB"},
+                                   @{@"创建时间：":@"2018-10-19 12:00:12"},@{@"靓靓🐟期限：":@"20分钟"},
+                                   @{@"收🐟心号：":@"😊"}
                                    
                                    ]
                            
@@ -65,7 +65,7 @@
     NSDictionary* dic1 = @{kImg:@"iconSucc",kTit:@"自动回复：",kSubTit:[NSString stringWithFormat:@"%@",@""], kIndexSection:@(IndexSectionOne),
                            kIndexRow:
                                @[
-                                   @{kTit:@"用户下单看到的快捷回复，可填写付款要求。"}
+                                   @{kTit:@"用户下单看到的快捷回复，可填写靓靓🐟要求。"}
                                    
                                    ]
                            
@@ -73,10 +73,10 @@
     [self.listData addObject:dic1];
     
     [self removeContentWithType:IndexSectionTwo];
-    NSDictionary* dic2 = @{kImg:@"iconSucc",kTit:@"买家限制：",kSubTit:[NSString stringWithFormat:@"%@",@""], kIndexSection:@(IndexSectionTwo),
+    NSDictionary* dic2 = @{kImg:@"iconSucc",kTit:@"可可家限制：",kSubTit:[NSString stringWithFormat:@"%@",@""], kIndexSection:@(IndexSectionTwo),
                            kIndexRow:
                                @[
-                                   @{@"收款账号：":@"支付宝"}
+                                   @{@"收🐟心号：":@"😊"}
                                    ]
                            };
     

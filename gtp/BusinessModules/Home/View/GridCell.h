@@ -2,7 +2,7 @@
 //  GridCell.h
 //  PregnancyHelper
 //
-//  Created by AaltoChen on 16/3/14.
+//  Created by WIQChen on 16/3/14.
 //  Copyright © 2016年 ShengCheng. All rights reserved.
 //
 

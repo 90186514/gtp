@@ -77,7 +77,7 @@
         NSDictionary* dic0  = incomeArr[i];
         NSDictionary* dic1 = @{
             kType:@(i),
-    //        kTit:[NSString stringWithFormat:@"%@",@"收入"],
+    //        kTit:[NSString stringWithFormat:@"%@",@"🎂"],
             kIndexInfo:[NSString stringWithFormat:@"%@",dic0.allKeys[0]],
             kColor:dic0.allValues[0]
                                
@@ -105,7 +105,7 @@
 //        NSDictionary* dic0  = incomeArr[i];
 //        NSDictionary* dic1 = @{
 //            kType:@(i),
-//    //        kTit:[NSString stringWithFormat:@"%@",@"收入"],
+//    //        kTit:[NSString stringWithFormat:@"%@",@"🎂"],
 //            kIndexInfo:[NSString stringWithFormat:@"%@",dic0.allKeys[0]],
 //            kColor:dic0.allValues[0]
 //

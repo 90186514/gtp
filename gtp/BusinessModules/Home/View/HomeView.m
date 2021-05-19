@@ -1,6 +1,6 @@
 
-//  Created by Aalto on 2018/11/19.
-//  Copyright © 2018 Aalto. All rights reserved.
+//  Created by WIQ on 2018/11/19.
+//  Copyright © 2018 WIQ. All rights reserved.
 //
 
 #import "HomeView.h"
@@ -56,27 +56,30 @@
     }];
 }
 
-#pragma mark - public
+#pragma mark - public dataProcess
 - (void)requestHomeListSuccessWithArray:(NSArray *)array WithPage:(NSInteger)page{
     //每一次刷新数据时，重置初始时间
     _start = CFAbsoluteTimeGetCurrent();
     self.currentPage = page;
+    if (self.currentPage == 1) {
+        [self.sections removeAllObjects];
+        [self.tableView reloadData];
+    }
     if (array.count > 0) {
-        if (self.currentPage == 1) {
-            [self.sections removeAllObjects];
-        }
         [self.sections addObjectsFromArray:array];
         [self.tableView reloadData];
         [self.tableView.mj_footer endRefreshing];
+        self.tableView.mj_footer.hidden = NO;
     } else {
         [self.tableView.mj_footer endRefreshingWithNoMoreData];
+        self.tableView.mj_footer.hidden = YES;//in 2 ways, footer no request
     }
     [self.tableView.mj_header endRefreshing];
 }
 
 - (void)requestHomeListFailed {
     self.currentPage = 0;
-    [self.sections removeAllObjects];
+//    [self.sections removeAllObjects];
     [self.tableView reloadData];
     [self.tableView.mj_header endRefreshing];
     [self.tableView.mj_footer endRefreshing];
@@ -203,7 +206,7 @@
             GridCell *cell = [GridCell cellWith:tableView];
             [cell richElementsInCellWithModel:itemData];
             [cell actionBlock:^(NSDictionary *dataModel) {
-                IndexSectionType type = [dataModel[kType] integerValue];
+                EnumActionTag type = [dataModel[kType] integerValue];
                 
                 if (weakSelf.block) {
                     self.block(@(type),dataModel);
@@ -306,18 +309,32 @@
         _tableView.tableFooterView = [UIView new];
         [HomeSectionHeaderView sectionHeaderViewWith:_tableView];
 //        [_tableView registerClass:[HomeSectionHeaderView class] forHeaderFooterViewReuseIdentifier:@"HomeSectionHeaderView"];
-       kWeakSelf(self);
-        [_tableView YBGeneral_addRefreshHeader:^{
-            kStrongSelf(self);
-            self.currentPage = 1;
-            [self.delegate homeView:self requestHomeListWithPage:self.currentPage];
-        }
-                                        footer:^{
-            kStrongSelf(self);
-            ++self.currentPage;
-            [self.delegate homeView:self requestHomeListWithPage:self.currentPage];
-        }
-         ];
+        
+//       kWeakSelf(self);
+//        [_tableView YBGeneral_addRefreshHeader:^{
+//            kStrongSelf(self);
+//            self.currentPage = 1;
+//            [self.delegate homeView:self requestHomeListWithPage:self.currentPage];
+//        }
+//                                        footer:^{
+//            kStrongSelf(self);
+//            ++self.currentPage;
+//            [self.delegate homeView:self requestHomeListWithPage:self.currentPage];
+//        }
+//         ];
+        
+        kWeakSelf(self);
+        [_tableView addMJHeaderWithBlock:^{
+                     kStrongSelf(self);
+                     self.currentPage = 1;
+                    [self.delegate homeView:self requestHomeListWithPage:self.currentPage];
+         }];
+         
+        [_tableView addMJFooterWithBlock:^{
+                     kStrongSelf(self);
+                     ++self.currentPage;
+                    [self.delegate homeView:self requestHomeListWithPage:self.currentPage];
+         }];
     }
     return _tableView;
 }

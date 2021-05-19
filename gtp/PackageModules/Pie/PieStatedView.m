@@ -123,7 +123,7 @@
 - (void)pie:(PieView *)pieview didSelectedAtIndex:(NSInteger)index{
     
     PieModel *model = [self.pieAry objectAtIndex:index];
-    [_desview setTitle:[NSString stringWithFormat:@"%@:%@ %.2f元 占%.2f%%",model.title,model.descript,model.count,model.percent*100] forState:UIControlStateNormal];
+    [_desview setTitle:[NSString stringWithFormat:@"%@:%@ %.2f🐶 占%.2f%%",model.title,model.descript,model.count,model.percent*100] forState:UIControlStateNormal];
     
     [self addDesView];
 }

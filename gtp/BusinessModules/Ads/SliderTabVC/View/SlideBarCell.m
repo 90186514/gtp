@@ -61,7 +61,7 @@
     tflab1.text = @"最大限额";
     _rangeLine.backgroundColor = HEXCOLOR(0x394368);
     
-    _fixLab.text = @"固定金额";
+    _fixLab.text = @"固定TUMO";
     //
 }
 
@@ -106,9 +106,9 @@
         
     }
     UILabel* lab0 = _leftLabs[0];
-    lab0.text = @"卖出数量";
+    lab0.text = @"SL出数量";
     UILabel* lab1 = _leftLabs[1];
-    lab1.text = @"付款期限";
+    lab1.text = @"靓靓🐟期限";
     
     UILabel* rlab0 = _rightLabs[0];
 //    rlab0.text = [NSString stringWithFormat:@"%@",accountType ==0?@"2349875690":@"23"];
@@ -121,13 +121,13 @@
 
     UITextView* rtf0 = _rightTfs[0];
     UITextView* rtf1 = _rightTfs[1];
-    rtf0.placeholder =@"  请输入卖出数量  ";
-    rtf1.placeholder =@"  请输入付款期限  ";
+    rtf0.placeholder =@"  请输入SL出数量  ";
+    rtf1.placeholder =@"  请输入靓靓🐟期限  ";
     [_rightTfs[1] mas_updateConstraints:^(MASConstraintMaker *make) {
         make.trailing.offset(-50);
     }];
     
-    _decLab.text = @"买家需要在付款期限内转账并点击确认付款，超过时限该笔交易将自动取消，您可以依据不同的交易方式来调整时限。";
+    _decLab.text = @"可可家需要在靓靓🐟期限内转心并点击好了靓靓🐟，超过时限该笔交易将自动取消，您可以依据不同的交易方式来调整时限。";
     
 }
 
