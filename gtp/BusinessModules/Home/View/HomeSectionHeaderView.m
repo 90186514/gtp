@@ -45,7 +45,8 @@
         _topicRefreshBtn.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
         _topicRefreshBtn.contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         _topicRefreshBtn.titleLabel.font = kFontSize(13);
-        _topicRefreshBtn.titleLabel.numberOfLines = 1;
+        _topicRefreshBtn.titleLabel.numberOfLines = 1;//0
+        _topicRefreshBtn.titleLabel.lineBreakMode = NSLineBreakByCharWrapping;
         [_topicRefreshBtn setTitleColor:HEXCOLOR(0x000000) forState:UIControlStateNormal];
         [_topicRefreshBtn addTarget:self action:@selector(refreshTopic:) forControlEvents:UIControlEventTouchUpInside];
         
