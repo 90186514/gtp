@@ -8,6 +8,7 @@
 
 #import "InputPWPopUpView.h"
 #define XHHTuanNumViewHight 288//347 //283+64
+#define XHHTuanNumViewWidth (MAINSCREEN_WIDTH-50)
 @interface InputPWPopUpView()<UIGestureRecognizerDelegate,UITextViewDelegate>
 @property(nonatomic,strong)UIView *contentView;
 @property (nonatomic, strong) UIImageView *line1;
@@ -46,7 +47,7 @@
     _contentViewHeigth = XHHTuanNumViewHight;
     if (_contentView == nil) {
 //        _contentView = [[UIView alloc]initWithFrame:CGRectMake(0, MAINSCREEN_HEIGHT - _contentViewHeigth, MAINSCREEN_WIDTH, _contentViewHeigth)];
-        _contentView = [[UIView alloc]initWithFrame:CGRectMake(0, (MAINSCREEN_HEIGHT - _contentViewHeigth)/2, MAINSCREEN_WIDTH, _contentViewHeigth)];
+        _contentView = [[UIView alloc]initWithFrame:CGRectMake((MAINSCREEN_WIDTH - XHHTuanNumViewWidth)/2, (MAINSCREEN_HEIGHT - _contentViewHeigth)/2, XHHTuanNumViewWidth, _contentViewHeigth)];
         _contentView.userInteractionEnabled = YES;
         _contentView.backgroundColor = [UIColor whiteColor];
         [self addSubview:_contentView];
@@ -138,6 +139,8 @@
         tf.delegate = self;
 //        tf.keyboardType = UIKeyboardTypeNumberPad;
         tf.textAlignment = NSTextAlignmentLeft;
+        tf.textContainer.maximumNumberOfLines = 1;
+        tf.textContainer.lineBreakMode = NSLineBreakByTruncatingTail;
         tf.backgroundColor = kClearColor;
         tf.textColor = [YBGeneralColor themeColor];
         tf.font = kFontSize(15);
@@ -290,14 +293,15 @@
     [view addSubview:self];
     [view addSubview:_contentView];
     
-    [_contentView setFrame:CGRectMake(0, MAINSCREEN_HEIGHT, MAINSCREEN_WIDTH, _contentViewHeigth)];
+    [_contentView setFrame:CGRectMake((MAINSCREEN_WIDTH - XHHTuanNumViewWidth)/2, MAINSCREEN_HEIGHT, XHHTuanNumViewWidth, _contentViewHeigth)];
     WS(weakSelf);
     [UIView animateWithDuration:0.3 animations:^{
         
         weakSelf.alpha = 1.0;
         
 //        [weakSelf.contentView setFrame:CGRectMake(0, (MAINSCREEN_HEIGHT - weakSelf.contentViewHeigth),MAINSCREEN_WIDTH,weakSelf.contentViewHeigth)];
-        [weakSelf.contentView setFrame:CGRectMake(0, (MAINSCREEN_HEIGHT - weakSelf.contentViewHeigth)/2,MAINSCREEN_WIDTH,weakSelf.contentViewHeigth)];
+        
+        [weakSelf.contentView setFrame:CGRectMake((MAINSCREEN_WIDTH - XHHTuanNumViewWidth)/2, (MAINSCREEN_HEIGHT - weakSelf.contentViewHeigth)/2,XHHTuanNumViewWidth, XHHTuanNumViewHight)];
         
     } completion:nil];
 }
@@ -306,11 +310,12 @@
 - (void)disMissView {
     WS(weakSelf);
 //    [_contentView setFrame:CGRectMake(0, MAINSCREEN_HEIGHT - _contentViewHeigth, MAINSCREEN_WIDTH, _contentViewHeigth)];
-    [_contentView setFrame:CGRectMake(0, (MAINSCREEN_HEIGHT - _contentViewHeigth)/2, MAINSCREEN_WIDTH, _contentViewHeigth)];
+    [_contentView setFrame:CGRectMake((MAINSCREEN_WIDTH - XHHTuanNumViewWidth)/2, (MAINSCREEN_HEIGHT - _contentViewHeigth)/2, XHHTuanNumViewWidth, _contentViewHeigth)];
     [UIView animateWithDuration:0.3f
                      animations:^{
                          weakSelf.alpha = 0.0;
-                         [weakSelf.contentView setFrame:CGRectMake(0, MAINSCREEN_HEIGHT, MAINSCREEN_WIDTH, weakSelf.contentViewHeigth)];
+                         
+                        [weakSelf.contentView setFrame:CGRectMake((MAINSCREEN_WIDTH - XHHTuanNumViewWidth)/2, MAINSCREEN_HEIGHT, XHHTuanNumViewWidth, weakSelf.contentViewHeigth)];
                      }
                      completion:^(BOOL finished){
                          [weakSelf removeFromSuperview];

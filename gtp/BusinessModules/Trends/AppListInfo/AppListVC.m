@@ -69,6 +69,9 @@
         NSLog(@"🐒 %d--",a);
         a++;
         
+//        NSMutableAttributedString *url = [NSMutableAttributedString new];
+//        [url appendAttributedString:attrStr];
+            
         NSMutableString *url = [NSMutableString string];
         
         //应用的类型是系统还是第三方
