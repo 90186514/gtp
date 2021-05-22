@@ -82,9 +82,9 @@
 
 - (void) requestHomeListWithPage:(NSInteger)page {
    kWeakSelf(self);
-    [self.vm network_getHomeListWithPage:page success:^(NSArray * _Nonnull dataArray) {
+    [self.vm network_getHomeListWithPage:page success:^(NSArray * _Nonnull dataArray, NSArray * _Nonnull footArr) {
         kStrongSelf(self);
-        [self requestHomeListSuccessWithArray:dataArray WithPage:page];
+        [self requestHomeListSuccessWithArray:dataArray WithArray:(NSArray *)footArr WithPage:page];
     } failed:^(id model){
         kStrongSelf(self);
 //        [self requestHomeListSuccessWithArray:model WithPage:page];
@@ -93,7 +93,7 @@
 }
 
 #pragma mark - public processData
-- (void)requestHomeListSuccessWithArray:(NSArray *)array WithPage:(NSInteger)page{
+- (void)requestHomeListSuccessWithArray:(NSArray *)sections WithArray:(NSArray *)footArr WithPage:(NSInteger)page{
     //每一次刷新数据时，重置初始时间
     _start = CFAbsoluteTimeGetCurrent();
     self.currentPage = page;
@@ -101,11 +101,16 @@
         [self.sections removeAllObjects];
         [self.tableView reloadData];
     }
-    if (array.count > 0) {
-        [self.sections addObjectsFromArray:array];
+    if (sections.count > 0) {
+        [self.sections removeAllObjects];
+        [self.sections addObjectsFromArray:sections];
         [self.tableView reloadData];
         [self.tableView.mj_footer endRefreshing];
         self.tableView.mj_footer.hidden = NO;
+        if (footArr.count == 0) {
+            [self.tableView.mj_footer endRefreshingWithNoMoreData];
+            self.tableView.mj_footer.hidden = YES;
+        }
     } else {
         [self.tableView.mj_footer endRefreshingWithNoMoreData];
         self.tableView.mj_footer.hidden = YES;//in 2 ways, footer no request
@@ -137,40 +142,42 @@
 
 #pragma mark - SectonHeader
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-//    if (section >= _sections.count) {
-//        section = _sections.count - 1;
-//    }
-//
-//    IndexSectionType type = [(_sections[section])[kIndexSection] integerValue];
-//    switch (type) {
-//        case IndexSectionTwo:
-//            return [HomeSectionHeaderView viewHeight];
-//            break;
-//        default:
+    if (section >= _sections.count) {
+        section = _sections.count - 1;
+    }
+
+    IndexSectionType type = [(_sections[section])[kIndexSection] integerValue];
+    switch (type) {
+        case IndexSectionTwo:{
+            NSDictionary* model = (NSDictionary*)(_sections[section]);
+            return [HomeSectionHeaderView viewHeight:model];
+        }
+            break;
+        default:
             return 0.1f;
-//            break;
-//    }
+            break;
+    }
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-//    if(section >= _sections.count) {
-//        section = _sections.count - 1;
-//    }
-//    IndexSectionType type = [(_sections[section])[kIndexSection] integerValue];
-//
-//    switch (type) {
-//        case IndexSectionTwo:{
-//            NSDictionary* model = (NSDictionary*)(_sections[section]);
-//            HomeSectionHeaderView * sectionHeaderView = (HomeSectionHeaderView *)[_tableView dequeueReusableHeaderFooterViewWithIdentifier:HomeSectionHeaderViewReuseIdentifier];
-//            [sectionHeaderView richElementsInViewWithModel:model];
-//            return  sectionHeaderView;
-//        }
-//            break;
-//
-//        default:
+    if(section >= _sections.count) {
+        section = _sections.count - 1;
+    }
+    IndexSectionType type = [(_sections[section])[kIndexSection] integerValue];
+
+    switch (type) {
+        case IndexSectionTwo:{
+            NSDictionary* model = (NSDictionary*)(_sections[section]);
+            HomeSectionHeaderView * sectionHeaderView = (HomeSectionHeaderView *)[_tableView dequeueReusableHeaderFooterViewWithIdentifier:HomeSectionHeaderViewReuseIdentifier];
+            [sectionHeaderView richElementsInViewWithModel:model];
+            return  sectionHeaderView;
+        }
+            break;
+
+        default:
             return [UIView new];
-//            break;
-//    }
+            break;
+    }
 }
 
 #pragma mark - SectonFooter
@@ -185,12 +192,6 @@
         case IndexSectionZero:
             return 12.f;
             break;
-        case IndexSectionOne:
-            return [HomeSectionHeaderView viewHeight];
-            break;
-        case IndexSectionTwo:
-            return .1f;
-            break;
         default:
             return 0.1f;
             break;
@@ -198,25 +199,7 @@
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
-    if (section >= _sections.count) {
-        section = _sections.count - 1;
-    }
-    IndexSectionType type = [(_sections[section])[kIndexSection] integerValue];
-    
-    switch (type) {
-        case IndexSectionOne:{
-            NSDictionary* model = (NSDictionary*)(_sections[section]);
-            HomeSectionHeaderView * sectionHeaderView = (HomeSectionHeaderView *)[_tableView dequeueReusableHeaderFooterViewWithIdentifier:HomeSectionHeaderViewReuseIdentifier];
-            [sectionHeaderView richElementsInViewWithModel:model];
-            return  sectionHeaderView;
-        }
-            break;
-            
-        default:
-            return [UIView new];
-            break;
-            
-    }
+    return [UIView new];
 }
 #pragma mark - cellForRow
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {

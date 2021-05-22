@@ -13,7 +13,6 @@
 
 @interface GridCell : UITableViewCell<UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout>
 @property(nonatomic, strong)UICollectionView *collectionView;
-@property(nonatomic, strong)NSArray *data;
 //@property (copy, nonatomic) void(^clickGridRowBlock)(NSDictionary * dataModel);
 - (void)actionBlock:(ActionBlock)block;
 +(CGFloat)cellHeightWithModel:(NSArray*)model;

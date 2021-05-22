@@ -10,6 +10,7 @@
 @interface GridCell()
 @property (nonatomic, copy) ActionBlock block;
 @property (nonatomic, strong)NSIndexPath* selectedIndexPath;
+@property(nonatomic, strong)NSMutableArray *data;
 @end
 @implementation GridCell
 
@@ -58,12 +59,14 @@
 }
 
 +(CGFloat)cellHeightWithModel:(NSArray*)model{
+    //VM累计出总的数据，V不在累计
     //更新GridCell高度
     return (model.count%4==0?model.count/4:model.count/4+1)*kGridCellHeight;
 }
 
 - (void)richElementsInCellWithModel:(NSArray*)model{
-    _data = model;
+    _data = [NSMutableArray array];
+    [_data addObjectsFromArray: model];
     
     //如果是GridCell的话，要同步collectionView高度
     [_collectionView setHeight:[GridCell cellHeightWithModel:model]];

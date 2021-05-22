@@ -65,21 +65,39 @@
     }
     return self;
 }
-+ (CGFloat)viewHeight
++ (CGFloat)viewHeight:(id)model
 {
-    return kHeightForHeaderInSections;
+    IndexSectionType type = [model[kIndexSection] integerValue];
+    switch (type) {
+        case IndexSectionTwo:{
+            NSArray* arr = (NSArray*)(model[kIndexInfo]);
+        
+            NSString* subTitle = arr[1];
+            
+            return subTitle.length==0?0.1f: kHeightForHeaderInSections;
+            
+        }
+            break;
+//
+        default:{
+            return .1f;
+        }
+            break;
+    }
+    
 }
 
 - (void)richElementsInViewWithModel:(id)model{
     IndexSectionType type = [model[kIndexSection] integerValue];
-    NSArray* arr = (NSArray*)(model[kIndexInfo]);
-    NSString* title =  arr[0];
-    NSString* subTitle = arr[1];
+    
     self.sectionLine.hidden = NO;
     
     switch (type) {
-        case IndexSectionOne:{
+        case IndexSectionTwo:{
             _sectionLine.hidden = NO;
+            NSArray* arr = (NSArray*)(model[kIndexInfo]);
+            NSString* title =  arr[0];
+            NSString* subTitle = arr[1];
             [_topicRefreshBtn setImage:[UIImage imageNamed:subTitle] forState:UIControlStateNormal];
             [_topicRefreshBtn setTitle:title forState:UIControlStateNormal];
             [_topicRefreshBtn layoutButtonWithEdgeInsetsStyle:MKButtonEdgeInsetsStyleLeft imageTitleSpace:13];

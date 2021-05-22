@@ -10,6 +10,7 @@
 
 @interface HomeVM()
 @property (strong,nonatomic)NSMutableArray   *listData;
+@property (nonatomic,strong) NSMutableArray* footerArr;
 @property (nonatomic,strong) HomeModel* model;
 @end
 
@@ -49,10 +50,12 @@
 //    }];
 }
 
-- (void)network_getHomeListWithPage:(NSInteger)page success:(void (^)(NSArray * _Nonnull))success failed:(DataBlock)failed {
+- (void)network_getHomeListWithPage:(NSInteger)page success:(void (^)(NSArray * _Nonnull,NSArray * _Nonnull))success failed:(DataBlock)failed {
     
     _listData = [NSMutableArray array];
-    
+    if (page ==1) {
+        _footerArr = [NSMutableArray array];
+    }
     
     
     NSString* v =  [YBSystemTool appVersion];
@@ -66,7 +69,7 @@
         if ([NSString getLNDataSuccessed:result]) {
             weakSelf.model = [HomeModel mj_objectWithKeyValues:dic];
             [self assembleApiData:weakSelf.model.result.data WithPage:page];
-            success(weakSelf.listData);
+            success(weakSelf.listData,weakSelf.model.result.data.returnData.rankinglist);
 //            [[NSNotificationCenter defaultCenter] postNotificationName:@"HomeModelReturn" object:nil];
         }
         else{
@@ -82,11 +85,11 @@
         return;
     }
     [self removeContentWithType:IndexSectionZero];
-    if (data.returnData !=nil && data.returnData.rankinglist.count>0 &&page==1) {
+//    if (data.returnData !=nil && data.returnData.rankinglist.count>0 &&page==1) {
         [self.listData addObject:@{
                    kIndexSection: @(IndexSectionZero),
                    kIndexRow: @[data.returnData]}];
-    }
+//    }
     
     [self removeContentWithType:IndexSectionOne];
     NSArray* gridSectionNames = @[@"SLMIA",@"我的🌹",@"数据统计",@"哥哥MIA",@"🐟"];//,@"🐟"
@@ -99,26 +102,28 @@
                                  };
         [gridParams addObject:param];
     }
-    if (page==1){
+//    if (page==1){
         [self.listData addObject:@{kIndexSection: @(IndexSectionOne),
-                                   kIndexInfo:@[@"待处理🌹",@"icon_bank"],
+                                   
                                    kIndexRow: @[gridParams]}];
-    }
-    
-    [self removeContentWithType:IndexSectionTwo];
-    NSMutableArray *times = [NSMutableArray arrayWithCapacity:20];
-    for (NSInteger i = 0; i < 8; i ++) {
-        NSInteger time = arc4random()%3600;
-        [times addObject:@(time)];
-    }
-//    if (data.t !=nil && data.t.arr.count>0) {
-        [self.listData addObject:@{
-                
-                kIndexSection: @(IndexSectionTwo),
-                kIndexRow: times}//data.t.arr
-         ];
 //    }
     
+    [self removeContentWithType:IndexSectionTwo];
+    
+    if (data.returnData !=nil && data.returnData.rankinglist.count>0 ) {
+        NSMutableArray *times = [NSMutableArray arrayWithCapacity:20];
+        for (NSInteger i = 0; i < data.returnData.rankinglist.count; i ++) {
+            NSInteger time = arc4random()%3600;
+            [times addObject:@(time)];
+        }
+        [_footerArr addObjectsFromArray:times];//拼接接口分页数据=data.returnData.rankinglist
+    }
+    [self.listData addObject:@{
+            
+            kIndexSection: @(IndexSectionTwo),
+            kIndexInfo:@[@"待处理🌹",@"icon_bank"],
+            kIndexRow: _footerArr}//data.t.arr
+     ];
     
     [self sortData];
 }

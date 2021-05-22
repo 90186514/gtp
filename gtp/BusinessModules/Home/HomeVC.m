@@ -107,7 +107,7 @@
 
 - (void)homeView:(HomeView *)view requestHomeListWithPage:(NSInteger)page {
    kWeakSelf(self);
-    [self.vm network_getHomeListWithPage:page success:^(NSArray * _Nonnull dataArray) {
+    [self.vm network_getHomeListWithPage:page success:^(NSArray * _Nonnull dataArray, NSArray * _Nonnull footArr) {
         kStrongSelf(self);
         [self.mainView requestHomeListSuccessWithArray:dataArray WithPage:page];
     } failed:^(id model){

@@ -15,5 +15,5 @@ static NSString *HomeSectionHeaderViewReuseIdentifier = @"HomeSectionHeaderView"
 @interface HomeSectionHeaderView : UITableViewHeaderFooterView
 - (void)richElementsInViewWithModel:(id)model;
 + (void)sectionHeaderViewWith:(UITableView*)tableView;
-+ (CGFloat)viewHeight;
++ (CGFloat)viewHeight:(id)model;
 @end
