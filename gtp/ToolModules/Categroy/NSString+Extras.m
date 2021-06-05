@@ -323,6 +323,37 @@
     return attributedStr;
 }
 
++ (NSMutableAttributedString *)attributedStringWithString:(NSString *)string stringColor:(UIColor*)scolor stringFont:(UIFont*)sFont subString:(NSString *)subString subStringColor:(UIColor*)subStringcolor subStringFont:(UIFont*)subStringFont paragraphStyle:(NSTextAlignment)alignment
+{
+    NSMutableDictionary *txtDict = [NSMutableDictionary dictionary];
+   NSMutableParagraphStyle *aParagraphStyle = [[NSMutableParagraphStyle alloc] init];
+//       aParagraphStyle.lineSpacing = 10;// 字体的行间距
+//       aParagraphStyle.firstLineHeadIndent = 30.0f;//首行缩进
+   aParagraphStyle.paragraphSpacing = .5;
+   aParagraphStyle.alignment = alignment;
+   [aParagraphStyle setLineBreakMode:NSLineBreakByWordWrapping];
+   [txtDict setObject:aParagraphStyle forKey:NSParagraphStyleAttributeName];
+//     [attStr addAttribute:NSBaselineOffsetAttributeName value:@(0.36 * (a - b)) range:NSMakeRange(2, attStr.length - 2)]; //vertical
+        
+    NSMutableAttributedString *attributedStr=[[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@", string]];
+    NSDictionary * attributes = @{ NSFontAttributeName:sFont,NSForegroundColorAttributeName:scolor};
+    [txtDict addEntriesFromDictionary:attributes];
+    
+    [attributedStr setAttributes:txtDict range:NSMakeRange(0,attributedStr.length)];
+    
+    
+    NSMutableAttributedString *subAttributedStr=[[NSMutableAttributedString alloc] initWithString:[NSString stringWithFormat:@"%@", subString]];
+    NSDictionary * subAttributes = @{NSFontAttributeName:subStringFont,NSForegroundColorAttributeName:subStringcolor};
+    [txtDict addEntriesFromDictionary:subAttributes];
+    
+    [subAttributedStr setAttributes:txtDict range:NSMakeRange(0,subAttributedStr.length)];
+    
+    [attributedStr appendAttributedString:subAttributedStr];
+    
+    
+    return attributedStr;
+}
+
 + (NSMutableAttributedString *)attributedStringWithString:(NSString *)string stringColor:(UIColor*)scolor stringFont:(UIFont*)sFont subString:(NSString *)subString subStringColor:(UIColor*)subStringcolor subStringFont:(UIFont*)subStringFont
 {
     NSMutableDictionary *txtDict = [NSMutableDictionary dictionary];

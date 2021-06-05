@@ -64,10 +64,9 @@ static CGFloat const kPadding            = 0;
     if (!_flowLayout) {
         _flowLayout = [[RTPagedCollectionViewLayout alloc] init];
 //        _flowLayout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
-        _flowLayout.itemSize = CGSizeMake((MAINSCREEN_WIDTH-kPadding*5)/4, (self.collectionView.frame.size.height-kPadding*4)/3);
-        //easyError
         _flowLayout.rows = 3;
         _flowLayout.columns = 4;
+        _flowLayout.itemSize = CGSizeMake((MAINSCREEN_WIDTH-kPadding*(_flowLayout.columns+1))/_flowLayout.columns, (self.collectionView.frame.size.height-kPadding*(_flowLayout.rows+1))/_flowLayout.rows);
         _flowLayout.edgeInsets = UIEdgeInsetsMake(kPadding, kPadding, kPadding, kPadding);
 //        _flowLayout.minimumLineSpacing = kPadding;
 //        _flowLayout.minimumInteritemSpacing = kPadding;
