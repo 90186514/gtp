@@ -109,11 +109,12 @@
 //    }
     
     [self removeContentWithType:IndexSectionTwo];
-    if (data.returnData !=nil && data.returnData.rankinglist.count>0 &&page==1) {
-        [self.listData addObject:@{
+
+    
+    [self.listData addObject:@{
                    kIndexSection: @(IndexSectionTwo),
                    kIndexRow: @[[self autoScrollArr:data.returnData.rankinglist]]}];
-    }
+
     
     [self removeContentWithType:IndexSectionThree];
     
