@@ -16,7 +16,7 @@
 +(NSDictionary *)objectClassInArray
 {
     return @{
-             @"rankinglist" : [WItem class]
+             @"rankinglist" : @"WItem"
              
              };
 }

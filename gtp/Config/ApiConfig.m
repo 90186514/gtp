@@ -21,7 +21,7 @@
         case ApiType_BTCList: api = @"ug/btc/pbels.do"; break;
             
             
-        case ApiType_Homes: api = @"ug/btc/pbels.do"; break;
+        case ApiType_Homes: api = @"rank/list"; break;
             
     }
     return api;

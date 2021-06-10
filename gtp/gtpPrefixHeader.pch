@@ -7,6 +7,9 @@
 #ifndef gtpPrefixHeader_pch
 #define gtpPrefixHeader_pch
 
+#import "gtp-Swift.h"
+//OC项目引用swift代码
+
 #import<objc/runtime.h>
 //三方库
 #import "RegexKitLite.h"

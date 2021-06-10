@@ -12,6 +12,7 @@
 
 #import "AccountCell.h"
 #import "GridCell.h"
+#import "AutoScrollCell.h"
 #import "HomeOrderCell.h"
 #import "HomeSectionHeaderView.h"
 
@@ -21,6 +22,7 @@
 #import "DataStatisticsVC.h"
 #import "ExchangeVC.h"
 #import "OrderDetailVC.h"
+
 @interface HomeVVC () <UITableViewDelegate, UITableViewDataSource>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, assign) NSUInteger currentPage;
@@ -67,6 +69,7 @@
 
 - (void)initView {
     [self.view addSubview:self.tableView];
+    
     
     [self.tableView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.view);
@@ -148,7 +151,7 @@
 
     IndexSectionType type = [(_sections[section])[kIndexSection] integerValue];
     switch (type) {
-        case IndexSectionTwo:{
+        case IndexSectionThree:{
             NSDictionary* model = (NSDictionary*)(_sections[section]);
             return [HomeSectionHeaderView viewHeight:model];
         }
@@ -166,7 +169,7 @@
     IndexSectionType type = [(_sections[section])[kIndexSection] integerValue];
 
     switch (type) {
-        case IndexSectionTwo:{
+        case IndexSectionThree:{
             NSDictionary* model = (NSDictionary*)(_sections[section]);
             HomeSectionHeaderView * sectionHeaderView = (HomeSectionHeaderView *)[_tableView dequeueReusableHeaderFooterViewWithIdentifier:HomeSectionHeaderViewReuseIdentifier];
             [sectionHeaderView richElementsInViewWithModel:model];
@@ -235,6 +238,14 @@
             break;
         case IndexSectionTwo:
         {
+            AutoScrollCell *cell = [AutoScrollCell cellWith:tableView];
+            [cell richElementsInCellWithModel:itemData];
+            return cell;
+            
+        }
+            break;
+        case IndexSectionThree:
+        {
             HomeOrderCell *cell = [HomeOrderCell cellWith:tableView];
             NSInteger second = [itemData integerValue] - round(CFAbsoluteTimeGetCurrent()-_start);
 //            WData* wData = (WData*)itemData;
@@ -281,6 +292,9 @@
             return [GridCell cellHeightWithModel:itemData];
             break;
         case IndexSectionTwo:
+            return [AutoScrollCell cellHeightWithModel:itemData];
+            break;
+        case IndexSectionThree:
         {
             NSInteger second = [itemData integerValue] - round(CFAbsoluteTimeGetCurrent()-_start);
             return [HomeOrderCell cellHeightWithModel:second];

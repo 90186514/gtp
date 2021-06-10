@@ -10,6 +10,27 @@
 #import <CommonCrypto/CommonDigest.h>
 
 @implementation NSString (Extras)
++(BOOL)isChinese:(NSString*)str{
+    for(int i=0; i< [str length];i++){
+            int a = [str characterAtIndex:i];
+            if( a > 0x4e00 && a < 0x9fff)
+            {
+                return YES;
+            }
+        }
+        return NO;
+//    for(int i =0; i < str.length; i++){
+//        int a =[str characterAtIndex:i];
+//        if(a >127) {
+//
+//            return YES;
+//
+//        }
+//
+//
+//    }
+//    return NO;
+}
 + (NSString *)getSumStringByArray:(NSArray *)array
 //[string or num]
 {

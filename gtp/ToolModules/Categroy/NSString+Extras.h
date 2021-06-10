@@ -20,6 +20,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)yb_MD5;
 
++(BOOL)isChinese:(NSString*)str;
+
 - (BOOL)match:(NSString *)express;
 
 + (BOOL)isPureInt:(NSString *)string;

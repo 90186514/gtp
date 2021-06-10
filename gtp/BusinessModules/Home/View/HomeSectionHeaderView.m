@@ -69,7 +69,7 @@
 {
     IndexSectionType type = [model[kIndexSection] integerValue];
     switch (type) {
-        case IndexSectionTwo:{
+        case IndexSectionThree:{
             NSArray* arr = (NSArray*)(model[kIndexInfo]);
         
             NSString* subTitle = arr[1];
@@ -93,7 +93,7 @@
     self.sectionLine.hidden = NO;
     
     switch (type) {
-        case IndexSectionTwo:{
+        case IndexSectionThree:{
             _sectionLine.hidden = NO;
             NSArray* arr = (NSArray*)(model[kIndexInfo]);
             NSString* title =  arr[0];

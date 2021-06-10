@@ -109,6 +109,13 @@
 //    }
     
     [self removeContentWithType:IndexSectionTwo];
+    if (data.returnData !=nil && data.returnData.rankinglist.count>0 &&page==1) {
+        [self.listData addObject:@{
+                   kIndexSection: @(IndexSectionTwo),
+                   kIndexRow: @[[self autoScrollArr:data.returnData.rankinglist]]}];
+    }
+    
+    [self removeContentWithType:IndexSectionThree];
     
     if (data.returnData !=nil && data.returnData.rankinglist.count>0 ) {
         NSMutableArray *times = [NSMutableArray arrayWithCapacity:20];
@@ -120,13 +127,88 @@
     }
     [self.listData addObject:@{
             
-            kIndexSection: @(IndexSectionTwo),
+            kIndexSection: @(IndexSectionThree),
             kIndexInfo:@[@"待处理🌹",@"icon_bank"],
             kIndexRow: _footerArr}//data.t.arr
      ];
     
     [self sortData];
 }
+
+- (NSAttributedString*)autoScrollArr:(NSArray*)models{
+    NSArray* txTimeArr = @[
+        @{@"List":@""},
+        @{@"时间                             漂亮":@"                                  天数"}
+        
+    ];
+    
+    NSMutableArray *times = [NSMutableArray new];
+    
+    for (int i =0; i<txTimeArr.count; i++) {
+        
+        NSDictionary* dic = txTimeArr[i];
+        
+        NSString* kStr = dic.allKeys[0];
+        NSMutableAttributedString *firstM = [[NSMutableAttributedString alloc]initWithString:kStr];
+        
+        [firstM addAttributes:@{NSFontAttributeName:i==0?[UIFont systemFontOfSize:12]:[UIFont systemFontOfSize:10],NSForegroundColorAttributeName:i==0? HEXCOLOR(0xFFFFFF):HEXCOLOR(0xA1747B)} range:NSMakeRange(0, kStr.length)];
+        
+        
+        NSString* vStr = dic.allValues[0];
+        NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc]initWithString:vStr];
+        [attributedString addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:10],NSForegroundColorAttributeName:HEXCOLOR(0xA1747B)} range:NSMakeRange(0, vStr.length)];
+        
+        [firstM appendAttributedString:attributedString];
+        [times addObject:firstM];
+    }
+    
+    NSMutableArray* txArr = [NSMutableArray array];//[WItem mj_objectArrayWithKeyValuesArray:models]
+    for (WItem* model in [WItem mj_objectArrayWithKeyValuesArray:models]) {
+        NSString* name = [NSString stringWithFormat:@"%@",model.title];
+        
+        if( name.length>1){
+            NSString* chName =  [name  substringToIndex:2];
+            if ([NSString isChinese:chName]) {
+                if(name.length>3){
+                    name =  [name  substringToIndex:4];
+                }
+            }else{
+                if( name.length>6){
+                    name =  [name  substringToIndex:7];
+                }
+            }
+        }
+        NSDictionary* dic = @{[NSString stringWithFormat:@"%@                   %@...",@"2021/00/00",name]:[NSString stringWithFormat:@"                              %@天",model.argValue]};
+        [txArr addObject:dic];
+    }
+    
+    for (NSDictionary* dic in txArr) {
+        
+        NSAttributedString* attrStr = [NSString attributedStringWithString:[NSString stringWithFormat:@"%@",dic.allKeys[0]] stringColor:HEXCOLOR(0xffffff) stringFont:kFontSize(10) subString:[NSString stringWithFormat:@"%@",dic.allValues[0]] subStringColor:HEXCOLOR(0xFDDD56) subStringFont:kFontSize(10) paragraphStyle:NSTextAlignmentLeft];
+        
+        [times addObject:attrStr];
+    }
+    
+    
+    NSMutableArray *addTimes = [NSMutableArray new];
+    for (int i =1; i<times.count; i++) {
+        
+        NSAttributedString* attS = times[i];
+        NSMutableAttributedString *oriS = [[NSMutableAttributedString alloc]initWithString:@"      "];
+        [oriS appendAttributedString:attS];
+        
+        [addTimes addObject:oriS];
+    }
+    [addTimes insertObject:times[0] atIndex:0];
+    
+    
+    
+    return  [addTimes copy];
+    
+}
+
+
+
 - (void)sortData {
     [self.listData sortUsingComparator:^NSComparisonResult(id obj1, id obj2) {
         NSNumber *number1 = [NSNumber numberWithInteger:[[obj1 objectForKey:kIndexSection] integerValue]];

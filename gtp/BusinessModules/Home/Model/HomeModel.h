@@ -9,25 +9,25 @@
 #import <Foundation/Foundation.h>
 
 @interface WItem : NSObject
-@property (nonatomic, strong) NSString * argValue;
-@property (nonatomic, strong) NSString * rankingType;
-@property (nonatomic, strong) NSString * argName;
-@property (nonatomic, strong) NSString * cover;
-@property (nonatomic, strong) NSString * title;
-@property (nonatomic, strong) NSString * subTitle;
+@property (nonatomic, copy) NSString * argValue;
+@property (nonatomic, copy) NSString * rankingType;
+@property (nonatomic, copy) NSString * argName;
+@property (nonatomic, copy) NSString * cover;
+@property (nonatomic, copy) NSString * title;
+@property (nonatomic, copy) NSString * subTitle;
 @end
 
 @interface WData : NSObject
-@property (nonatomic, strong) NSArray * rankinglist;
-@property (nonatomic, strong) NSString * category;
-@property (nonatomic, strong) NSString * title;
-@property (nonatomic, strong) NSString * subtitle;
+@property (nonatomic, copy) NSArray * rankinglist;
+@property (nonatomic, copy) NSString * category;
+@property (nonatomic, copy) NSString * title;
+@property (nonatomic, copy) NSString * subtitle;
 +(NSDictionary *)objectClassInArray;
 @end
 
 
 @interface HomeData : NSObject
-@property (nonatomic, strong) NSArray * itemBaseInfoList;
+@property (nonatomic, copy) NSArray * itemBaseInfoList;
 @property (nonatomic, assign) NSInteger totalCount;
 
 @property (nonatomic, strong) WData * returnData;

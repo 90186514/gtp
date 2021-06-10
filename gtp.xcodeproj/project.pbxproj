@@ -654,6 +654,11 @@
 		818CED8425F75453007F15C9 /* AppListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 818CED8325F75453007F15C9 /* AppListVC.m */; };
 		81983EEA25F4BD6F00FAE794 /* UIControl+ClickControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 81983EE825F4BD6E00FAE794 /* UIControl+ClickControl.m */; };
 		81983EF025F4BF4F00FAE794 /* AccountingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81983EEF25F4BF4F00FAE794 /* AccountingView.m */; };
+		81F7F333266DCE5E007B25BC /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7F332266DCE5E007B25BC /* Test.swift */; };
+		81F7F36A267224E7007B25BC /* AutoScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F7F369267224E7007B25BC /* AutoScrollCell.m */; };
+		81F7F3722672252F007B25BC /* ExtensionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7F36F2672252F007B25BC /* ExtensionColor.swift */; };
+		81F7F3732672252F007B25BC /* ZXWinnerScrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7F3702672252F007B25BC /* ZXWinnerScrollView.swift */; };
+		81F7F3742672252F007B25BC /* ZXLotteryWinnerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7F3712672252F007B25BC /* ZXLotteryWinnerCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -1597,6 +1602,12 @@
 		81983EE925F4BD6E00FAE794 /* UIControl+ClickControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+ClickControl.h"; sourceTree = "<group>"; };
 		81983EEE25F4BF4F00FAE794 /* AccountingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountingView.h; sourceTree = "<group>"; };
 		81983EEF25F4BF4F00FAE794 /* AccountingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountingView.m; sourceTree = "<group>"; };
+		81F7F332266DCE5E007B25BC /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		81F7F368267224E7007B25BC /* AutoScrollCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoScrollCell.h; sourceTree = "<group>"; };
+		81F7F369267224E7007B25BC /* AutoScrollCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoScrollCell.m; sourceTree = "<group>"; };
+		81F7F36F2672252F007B25BC /* ExtensionColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExtensionColor.swift; sourceTree = "<group>"; };
+		81F7F3702672252F007B25BC /* ZXWinnerScrollView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXWinnerScrollView.swift; sourceTree = "<group>"; };
+		81F7F3712672252F007B25BC /* ZXLotteryWinnerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZXLotteryWinnerCell.swift; sourceTree = "<group>"; };
 		8F009642DE90060E9B0D3779 /* Pods-gtp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gtp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-gtp/Pods-gtp.debug.xcconfig"; sourceTree = "<group>"; };
 		C8A811F00DE8D35BED391E23 /* Pods_gtp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_gtp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -3065,6 +3076,7 @@
 				6423D7DC21C4F9A2002FECA5 /* HomeVC.m */,
 				810C2E9D2654CC24003A64A3 /* HomeVVC.h */,
 				810C2E9C2654CC23003A64A3 /* HomeVVC.m */,
+				81F7F332266DCE5E007B25BC /* Test.swift */,
 				640B2FA121D0F4CA002ABE64 /* DataStatistics */,
 				6423D7C821C4F9A2002FECA5 /* VM */,
 				6423D7CB21C4F9A2002FECA5 /* Model */,
@@ -3095,12 +3107,15 @@
 		6423D7CE21C4F9A2002FECA5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				81F7F36E2672252F007B25BC /* AutoScrollView */,
 				6423D7D821C4F9A2002FECA5 /* HomeSectionHeaderView.h */,
 				6423D7D021C4F9A2002FECA5 /* HomeSectionHeaderView.m */,
 				6423D7D621C4F9A2002FECA5 /* HomeOrderCell.h */,
 				6423D7D121C4F9A2002FECA5 /* HomeOrderCell.m */,
 				6423D7DA21C4F9A2002FECA5 /* AccountCell.h */,
 				6423D7D321C4F9A2002FECA5 /* AccountCell.m */,
+				81F7F368267224E7007B25BC /* AutoScrollCell.h */,
+				81F7F369267224E7007B25BC /* AutoScrollCell.m */,
 				6423D7D721C4F9A2002FECA5 /* GridCell.h */,
 				6423D7CF21C4F9A2002FECA5 /* GridCell.m */,
 				6423D7D521C4F9A2002FECA5 /* BaseCell.h */,
@@ -3906,6 +3921,16 @@
 			path = AppListInfo;
 			sourceTree = "<group>";
 		};
+		81F7F36E2672252F007B25BC /* AutoScrollView */ = {
+			isa = PBXGroup;
+			children = (
+				81F7F36F2672252F007B25BC /* ExtensionColor.swift */,
+				81F7F3702672252F007B25BC /* ZXWinnerScrollView.swift */,
+				81F7F3712672252F007B25BC /* ZXLotteryWinnerCell.swift */,
+			);
+			path = AutoScrollView;
+			sourceTree = "<group>";
+		};
 		A5341C8097FD99368AC9C409 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -4582,6 +4607,7 @@
 				393215D5248E3CDD00EC4CD8 /* SaoleiChessView.m in Sources */,
 				640B30AE21D49E8D002ABE64 /* ExchangeStatusCell.m in Sources */,
 				640B2FC421D22B3A002ABE64 /* DateValueFormatter.m in Sources */,
+				81F7F3722672252F007B25BC /* ExtensionColor.swift in Sources */,
 				393215D1248E3CDD00EC4CD8 /* SaoleiFooterView.m in Sources */,
 				642E447321CA1DC4000E0888 /* CircleAnimationVC.m in Sources */,
 				39441E562476B37E00AA23C3 /* CalendarModel.m in Sources */,
@@ -4609,6 +4635,7 @@
 				640B313621D76384002ABE64 /* FCDetectViewController.m in Sources */,
 				640B2FBD21D1CD31002ABE64 /* DSSlideView.m in Sources */,
 				6423D80B21C4F9A3002FECA5 /* UITableView+YBGeneral.m in Sources */,
+				81F7F36A267224E7007B25BC /* AutoScrollCell.m in Sources */,
 				393213B5248E2EDE00EC4CD8 /* FSSVGUtils.m in Sources */,
 				640B30C821D4D499002ABE64 /* OrdersPageListCell.m in Sources */,
 				640B310521D63A2D002ABE64 /* ModifyAdsVC.m in Sources */,
@@ -4626,6 +4653,7 @@
 				640B317221D76496002ABE64 /* FCPPApi.m in Sources */,
 				642E44D821CA36C0000E0888 /* TabScrollview.m in Sources */,
 				640B30F521D62255002ABE64 /* PostAdsDetailCell.m in Sources */,
+				81F7F333266DCE5E007B25BC /* Test.swift in Sources */,
 				642E44E621CB36F3000E0888 /* PageListView.m in Sources */,
 				39441E522476B37E00AA23C3 /* AccountPurseVC.m in Sources */,
 				6439E0F721C899B000A12D79 /* pinyin.m in Sources */,
@@ -4685,6 +4713,7 @@
 				642E45A321CE1E9C000E0888 /* PHLockClick.m in Sources */,
 				39441E61247885A700AA23C3 /* AccountStatedSectionHV.m in Sources */,
 				3948F8092472498400477131 /* AccountingVM.m in Sources */,
+				81F7F3732672252F007B25BC /* ZXWinnerScrollView.swift in Sources */,
 				393215D6248E3CDD00EC4CD8 /* SaoleiHeaderView.m in Sources */,
 				39441E552476B37E00AA23C3 /* MonthOpeartion.m in Sources */,
 				3932190724937C1000EC4CD8 /* CenterSpinView.m in Sources */,
@@ -4723,6 +4752,7 @@
 				640B317421D76496002ABE64 /* FCPPFaceBeautify.m in Sources */,
 				640B2FC621D22B3A002ABE64 /* SymbolsValueFormatter.m in Sources */,
 				6405E97521E331D700D9719B /* QuickeningVC.m in Sources */,
+				81F7F3742672252F007B25BC /* ZXLotteryWinnerCell.swift in Sources */,
 				6423D80621C4F9A3002FECA5 /* YBGeneralColor.m in Sources */,
 				640B2FE421D366B2002ABE64 /* OrderDetailVM.m in Sources */,
 				3959407B248E0B2A005CF920 /* PieView.m in Sources */,
@@ -4908,9 +4938,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 8F009642DE90060E9B0D3779 /* Pods-gtp.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8FV29YMF6R;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/gtp/gtpPrefixHeader.pch";
@@ -4925,7 +4957,7 @@
 				PROVISIONING_PROFILE_SPECIFIER = gtqkl;
 				SWIFT_OBJC_BRIDGING_HEADER = "gtp/gtp-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
@@ -4934,9 +4966,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 557501202BD3199C89CE26F6 /* Pods-gtp.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Manual;
+				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = 8FV29YMF6R;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/gtp/gtpPrefixHeader.pch";
@@ -4950,7 +4984,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = gtqkl;
 				SWIFT_OBJC_BRIDGING_HEADER = "gtp/gtp-Bridging-Header.h";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
@@ -4958,6 +4992,7 @@
 		6423D75521C4F7C3002FECA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = gtpTests/Info.plist;
@@ -4976,6 +5011,7 @@
 		6423D75621C4F7C3002FECA5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = gtpTests/Info.plist;
@@ -4994,6 +5030,7 @@
 		6423D75821C4F7C3002FECA5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = gtpUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -5011,6 +5048,7 @@
 		6423D75921C4F7C3002FECA5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = gtpUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
