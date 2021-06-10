@@ -1,6 +1,6 @@
 
 #import <UIKit/UIKit.h>
-//#import "BoxAccessoriesModel.h"
+
 @interface AutoScrollCell : UITableViewCell
 
 +(CGFloat)cellHeightWithModel:(id)model;

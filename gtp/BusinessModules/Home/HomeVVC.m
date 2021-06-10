@@ -16,6 +16,7 @@
 #import "HomeOrderCell.h"
 #import "HomeSectionHeaderView.h"
 
+#import "HomeFV.h"
 
 #import "PostAdsVC.h"
 #import "OrdersVC.h"
@@ -30,6 +31,9 @@
 @property (nonatomic, assign) CFAbsoluteTime start;  //刷新数据时的时间
 
 @property (nonatomic, strong) HomeVM *vm;
+
+@property (nonatomic, strong)UIView *fv;
+@property (nonatomic, strong) HomeFV * hFV;
 
 @end
 
@@ -114,6 +118,13 @@
             [self.tableView.mj_footer endRefreshingWithNoMoreData];
             self.tableView.mj_footer.hidden = YES;
         }
+        
+        self.hFV.userInteractionEnabled = true;
+        [self.hFV richElementsInCellWithModel:footArr];
+        [self.hFV actionBlock:^(id data) {
+            
+            
+        }];
     } else {
         [self.tableView.mj_footer endRefreshingWithNoMoreData];
         self.tableView.mj_footer.hidden = YES;//in 2 ways, footer no request
@@ -373,7 +384,7 @@
         _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
         _tableView.delegate = self;
         _tableView.dataSource = self;
-        _tableView.tableFooterView = [UIView new];
+        _tableView.tableFooterView = self.fv;
         [HomeSectionHeaderView sectionHeaderViewWith:_tableView];
 //        [_tableView registerClass:[HomeSectionHeaderView class] forHeaderFooterViewReuseIdentifier:@"HomeSectionHeaderView"];
        kWeakSelf(self);
@@ -390,6 +401,32 @@
         }];
     }
     return _tableView;
+}
+
+- (UIView *)fv {
+    if (!_fv) {
+        _fv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MAINSCREEN_WIDTH, 50+20+YBFrameTool.iphoneBottomHeight)];
+        
+        _fv.backgroundColor = [UIColor clearColor];
+        
+        UIButton *icon0 = [[UIButton alloc]init];
+        [icon0
+         setImage:[UIImage imageNamed:@"home_top_img"] forState:0];
+        [icon0 setBackgroundColor:kClearColor];
+        icon0.adjustsImageWhenHighlighted = NO;
+        [_fv addSubview:icon0];
+        [icon0 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(30);
+            make.bottom.mas_equalTo(-YBFrameTool.iphoneBottomHeight);
+            make.centerX.mas_equalTo(self.fv);
+            make.height.mas_equalTo(20);
+        }];
+        
+        NSInteger topMar = 20+YBFrameTool.iphoneBottomHeight;
+        self.hFV = [[HomeFV alloc]initWithFrame:CGRectZero InSuperView:_fv withTopMargin:-topMar];
+        
+    }
+    return _fv;
 }
 
 - (NSUInteger)currentPage {
