@@ -508,12 +508,15 @@
 }
 
 -(void)floatBtnAction:(FloatingButton *)sender{
-    TurntableView* popupView = [[TurntableView alloc]init];
-    [popupView richElementsInViewWithModel:self.lastSectionArr];
-    [popupView showInApplicationKeyWindow];
-    [popupView actionBlock:^(WItem*  data) {
-        NSLog(@"%@",data.title);
-    }];
+    if (self.lastSectionArr.count>0) {
+        TurntableView* popupView = [[TurntableView alloc]init];
+        [popupView richElementsInViewWithModel:self.lastSectionArr];
+        [popupView showInApplicationKeyWindow];
+        [popupView actionBlock:^(WItem*  data) {
+            NSLog(@"%@",data.title);
+        }];
+    }
+    
 }
 
 -(FloatingButton *)floatBtn{
