@@ -16,6 +16,7 @@
 #import "HomeOrderCell.h"
 #import "HomeSectionHeaderView.h"
 
+#import "HomeHV.h"
 #import "HomeFV.h"
 
 #import "PostAdsVC.h"
@@ -32,9 +33,12 @@
 
 @property (nonatomic, strong) HomeVM *vm;
 
+@property (nonatomic, strong)UIView *hv;
+@property (nonatomic, strong) HomeHV * hHV;
+
+
 @property (nonatomic, strong)UIView *fv;
 @property (nonatomic, strong) HomeFV * hFV;
-
 @end
 
 @implementation HomeVVC
@@ -89,9 +93,9 @@
 
 - (void) requestHomeListWithPage:(NSInteger)page {
    kWeakSelf(self);
-    [self.vm network_getHomeListWithPage:page success:^(NSArray * _Nonnull dataArray, NSArray * _Nonnull footArr) {
+    [self.vm network_getHomeListWithPage:page success:^(NSArray * _Nonnull dataArray, NSArray * _Nonnull lastSectionArr) {
         kStrongSelf(self);
-        [self requestHomeListSuccessWithArray:dataArray WithArray:(NSArray *)footArr WithPage:page];
+        [self requestHomeListSuccessWithArray:dataArray WithArray:lastSectionArr WithPage:page];
     } failed:^(id model){
         kStrongSelf(self);
 //        [self requestHomeListSuccessWithArray:model WithPage:page];
@@ -100,7 +104,7 @@
 }
 
 #pragma mark - public processData
-- (void)requestHomeListSuccessWithArray:(NSArray *)sections WithArray:(NSArray *)footArr WithPage:(NSInteger)page{
+- (void)requestHomeListSuccessWithArray:(NSArray *)sections WithArray:(NSArray *)lastSectionArr WithPage:(NSInteger)page{
     //每一次刷新数据时，重置初始时间
     _start = CFAbsoluteTimeGetCurrent();
     self.currentPage = page;
@@ -114,13 +118,13 @@
         [self.tableView reloadData];
         [self.tableView.mj_footer endRefreshing];
         self.tableView.mj_footer.hidden = NO;
-        if (footArr.count == 0) {
+        if (lastSectionArr.count == 0) {
             [self.tableView.mj_footer endRefreshingWithNoMoreData];
             self.tableView.mj_footer.hidden = YES;
         }
         
         self.hFV.userInteractionEnabled = true;
-        [self.hFV richElementsInCellWithModel:footArr];
+        [self.hFV richElementsInCellWithModel:lastSectionArr];
         [self.hFV actionBlock:^(id data) {
             
             
@@ -217,7 +221,7 @@
 }
 #pragma mark - cellForRow
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    WS(weakSelf);
+//    WS(weakSelf);
     
     NSInteger section = indexPath.section;
     if(section >= _sections.count)
@@ -384,6 +388,7 @@
         _tableView.separatorStyle = UITableViewCellSelectionStyleNone;
         _tableView.delegate = self;
         _tableView.dataSource = self;
+        _tableView.tableHeaderView = self.hv;
         _tableView.tableFooterView = self.fv;
         [HomeSectionHeaderView sectionHeaderViewWith:_tableView];
 //        [_tableView registerClass:[HomeSectionHeaderView class] forHeaderFooterViewReuseIdentifier:@"HomeSectionHeaderView"];
@@ -401,6 +406,32 @@
         }];
     }
     return _tableView;
+}
+
+- (UIView *)hv {
+    if (!_hv) {
+        _hv = [[UIView alloc] initWithFrame:CGRectMake(0, 0, MAINSCREEN_WIDTH, 50+20+YBFrameTool.statusBarHeight)];
+        
+        _hv.backgroundColor = [UIColor clearColor];
+        
+        UIButton *icon0 = [[UIButton alloc]init];
+        [icon0
+         setImage:[UIImage imageNamed:@"home_top_img"] forState:0];
+        [icon0 setBackgroundColor:kClearColor];
+        icon0.adjustsImageWhenHighlighted = NO;
+        [_hv addSubview:icon0];
+        [icon0 mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.left.mas_equalTo(30);
+            make.top.mas_equalTo(YBFrameTool.statusBarHeight);
+            make.centerX.mas_equalTo(self.hv);
+            make.height.mas_equalTo(20);
+        }];
+        
+        NSInteger topMar = 20+YBFrameTool.statusBarHeight;
+        self.hHV = [[HomeHV alloc]initWithFrame:CGRectZero InSuperView:_hv withTopMargin:-topMar];
+        
+    }
+    return _hv;
 }
 
 - (UIView *)fv {

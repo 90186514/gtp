@@ -2,8 +2,8 @@
 #import "HomeFV.h"
 
 @interface HomeFV ()
-@property (nonatomic,copy) NSArray *turnArr;
-@property (nonatomic,strong)NSMutableArray *resultArray;
+@property (nonatomic,copy) NSArray *arr;
+
 @property (nonatomic,strong)NSMutableArray *btns;
 @property (nonatomic, copy) ActionBlock block;
 @property (nonatomic,strong)UIView *bgView;
@@ -13,10 +13,9 @@
 
 - (id)initWithFrame:(CGRect)frame InSuperView:(UIView*)superView withTopMargin:(NSInteger)topMargin{
     if (self == [super initWithFrame:frame]) {
-        self.resultArray = [NSMutableArray array];
         
         self.bgView = [[UIView alloc]init];
-//        self.bgView.backgroundColor = HEXCOLOR(0x291518);
+//        self.bgView.backgroundColor = kWhiteColor;
         self.bgView.userInteractionEnabled = YES;
         [superView addSubview:self.bgView];
         [self.bgView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -39,12 +38,12 @@
 }
 
 -(void)richElementsInCellWithModel:(id)model{
-    self.turnArr = model;
+    self.arr = model;
     
     
     _btns = [NSMutableArray array];
     
-    for (int i = 0; i < self.turnArr.count; i++) {
+    for (int i = 0; i < self.arr.count; i++) {
         UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
         button.tag =  i;
         button.contentVerticalAlignment = UIControlContentVerticalAlignmentCenter;
@@ -65,7 +64,7 @@
     [_btns mas_makeConstraints:^(MASConstraintMaker *make) {
         make.leading.equalTo(@0);
         make.trailing.equalTo(@0);
-        make.height.mas_equalTo((50/self.turnArr.count));
+        make.height.mas_equalTo((50/self.arr.count));
 //        make.width.mas_equalTo(@18);
     }];
     

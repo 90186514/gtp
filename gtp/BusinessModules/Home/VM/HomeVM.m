@@ -10,7 +10,7 @@
 
 @interface HomeVM()
 @property (strong,nonatomic)NSMutableArray   *listData;
-@property (nonatomic,strong) NSMutableArray* footerArr;
+@property (nonatomic,strong) NSMutableArray* lastSectionArr;
 @property (nonatomic,strong) HomeModel* model;
 @end
 
@@ -54,7 +54,7 @@
     
     _listData = [NSMutableArray array];
     if (page ==1) {
-        _footerArr = [NSMutableArray array];
+        _lastSectionArr = [NSMutableArray array];
     }
     
     
@@ -124,13 +124,13 @@
             NSInteger time = arc4random()%3600;
             [times addObject:@(time)];
         }
-        [_footerArr addObjectsFromArray:times];//拼接接口分页数据=data.returnData.rankinglist
+        [_lastSectionArr addObjectsFromArray:times];//拼接接口分页数据=data.returnData.rankinglist
     }
     [self.listData addObject:@{
             
             kIndexSection: @(IndexSectionThree),
             kIndexInfo:@[@"待处理🌹",@"icon_bank"],
-            kIndexRow: _footerArr}//data.t.arr
+            kIndexRow: _lastSectionArr}//data.t.arr
      ];
     
     [self sortData];

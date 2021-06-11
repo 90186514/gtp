@@ -3,7 +3,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface HomeFV : UIView<CAAnimationDelegate>
+@interface HomeFV : UIView
 - (id)initWithFrame:(CGRect)frame InSuperView:(UIView*)superView withTopMargin:(NSInteger)topMargin;
 - (void)actionBlock:(ActionBlock)block;
 - (void)richElementsInCellWithModel:(id)model;
