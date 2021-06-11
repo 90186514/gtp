@@ -10,7 +10,7 @@
 
 @interface HomeVM()
 @property (strong,nonatomic)NSMutableArray   *listData;
-@property (nonatomic,strong) NSMutableArray* lastSectionArr;
+@property (nonatomic,strong) NSMutableArray* lastSectionSumArr;
 @property (nonatomic,strong) HomeModel* model;
 @end
 
@@ -50,11 +50,11 @@
 //    }];
 }
 
-- (void)network_getHomeListWithPage:(NSInteger)page success:(void (^)(NSArray * _Nonnull,NSArray * _Nonnull))success failed:(DataBlock)failed {
+- (void)network_getHomeListWithPage:(NSInteger)page success:(void (^)(NSArray * _Nonnull,NSArray * _Nonnull,NSArray * _Nonnull))success failed:(DataBlock)failed {
     
     _listData = [NSMutableArray array];
     if (page ==1) {
-        _lastSectionArr = [NSMutableArray array];
+        _lastSectionSumArr = [NSMutableArray array];
     }
     
     
@@ -69,9 +69,11 @@
         if ([NSString getLNDataSuccessed:result]) {
             weakSelf.model = [HomeModel mj_objectWithKeyValues:dic];
             NSArray* arr =[WItem mj_objectArrayWithKeyValuesArray:weakSelf.model.result.data.returnData.rankinglist];
-            
+            if (page ==3) {
+                arr = @[];
+            }
             [self assembleApiData:arr WithPage:page];
-            success(weakSelf.listData,arr);
+            success(weakSelf.listData,arr,self.lastSectionSumArr);
 //            [[NSNotificationCenter defaultCenter] postNotificationName:@"HomeModelReturn" object:nil];
         }
         else{
@@ -83,9 +85,9 @@
 }
 
 - (void)assembleApiData:(NSArray*)data WithPage:(NSInteger)page{
-    if (page ==3) {
-        return;
-    }
+//    if (page ==3) {
+//        return;
+//    }
     [self removeContentWithType:IndexSectionZero];
 //    if (data.returnData !=nil && data.returnData.rankinglist.count>0 &&page==1) {
         [self.listData addObject:@{
@@ -126,13 +128,13 @@
             NSInteger time = arc4random()%3600;
             [times addObject:@(time)];
         }
-        [_lastSectionArr addObjectsFromArray:times];//拼接接口分页数据=data.returnData.rankinglist
+        [_lastSectionSumArr addObjectsFromArray:times];//拼接接口分页数据=data.returnData.rankinglist
     }
     [self.listData addObject:@{
             
             kIndexSection: @(IndexSectionThree),
             kIndexInfo:@[@"待处理🌹",@"icon_bank"],
-            kIndexRow: _lastSectionArr}//data.t.arr
+            kIndexRow: _lastSectionSumArr}//data.t.arr
      ];
     
     [self sortData];
@@ -204,10 +206,7 @@
     }
     [addTimes insertObject:times[0] atIndex:0];
     
-    
-    
     return  [addTimes copy];
-    
 }
 
 

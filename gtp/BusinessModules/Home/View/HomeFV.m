@@ -39,7 +39,9 @@
 
 -(void)richElementsInCellWithModel:(id)model{
     self.arr = model;
-    
+    if (self.arr.count==0) {
+        return;;
+    }
     
     _btns = [NSMutableArray array];
     

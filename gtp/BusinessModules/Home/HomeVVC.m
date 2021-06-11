@@ -32,7 +32,10 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, assign) NSUInteger currentPage;
 @property (nonatomic, strong) NSMutableArray *sections;
-@property (nonatomic, strong)NSMutableArray * lastSectionArr;
+@property (nonatomic, strong)NSArray * lastSectionArr;
+@property (nonatomic, strong)NSMutableArray * lastSectionSumArr;
+
+
 
 @property (nonatomic, assign) CFAbsoluteTime start;  //刷新数据时的时间
 
@@ -105,9 +108,9 @@
 
 - (void) requestHomeListWithPage:(NSInteger)page {
    kWeakSelf(self);
-    [self.vm network_getHomeListWithPage:page success:^(NSArray * _Nonnull dataArray, NSArray * _Nonnull lastSectionArr) {
+    [self.vm network_getHomeListWithPage:page success:^(NSArray * _Nonnull dataArray, NSArray * _Nonnull lastSectionArr,NSArray * _Nonnull lastSectionSumArr) {
         kStrongSelf(self);
-        [self requestHomeListSuccessWithArray:dataArray WithArray:lastSectionArr WithPage:page];
+        [self requestHomeListSuccessWithArray:dataArray WithLastSectionArr:lastSectionArr WithLastSectionSumArr:lastSectionSumArr WithPage:page];
     } failed:^(id model){
         kStrongSelf(self);
 //        [self requestHomeListSuccessWithArray:model WithPage:page];
@@ -116,33 +119,42 @@
 }
 
 #pragma mark - public processData
-- (void)requestHomeListSuccessWithArray:(NSArray *)sections WithArray:(NSArray *)lastSectionArr WithPage:(NSInteger)page{
+- (void)requestHomeListSuccessWithArray:(NSArray *)sections WithLastSectionArr:(NSArray *)lastSectionArr WithLastSectionSumArr:(NSArray *)lastSectionSumArr WithPage:(NSInteger)page{
     //每一次刷新数据时，重置初始时间
     _start = CFAbsoluteTimeGetCurrent();
     self.currentPage = page;
     if (self.currentPage == 1) {
+        self.tableView.tableFooterView = [UIView new];
         [self.sections removeAllObjects];
         [self.tableView reloadData];
     }
     if (sections.count > 0) {
-        self.lastSectionArr = [NSMutableArray array];
+        self.lastSectionArr = lastSectionArr;
+        
+        self.lastSectionSumArr = [NSMutableArray array];
+        [self.lastSectionSumArr addObjectsFromArray:lastSectionSumArr];
+        
         [self.sections removeAllObjects];
         [self.sections addObjectsFromArray:sections];
-        [self.lastSectionArr addObjectsFromArray:lastSectionArr];
+        
         [self.tableView reloadData];
         [self.tableView.mj_footer endRefreshing];
         self.tableView.mj_footer.hidden = NO;
         if (lastSectionArr.count == 0) {
             [self.tableView.mj_footer endRefreshingWithNoMoreData];
             self.tableView.mj_footer.hidden = YES;
+            //最后一页无数据
+            self.tableView.tableFooterView = self.fv;
+             self.hFV.userInteractionEnabled = true;
+             [self.hFV richElementsInCellWithModel:lastSectionArr];
+             [self.hFV actionBlock:^(id data) {
+                 
+                 
+             }];
         }
         
-        self.hFV.userInteractionEnabled = true;
-        [self.hFV richElementsInCellWithModel:lastSectionArr];
-        [self.hFV actionBlock:^(id data) {
-            
-            
-        }];
+        
+        
     } else {
         [self.tableView.mj_footer endRefreshingWithNoMoreData];
         self.tableView.mj_footer.hidden = YES;//in 2 ways, footer no request
@@ -403,7 +415,7 @@
         _tableView.delegate = self;
         _tableView.dataSource = self;
         _tableView.tableHeaderView = self.hv;
-        _tableView.tableFooterView = self.fv;
+//        _tableView.tableFooterView = self.fv;
         [HomeSectionHeaderView sectionHeaderViewWith:_tableView];
 //        [_tableView registerClass:[HomeSectionHeaderView class] forHeaderFooterViewReuseIdentifier:@"HomeSectionHeaderView"];
        kWeakSelf(self);
