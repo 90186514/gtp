@@ -250,13 +250,15 @@
     [self.startBtn addTarget:self action:@selector(startButtonClick) forControlEvents:UIControlEventTouchUpInside];
     [self.startBtn setTitle:@"开始" forState:0];
     [self.startBtn setTitleColor:kBlackColor forState:0];
+    self.startBtn.layer.cornerRadius = 100/2;
+    self.startBtn.layer.masksToBounds = true;
     self.startBtn.userInteractionEnabled = YES;
     [self.bgView addSubview:self.startBtn];
     [self.startBtn mas_makeConstraints:^(MASConstraintMaker *make) {
         make.center.equalTo(self.turntableImgView);
         make.width.height.equalTo(@100);
     }];
-    self.startBtn.backgroundColor = kGrayColor;
+    self.startBtn.backgroundColor = UIColor.blueColor;
     
     
     
