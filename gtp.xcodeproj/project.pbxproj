@@ -654,6 +654,9 @@
 		818CED8425F75453007F15C9 /* AppListVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 818CED8325F75453007F15C9 /* AppListVC.m */; };
 		81983EEA25F4BD6F00FAE794 /* UIControl+ClickControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 81983EE825F4BD6E00FAE794 /* UIControl+ClickControl.m */; };
 		81983EF025F4BF4F00FAE794 /* AccountingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81983EEF25F4BF4F00FAE794 /* AccountingView.m */; };
+		81DE25D726733266008A4CED /* FloatingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DE25D626733266008A4CED /* FloatingButton.m */; };
+		81DE25E126733468008A4CED /* UIWindow+KeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DE25E026733468008A4CED /* UIWindow+KeyWindow.m */; };
+		81DE25E8267337E3008A4CED /* TurntableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DE25E6267337E3008A4CED /* TurntableView.m */; };
 		81F7F333266DCE5E007B25BC /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7F332266DCE5E007B25BC /* Test.swift */; };
 		81F7F36A267224E7007B25BC /* AutoScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F7F369267224E7007B25BC /* AutoScrollCell.m */; };
 		81F7F3722672252F007B25BC /* ExtensionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7F36F2672252F007B25BC /* ExtensionColor.swift */; };
@@ -1604,6 +1607,12 @@
 		81983EE925F4BD6E00FAE794 /* UIControl+ClickControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIControl+ClickControl.h"; sourceTree = "<group>"; };
 		81983EEE25F4BF4F00FAE794 /* AccountingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AccountingView.h; sourceTree = "<group>"; };
 		81983EEF25F4BF4F00FAE794 /* AccountingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AccountingView.m; sourceTree = "<group>"; };
+		81DE25D526733266008A4CED /* FloatingButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FloatingButton.h; sourceTree = "<group>"; };
+		81DE25D626733266008A4CED /* FloatingButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FloatingButton.m; sourceTree = "<group>"; };
+		81DE25DF26733468008A4CED /* UIWindow+KeyWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWindow+KeyWindow.h"; sourceTree = "<group>"; };
+		81DE25E026733468008A4CED /* UIWindow+KeyWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+KeyWindow.m"; sourceTree = "<group>"; };
+		81DE25E6267337E3008A4CED /* TurntableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurntableView.m; sourceTree = "<group>"; };
+		81DE25E7267337E3008A4CED /* TurntableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurntableView.h; sourceTree = "<group>"; };
 		81F7F332266DCE5E007B25BC /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		81F7F368267224E7007B25BC /* AutoScrollCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoScrollCell.h; sourceTree = "<group>"; };
 		81F7F369267224E7007B25BC /* AutoScrollCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoScrollCell.m; sourceTree = "<group>"; };
@@ -2911,6 +2920,7 @@
 		6423D75A21C4F9A0002FECA5 /* GeneralModules */ = {
 			isa = PBXGroup;
 			children = (
+				81DE25DE26733468008A4CED /* UIWindow */,
 				6423D75B21C4F9A0002FECA5 /* UIScrollView */,
 				6423D75E21C4F9A0002FECA5 /* UIView */,
 				6423D76121C4F9A0002FECA5 /* Notification */,
@@ -3113,6 +3123,8 @@
 		6423D7CE21C4F9A2002FECA5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				81DE25E5267337E3008A4CED /* Turntable */,
+				81DE25D426733266008A4CED /* FloatingButton */,
 				81F7F36E2672252F007B25BC /* AutoScrollView */,
 				6423D7D821C4F9A2002FECA5 /* HomeSectionHeaderView.h */,
 				6423D7D021C4F9A2002FECA5 /* HomeSectionHeaderView.m */,
@@ -3931,6 +3943,33 @@
 			path = AppListInfo;
 			sourceTree = "<group>";
 		};
+		81DE25D426733266008A4CED /* FloatingButton */ = {
+			isa = PBXGroup;
+			children = (
+				81DE25D526733266008A4CED /* FloatingButton.h */,
+				81DE25D626733266008A4CED /* FloatingButton.m */,
+			);
+			path = FloatingButton;
+			sourceTree = "<group>";
+		};
+		81DE25DE26733468008A4CED /* UIWindow */ = {
+			isa = PBXGroup;
+			children = (
+				81DE25DF26733468008A4CED /* UIWindow+KeyWindow.h */,
+				81DE25E026733468008A4CED /* UIWindow+KeyWindow.m */,
+			);
+			path = UIWindow;
+			sourceTree = "<group>";
+		};
+		81DE25E5267337E3008A4CED /* Turntable */ = {
+			isa = PBXGroup;
+			children = (
+				81DE25E7267337E3008A4CED /* TurntableView.h */,
+				81DE25E6267337E3008A4CED /* TurntableView.m */,
+			);
+			path = Turntable;
+			sourceTree = "<group>";
+		};
 		81F7F36E2672252F007B25BC /* AutoScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -4583,6 +4622,7 @@
 				6405E95D21E31E5C00D9719B /* UIImageView+Extras.m in Sources */,
 				642E446F21CA1DC4000E0888 /* SXWaveView.m in Sources */,
 				6439E11B21C8A03300A12D79 /* NSData+Extras.m in Sources */,
+				81DE25E8267337E3008A4CED /* TurntableView.m in Sources */,
 				6423D86421C4F9A3002FECA5 /* NSString+Extras.m in Sources */,
 				39441E5B2476B37E00AA23C3 /* AccountStatedVC.m in Sources */,
 				640B2FE521D366B2002ABE64 /* OrderDetailModel.m in Sources */,
@@ -4695,6 +4735,7 @@
 				640B310621D63A2D002ABE64 /* ModifyAdsVM.m in Sources */,
 				640B2FB521D0F4CA002ABE64 /* DataStatisticsView.m in Sources */,
 				6423D72A21C4F7C2002FECA5 /* AppDelegate.m in Sources */,
+				81DE25E126733468008A4CED /* UIWindow+KeyWindow.m in Sources */,
 				640B313221D76384002ABE64 /* FCBankCardViewController.m in Sources */,
 				6423D85821C4F9A3002FECA5 /* HomeOrderCell.m in Sources */,
 				6423D85921C4F9A3002FECA5 /* BaseCell.m in Sources */,
@@ -4774,6 +4815,7 @@
 				3948F7282470945400477131 /* AccountTagView.m in Sources */,
 				642E45B221CF7963000E0888 /* UITextView+ZWLimitCounter.m in Sources */,
 				640B30B121D49F36002ABE64 /* ExchangeView.m in Sources */,
+				81DE25D726733266008A4CED /* FloatingButton.m in Sources */,
 				6405E98221E3391C00D9719B /* PHRoundTagView.m in Sources */,
 				642E45A621CF5BFA000E0888 /* PostAdsPaysCell.m in Sources */,
 				642E447A21CA1DC4000E0888 /* RichTextAdjustTableViewCell.m in Sources */,
@@ -4959,7 +5001,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/gtp/gtpPrefixHeader.pch";
 				INFOPLIST_FILE = gtp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -4987,7 +5029,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/gtp/gtpPrefixHeader.pch";
 				INFOPLIST_FILE = gtp/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

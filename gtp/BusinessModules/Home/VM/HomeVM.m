@@ -68,8 +68,10 @@
         NSDictionary* result = dic[@"result"];
         if ([NSString getLNDataSuccessed:result]) {
             weakSelf.model = [HomeModel mj_objectWithKeyValues:dic];
-            [self assembleApiData:weakSelf.model.result.data WithPage:page];
-            success(weakSelf.listData,weakSelf.model.result.data.returnData.rankinglist);
+            NSArray* arr =[WItem mj_objectArrayWithKeyValuesArray:weakSelf.model.result.data.returnData.rankinglist];
+            
+            [self assembleApiData:arr WithPage:page];
+            success(weakSelf.listData,arr);
 //            [[NSNotificationCenter defaultCenter] postNotificationName:@"HomeModelReturn" object:nil];
         }
         else{
@@ -80,7 +82,7 @@
     }];
 }
 
-- (void)assembleApiData:(HomeData*)data WithPage:(NSInteger)page{
+- (void)assembleApiData:(NSArray*)data WithPage:(NSInteger)page{
     if (page ==3) {
         return;
     }
@@ -88,7 +90,7 @@
 //    if (data.returnData !=nil && data.returnData.rankinglist.count>0 &&page==1) {
         [self.listData addObject:@{
                    kIndexSection: @(IndexSectionZero),
-                   kIndexRow: @[data.returnData]}];
+                   kIndexRow: @[data]}];
 //    }
     
     [self removeContentWithType:IndexSectionOne];
@@ -110,17 +112,17 @@
     
     [self removeContentWithType:IndexSectionTwo];
 
-    
+    NSArray* scrollArr = data;
     [self.listData addObject:@{
                    kIndexSection: @(IndexSectionTwo),
-                   kIndexRow: @[[self autoScrollArr:data.returnData.rankinglist]]}];
+                   kIndexRow: @[[self autoScrollArr:scrollArr]]}];
 
     
     [self removeContentWithType:IndexSectionThree];
     
-    if (data.returnData !=nil && data.returnData.rankinglist.count>0 ) {
+    if (data !=nil && data.count>0 ) {
         NSMutableArray *times = [NSMutableArray arrayWithCapacity:20];
-        for (NSInteger i = 0; i < data.returnData.rankinglist.count; i ++) {
+        for (NSInteger i = 0; i < data.count; i ++) {
             NSInteger time = arc4random()%3600;
             [times addObject:@(time)];
         }
@@ -164,7 +166,7 @@
     }
     
     NSMutableArray* txArr = [NSMutableArray array];//[WItem mj_objectArrayWithKeyValuesArray:models]
-    for (WItem* model in [WItem mj_objectArrayWithKeyValuesArray:models]) {
+    for (WItem* model in models) {
         NSString* name = [NSString stringWithFormat:@"%@",model.title];
         
         if( name.length>1){

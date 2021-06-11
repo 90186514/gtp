@@ -19,6 +19,9 @@
 #import "HomeHV.h"
 #import "HomeFV.h"
 
+#import "FloatingButton.h"
+#import "TurntableView.h"
+
 #import "PostAdsVC.h"
 #import "OrdersVC.h"
 #import "DataStatisticsVC.h"
@@ -29,6 +32,8 @@
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, assign) NSUInteger currentPage;
 @property (nonatomic, strong) NSMutableArray *sections;
+@property (nonatomic, strong)NSMutableArray * lastSectionArr;
+
 @property (nonatomic, assign) CFAbsoluteTime start;  //刷新数据时的时间
 
 @property (nonatomic, strong) HomeVM *vm;
@@ -36,6 +41,7 @@
 @property (nonatomic, strong)UIView *hv;
 @property (nonatomic, strong) HomeHV * hHV;
 
+@property (nonatomic, strong)FloatingButton *floatBtn;
 
 @property (nonatomic, strong)UIView *fv;
 @property (nonatomic, strong) HomeFV * hFV;
@@ -85,6 +91,12 @@
     
 }
 
+-(void)viewDidLayoutSubviews {
+    [super viewDidLayoutSubviews];
+    
+    [self.view bringSubviewToFront:self.floatBtn];
+}
+
 -(void)netwoekingErrorDataRefush{
 //    [self  requestHomeListWithPage:1];
 }
@@ -113,8 +125,10 @@
         [self.tableView reloadData];
     }
     if (sections.count > 0) {
+        self.lastSectionArr = [NSMutableArray array];
         [self.sections removeAllObjects];
         [self.sections addObjectsFromArray:sections];
+        [self.lastSectionArr addObjectsFromArray:lastSectionArr];
         [self.tableView reloadData];
         [self.tableView.mj_footer endRefreshing];
         self.tableView.mj_footer.hidden = NO;
@@ -479,6 +493,33 @@
         _vm = [HomeVM new];
     }
     return _vm;
+}
+
+-(void)floatBtnAction:(FloatingButton *)sender{
+    TurntableView* popupView = [[TurntableView alloc]init];
+    [popupView richElementsInViewWithModel:self.lastSectionArr];
+    [popupView showInApplicationKeyWindow];
+    [popupView actionBlock:^(WItem*  data) {
+        NSLog(@"%@",data.title);
+    }];
+}
+
+-(FloatingButton *)floatBtn{
+    if(!_floatBtn){
+        _floatBtn = [FloatingButton buttonWithType:0];
+        _floatBtn.layer.cornerRadius = 30;
+        _floatBtn.layer.masksToBounds = true;
+        [_floatBtn setBackgroundImage:[UIImage imageNamed:@"home_top_img"] forState:0];
+        [_floatBtn addTarget:self action:@selector(floatBtnAction:) forControlEvents:UIControlEventTouchUpInside];
+        
+        UIEdgeInsets insets = [[UIWindow keyWindow] safeAreaInsets];
+        _floatBtn.frame = CGRectMake(self.view.width - 12 - 60, self.view.height * 1242/2248, 60, 60);
+
+        _floatBtn.safeInsets = UIEdgeInsetsMake(0, 0, insets.bottom + 50, 0);
+        _floatBtn.parentView = self.view;
+        [self.view addSubview:_floatBtn];
+    }
+    return _floatBtn;
 }
 
 - (void)dealloc {
