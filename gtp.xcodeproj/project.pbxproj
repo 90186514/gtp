@@ -657,6 +657,10 @@
 		81DE25D726733266008A4CED /* FloatingButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DE25D626733266008A4CED /* FloatingButton.m */; };
 		81DE25E126733468008A4CED /* UIWindow+KeyWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DE25E026733468008A4CED /* UIWindow+KeyWindow.m */; };
 		81DE25E8267337E3008A4CED /* TurntableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DE25E6267337E3008A4CED /* TurntableView.m */; };
+		81DE25F926738708008A4CED /* SlotAnimateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DE25F726738708008A4CED /* SlotAnimateView.m */; };
+		81DE25FA26738708008A4CED /* SlotAnimateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 81DE25F826738708008A4CED /* SlotAnimateView.xib */; };
+		81DE2609267389C8008A4CED /* ZCSlotMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = 81DE2608267389C8008A4CED /* ZCSlotMachine.m */; };
+		81DE261926747370008A4CED /* verticalLine@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 81DE261826747370008A4CED /* verticalLine@2x.png */; };
 		81F7F333266DCE5E007B25BC /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7F332266DCE5E007B25BC /* Test.swift */; };
 		81F7F36A267224E7007B25BC /* AutoScrollCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 81F7F369267224E7007B25BC /* AutoScrollCell.m */; };
 		81F7F3722672252F007B25BC /* ExtensionColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F7F36F2672252F007B25BC /* ExtensionColor.swift */; };
@@ -1613,6 +1617,12 @@
 		81DE25E026733468008A4CED /* UIWindow+KeyWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+KeyWindow.m"; sourceTree = "<group>"; };
 		81DE25E6267337E3008A4CED /* TurntableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurntableView.m; sourceTree = "<group>"; };
 		81DE25E7267337E3008A4CED /* TurntableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TurntableView.h; sourceTree = "<group>"; };
+		81DE25F626738708008A4CED /* SlotAnimateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SlotAnimateView.h; sourceTree = "<group>"; };
+		81DE25F726738708008A4CED /* SlotAnimateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SlotAnimateView.m; sourceTree = "<group>"; };
+		81DE25F826738708008A4CED /* SlotAnimateView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SlotAnimateView.xib; sourceTree = "<group>"; };
+		81DE2607267389C8008A4CED /* ZCSlotMachine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZCSlotMachine.h; sourceTree = "<group>"; };
+		81DE2608267389C8008A4CED /* ZCSlotMachine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZCSlotMachine.m; sourceTree = "<group>"; };
+		81DE261826747370008A4CED /* verticalLine@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "verticalLine@2x.png"; sourceTree = "<group>"; };
 		81F7F332266DCE5E007B25BC /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		81F7F368267224E7007B25BC /* AutoScrollCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AutoScrollCell.h; sourceTree = "<group>"; };
 		81F7F369267224E7007B25BC /* AutoScrollCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AutoScrollCell.m; sourceTree = "<group>"; };
@@ -3123,6 +3133,7 @@
 		6423D7CE21C4F9A2002FECA5 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				81DE25EF267386CD008A4CED /* ZCSlotMachine */,
 				81DE25E5267337E3008A4CED /* Turntable */,
 				81DE25D426733266008A4CED /* FloatingButton */,
 				81F7F36E2672252F007B25BC /* AutoScrollView */,
@@ -3970,6 +3981,19 @@
 			path = Turntable;
 			sourceTree = "<group>";
 		};
+		81DE25EF267386CD008A4CED /* ZCSlotMachine */ = {
+			isa = PBXGroup;
+			children = (
+				81DE261826747370008A4CED /* verticalLine@2x.png */,
+				81DE2607267389C8008A4CED /* ZCSlotMachine.h */,
+				81DE2608267389C8008A4CED /* ZCSlotMachine.m */,
+				81DE25F626738708008A4CED /* SlotAnimateView.h */,
+				81DE25F726738708008A4CED /* SlotAnimateView.m */,
+				81DE25F826738708008A4CED /* SlotAnimateView.xib */,
+			);
+			path = ZCSlotMachine;
+			sourceTree = "<group>";
+		};
 		81F7F36E2672252F007B25BC /* AutoScrollView */ = {
 			isa = PBXGroup;
 			children = (
@@ -4173,6 +4197,7 @@
 				39DDE3DA24821F7B009E1985 /* yexiao@2x.png in Resources */,
 				39DDE45D24821F7B009E1985 /* payweixin@2x.png in Resources */,
 				6405E96C21E331CB00D9719B /* baby_40@2x.png in Resources */,
+				81DE25FA26738708008A4CED /* SlotAnimateView.xib in Resources */,
 				39DDE45A24821F7B009E1985 /* iconConceled@3x.png in Resources */,
 				39DDE43324821F7B009E1985 /* disable_unselected@3x.png in Resources */,
 				39DDE39A24821F7B009E1985 /* icon_vip@2x.png in Resources */,
@@ -4244,6 +4269,7 @@
 				39DDE46024821F7B009E1985 /* paycredit@3x.png in Resources */,
 				39DDE44624821F7B009E1985 /* icon_erase@2x.png in Resources */,
 				39DDE3CF24821F7B009E1985 /* xiucheyanghu@3x.png in Resources */,
+				81DE261926747370008A4CED /* verticalLine@2x.png in Resources */,
 				6439E0A321C7957300A12D79 /* renwu5.png in Resources */,
 				64FB4E7421C65189000952D6 /* tablefton.png in Resources */,
 				642E456621CCF291000E0888 /* red_x_down.png in Resources */,
@@ -4608,6 +4634,7 @@
 				640B312A21D76384002ABE64 /* FCOCRIDCardViewController.m in Sources */,
 				6423D86521C4F9A3002FECA5 /* NSObject+Extras.m in Sources */,
 				640B312F21D76384002ABE64 /* FCBeautifyViewController.m in Sources */,
+				81DE2609267389C8008A4CED /* ZCSlotMachine.m in Sources */,
 				640B316F21D76496002ABE64 /* FCPPFace.m in Sources */,
 				6423D86121C4F9A3002FECA5 /* NSString+YBFontSize.m in Sources */,
 				81F7F38026730A83007B25BC /* HomeHV.m in Sources */,
@@ -4768,6 +4795,7 @@
 				3948F8092472498400477131 /* AccountingVM.m in Sources */,
 				81F7F3732672252F007B25BC /* ZXWinnerScrollView.swift in Sources */,
 				393215D6248E3CDD00EC4CD8 /* SaoleiHeaderView.m in Sources */,
+				81DE25F926738708008A4CED /* SlotAnimateView.m in Sources */,
 				39441E552476B37E00AA23C3 /* MonthOpeartion.m in Sources */,
 				3932190724937C1000EC4CD8 /* CenterSpinView.m in Sources */,
 				640B313721D76384002ABE64 /* FCOCRVehicleLicenseViewController.m in Sources */,

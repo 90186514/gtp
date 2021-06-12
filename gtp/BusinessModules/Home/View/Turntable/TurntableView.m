@@ -34,9 +34,9 @@
 }
 
 - (void)clickright{
-//    if (self.block) {
-//        self.block(@2);
-//    }
+    if (self.block) {
+        self.block(@0);
+    }
 }
 
 - (void)setupContent {
@@ -387,6 +387,9 @@ double radians(float degrees) {
 
 
 - (void)disMissView {
+    if (self.startBtn.userInteractionEnabled==NO) {
+        return;
+    }
     __weak __typeof(self)weakSelf = self;
     [_contentView setFrame:CGRectMake((MAINSCREEN_WIDTH - XHHTuanNumViewWidth)/2, (MAINSCREEN_HEIGHT - _contentViewHeigth)/2, XHHTuanNumViewWidth, _contentViewHeigth)];
     [UIView animateWithDuration:0.3f
@@ -400,6 +403,9 @@ double radians(float degrees) {
                          
                          [weakSelf removeFromSuperview];
                          [weakSelf.contentView removeFromSuperview];
+                        if (self.block) {
+                            self.block(@0);
+                        }
         
                      }];
     

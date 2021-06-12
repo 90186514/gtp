@@ -70,6 +70,9 @@
 //api
 #import "ApiConfig.h"
 
+//
+#import "HomeModel.h"
+
 //BusinessModules
 #import "AccountingModel.h"
 #import "UserInfoManager.h"

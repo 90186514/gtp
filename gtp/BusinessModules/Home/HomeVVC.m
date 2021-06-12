@@ -21,6 +21,7 @@
 
 #import "FloatingButton.h"
 #import "TurntableView.h"
+#import "SlotAnimateView.h"
 
 #import "PostAdsVC.h"
 #import "OrdersVC.h"
@@ -36,7 +37,6 @@
 @property (nonatomic, strong)NSMutableArray * lastSectionSumArr;
 
 
-
 @property (nonatomic, assign) CFAbsoluteTime start;  //刷新数据时的时间
 
 @property (nonatomic, strong) HomeVM *vm;
@@ -45,6 +45,8 @@
 @property (nonatomic, strong) HomeHV * hHV;
 
 @property (nonatomic, strong)FloatingButton *floatBtn;
+@property (nonatomic, strong) SlotAnimateView *slotAnimateView;
+@property (nonatomic, strong)WItem* resultItem;
 
 @property (nonatomic, strong)UIView *fv;
 @property (nonatomic, strong) HomeFV * hFV;
@@ -511,9 +513,16 @@
     if (self.lastSectionArr.count>0) {
         TurntableView* popupView = [[TurntableView alloc]init];
         [popupView richElementsInViewWithModel:self.lastSectionArr];
-        [popupView showInApplicationKeyWindow];
-        [popupView actionBlock:^(WItem*  data) {
-            NSLog(@"%@",data.title);
+        [popupView showInView:self.view];
+        [popupView actionBlock:^(id data) {
+            if ([data isKindOfClass:[WItem class]]) {
+                WItem* item = data;
+                self.resultItem = item;
+//                NSLog(@"%@",item.title);
+                [self setupAnimateView];
+                [self setAnimate];
+            }
+            
         }];
     }
     
@@ -535,6 +544,41 @@
         [self.view addSubview:_floatBtn];
     }
     return _floatBtn;
+}
+
+- (void)setupContent{
+    _slotAnimateView.hidden = YES;
+//    WelfareWinPopView* popupView = [[WelfareWinPopView alloc]init];
+//    [popupView richElementsInViewWithModel:self.aModel];
+//    [popupView showInView:self.view];
+//    [popupView actionBlock:^(id data) {
+//        [self requestHomeListWithPage:1];
+//
+//    }];
+}
+
+- (void) setAnimate {
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(6.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self setupContent];
+    });
+}
+
+- (void)setupAnimateView {
+    _slotAnimateView = [SlotAnimateView customView];
+    _slotAnimateView.frame = CGRectMake(10, YBFrameTool.navigationBarHeight + 10, MAINSCREEN_WIDTH - 20, MAINSCREEN_HEIGHT - YBFrameTool.navigationBarHeight - YBFrameTool.iphoneBottomHeight - 10 - 70);
+    [self.view addSubview:_slotAnimateView];
+    _slotAnimateView.nowPriceLab.hidden = true;
+    _slotAnimateView.originalPriceLab.hidden = true;
+    _slotAnimateView.titleImg.hidden = true;
+    _slotAnimateView.diamondImg.hidden = true;
+
+    for (int i=0; i<[self.lastSectionArr count]; i++) {
+        WItem *model = self.lastSectionArr[i];
+        [_slotAnimateView.iconArray addObject: model];
+    }
+    [_slotAnimateView.iconUrlArray addObject: self.resultItem];
+
+    [_slotAnimateView setupOneAnimationView];
 }
 
 - (void)dealloc {
